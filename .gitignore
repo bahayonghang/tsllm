@@ -1,0 +1,17 @@
+data/
+target/
+
+# Harness-local scaffolding. Not the project contract.
+.agents/
+.claude/
+.codex/
+.codegraph/
+.reasonix/
+
+# Not project adapters. Ignore them if a tool creates them locally.
+.grok/
+.kimi-code/
+.omp/
+.cursor/
+
+ref/
