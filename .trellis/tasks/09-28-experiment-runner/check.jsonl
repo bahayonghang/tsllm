@@ -1,0 +1,6 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Toolchain and leakage tests"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Metric and label rules"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "State transitions through RunStore"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Worker catch-all rules"}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Data that must not be logged"}

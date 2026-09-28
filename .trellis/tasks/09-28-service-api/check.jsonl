@@ -1,0 +1,5 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Toolchain"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Envelope and status codes"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Transitions only through RunStore"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "No business logic in routes"}

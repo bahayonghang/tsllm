@@ -1,0 +1,5 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/model-adapter-guidelines.md", "reason": "Adapter checklist"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Toolchain and forbidden patterns"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Fine-tuning must use fit rows only"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "No silent fallback"}

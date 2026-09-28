@@ -1,0 +1,7 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend stack and core rules"}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "web/ layout and routes"}
+{"file": ".trellis/spec/frontend/api-client.md", "reason": "Generated types, client, query hooks, SSE"}
+{"file": ".trellis/spec/frontend/forms-and-charts.md", "reason": "Schema form, charts, time display"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Scripts, TypeScript, tests"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Backend and frontend boundary"}

@@ -1,0 +1,32 @@
+{
+  "id": "tsfm-platform",
+  "name": "tsfm-platform",
+  "title": "时序基础模型微调与展示平台",
+  "description": "Parent task: generic TSFM fine-tuning platform (data contract, backbone adapters, forecast/classification runner, FastAPI service, React UI) validated on the Yangquan rotary kiln dataset.",
+  "status": "planning",
+  "dev_type": null,
+  "scope": null,
+  "package": null,
+  "priority": "P1",
+  "creator": "lyh",
+  "assignee": "lyh",
+  "createdAt": "2026-09-28",
+  "completedAt": null,
+  "branch": null,
+  "base_branch": "main",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [
+    "09-28-data-contract",
+    "09-28-backbone-adapters",
+    "09-28-experiment-runner",
+    "09-28-service-api",
+    "09-28-web-ui"
+  ],
+  "parent": null,
+  "relatedFiles": [],
+  "notes": "",
+  "meta": {}
+}

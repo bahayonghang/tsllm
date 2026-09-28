@@ -1,0 +1,4 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Scripts and forbidden patterns"}
+{"file": ".trellis/spec/frontend/api-client.md", "reason": "No hand-written API types"}
+{"file": ".trellis/spec/frontend/forms-and-charts.md", "reason": "No hard-coded backbone or task fields"}

@@ -1,0 +1,8 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend spec index"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Service layer rules: no torch, thin routes"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Error envelope and code-to-status map"}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Service logging and SSE event format"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Run directory and config write rules"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Test rules"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Event log boundary between worker, SSE, and web"}

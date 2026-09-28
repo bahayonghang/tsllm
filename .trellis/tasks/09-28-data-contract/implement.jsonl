@@ -1,0 +1,9 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend spec index"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Package layout and layer rules"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "YAML io, Parquet cache, UTF-8 rules"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "TsllmError and dataset error codes"}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Reporter protocol used by ingest"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "pyproject tool config, test rules"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Resampling, segments, splits, windows, labels"}
+{"file": ".trellis/tasks/09-28-tsfm-platform/research/data-profile.md", "reason": "Kiln data facts: dtypes, duplicates, gaps, eligible counts"}

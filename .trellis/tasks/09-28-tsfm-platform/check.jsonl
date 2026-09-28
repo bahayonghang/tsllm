@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Toolchain, test rules, leakage tests"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Leakage rules for AC7"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Web checks for AC5 and AC6"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Boundary checklist for integration review"}

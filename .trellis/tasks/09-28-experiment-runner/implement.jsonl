@@ -1,0 +1,11 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend spec index"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Layer rules"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Run directory, atomic writes, events.jsonl"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Worker failure handling"}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "FileReporter and env snapshot"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Windows, labels, metrics, origin_set_hash"}
+{"file": ".trellis/spec/backend/model-adapter-guidelines.md", "reason": "Capabilities checks in the task layer"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Test rules"}
+{"file": ".trellis/tasks/09-28-tsfm-platform/research/report-applicability.md", "reason": "Metrics and gates adopted from the report"}
+{"file": ".trellis/tasks/09-28-tsfm-platform/research/data-profile.md", "reason": "Kiln channel names for sample run configs"}
