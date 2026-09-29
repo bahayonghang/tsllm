@@ -1,6 +1,7 @@
 """Command line entry point."""
 
 import json
+import logging
 from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
@@ -36,8 +37,14 @@ runs_app = typer.Typer(
     no_args_is_help=True,
     pretty_exceptions_show_locals=False,
 )
+api_app = typer.Typer(
+    help="Export the HTTP API description.",
+    no_args_is_help=True,
+    pretty_exceptions_show_locals=False,
+)
 app.add_typer(data_app, name="data")
 app.add_typer(runs_app, name="runs")
+app.add_typer(api_app, name="api")
 
 
 @app.callback()
@@ -204,3 +211,30 @@ def runs_show(run_id: Annotated[str, typer.Argument(help="Run id.")]) -> None:
 def schema() -> None:
     """Print the RunConfig JSON Schema and backbone Options schemas."""
     typer.echo(json.dumps(run_config_schema(), ensure_ascii=False, indent=2))
+
+
+@app.command("serve")
+def serve(
+    host: Annotated[str, typer.Option(help="Bind address.")] = "127.0.0.1",
+    port: Annotated[int, typer.Option(help="Bind port.")] = 8000,
+) -> None:
+    """Start the HTTP API and the job queue."""
+    import uvicorn
+
+    from tsllm.service.app import create_app
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
+    uvicorn.run(create_app(), host=host, port=port)
+
+
+@api_app.command("openapi")
+def api_openapi(
+    out: Annotated[Path, typer.Option("--out", help="Output JSON file.")],
+) -> None:
+    """Write the OpenAPI document of the HTTP API."""
+    from tsllm.service.app import create_app
+
+    document = create_app().openapi()
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    typer.echo(f"paths={len(document['paths'])} out={out}")

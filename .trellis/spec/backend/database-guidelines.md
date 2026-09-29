@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for dataset YAML files, the prepared-data cache, and run directories. Service config writes remain Decided.
+Status: **Verified** for dataset YAML files, the prepared-data cache, run directories, and service config writes.
 
 All state is in files. There is no ORM, no SQL, and no migration tool. There are 3 storage areas:
 
@@ -64,7 +64,7 @@ CLI commands: `tsllm data list`, `tsllm data ingest <id> [--force]`, and `tsllm 
 #### 3. Contracts
 
 - The registry resolves `configs/datasets/<id>.yaml`; `id` must match the filename. Config models reject unknown fields.
-- Ingestion reuses a fresh cache unless `force=True`. `cache_root` overrides `cache/datasets` for isolated callers and tests. No environment variable is required.
+- Ingestion reuses a fresh cache unless `force=True`. `cache_root` overrides the default root for isolated callers and tests. The default root is `$TSLLM_CACHE_DIR/datasets`, or `cache/datasets` when the variable is not set (`tsllm.data.cache.default_cache_root`). The service sets the variable for its worker subprocesses, so the service and the worker read one cache.
 - The return value is `PreparedFrame(frame, channels, freq, meta)` from `src/tsllm/data/types.py`. Metadata contains channel profiles, segments, split boundaries/counts, the config hash, and the source fingerprint.
 - `profile` reads existing cache metadata. It must not create or repair a missing or stale cache.
 - Source freshness uses size and `mtime_ns`; it does not prove content identity when both values remain unchanged.
@@ -112,7 +112,7 @@ Status: **Verified** in `src/tsllm/runs/store.py`, `reporter.py`, and `worker.py
 - `events.jsonl` is append-only. `FileReporter` writes one complete line per event, then calls `flush()`. Readers send only lines that end with `\n`.
 - `config.yaml` in a run directory is a snapshot (`JobSpec`). Never change it after the job is created.
 - Predictions are long-format Parquet: forecast `origin_time, channel, lead, y_true, y_pred, q_<level>...` (missing values are null); classification `origin_time, label, score`.
-- The transition check reads and then writes without a lock. A concurrent service cancel and worker completion can race; the service-api task owns that case.
+- The transition check reads and then writes without a lock. The service serializes its own writes and writes a racing transition only after the worker process has ended. See `error-handling.md`, "Service writes and the worker race".
 
 ---
 
@@ -125,3 +125,15 @@ Status: **Verified** in `src/tsllm/runs/store.py`, `reporter.py`, and `worker.py
 | `open(path)` without `encoding="utf-8"`            | Chinese channel names break on Windows          |
 | Change `status.json` without `RunStore.transition` | The state machine rules are lost                |
 | Cache key from the file path only                  | A config change must make a new cache directory |
+
+---
+
+## Service Config Writes
+
+Status: **Verified**.
+
+- `PUT /api/datasets/{id}/channels` calls `src/tsllm/data/channels.py::update_channels`. The request must name the same channel set as the config; only `role`, `unit`, and `description` change. The original channel order is kept. A config with `channels: null` gets its channel list from a fresh cache; without a fresh cache the request fails with `CHANNEL_INVALID`. The new explicit list changes `config_hash`, so the response reports `needs_ingest: true`.
+- `src/tsllm/data/registry.py::save_dataset` writes the dataset YAML file with `source.path` in forward-slash form on every platform. `Path` serialization on Windows gives backslashes, which break the file on Linux. The config hash does not change, because it is computed from the parsed `Path`.
+- `PUT /api/run-templates/{name}` calls `src/tsllm/config/templates.py::save_template`. Names match `^[A-Za-z0-9_-]+$`.
+- Writing a YAML file through the service removes YAML comments; the file contains the full model dump.
+- Tests: `tests/service/test_api_datasets.py::test_channel_dictionary_update` and `tests/service/test_api_basic.py::test_run_templates`.

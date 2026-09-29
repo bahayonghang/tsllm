@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for the six implemented adapters, configuration, capabilities, lazy discovery, checkpoint resolution, NaN handling, training, and adapter round trips. Offline tests and local real-checkpoint/CUDA acceptance are recorded in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md` and its `research/real-acceptance.md`. Runner integration is Verified in `src/tsllm/tasks/`. Service and web integration remain Decided.
+Status: **Verified** for the six implemented adapters, configuration, capabilities, lazy discovery, checkpoint resolution, NaN handling, training, and adapter round trips. Offline tests and local real-checkpoint/CUDA acceptance are recorded in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md` and its `research/real-acceptance.md`. Runner integration is Verified in `src/tsllm/tasks/`. Service integration is Verified: `/api/backbones` returns `list_backbones()` and the service never imports model libraries (`tests/service/test_api_basic.py::test_service_does_not_import_model_libraries`). Web integration remains Decided.
 
 An adapter wraps one time-series model (a foundation model or a baseline) behind the `Backbone` protocol. Tasks, evaluation, service, and web code use only the protocol, the registry, and `Capabilities`. They never use a model name in a condition.
 

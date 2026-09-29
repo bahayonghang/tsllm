@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for `Reporter`, `NullReporter`, `PrintReporter`, adapter warnings/training metrics, and ingestion CLI output. `FileReporter`, the worker environment snapshot, and the run CLI are also Verified. SSE remains Decided.
+Status: **Verified** for `Reporter`, `NullReporter`, `PrintReporter`, adapter warnings/training metrics, and ingestion CLI output. `FileReporter`, the worker environment snapshot, and the run CLI are also Verified. SSE and service logging are Verified in `src/tsllm/service/sse.py` and `jobs.py`.
 
 There are 2 output paths. Use the correct one.
 
@@ -74,3 +74,30 @@ Adapter reporting is implemented in `src/tsllm/backbones/base.py`, `features.py`
 ## Environment Snapshot
 
 `src/tsllm/runs/env.py::environment_snapshot` builds `env.json`: Python and platform, package versions from `importlib.metadata` (`null` if not installed), torch version, CUDA version, `cuda_available`, GPU name and compute capability, backbone checkpoint and requested revision, resolved checkpoint path and revision, license, and `hf_endpoint` as `{set, host}`. The worker writes it after the `running` transition and rewrites it after the task returns or raises, when `TaskContext.backbone` is set. Adapters that resolve the checkpoint at first use (TTM) are therefore recorded too. Every result must be traceable to this file.
+
+---
+
+## Server-Sent Events
+
+Implemented in `src/tsllm/service/sse.py::tail_events`; route `GET /api/runs/{run_id}/events` in `src/tsllm/service/routes/runs.py`.
+
+```text
+id: <line number of events.jsonl, starting at 1>
+event: <kind of the line: log | progress | metric | stage>
+data: <the line, unchanged>
+
+```
+
+- The stream starts after the id in the `Last-Event-ID` header, or after the `from` query parameter. The header wins when both are present.
+- The reader keeps the byte offset of the file. Each poll reads only new bytes, so a large file (for example `features` classification, which writes one warning per batch) is read once per connection. Lines are split at `\n` only; `str.splitlines` also splits at U+2028, which JSON text can contain.
+- A line without its final `\n` is not sent; it is read at the next poll.
+- The state is read before the file. When the state is terminal and a read returns no new line, the stream sends `event: end` with `data: {"state": "<state>"}` and closes.
+- Without new lines for `heartbeat_seconds` (15 s by default) the stream sends the comment `: ping`. The poll interval is `poll_seconds` (0.5 s by default). Both are `Settings` fields.
+- Tests: `tests/service/test_api_events.py` covers the complete stream, resume by header and by query, a partial last line, live lines from another thread, and heartbeats.
+
+## Service Logging
+
+- `tsllm serve` calls `logging.basicConfig` once at start. The service modules only get loggers.
+- `tsllm.service.jobs` logs INFO for queued, started (with pid), reattached, and finished runs; WARNING for an `interrupted` run at start; ERROR with the run id for a failed run, including a worker that exited before `running`.
+- Worker stdout and stderr go to `runs/<run_id>/worker.log`. The service starts the worker with `PYTHONIOENCODING=utf-8`.
+- The service logs a traceback for an unhandled route error. The response contains only `INTERNAL_ERROR`.

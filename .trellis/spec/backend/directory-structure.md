@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for config, data, adapters, tasks, evaluation, runs, errors, reporting, and the data/run CLI. `service/` and `web/` are planned and remain Decided.
+Status: **Verified** for config, data, adapters, tasks, evaluation, runs, errors, reporting, the service, and the CLI. `web/` is planned and remains Decided.
 
 The project is one Python package, `tsllm`, in a `src/` layout. uv builds it with `uv_build`. The design defines 7 layers. Dependencies go down only (see "Layer Rules").
 
@@ -30,9 +30,10 @@ src/tsllm/
     base.py  io.py  dataset.py  labels.py
     backbone.py                # BackboneConfig, FinetuneConfig, LoraSpec
     run.py  schema.py           # RunConfig, JobSpec; run_config_schema()
+    templates.py                # configs/runs/<name>.yaml read and write
   data/                       # source read, resample, segments, splits, windows, labels, cache
     types.py  registry.py  source.py  rules.py  prepare.py  cache.py
-    stats.py  windows.py  labels.py  profile.py
+    stats.py  windows.py  labels.py  profile.py  series.py  channels.py
   backbones/                  # adapter base, registry, and six adapters
     base.py  registry.py  checkpoint.py  windows.py  nan.py  training.py
     persistence.py  ridge.py  features.py  chronos2.py  timesfm25.py  ttm.py
@@ -40,10 +41,10 @@ src/tsllm/
     registry.py  context.py  validation.py  forecast.py  classify.py
   evaluation/                 # metrics and resource measurement
     metrics.py  resources.py
-  runs/                       # run store, file reporter, worker entry
-    store.py  reporter.py  env.py  seeding.py  worker.py
-  service/                    # planned: FastAPI app, job manager, SSE, routes
-    app.py  settings.py  errors.py  models.py  jobs.py  sse.py  static.py
+  runs/                       # run store, file reporter, worker entry, result reads
+    store.py  reporter.py  env.py  seeding.py  worker.py  results.py  compare.py
+  service/                    # FastAPI app, job manager, SSE, routes; no torch
+    app.py  settings.py  errors.py  models.py  deps.py  jobs.py  sse.py  static.py
     routes/{system,schema,datasets,backbones,runs,compare,templates}.py
 tests/                        # mirrors src/tsllm; fixtures make synthetic data
 web/                          # planned: React UI
@@ -117,4 +118,10 @@ service ─▶ runs ─▶ tasks, evaluation ─▶ backbones ─▶ data ─▶
 - Tasks: `src/tsllm/tasks/`. The task layer reads data only through `tsllm.data` functions and `PreparedFrame.channels`. Tests in `tests/tasks/` and `tests/runs/test_worker_e2e.py`.
 - Runs: `src/tsllm/runs/`; tests in `tests/runs/`. CLI commands `tsllm run`, `tsllm runs list`, `tsllm runs show`, and `tsllm schema` are in `src/tsllm/cli.py`; tests in `tests/test_cli.py`.
 
-Service placement remains defined by the parent design §1–§2 and the service-api child design. Its listed paths are not implementation evidence.
+## Service Implementation References
+
+- App factory and settings: `src/tsllm/service/app.py`, `settings.py` (`Settings.from_env()` reads `TSLLM_RUNS_DIR`, `TSLLM_CACHE_DIR`, `TSLLM_CONFIGS_DIR`, `TSLLM_GPU_SLOTS`, `TSLLM_CPU_SLOTS`), and `deps.py` (request dependencies for settings, store, and job manager).
+- Route logic lives in lower layers: `tsllm.data.series` (plot buckets), `tsllm.data.channels` (channel dictionary edits), `tsllm.config.templates`, `tsllm.runs.results` (metrics, env, predictions), `tsllm.runs.compare`, and `tsllm.runs.env.gpu_info` / `package_versions` (no torch import).
+- Job queue: `src/tsllm/service/jobs.py`. One asyncio queue per pool (`gpu` for `device: cuda` experiments, `cpu` for all other jobs) with one runner task per slot, FIFO. Workers start with `subprocess.Popen` and are polled, so the service does not depend on the event loop type on Windows.
+- CLI: `tsllm serve [--host] [--port]` and `tsllm api openapi --out <path>` in `src/tsllm/cli.py`; both import the service inside the command.
+- Tests: `tests/service/`.

@@ -280,6 +280,7 @@ runs/<run_id>/                  # run_id = <YYYYmmdd-HHMMSS>-<name 的 slug>-<4 
 | `running` | `succeeded` | worker | 正常结束 |
 | `running` | `failed` | worker | 捕获到异常 |
 | `running` | `failed` | service | 子进程退出码非 0 且状态仍为 `running`（worker 未能写入终态） |
+| `queued` | `failed` | service | 子进程已退出且状态仍为 `queued`（worker 未能写入 `running`，例如解释器无法启动） |
 | `queued`、`running` | `cancelled` | service | 用户取消 |
 | `running` | `interrupted` | service | 服务启动时发现无存活 worker |
 

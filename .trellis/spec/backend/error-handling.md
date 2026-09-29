@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for data/adapter/task/run domain exceptions, loading boundaries, worker failure, and CLI handling. The API envelope contract remains Decided.
+Status: **Verified** for data/adapter/task/run domain exceptions, loading boundaries, worker failure, CLI handling, and the service API envelope.
 
 - Domain errors inherit `tsllm.errors.TsllmError`. Each class has a stable `code` string.
 - Each layer raises the error. Only 2 places catch all errors: the worker entry (`tsllm.runs.worker.main`) and the service exception handlers (`tsllm.service.errors`).
@@ -30,6 +30,9 @@ Define each subclass in the module that owns the condition. Do not collect all c
 | `TaskConfigError`    | `tsllm.tasks.validation` | `TASK_CONFIG_INVALID` | A split has no legal origins for the task lengths, or training labels have one class |
 | `InvalidTransition`  | `tsllm.runs.store`     | `INVALID_TRANSITION`     | `(from, to, writer)` is not in the state table                       |
 | `RunNotFound`        | `tsllm.runs.store`     | `RUN_NOT_FOUND`          | No run directory for the id                                          |
+| `ChannelError`       | `tsllm.data.registry`  | `CHANNEL_INVALID`        | A requested channel does not exist, or a channel update changes the channel set |
+| `TemplateNotFound`   | `tsllm.config.templates` | `TEMPLATE_NOT_FOUND`   | No `configs/runs/<name>.yaml`                                        |
+| `ResultNotFound`     | `tsllm.runs.results`   | `RESULT_NOT_FOUND`       | The run has no `metrics.json`, or no predictions for the split       |
 
 Use `NotImplementedError` for a feature that the config allows but this round does not implement (for example `past_covariate` channels). The message names the feature.
 
@@ -84,36 +87,54 @@ except Exception as exc:
 - `status.json.error` holds one line: `<ExceptionClass>: <message>`. Whitespace, including newlines, collapses to single spaces.
 - `validate_job` runs inside the worker before data or model loading, and in `tsllm run` before the run directory is created. A job that the CLI rejects creates no directory.
 - If the worker process exits with a non-zero code and `status.json` is still `running`, the service writes `failed` with `error = "worker exited with code N"`.
+- If the worker process exits and `status.json` is still `queued` (the worker did not write `running`, for example the interpreter did not start), the service writes `queued → failed` with `error = "worker exited with code N before it started"`. `started_at` stays null.
 - Tests: `tests/runs/test_worker_e2e.py::test_failure_records_traceback_and_summary` and `tests/runs/test_store.py::test_transition_matrix`.
 
 ---
 
-## API Error Envelope (Planned)
+## API Error Envelope
 
-Every non-2xx response has this body:
+Implemented in `src/tsllm/service/errors.py`. Every non-2xx response has this body:
 
 ```json
 {
   "error": {
     "code": "DATASET_NOT_INGESTED",
-    "message": "dataset 'yangquan_kiln' is not ingested",
+    "message": "dataset 'yangquan_kiln' cache is missing or stale",
     "detail": null
   }
 }
 ```
 
-`tsllm.service.errors` maps codes to HTTP status:
+`tsllm.service.errors.STATUS_BY_CODE` maps codes to HTTP status:
 
-| HTTP status | Codes                                                                                                                          |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| 404         | `DATASET_NOT_FOUND`, `RUN_NOT_FOUND`, `TEMPLATE_NOT_FOUND`                                                                     |
-| 409         | `DATASET_NOT_INGESTED`, `INVALID_TRANSITION`                                                                                   |
-| 422         | `VALIDATION_ERROR` (Pydantic; `detail` is the error list with field paths), `CAPABILITY_UNSUPPORTED`, `DATASET_CONFIG_INVALID` |
-| 500         | Any other exception. `code` is `INTERNAL_ERROR`. The traceback goes to the service log, not to the response.                   |
+| HTTP status | Codes |
+| ----------- | ----- |
+| 404 | `DATASET_NOT_FOUND`, `RUN_NOT_FOUND`, `TEMPLATE_NOT_FOUND`, `RESULT_NOT_FOUND`; `NOT_FOUND` for a path without a route |
+| 409 | `DATASET_NOT_INGESTED`, `INVALID_TRANSITION` |
+| 422 | `VALIDATION_ERROR`, `CAPABILITY_UNSUPPORTED`, `DATASET_CONFIG_INVALID`, `CHANNEL_INVALID`, `TASK_CONFIG_INVALID`, `BACKBONE_LOAD_FAILED`, `NOT_IMPLEMENTED` |
+| 500 | Any other exception. `code` is `INTERNAL_ERROR`. The traceback goes to the service log, not to the response. |
+
+- `VALIDATION_ERROR` comes from request validation and from Pydantic validation inside a route (for example an invalid template file). `detail` is a list of `{loc, msg, type}`. Input values are not echoed.
+- `BACKBONE_LOAD_FAILED` is 422 at the API because `validate_job` raises it for an unregistered backbone name, which is request input. Checkpoint loading runs only in the worker and is recorded in `status.json`.
+- `TASK_CONFIG_INVALID` is 422 for the same reason: the task lengths do not fit the data. The worker normally raises it, so it usually appears in `status.json.error`.
+- `NotImplementedError` (a feature the config allows but this round does not implement, for example `past_covariate` channels in a forecast run) maps to 422 with code `NOT_IMPLEMENTED` and the exception message.
+- Other Starlette HTTP errors (for example 405) use code `HTTP_ERROR`.
+- Routes declare `ErrorOut` for 404, 409, 422, and 500 in OpenAPI (`ERROR_RESPONSES`).
 
 The domain layers do not know HTTP status codes. Only `tsllm.service.errors` holds the mapping.
 
----
+Tests: `tests/service/test_api_basic.py::test_error_envelopes` covers 404, 409, and 422 codes, including `NOT_IMPLEMENTED` and `BACKBONE_LOAD_FAILED`, and asserts that a rejected submission creates no run directory.
+
+### Service writes and the worker race
+
+`RunStore.transition` reads and then writes without a file lock. `tsllm.service.jobs.JobManager` removes the race with the worker this way:
+
+- Every service state write holds one `asyncio.Lock` in `JobManager`.
+- Launch reads `queued` and starts the subprocess under the lock. Cancel of a run without a process writes `cancelled` under the lock; the scheduler skips a run that is no longer `queued`.
+- Cancel of a run with a process first terminates the process tree (`psutil`, terminate, then kill after 3 s), then writes `cancelled`. After the process ends, no worker write can follow. If the worker wrote a terminal state first, the transition raises `InvalidTransition` (409).
+- After a worker process exits, the service writes `failed` only if the state is still `queued` or `running`: `error = "worker exited with code N"`, with the suffix ` before it started` for `queued`. A run that is being cancelled is skipped.
+- Tests: `tests/service/test_api_jobs.py::test_worker_exit_without_final_state_is_failed` and `test_worker_exit_before_running_is_failed`.
 
 ## Common Mistakes
 

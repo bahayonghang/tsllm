@@ -1,0 +1,3572 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "tsllm",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Health",
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/system": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "System",
+        "operationId": "system_api_system_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/schema/run-config": {
+      "get": {
+        "tags": [
+          "schema"
+        ],
+        "summary": "Run Config",
+        "description": "`run_config` is the RunConfig schema; `backbone_options` maps backbone to Options schema.",
+        "operationId": "run_config_api_schema_run_config_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Run Config Api Schema Run Config Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/datasets": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Datasets",
+        "operationId": "datasets_api_datasets_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DatasetOut"
+                  },
+                  "type": "array",
+                  "title": "Response Datasets Api Datasets Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/datasets/{dataset_id}": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Dataset",
+        "operationId": "dataset_api_datasets__dataset_id__get",
+        "parameters": [
+          {
+            "name": "dataset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Dataset Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatasetDetailOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/datasets/{dataset_id}/ingest": {
+      "post": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Ingest",
+        "operationId": "ingest_api_datasets__dataset_id__ingest_post",
+        "parameters": [
+          {
+            "name": "dataset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Dataset Id"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunSubmittedOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/datasets/{dataset_id}/series": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Series",
+        "description": "Bucket means over [start, end]; times are dataset-local and offsets are ignored.",
+        "operationId": "series_api_datasets__dataset_id__series_get",
+        "parameters": [
+          {
+            "name": "dataset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Dataset Id"
+            }
+          },
+          {
+            "name": "channels",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Repeat for each channel.",
+              "title": "Channels"
+            },
+            "description": "Repeat for each channel."
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End"
+            }
+          },
+          {
+            "name": "max_points",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 20000,
+              "minimum": 1,
+              "default": 2000,
+              "title": "Max Points"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeriesOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/datasets/{dataset_id}/channels": {
+      "put": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Put Channels",
+        "operationId": "put_channels_api_datasets__dataset_id__channels_put",
+        "parameters": [
+          {
+            "name": "dataset_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Dataset Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChannelsIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelsOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/backbones": {
+      "get": {
+        "tags": [
+          "backbones"
+        ],
+        "summary": "Backbones",
+        "operationId": "backbones_api_backbones_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/BackboneInfo"
+                  },
+                  "type": "array",
+                  "title": "Response Backbones Api Backbones Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Runs",
+        "operationId": "runs_api_runs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RunSummary"
+                  },
+                  "type": "array",
+                  "title": "Response Runs Api Runs Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Submit",
+        "operationId": "submit_api_runs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RunConfig"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunSubmittedOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Run",
+        "operationId": "run_api_runs__run_id__get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunDetailOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/cancel": {
+      "post": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Cancel",
+        "operationId": "cancel_api_runs__run_id__cancel_post",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunStatus"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/events": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Events",
+        "description": "SSE of events.jsonl. Event ids are line numbers; the stream starts after the given id.",
+        "operationId": "events_api_runs__run_id__events_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From"
+            }
+          },
+          {
+            "name": "last-event-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last-Event-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/event-stream": {}
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/metrics": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Metrics",
+        "description": "metrics.json of the run; see the parent design section 6.1.",
+        "operationId": "metrics_api_runs__run_id__metrics_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Metrics Api Runs  Run Id  Metrics Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/predictions": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Predictions",
+        "description": "Without origin_time: the thinned origin list. With origin_time: the rows of that origin.",
+        "operationId": "predictions_api_runs__run_id__predictions_get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "split",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": [
+                "val",
+                "cal",
+                "test"
+              ],
+              "type": "string",
+              "title": "Split"
+            }
+          },
+          {
+            "name": "channel",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Channel"
+            }
+          },
+          {
+            "name": "origin_time",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Origin Time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 5000,
+              "minimum": 1,
+              "default": 500,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionsOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/compare": {
+      "get": {
+        "tags": [
+          "compare"
+        ],
+        "summary": "Compare",
+        "description": "`run_ids` is a comma-separated list of run ids.",
+        "operationId": "compare_api_compare_get",
+        "parameters": [
+          {
+            "name": "run_ids",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]+(,[A-Za-z0-9_.-]+)*$",
+              "title": "Run Ids"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/run-templates": {
+      "get": {
+        "tags": [
+          "templates"
+        ],
+        "summary": "Templates",
+        "operationId": "templates_api_run_templates_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/TemplateOut"
+                  },
+                  "type": "array",
+                  "title": "Response Templates Api Run Templates Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/run-templates/{name}": {
+      "get": {
+        "tags": [
+          "templates"
+        ],
+        "summary": "Get Template",
+        "operationId": "get_template_api_run_templates__name__get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunConfig"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "templates"
+        ],
+        "summary": "Put Template",
+        "operationId": "put_template_api_run_templates__name__put",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Name"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RunConfig"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunConfig"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorOut"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BackboneConfig": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name",
+            "description": "Backbone registry name."
+          },
+          "checkpoint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Checkpoint",
+            "description": "Hugging Face repository or local checkpoint directory."
+          },
+          "revision": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revision",
+            "description": "Checkpoint revision to resolve."
+          },
+          "device": {
+            "type": "string",
+            "enum": [
+              "cuda",
+              "cpu"
+            ],
+            "title": "Device",
+            "description": "Execution device.",
+            "default": "cuda"
+          },
+          "dtype": {
+            "type": "string",
+            "enum": [
+              "fp32",
+              "bf16"
+            ],
+            "title": "Dtype",
+            "description": "CUDA numeric type.",
+            "default": "bf16"
+          },
+          "options": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Options",
+            "description": "Adapter-specific options."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "BackboneConfig"
+      },
+      "BackboneInfo": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "capabilities": {
+            "$ref": "#/components/schemas/Capabilities"
+          },
+          "options_schema": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Options Schema"
+          },
+          "requires": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Requires"
+          },
+          "installed": {
+            "type": "boolean",
+            "title": "Installed"
+          },
+          "default_checkpoint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Default Checkpoint"
+          },
+          "license": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "License"
+          },
+          "license_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "License Url"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "capabilities",
+          "options_schema",
+          "requires",
+          "installed",
+          "default_checkpoint",
+          "license",
+          "license_url"
+        ],
+        "title": "BackboneInfo"
+      },
+      "Capabilities": {
+        "properties": {
+          "forecast_modes": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "zero_shot",
+                "lora",
+                "head",
+                "full"
+              ]
+            },
+            "type": "array",
+            "uniqueItems": true,
+            "title": "Forecast Modes"
+          },
+          "embed": {
+            "type": "boolean",
+            "title": "Embed"
+          },
+          "quantiles": {
+            "type": "boolean",
+            "title": "Quantiles"
+          },
+          "multivariate": {
+            "type": "string",
+            "enum": [
+              "native",
+              "channel_independent",
+              "none"
+            ],
+            "title": "Multivariate"
+          },
+          "max_context": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Context"
+          },
+          "max_horizon": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Horizon"
+          },
+          "needs_fit_stats": {
+            "type": "boolean",
+            "title": "Needs Fit Stats",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "forecast_modes",
+          "embed",
+          "quantiles",
+          "multivariate"
+        ],
+        "title": "Capabilities"
+      },
+      "ChannelSpec": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name",
+            "description": "Exact source column name."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "target",
+              "past_covariate",
+              "known_future_covariate",
+              "ignore"
+            ],
+            "title": "Role",
+            "description": "Channel role.",
+            "default": "target"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit",
+            "description": "Physical unit."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Channel documentation."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "ChannelSpec"
+      },
+      "ChannelsIn": {
+        "properties": {
+          "channels": {
+            "items": {
+              "$ref": "#/components/schemas/ChannelSpec"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Channels",
+            "description": "All channels; only role, unit, and description can change."
+          }
+        },
+        "type": "object",
+        "required": [
+          "channels"
+        ],
+        "title": "ChannelsIn"
+      },
+      "ChannelsOut": {
+        "properties": {
+          "config_hash": {
+            "type": "string",
+            "title": "Config Hash"
+          },
+          "needs_ingest": {
+            "type": "boolean",
+            "title": "Needs Ingest"
+          },
+          "config": {
+            "$ref": "#/components/schemas/DatasetConfig"
+          }
+        },
+        "type": "object",
+        "required": [
+          "config_hash",
+          "needs_ingest",
+          "config"
+        ],
+        "title": "ChannelsOut"
+      },
+      "ClassifyTaskConfig": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "classify",
+            "title": "Type",
+            "description": "Task type.",
+            "default": "classify"
+          },
+          "context_length": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Context Length",
+            "description": "Context length in grid steps."
+          },
+          "eval_splits": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "val",
+                "cal",
+                "test"
+              ]
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Eval Splits",
+            "description": "Evaluated splits."
+          },
+          "train_origin_stride": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Train Origin Stride",
+            "description": "Training origin stride.",
+            "default": 1
+          },
+          "eval_origin_stride": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Eval Origin Stride",
+            "description": "Evaluation origin stride.",
+            "default": 1
+          },
+          "max_train_origins": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Max Train Origins",
+            "description": "Evenly spaced training origin limit.",
+            "default": 20000
+          },
+          "max_eval_origins": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Eval Origins",
+            "description": "Evenly spaced evaluation origin limit; null is no limit."
+          },
+          "label": {
+            "$ref": "#/components/schemas/FutureEventRule",
+            "description": "Future event label rule."
+          },
+          "head": {
+            "$ref": "#/components/schemas/HeadConfig",
+            "description": "Classifier head."
+          },
+          "embed_batch_size": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Embed Batch Size",
+            "description": "Representation batch size.",
+            "default": 64
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "context_length",
+          "label"
+        ],
+        "title": "ClassifyTaskConfig"
+      },
+      "CompareColumnOut": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "dataset": {
+            "type": "string",
+            "title": "Dataset"
+          },
+          "task": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task"
+          },
+          "backbone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Backbone"
+          },
+          "mode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mode"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled",
+              "interrupted"
+            ],
+            "title": "State"
+          },
+          "context_length": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context Length"
+          },
+          "horizon": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Horizon"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "name",
+          "dataset",
+          "task",
+          "backbone",
+          "mode",
+          "state",
+          "context_length",
+          "horizon"
+        ],
+        "title": "CompareColumnOut"
+      },
+      "CompareOut": {
+        "properties": {
+          "columns": {
+            "items": {
+              "$ref": "#/components/schemas/CompareColumnOut"
+            },
+            "type": "array",
+            "title": "Columns"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/CompareRowOut"
+            },
+            "type": "array",
+            "title": "Rows"
+          },
+          "warnings": {
+            "items": {
+              "$ref": "#/components/schemas/CompareWarningOut"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "columns",
+          "rows",
+          "warnings"
+        ],
+        "title": "CompareOut"
+      },
+      "CompareRowOut": {
+        "properties": {
+          "split": {
+            "type": "string",
+            "title": "Split"
+          },
+          "metric": {
+            "type": "string",
+            "title": "Metric"
+          },
+          "values": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Values",
+            "description": "Value per run id."
+          }
+        },
+        "type": "object",
+        "required": [
+          "split",
+          "metric",
+          "values"
+        ],
+        "title": "CompareRowOut"
+      },
+      "CompareWarningOut": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "CompareWarningOut"
+      },
+      "Condition": {
+        "properties": {
+          "channel": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Channel",
+            "description": "Channel to compare."
+          },
+          "op": {
+            "type": "string",
+            "enum": [
+              "gt",
+              "ge",
+              "lt",
+              "le",
+              "eq",
+              "ne"
+            ],
+            "title": "Op",
+            "description": "Comparison."
+          },
+          "value": {
+            "type": "number",
+            "title": "Value",
+            "description": "Comparison threshold."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "channel",
+          "op",
+          "value"
+        ],
+        "title": "Condition"
+      },
+      "ConditionGroup": {
+        "properties": {
+          "all": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Condition"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ConditionGroup"
+                    }
+                  ]
+                },
+                "type": "array",
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "All",
+            "description": "All child rules must match."
+          },
+          "any": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Condition"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ConditionGroup"
+                    }
+                  ]
+                },
+                "type": "array",
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Any",
+            "description": "At least one child rule must match."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ConditionGroup"
+      },
+      "DatasetConfig": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+            "title": "Id",
+            "description": "Dataset file stem."
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceConfig",
+            "description": "Source file configuration."
+          },
+          "native_freq": {
+            "type": "string",
+            "pattern": "^[0-9]+(?:[.][0-9]+)?(us|ms|s|min|h|d)$",
+            "title": "Native Freq",
+            "description": "Native sampling interval."
+          },
+          "freq": {
+            "type": "string",
+            "pattern": "^[0-9]+(?:[.][0-9]+)?(us|ms|s|min|h|d)$",
+            "title": "Freq",
+            "description": "Prepared grid interval."
+          },
+          "aggregation": {
+            "type": "string",
+            "enum": [
+              "mean",
+              "last"
+            ],
+            "title": "Aggregation",
+            "description": "Bin aggregation.",
+            "default": "mean"
+          },
+          "dedup": {
+            "type": "string",
+            "enum": [
+              "keep_first",
+              "keep_last"
+            ],
+            "title": "Dedup",
+            "description": "Duplicate policy.",
+            "default": "keep_last"
+          },
+          "channels": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ChannelSpec"
+                },
+                "type": "array",
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channels",
+            "description": "Channels, or automatic numeric discovery."
+          },
+          "eligibility": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConditionGroup"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Eligibility rules, or any non-null channel."
+          },
+          "segments": {
+            "$ref": "#/components/schemas/SegmentConfig",
+            "description": "Continuous segment rules."
+          },
+          "split": {
+            "$ref": "#/components/schemas/SplitConfig",
+            "description": "Chronological split rules."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "native_freq",
+          "freq",
+          "segments"
+        ],
+        "title": "DatasetConfig"
+      },
+      "DatasetDetailOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "fresh",
+              "stale",
+              "missing"
+            ],
+            "title": "Status",
+            "description": "Cache state of the current configuration."
+          },
+          "config_hash": {
+            "type": "string",
+            "title": "Config Hash"
+          },
+          "config": {
+            "$ref": "#/components/schemas/DatasetConfig"
+          },
+          "meta": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meta",
+            "description": "Cache metadata; null unless fresh."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "config_hash",
+          "config",
+          "meta"
+        ],
+        "title": "DatasetDetailOut"
+      },
+      "DatasetOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "fresh",
+              "stale",
+              "missing"
+            ],
+            "title": "Status",
+            "description": "Cache state of the current configuration."
+          },
+          "config_hash": {
+            "type": "string",
+            "title": "Config Hash"
+          },
+          "config": {
+            "$ref": "#/components/schemas/DatasetConfig"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "config_hash",
+          "config"
+        ],
+        "title": "DatasetOut"
+      },
+      "ErrorBody": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "detail": {
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorBody"
+      },
+      "ErrorOut": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorBody"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorOut"
+      },
+      "FinetuneConfig": {
+        "properties": {
+          "learning_rate": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Learning Rate",
+            "description": "Optimizer learning rate.",
+            "default": 1e-05
+          },
+          "num_steps": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Num Steps",
+            "description": "Number of optimizer steps.",
+            "default": 1000
+          },
+          "batch_size": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Batch Size",
+            "description": "Training batch size.",
+            "default": 64
+          },
+          "eval_every": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Eval Every",
+            "description": "Validation interval in steps.",
+            "default": 100
+          },
+          "grad_clip": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Grad Clip",
+            "description": "Maximum gradient norm.",
+            "default": 1.0
+          },
+          "lora": {
+            "$ref": "#/components/schemas/LoraSpec",
+            "description": "Low-rank adapter settings."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "FinetuneConfig"
+      },
+      "ForecastTaskConfig": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "forecast",
+            "title": "Type",
+            "description": "Task type.",
+            "default": "forecast"
+          },
+          "context_length": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Context Length",
+            "description": "Context length in grid steps."
+          },
+          "horizon": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Horizon",
+            "description": "Forecast horizon in grid steps."
+          },
+          "eval_leads": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Eval Leads",
+            "description": "Lead steps (1-based) that get separate metrics."
+          },
+          "eval_splits": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "val",
+                "cal",
+                "test"
+              ]
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Eval Splits",
+            "description": "Evaluated splits."
+          },
+          "train_origin_stride": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Train Origin Stride",
+            "description": "Training origin stride. Adapters sample forecast training windows from fit segments, so forecast runs do not use this value.",
+            "default": 1
+          },
+          "eval_origin_stride": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Eval Origin Stride",
+            "description": "Evaluation origin stride.",
+            "default": 1
+          },
+          "max_eval_origins": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Eval Origins",
+            "description": "Evenly spaced evaluation origin limit; null is no limit."
+          },
+          "eval_batch_size": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Eval Batch Size",
+            "description": "Forecast batch size.",
+            "default": 64
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "context_length",
+          "horizon"
+        ],
+        "title": "ForecastTaskConfig"
+      },
+      "FutureEventRule": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "future_event",
+            "title": "Type",
+            "description": "Label rule type.",
+            "default": "future_event"
+          },
+          "channel": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Channel",
+            "description": "Event channel."
+          },
+          "op": {
+            "type": "string",
+            "enum": [
+              "gt",
+              "lt",
+              "outside"
+            ],
+            "title": "Op",
+            "description": "Event comparison."
+          },
+          "threshold": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ThresholdSpec"
+              },
+              {
+                "$ref": "#/components/schemas/OutsideThreshold"
+              }
+            ],
+            "title": "Threshold",
+            "description": "Threshold definition."
+          },
+          "window": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Window",
+            "description": "Future window length in grid steps."
+          },
+          "min_duration": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Min Duration",
+            "description": "Consecutive event steps required."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "channel",
+          "op",
+          "threshold",
+          "window",
+          "min_duration"
+        ],
+        "title": "FutureEventRule"
+      },
+      "GpuOut": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "memory_total_mb": {
+            "type": "number",
+            "title": "Memory Total Mb"
+          },
+          "memory_used_mb": {
+            "type": "number",
+            "title": "Memory Used Mb"
+          },
+          "driver_version": {
+            "type": "string",
+            "title": "Driver Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "index",
+          "name",
+          "memory_total_mb",
+          "memory_used_mb",
+          "driver_version"
+        ],
+        "title": "GpuOut"
+      },
+      "HeadConfig": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "logistic",
+              "mlp"
+            ],
+            "title": "Type",
+            "description": "Classifier head.",
+            "default": "logistic"
+          },
+          "class_weight": {
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "balanced"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Class Weight",
+            "description": "Class weighting; null gives equal sample weights.",
+            "default": "balanced"
+          },
+          "C": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "C",
+            "description": "Inverse regularization for logistic heads.",
+            "default": 1.0
+          },
+          "hidden_layer_sizes": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Hidden Layer Sizes",
+            "description": "Hidden layer sizes for MLP heads."
+          },
+          "max_iter": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Max Iter",
+            "description": "Maximum solver iterations.",
+            "default": 1000
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "HeadConfig"
+      },
+      "HealthOut": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status",
+            "default": "ok"
+          }
+        },
+        "type": "object",
+        "title": "HealthOut"
+      },
+      "JobSpec": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "experiment",
+              "ingest"
+            ],
+            "title": "Kind",
+            "description": "Job kind."
+          },
+          "dataset": {
+            "$ref": "#/components/schemas/DatasetConfig",
+            "description": "Dataset configuration snapshot."
+          },
+          "run": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RunConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Run configuration; null for ingest."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "kind",
+          "dataset"
+        ],
+        "title": "JobSpec"
+      },
+      "LoraSpec": {
+        "properties": {
+          "r": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "R",
+            "description": "Low-rank adapter rank.",
+            "default": 8
+          },
+          "alpha": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Alpha",
+            "description": "Low-rank adapter scaling factor.",
+            "default": 16
+          },
+          "dropout": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "minimum": 0.0,
+            "title": "Dropout",
+            "description": "Adapter dropout rate.",
+            "default": 0.05
+          },
+          "target_modules": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Modules",
+            "description": "Module names; null selects the adapter defaults."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "LoraSpec"
+      },
+      "OutsideThreshold": {
+        "properties": {
+          "low": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ThresholdSpec"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Low",
+            "description": "Lower fixed threshold or fit quantile."
+          },
+          "high": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ThresholdSpec"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "High",
+            "description": "Upper fixed threshold or fit quantile."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "low",
+          "high"
+        ],
+        "title": "OutsideThreshold"
+      },
+      "PredictionsOut": {
+        "properties": {
+          "split": {
+            "type": "string",
+            "title": "Split"
+          },
+          "origin_time": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Origin Time",
+            "description": "Requested origin; null for the origin list."
+          },
+          "origins": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Origins",
+            "description": "Thinned origin list without origin_time."
+          },
+          "total_origins": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Origins",
+            "description": "Origin count before thinning."
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows",
+            "description": "Prediction rows of origin_time."
+          }
+        },
+        "type": "object",
+        "required": [
+          "split",
+          "origin_time",
+          "origins",
+          "total_origins",
+          "rows"
+        ],
+        "title": "PredictionsOut"
+      },
+      "RunConfig": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name",
+            "description": "Run name."
+          },
+          "dataset": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Dataset",
+            "description": "Dataset id."
+          },
+          "task": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ForecastTaskConfig"
+              },
+              {
+                "$ref": "#/components/schemas/ClassifyTaskConfig"
+              }
+            ],
+            "title": "Task",
+            "description": "Task configuration.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "classify": "#/components/schemas/ClassifyTaskConfig",
+                "forecast": "#/components/schemas/ForecastTaskConfig"
+              }
+            }
+          },
+          "backbone": {
+            "$ref": "#/components/schemas/BackboneConfig",
+            "description": "Backbone configuration."
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "zero_shot",
+              "lora",
+              "head",
+              "full"
+            ],
+            "title": "Mode",
+            "description": "Training mode; classification requires head."
+          },
+          "finetune": {
+            "$ref": "#/components/schemas/FinetuneConfig",
+            "description": "Fine-tuning settings; zero_shot ignores them."
+          },
+          "seed": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Seed",
+            "description": "Random seed.",
+            "default": 0
+          },
+          "notes": {
+            "type": "string",
+            "title": "Notes",
+            "description": "Free-text notes.",
+            "default": ""
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "dataset",
+          "task",
+          "backbone",
+          "mode"
+        ],
+        "title": "RunConfig"
+      },
+      "RunDetailOut": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "job": {
+            "$ref": "#/components/schemas/JobSpec"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RunStatus"
+          },
+          "env": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Env"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "job",
+          "status",
+          "env"
+        ],
+        "title": "RunDetailOut"
+      },
+      "RunStatus": {
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled",
+              "interrupted"
+            ],
+            "title": "State"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "pid": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pid"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "state",
+          "created_at"
+        ],
+        "title": "RunStatus"
+      },
+      "RunSubmittedOut": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RunStatus"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "status"
+        ],
+        "title": "RunSubmittedOut"
+      },
+      "RunSummary": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "experiment",
+              "ingest"
+            ],
+            "title": "Kind"
+          },
+          "dataset": {
+            "type": "string",
+            "title": "Dataset"
+          },
+          "task": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task"
+          },
+          "backbone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Backbone"
+          },
+          "mode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mode"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled",
+              "interrupted"
+            ],
+            "title": "State"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "primary_metric": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Metric"
+          },
+          "primary_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "run_id",
+          "name",
+          "kind",
+          "dataset",
+          "task",
+          "backbone",
+          "mode",
+          "state",
+          "created_at",
+          "finished_at",
+          "primary_metric",
+          "primary_value"
+        ],
+        "title": "RunSummary"
+      },
+      "SegmentConfig": {
+        "properties": {
+          "max_gap": {
+            "type": "string",
+            "pattern": "^[0-9]+(?:[.][0-9]+)?(us|ms|s|min|h|d)$",
+            "title": "Max Gap",
+            "description": "Maximum internal interruption duration."
+          },
+          "min_length": {
+            "type": "string",
+            "pattern": "^[0-9]+(?:[.][0-9]+)?(us|ms|s|min|h|d)$",
+            "title": "Min Length",
+            "description": "Minimum segment duration, including grid steps."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "max_gap",
+          "min_length"
+        ],
+        "title": "SegmentConfig"
+      },
+      "SegmentOut": {
+        "properties": {
+          "segment_id": {
+            "type": "integer",
+            "title": "Segment Id"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Start"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time",
+            "title": "End"
+          },
+          "length": {
+            "type": "integer",
+            "title": "Length"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "title": "Duration Seconds"
+          },
+          "eligible_points": {
+            "type": "integer",
+            "title": "Eligible Points"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segment_id",
+          "start",
+          "end",
+          "length",
+          "duration_seconds",
+          "eligible_points"
+        ],
+        "title": "SegmentOut"
+      },
+      "SeriesOut": {
+        "properties": {
+          "every": {
+            "type": "string",
+            "title": "Every",
+            "description": "Bucket width; buckets are labelled with their start time."
+          },
+          "time": {
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "type": "array",
+            "title": "Time"
+          },
+          "values": {
+            "additionalProperties": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Values"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/SegmentOut"
+            },
+            "type": "array",
+            "title": "Segments"
+          },
+          "split_boundaries": {
+            "additionalProperties": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "type": "object",
+            "title": "Split Boundaries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "every",
+          "time",
+          "values",
+          "segments",
+          "split_boundaries"
+        ],
+        "title": "SeriesOut"
+      },
+      "SourceConfig": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "format": "path",
+            "title": "Path",
+            "description": "Source file path."
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "csv",
+              "parquet"
+            ],
+            "title": "Format",
+            "description": "Source format.",
+            "default": "csv"
+          },
+          "encoding": {
+            "type": "string",
+            "enum": [
+              "utf8",
+              "utf8-lossy"
+            ],
+            "title": "Encoding",
+            "description": "CSV encoding.",
+            "default": "utf8"
+          },
+          "time_column": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Time Column",
+            "description": "Timestamp column name."
+          },
+          "time_format": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time Format",
+            "description": "Timestamp format, or ISO discovery."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "path",
+          "time_column"
+        ],
+        "title": "SourceConfig"
+      },
+      "SplitConfig": {
+        "properties": {
+          "ratios": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 4,
+            "title": "Ratios",
+            "description": "Fit, val, cal, test proportions.",
+            "default": [
+              0.7,
+              0.1,
+              0.1,
+              0.1
+            ]
+          },
+          "basis": {
+            "type": "string",
+            "const": "eligible_points",
+            "title": "Basis",
+            "description": "Boundary count basis.",
+            "default": "eligible_points"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "SplitConfig"
+      },
+      "SystemOut": {
+        "properties": {
+          "python": {
+            "type": "string",
+            "title": "Python"
+          },
+          "platform": {
+            "type": "string",
+            "title": "Platform"
+          },
+          "packages": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Packages"
+          },
+          "gpus": {
+            "items": {
+              "$ref": "#/components/schemas/GpuOut"
+            },
+            "type": "array",
+            "title": "Gpus"
+          },
+          "runs_dir": {
+            "type": "string",
+            "title": "Runs Dir"
+          },
+          "cache_dir": {
+            "type": "string",
+            "title": "Cache Dir"
+          },
+          "configs_dir": {
+            "type": "string",
+            "title": "Configs Dir"
+          },
+          "gpu_slots": {
+            "type": "integer",
+            "title": "Gpu Slots"
+          },
+          "cpu_slots": {
+            "type": "integer",
+            "title": "Cpu Slots"
+          }
+        },
+        "type": "object",
+        "required": [
+          "python",
+          "platform",
+          "packages",
+          "gpus",
+          "runs_dir",
+          "cache_dir",
+          "configs_dir",
+          "gpu_slots",
+          "cpu_slots"
+        ],
+        "title": "SystemOut"
+      },
+      "TemplateOut": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "TemplateOut"
+      },
+      "ThresholdSpec": {
+        "properties": {
+          "quantile": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quantile",
+            "description": "Eligible fit quantile."
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value",
+            "description": "Fixed threshold."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ThresholdSpec"
+      }
+    }
+  }
+}

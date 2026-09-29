@@ -2,6 +2,8 @@
 
 import os
 import platform
+import shutil
+import subprocess
 import sys
 from importlib.metadata import PackageNotFoundError, version
 from importlib.util import find_spec
@@ -76,3 +78,43 @@ def environment_snapshot(
             "host": urlparse(endpoint).hostname if endpoint else None,
         },
     }
+
+
+def package_versions() -> dict[str, str | None]:
+    """Installed versions from package metadata. No package is imported."""
+    return {package: _version(package) for package in (*PACKAGES, "torch", "fastapi")}
+
+
+def gpu_info() -> list[dict[str, Any]]:
+    """GPU facts from nvidia-smi, without torch. An empty list means no GPU was found."""
+    executable = shutil.which("nvidia-smi")
+    if executable is None:
+        return []
+    query = "index,name,memory.total,memory.used,driver_version"
+    try:
+        result = subprocess.run(
+            [executable, f"--query-gpu={query}", "--format=csv,noheader,nounits"],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            timeout=5,
+            check=True,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return []
+    gpus = []
+    for line in result.stdout.splitlines():
+        fields = [field.strip() for field in line.split(",")]
+        if len(fields) != 5:
+            continue
+        index, name, total, used, driver = fields
+        gpus.append(
+            {
+                "index": int(index),
+                "name": name,
+                "memory_total_mb": float(total),
+                "memory_used_mb": float(used),
+                "driver_version": driver,
+            }
+        )
+    return gpus

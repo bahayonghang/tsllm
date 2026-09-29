@@ -8,7 +8,7 @@ import yaml
 from pydantic import ValidationError
 
 from tsllm.config.dataset import DatasetConfig
-from tsllm.config.io import load_yaml
+from tsllm.config.io import dump_yaml, load_yaml
 from tsllm.errors import TsllmError
 
 
@@ -18,6 +18,10 @@ class DatasetNotFound(TsllmError):
 
 class DatasetConfigError(TsllmError):
     code: ClassVar[str] = "DATASET_CONFIG_INVALID"
+
+
+class ChannelError(TsllmError):
+    code: ClassVar[str] = "CHANNEL_INVALID"
 
 
 def dataset_dir() -> Path:
@@ -43,3 +47,10 @@ def load_dataset(dataset_id: str, directory: Path | None = None) -> DatasetConfi
 def list_datasets(directory: Path | None = None) -> list[DatasetConfig]:
     root = directory if directory is not None else dataset_dir()
     return [load_dataset(path.stem, root) for path in sorted(root.glob("*.yaml"))]
+
+
+def save_dataset(cfg: DatasetConfig, directory: Path | None = None) -> None:
+    """Write a dataset YAML file. The source path uses forward slashes on every platform."""
+    payload = cfg.model_dump(mode="json")
+    payload["source"]["path"] = cfg.source.path.as_posix()
+    dump_yaml(payload, (directory if directory is not None else dataset_dir()) / f"{cfg.id}.yaml")

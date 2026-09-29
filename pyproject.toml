@@ -9,11 +9,13 @@ authors = [
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "chronos-forecasting>=2.3.2,<3",
+    "fastapi>=0.141.1",
     "granite-tsfm>=0.3.9,<0.4",
     "huggingface-hub",
     "numpy>=2.5.3",
     "peft>=0.21,<1",
     "polars>=1.44.2",
+    "psutil>=7.2.2",
     "pyarrow>=25.0.1",
     "pydantic>=2.13.5",
     "pyyaml>=6.0.3",
@@ -21,6 +23,7 @@ dependencies = [
     "torch==2.11.*",
     "transformers>=5.17,<6",
     "typer>=0.27.2",
+    "uvicorn[standard]>=0.54.0",
 ]
 
 [project.scripts]
@@ -63,6 +66,7 @@ markers = [
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
     "pyright>=1.1.414",
     "pytest>=9.1.1",
     "ruff>=0.16.9",

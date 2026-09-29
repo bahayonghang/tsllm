@@ -12,7 +12,9 @@ The backbone-adapters implementation is also Verified for its six adapters, conf
 
 The experiment-runner implementation is Verified for run config and schema, metrics, run store, file events, worker, tasks, and the run CLI. Offline tests cover synthetic end-to-end runs; local CLI acceptance on the kiln dataset is recorded in `.trellis/tasks/09-28-experiment-runner/prd.md`.
 
-`Verified` covers only the implemented scopes identified in each guide and their tests. Service and web contracts remain Decided. The parent `design.md` remains the shared contract.
+The service-api implementation is Verified for the HTTP API, error envelope, job queue, cancel, restart recovery, SSE, and CLI. Offline tests are in `tests/service/`; local manual acceptance is recorded in `.trellis/tasks/09-28-service-api/prd.md`.
+
+`Verified` covers only the implemented scopes identified in each guide and their tests. Web contracts remain Decided. The parent `design.md` remains the shared contract.
 
 ---
 
@@ -20,11 +22,11 @@ The experiment-runner implementation is Verified for run config and schema, metr
 
 | Guide                                                     | Description                                                          | Status  |
 | --------------------------------------------------------- | -------------------------------------------------------------------- | ------- |
-| [Directory Structure](./directory-structure.md)           | Config/data/adapter/task/evaluation/run modules and dependency boundaries; service and web planned | Verified |
-| [Storage Guidelines](./database-guidelines.md)            | YAML registry, Parquet cache, and run directories; service config writes planned | Verified |
-| [Error Handling](./error-handling.md)                     | Data/adapter/task/run errors, worker failure, CLI privacy; API envelope planned | Verified |
-| [Logging Guidelines](./logging-guidelines.md)             | Reporter, adapter metrics, CLI, file events, environment snapshot; SSE planned | Verified |
-| [Quality Guidelines](./quality-guidelines.md)             | Offline gates, adapter regressions, runner end-to-end tests, real weight/CUDA acceptance; service tests planned | Verified |
+| [Directory Structure](./directory-structure.md)           | Config/data/adapter/task/evaluation/run modules and dependency boundaries; service; web planned | Verified |
+| [Storage Guidelines](./database-guidelines.md)            | YAML registry, Parquet cache, and run directories; service config writes | Verified |
+| [Error Handling](./error-handling.md)                     | Data/adapter/task/run errors, worker failure, CLI privacy; API envelope; service/worker race | Verified |
+| [Logging Guidelines](./logging-guidelines.md)             | Reporter, adapter metrics, CLI, file events, environment snapshot; SSE; service logging | Verified |
+| [Quality Guidelines](./quality-guidelines.md)             | Offline gates, adapter regressions, runner end-to-end tests, real weight/CUDA acceptance; service tests | Verified |
 | [Time-Series Guidelines](./time-series-guidelines.md)     | Data preparation, windows, stats, labels, adapter sampling, evaluation metrics | Verified |
 | [Model Adapter Guidelines](./model-adapter-guidelines.md) | Six adapters, capabilities, lazy imports, checkpoints, NaN, training | Verified |
 

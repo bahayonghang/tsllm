@@ -6,7 +6,7 @@
 
 ## Toolchain
 
-Status: **Verified** for the data-contract and backbone-adapters implementations, offline synthetic/tiny-model tests, and local real-checkpoint/CUDA acceptance. Evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md` and `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`. The experiment runner is Verified by the offline tests listed below and by local CLI acceptance recorded in `.trellis/tasks/09-28-experiment-runner/prd.md`. Service requirements remain planned.
+Status: **Verified** for the data-contract and backbone-adapters implementations, offline synthetic/tiny-model tests, and local real-checkpoint/CUDA acceptance. Evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md` and `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`. The experiment runner is Verified by the offline tests listed below and by local CLI acceptance recorded in `.trellis/tasks/09-28-experiment-runner/prd.md`. The service is Verified by `tests/service/` and by the local manual check recorded in `.trellis/tasks/09-28-service-api/prd.md`.
 
 | Tool    | Use                                              | Command                                           |
 | ------- | ------------------------------------------------ | ------------------------------------------------- |
@@ -53,7 +53,8 @@ The active configuration is in `pyproject.toml`; resolved dependency versions ar
 - Run the marked tests on a machine with weights: `HF_ENDPOINT=https://hf-mirror.com uv run pytest -m "gpu or weights"`.
 - The marked tests in `tests/backbones/test_smoke_weights.py` and `test_cuda.py` do not skip missing checkpoints or hardware. Record failed attempts separately from corrected reruns. LoRA acceptance requires `0 < trainable_params < 0.05 * total_params`; TTM uses head training.
 - `tests/backbones/test_contract.py::test_registry_import_is_light` imports and lists all six adapters in a fresh Python process, then checks that torch, chronos, transformers, tsfm_public, peft, and sklearn remain absent from `sys.modules`. A parent pytest process can already contain libraries used by tiny-model tests.
-- The service tests use `fastapi.testclient.TestClient` and a real worker subprocess for the `persistence` backbone.
+- The service tests use `fastapi.testclient.TestClient` and a real worker subprocess for ingest and `persistence` jobs (`tests/service/test_api_jobs.py`). Cancel, pool, and exit tests replace the worker with `Settings.worker_command` (a sleeping process or a process tree). `tests/service/test_api_basic.py::test_service_does_not_import_model_libraries` starts the app and calls the backbone, schema, and system routes in a fresh process, then checks that no model library is in `sys.modules`.
+- On Windows the venv `python.exe` is a launcher that starts the base interpreter as a child process. The launcher pid and the worker pid in `status.json` differ, and both have the same command line. Cancel must terminate the process tree; a test must check every process in the tree.
 - Assert numbers with a stated tolerance: `np.testing.assert_allclose(actual, expected, rtol=1e-6)`.
 
 ### Required leakage tests

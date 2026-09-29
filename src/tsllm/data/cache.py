@@ -5,7 +5,7 @@ import json
 import os
 from dataclasses import replace
 from pathlib import Path
-from typing import Any, ClassVar
+from typing import Any, ClassVar, Literal
 from uuid import uuid4
 
 import polars as pl
@@ -29,8 +29,13 @@ def config_hash(cfg: DatasetConfig) -> str:
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()[:12]
 
 
+def default_cache_root() -> Path:
+    """Dataset cache root; the service sets TSLLM_CACHE_DIR for its worker subprocesses."""
+    return Path(os.environ.get("TSLLM_CACHE_DIR", "cache")) / "datasets"
+
+
 def cache_dir(cfg: DatasetConfig, root: Path | None = None) -> Path:
-    return (root if root is not None else Path("cache/datasets")) / cfg.id / config_hash(cfg)
+    return (root if root is not None else default_cache_root()) / cfg.id / config_hash(cfg)
 
 
 def source_fingerprint(cfg: DatasetConfig) -> dict[str, int]:
@@ -57,6 +62,26 @@ def is_fresh(cfg: DatasetConfig, root: Path | None = None) -> bool:
         )
     except (OSError, ValueError, UnicodeError):
         return False
+
+
+def cache_status(
+    cfg: DatasetConfig, root: Path | None = None
+) -> Literal["fresh", "stale", "missing"]:
+    """Missing means that no cache of any configuration exists for the dataset id."""
+    if is_fresh(cfg, root):
+        return "fresh"
+    dataset_root = cache_dir(cfg, root).parent
+    return "stale" if any(dataset_root.glob("*/meta.json")) else "missing"
+
+
+def read_meta(cfg: DatasetConfig, root: Path | None = None) -> dict[str, Any] | None:
+    """Metadata of a fresh cache, or None. The frame is not read."""
+    if not is_fresh(cfg, root):
+        return None
+    try:
+        return _read_meta(cache_dir(cfg, root) / "meta.json")
+    except (OSError, ValueError, UnicodeError):
+        return None
 
 
 def write_cache(

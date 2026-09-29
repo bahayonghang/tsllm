@@ -24,6 +24,7 @@ ALLOWED_TRANSITIONS: frozenset[tuple[RunState, RunState, Writer]] = frozenset(
         ("running", "succeeded", "worker"),
         ("running", "failed", "worker"),
         ("running", "failed", "service"),
+        ("queued", "failed", "service"),
         ("queued", "cancelled", "service"),
         ("running", "cancelled", "service"),
         ("running", "interrupted", "service"),

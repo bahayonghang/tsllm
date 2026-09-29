@@ -16,9 +16,10 @@ def load_yaml[T: BaseModel](model: type[T], path: Path) -> T:
         return model.model_validate(yaml.safe_load(stream))
 
 
-def dump_yaml(model: BaseModel, path: Path) -> None:
+def dump_yaml(model: BaseModel | dict[str, Any], path: Path) -> None:
+    payload = model.model_dump(mode="json") if isinstance(model, BaseModel) else model
     with path.open("w", encoding="utf-8") as stream:
-        yaml.safe_dump(model.model_dump(mode="json"), stream, allow_unicode=True, sort_keys=False)
+        yaml.safe_dump(payload, stream, allow_unicode=True, sort_keys=False)
 
 
 def json_safe(value: Any) -> Any:

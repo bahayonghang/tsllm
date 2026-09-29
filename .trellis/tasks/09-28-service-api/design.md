@@ -39,7 +39,7 @@ class JobManager:
 
 - 每个池一个 `asyncio.Queue` 与一个 `asyncio.Semaphore(slots)`。
 - 调度循环：取 run_id → 若状态已为 `cancelled` 则跳过 → 获取信号量 → `asyncio.create_subprocess_exec(*cmd, cwd=repo_root, stdout/stderr → run_dir/worker.log)` → 等待结束 → 释放信号量。
-- 子进程退出码非 0 且 `status.json` 仍为 `running`（worker 未能写入终态，例如被系统终止）时，服务写 `failed`，`error = "worker exited with code N"`。该转换已列入父设计第 6 节转换表。
+- 子进程退出码非 0 且 `status.json` 仍为 `running`（worker 未能写入终态，例如被系统终止）时，服务写 `failed`，`error = "worker exited with code N"`。该转换已列入父设计第 6 节转换表。子进程已退出且状态仍为 `queued`（worker 未能写入 `running`）时，服务写 `queued → failed`，`error = "worker exited with code N before it started"`；该转换于 2026-09-29 经用户确认加入父设计第 6 节转换表。
 - 取消：`psutil.Process(pid).children(recursive=True)` 与本进程一起 `terminate()`，3 s 后仍存活则 `kill()`。
 
 ## 3. 恢复判定
