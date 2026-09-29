@@ -8,7 +8,10 @@ The first dataset is the Yangquan rotary kiln DCS data (`data/阳泉回转窑联
 
 - Data-contract implementation and AC1–AC6 validation are complete. Its six applicable backend guides are Verified for the implemented scope. The implementation is committed as `04bd695`. Completion evidence is retained with the data-contract task under `.trellis/tasks/archive/`.
 - Backbone-adapters implementation and local checkpoint/CUDA acceptance are complete on `codex/backbone-adapters`. Its task retains failure and rerun evidence. Final full-scope review passed. Evidence is retained in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`.
-- Experiment-runner, service-api, and web-ui remain planned; their implementation has not started.
+- Experiment-runner implementation and local acceptance are complete (`65b6f11`).
+- Service-api implementation and local acceptance are complete (`212ccf2`). The state table includes `queued → failed` (service).
+- Web-ui implementation and in-app browser acceptance (AC1–AC6) are complete (`2b26ac4`). The frontend guides are Verified. The chart canvas was not checked visually because the browser pane was hidden; chart options were checked with the ECharts SVG server-side renderer.
+- All five child tasks are archived under `.trellis/tasks/archive/2026-09/`. The parent task is still open: its final integration acceptance (parent AC1–AC7) is not recorded.
 - Parent task: `.trellis/tasks/09-28-tsfm-platform/`. Read its `prd.md` and `design.md` before any work. `design.md` holds the shared contracts.
 - Child tasks, in order: `09-28-data-contract` → `09-28-backbone-adapters` → `09-28-experiment-runner` → `09-28-service-api` → `09-28-web-ui`. Each child has `prd.md`, `design.md`, `implement.md`.
 
@@ -21,7 +24,7 @@ The first dataset is the Yangquan rotary kiln DCS data (`data/阳泉回转窑联
 
 ## Commands
 
-These commands work after the matching child task lands.
+All child tasks have landed. These commands work.
 
 ```bash
 uv sync
