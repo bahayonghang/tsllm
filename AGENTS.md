@@ -6,7 +6,8 @@ The first dataset is the Yangquan rotary kiln DCS data (`data/阳泉回转窑联
 
 ## Status
 
-- 2026-09-28: planning is complete. No implementation code exists yet (`src/tsllm/__init__.py` is a stub).
+- Data-contract implementation and AC1–AC6 validation are complete. Its six applicable backend guides are Verified for the implemented scope. Commit and archive approval are pending.
+- The remaining four child tasks are planned; their implementation has not started.
 - Parent task: `.trellis/tasks/09-28-tsfm-platform/`. Read its `prd.md` and `design.md` before any work. `design.md` holds the shared contracts.
 - Child tasks, in order: `09-28-data-contract` → `09-28-backbone-adapters` → `09-28-experiment-runner` → `09-28-service-api` → `09-28-web-ui`. Each child has `prd.md`, `design.md`, `implement.md`.
 

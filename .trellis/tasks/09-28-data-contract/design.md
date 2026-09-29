@@ -31,7 +31,9 @@ src/tsllm/
 
 ## 2. 读取（`source.py`）
 
-- CSV：`pl.read_csv(path, schema_overrides={ch: pl.Float64 for ch in channels}, try_parse_dates=False, encoding=...)`，再按 `time_format` 或 ISO 解析时间列。`channels` 为 null 时先读表头，除时间列外全部为通道。
+- CSV：`pl.read_csv(path, schema_overrides={ch: pl.Float64 for ch in channels}, try_parse_dates=False, encoding=...)`，再按 `time_format` 或 ISO 解析时间列。显式配置的通道必须转换为 Float64，转换失败时报配置错误。
+- `channels` 为 null 时遵循父设计 3.1：只选择数值列，角色为 `target`。CSV 自动识别检查完整列的非空值能否转换为 Float64，避免前 N 行为空导致误判；字符串标识列不作为通道。全空列按可空浮点通道保留。Parquet 使用数值列或全空列，排除时间列。选择后统一输出 Float64，缺失保留 null。
+- 自动识别用合成数据验证：数值列、前 N 行为空的数值列、全空列、字符串标识列并存时，输出只含数值和全空通道；显式配置的非法数值通道必须报错，错误信息不得包含原始值。
 - 读取后按时间排序，检查单调；`dedup` 用 `unique(subset=time, keep=...)`。
 - 只保留时间列与 `role != ignore` 的通道。
 

@@ -1,13 +1,20 @@
 [project]
 name = "tsllm"
 version = "0.1.0"
-description = "Add your description here"
+description = "Time-series foundation model experiments"
 readme = "README.md"
 authors = [
     { name = "李永航", email = "bahayonghang@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.3",
+    "polars>=1.44.2",
+    "pyarrow>=25.0.1",
+    "pydantic>=2.13.5",
+    "pyyaml>=6.0.3",
+    "typer>=0.27.2",
+]
 
 [project.scripts]
 tsllm = "tsllm:main"
@@ -15,3 +22,33 @@ tsllm = "tsllm:main"
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = [".trellis"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.13"
+typeCheckingMode = "standard"
+reportMissingTypeStubs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not gpu and not weights'"
+markers = [
+    "gpu: needs a CUDA GPU",
+    "weights: downloads or reads real model weights",
+]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]

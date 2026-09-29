@@ -3,7 +3,7 @@
   "name": "data-contract",
   "title": "数据契约与数据集注册",
   "description": "Dataset registry, cement CSV ingestion to Parquet, resampling, running segments, chronological splits, window manifests, label rules, leakage checks.",
-  "status": "planning",
+  "status": "in_progress",
   "dev_type": null,
   "scope": null,
   "package": null,
@@ -12,7 +12,7 @@
   "assignee": "lyh",
   "createdAt": "2026-09-28",
   "completedAt": null,
-  "branch": null,
+  "branch": "codex/data-contract",
   "base_branch": "main",
   "worktree_path": null,
   "commit": null,
@@ -21,6 +21,6 @@
   "children": [],
   "parent": "09-28-tsfm-platform",
   "relatedFiles": [],
-  "notes": "",
+  "notes": "步骤 1–10、最终全范围 trellis-check 与 Phase 3.3 已完成；AC1–AC6 全通过。四项命令退出 0，format 32 files，pyright 0 errors，pytest 87 passed。AC4 最终复测 523782 有效分钟、43 段，CLI 4.535 s、墙钟 6.763 s；相对用户批准基准 523702 偏差 +0.015276%。旧基准失败及差异来源原因未查明的记录保留。AC5 为 17420 有效点，等于独立非全空行数，CLI 0.060 s、墙钟 0.827 s。父共享设计未修改。Phase 3.4 提交方案待确认，详见 verification.md。未暂存、提交、归档或推送。",
   "meta": {}
 }

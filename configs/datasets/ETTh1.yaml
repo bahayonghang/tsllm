@@ -1,0 +1,19 @@
+id: ETTh1
+source:
+  path: data/ETT-small/ETTh1.csv
+  format: csv
+  encoding: utf8
+  time_column: date
+  time_format: null
+native_freq: 1h
+freq: 1h
+aggregation: mean
+dedup: keep_last
+channels: null
+eligibility: null
+segments:
+  max_gap: 2h
+  min_length: 6h
+split:
+  ratios: [0.70, 0.10, 0.10, 0.10]
+  basis: eligible_points

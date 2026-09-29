@@ -1,4 +1,4 @@
-data/
+/data/
 target/
 
 # Harness-local scaffolding. Not the project contract.
@@ -14,4 +14,10 @@ target/
 .omp/
 .cursor/
 
-ref/
+/ref/
+/runs/
+/cache/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/

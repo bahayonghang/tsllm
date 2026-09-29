@@ -6,6 +6,8 @@
 
 ## Overview
 
+Status: **Verified** for `Reporter`, `NullReporter`, `PrintReporter`, and ingestion CLI output. `FileReporter`, SSE, and worker diagnostics remain Decided.
+
 There are 2 output paths. Use the correct one.
 
 | Path        | API                            | Reader                                          | Content                                                           |
@@ -19,19 +21,24 @@ The CLI prints results with `typer.echo`. Library code does not call `print`.
 
 ## Reporter
 
+The protocol and its current implementations are in `src/tsllm/reporting.py`.
+
 ```python
+LogLevel = Literal["debug", "info", "warning", "error"]
+
 class Reporter(Protocol):
-    def log(self, msg: str, level: str = "info") -> None: ...   # debug | info | warning | error
+    def log(self, msg: str, level: LogLevel = "info") -> None: ...
     def progress(self, step: int, total: int) -> None: ...
     def metric(self, name: str, value: float, step: int | None = None) -> None: ...
     def stage(self, name: str) -> None: ...
 ```
 
-- Implementations: `NullReporter` (tests), `PrintReporter` (CLI without a run directory), `FileReporter` (`tsllm.runs.reporter`, writes `events.jsonl`).
+- Implementations: `NullReporter` (tests) and `PrintReporter` (CLI without a run directory). `FileReporter` (`tsllm.runs.reporter`, writes `events.jsonl`) is planned.
 - Data ingest, adapters, and tasks receive a `Reporter` as an argument. They do not create one and do not write files in the run directory.
-- `FileReporter` writes one JSON line per call: `{"ts": "<UTC ISO>", "kind": "log|progress|metric|stage", ...}`. It calls `flush()` after each line.
-- `progress` is rate-limited to 1 line per 0.5 s per stage. The last step is always written.
+- Planned `FileReporter` writes one JSON line per call: `{"ts": "<UTC ISO>", "kind": "log|progress|metric|stage", ...}`. It calls `flush()` after each line.
+- `PrintReporter.progress` emits at most one intermediate line per 0.5 s per stage. The last step is always written. `stage` resets the interval.
 - Stage names: `load`, `finetune`, `evaluate:<split>`, `done`. Ingest uses `read`, `resample`, `segment`, `split`, `write`.
+- `src/tsllm/data/prepare.py::ingest_dataset` emits `done` after cache reuse or successful writing. `tests/data/test_ingest.py` asserts the full preparation stage order. CLI tests are in `tests/test_cli.py`.
 
 ---
 
@@ -54,9 +61,10 @@ class Reporter(Protocol):
 - Text from `ref/`.
 - Secrets: `HF_TOKEN`, other tokens, credentials. `env.json` records only whether `HF_ENDPOINT` is set and its host name.
 - Full file contents of configs in the service log. The run directory already holds the snapshot.
+- Source-parser and YAML exception chains can contain private values. Boundary handlers suppress these chains; the CLI disables Typer local-variable display. See `src/tsllm/data/source.py`, `src/tsllm/data/registry.py`, and `src/tsllm/cli.py`.
 
 ---
 
-## Environment Snapshot
+## Environment Snapshot (Planned)
 
 The worker writes `env.json` once per run (experiment-runner design §7): Python and platform, package versions (`null` if not installed), torch CUDA version, GPU name and compute capability, backbone checkpoint, resolved revision, and license. Every result must be traceable to this file.

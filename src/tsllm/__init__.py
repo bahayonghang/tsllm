@@ -1,2 +1,4 @@
 def main() -> None:
-    print("Hello from tsllm!")
+    from tsllm.cli import app
+
+    app()

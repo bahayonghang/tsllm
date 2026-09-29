@@ -6,9 +6,9 @@
 
 ## Status
 
-The team decided these conventions on 2026-09-28, before the implementation code exists. The source is the planning task `.trellis/tasks/09-28-tsfm-platform/` (`prd.md`, `design.md`) and its 5 child tasks.
+The data-contract implementation is Verified. Evidence is in `.trellis/tasks/09-28-data-contract/verification.md`: all four quality commands pass, 87 synthetic tests pass, and both configured datasets pass local ingestion acceptance.
 
-The examples in these files are reference patterns from the task designs. When an implementation child lands, replace each reference example with a real file path and update the Status column below to `Verified`.
+`Verified` covers the implemented config, data, error, reporting, CLI, and test contracts only. Each guide identifies its implementation files and tests. Adapter, experiment-runner, service, web, and metric contracts remain Decided until their child tasks verify them. The parent `design.md` remains the shared contract.
 
 ---
 
@@ -16,12 +16,12 @@ The examples in these files are reference patterns from the task designs. When a
 
 | Guide                                                     | Description                                                          | Status  |
 | --------------------------------------------------------- | -------------------------------------------------------------------- | ------- |
-| [Directory Structure](./directory-structure.md)           | Package layers, module placement, naming                             | Decided |
-| [Storage Guidelines](./database-guidelines.md)            | No database. YAML configs, Parquet cache, run directories            | Decided |
-| [Error Handling](./error-handling.md)                     | `TsllmError` codes, worker failure, API error envelope               | Decided |
-| [Logging Guidelines](./logging-guidelines.md)             | `Reporter` events, stdlib logging, data that must not be logged      | Decided |
-| [Quality Guidelines](./quality-guidelines.md)             | uv, ruff, pyright, pytest markers, offline tests, forbidden patterns | Decided |
-| [Time-Series Guidelines](./time-series-guidelines.md)     | Resampling, segments, splits, windows, leakage rules, metrics        | Decided |
+| [Directory Structure](./directory-structure.md)           | Config/data modules and dependency boundaries; later layers planned | Verified |
+| [Storage Guidelines](./database-guidelines.md)            | YAML registry and Parquet cache; run directories planned             | Verified |
+| [Error Handling](./error-handling.md)                     | Data errors and CLI privacy; worker/API handling planned             | Verified |
+| [Logging Guidelines](./logging-guidelines.md)             | Reporter and CLI output; file events and worker diagnostics planned   | Verified |
+| [Quality Guidelines](./quality-guidelines.md)             | Python gates and synthetic data tests; later-layer tests planned      | Verified |
+| [Time-Series Guidelines](./time-series-guidelines.md)     | Data preparation, windows, stats, labels; evaluation metrics planned   | Verified |
 | [Model Adapter Guidelines](./model-adapter-guidelines.md) | Backbone protocol, capabilities, lazy imports, checkpoints, NaN      | Decided |
 
 ---

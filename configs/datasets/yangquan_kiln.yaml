@@ -1,0 +1,40 @@
+id: yangquan_kiln
+source:
+  path: data/阳泉回转窑联合训练孪生样本/data_in.csv
+  format: csv
+  encoding: utf8
+  time_column: DateTime
+  time_format: null
+native_freq: 10s
+freq: 1min
+aggregation: mean
+dedup: keep_last
+channels:
+  - {name: 窑喂料反馈, role: target, unit: null, description: null}
+  - {name: 窑头煤反馈, role: target, unit: null, description: null}
+  - {name: 高温风机反馈, role: target, unit: null, description: null}
+  - {name: 窑头负压反馈, role: target, unit: null, description: null}
+  - {name: 分解炉出口温度反馈, role: target, unit: null, description: null}
+  - {name: C5下料温度反馈, role: target, unit: null, description: null}
+  - {name: 窑电流反馈, role: target, unit: null, description: null}
+  - {name: 二次风温反馈, role: target, unit: null, description: null}
+  - {name: 烟室温度反馈, role: target, unit: null, description: null}
+  - {name: 烟室NOX反馈, role: target, unit: null, description: null}
+  - {name: 入窑斗提电流2反馈, role: target, unit: null, description: null}
+  - {name: 三次风温均值, role: target, unit: null, description: null}
+  - {name: 分解炉内温度1反馈, role: target, unit: null, description: null}
+  - {name: 篦冷机一室压力反馈, role: target, unit: null, description: null}
+  - {name: 篦冷机二室压力反馈, role: target, unit: null, description: null}
+  - {name: 篦冷机三室压力反馈, role: target, unit: null, description: null}
+  - {name: 篦冷机八室压力反馈, role: target, unit: null, description: null}
+  - {name: F9风机电流反馈, role: target, unit: null, description: null}
+eligibility:
+  all:
+    - {channel: 窑头煤反馈, op: gt, value: 5}
+    - {channel: 高温风机反馈, op: gt, value: 200}
+segments:
+  max_gap: 2min
+  min_length: 6h
+split:
+  ratios: [0.70, 0.10, 0.10, 0.10]
+  basis: eligible_points

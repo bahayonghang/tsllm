@@ -6,6 +6,8 @@
 
 ## Toolchain
 
+Status: **Verified** for the data-contract application and synthetic tests. Adapter, runner, and service test requirements below remain planned. Full gate evidence is in `.trellis/tasks/09-28-data-contract/verification.md`.
+
 | Tool    | Use                                              | Command                                           |
 | ------- | ------------------------------------------------ | ------------------------------------------------- |
 | uv      | Python 3.13 environment, dependencies, lock file | `uv sync`, `uv add <pkg>`, `uv add --dev <pkg>`   |
@@ -15,32 +17,13 @@
 
 A change is complete only when all 4 commands pass.
 
-Configuration in `pyproject.toml` (set by the data-contract child):
+The active configuration is in `pyproject.toml`; resolved dependency versions are in `uv.lock`.
 
-```toml
-[tool.ruff]
-line-length = 100
-target-version = "py313"
-
-[tool.ruff.lint]
-select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
-# Chinese text in strings and comments uses full-width punctuation.
-ignore = ["RUF001", "RUF002", "RUF003"]
-
-[tool.pyright]
-include = ["src", "tests"]
-pythonVersion = "3.13"
-typeCheckingMode = "standard"
-reportMissingTypeStubs = false
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-m 'not gpu and not weights'"
-markers = [
-  "gpu: needs a CUDA GPU",
-  "weights: downloads or reads real model weights",
-]
-```
+- Ruff targets Python 3.13, uses a 100-column line length, and selects `E`, `F`, `W`, `I`, `UP`, `B`, `SIM`, and `RUF`. `RUF001`–`RUF003` allow exact Chinese text.
+- Ruff excludes `.trellis` generated tools and planning files through `extend-exclude`. The application and test rules remain enabled. Check discovery with `uv run ruff check --show-files` when changing ignore rules.
+- Pyright checks `src` and `tests` in standard mode for Python 3.13. Missing third-party type stubs are not reported.
+- Pytest collects `tests` and excludes the registered `gpu` and `weights` markers by default.
+- `.gitignore` uses root-anchored `/data/`, `/ref/`, `/runs/`, and `/cache/`. An unanchored `data/` also hides `src/tsllm/data` and `tests/data` from Git and Ruff discovery. Source and test directories must remain visible.
 
 - Add dependencies with `uv add`. Do not edit `uv.lock` by hand.
 - torch comes from the `pytorch-cu128` index (backbone-adapters implement step 1). The GPU is sm_120. Do not install a CPU-only torch or a CUDA build older than 12.8.
@@ -64,6 +47,8 @@ markers = [
 
 - Tests run offline. The default `uv run pytest` must not download weights, must not need a GPU, and must not read `data/`.
 - Use synthetic fixtures from `tests/conftest.py` (a small multichannel series with known running segments, gaps, and duplicate timestamps).
+- `tests/data/test_stats_windows.py` uses AST checks and an independent Python process to verify that importing `tsllm.data` does not import model libraries. An already-imported test process alone is insufficient evidence.
+- `tests/data/test_source.py`, `tests/data/test_ingest.py`, and `tests/test_cli.py` use temporary files for source errors, cache changes, and CLI privacy. Local real-data acceptance runs separately and records only aggregate counts, timings, and time metadata.
 - Adapter tests without weights build tiny random models from a config (TimesFM 2.5, TTM). Tests with real weights carry `@pytest.mark.weights`. Tests that need CUDA carry `@pytest.mark.gpu`.
 - Run the marked tests on a machine with weights: `HF_ENDPOINT=https://hf-mirror.com uv run pytest -m "gpu or weights"`.
 - The service tests use `fastapi.testclient.TestClient` and a real worker subprocess for the `persistence` backbone.
@@ -78,6 +63,10 @@ Every change in `tsllm.data`, `tsllm.tasks`, or an adapter `finetune` must keep 
 3. The label threshold does not change when you add extreme values outside the fit rows.
 4. No window crosses a segment boundary.
 5. The evaluation origin set (`origin_set_hash`) is the same for 2 backbones with the same task config.
+
+Current evidence: `tests/data/test_stats_windows.py` covers fit-only statistics, masks, legal manifests, extraction boundaries, and deterministic origin hashes. `tests/data/test_labels.py` covers fit-only thresholds and exact future-window endpoints. Both test files exclude ineligible fit rows from statistics and thresholds. Cross-backbone comparison remains an experiment-runner acceptance requirement.
+
+An isolated mutation check must fail through a relevant assertion or missing expected exception. Import, syntax, and setup failures do not prove that a leakage test detects the removed constraint. The eight checks for this task are recorded in `.trellis/tasks/09-28-data-contract/verification.md`.
 
 ---
 

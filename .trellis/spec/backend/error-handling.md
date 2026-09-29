@@ -6,6 +6,8 @@
 
 ## Overview
 
+Status: **Verified** for data-domain exceptions and CLI handling. Worker failure and API envelope contracts remain Decided.
+
 - Domain errors inherit `tsllm.errors.TsllmError`. Each class has a stable `code` string.
 - Each layer raises the error. Only 2 places catch all errors: the worker entry (`tsllm.runs.worker.main`) and the service exception handlers (`tsllm.service.errors`).
 - The worker records a failure in `status.json` and `events.jsonl`. The service returns a failure as the JSON error envelope.
@@ -14,21 +16,14 @@
 
 ## Error Types
 
-```python
-# src/tsllm/errors.py (reference pattern)
-from typing import ClassVar
-
-
-class TsllmError(Exception):
-    code: ClassVar[str] = "TSLLM_ERROR"
-```
+The base class is `src/tsllm/errors.py::TsllmError`, with `code: ClassVar[str] = "TSLLM_ERROR"`. Data subclasses are implemented in `src/tsllm/data/registry.py` and `src/tsllm/data/cache.py`. The adapter and run classes in the table below remain planned.
 
 Define each subclass in the module that owns the condition. Do not collect all classes in `errors.py`.
 
 | Class                | Module                 | `code`                   | Condition                                                            |
 | -------------------- | ---------------------- | ------------------------ | -------------------------------------------------------------------- |
 | `DatasetNotFound`    | `tsllm.data.registry`  | `DATASET_NOT_FOUND`      | No `configs/datasets/<id>.yaml`                                      |
-| `DatasetConfigError` | `tsllm.data.registry`  | `DATASET_CONFIG_INVALID` | YAML does not validate, or `id` differs from the file name           |
+| `DatasetConfigError` | `tsllm.data.registry`  | `DATASET_CONFIG_INVALID` | Invalid config/source, filename mismatch, inaccessible storage, or source change during ingestion |
 | `DatasetNotIngested` | `tsllm.data.cache`     | `DATASET_NOT_INGESTED`   | Cache is missing or stale                                            |
 | `CapabilityError`    | `tsllm.backbones.base` | `CAPABILITY_UNSUPPORTED` | The backbone does not support the mode, embed, or horizon            |
 | `BackboneLoadError`  | `tsllm.backbones.base` | `BACKBONE_LOAD_FAILED`   | A library is missing, or the checkpoint cannot be resolved or loaded |
@@ -45,13 +40,20 @@ Use `ValueError` only for programming errors inside one module (wrong array shap
 
 - Raise early at the boundary. Validate a `RunConfig` against backbone capabilities before the worker loads a model.
 - An error message names the identifiers: dataset id, run id, channel name, backbone name, checkpoint. It does not contain data values.
-- Do not catch an exception only to log it and continue. Catch it only if you can recover or add context. To add context, use `raise NewError(...) from exc`.
+- Do not catch an exception only to log it and continue. Catch it only if you can recover or add context. Chain with `raise NewError(...) from exc` only when the cause contains no private values. At source/config/cache parser boundaries, use a sanitized domain message and `raise ... from None`; parser and validation diagnostics can expose source values.
 - Do not fall back silently. Example: if `mode: lora` and `peft` is not installed, raise `BackboneLoadError`. Do not run `full` instead.
 - A bare `except:` is not allowed. `except Exception` is allowed only in `worker.main` and in the service handlers.
 
 ---
 
-## Worker Failure
+## Verified CLI and Parser Boundaries
+
+- `src/tsllm/cli.py::_domain_errors` catches `TsllmError`, emits its stable code and message, and exits with code 1. It does not catch arbitrary exceptions.
+- `src/tsllm/cli.py` disables Typer local-variable display with `pretty_exceptions_show_locals=False` on both apps.
+- `src/tsllm/data/source.py::read_source`, `src/tsllm/data/registry.py::load_dataset`, and the cache read/write boundary suppress unsafe parser causes.
+- `tests/data/test_source.py` and `tests/test_cli.py` assert that malformed synthetic values do not appear in formatted exception chains or CLI output. `tests/data/test_ingest.py` covers inaccessible and changing sources.
+
+## Worker Failure (Planned)
 
 ```python
 # tsllm.runs.worker.main (reference pattern, experiment-runner design §8)
@@ -71,7 +73,7 @@ except Exception as exc:
 
 ---
 
-## API Error Envelope
+## API Error Envelope (Planned)
 
 Every non-2xx response has this body:
 

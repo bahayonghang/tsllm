@@ -6,7 +6,9 @@
 
 ## Overview
 
-The project is one Python package, `tsllm`, in a `src/` layout. uv builds it with `uv_build`. The package has 7 layers. Dependencies go down only (see "Layer Rules").
+Status: **Verified** for config, data, errors, reporting, and the data CLI. The other layers below are planned and remain Decided.
+
+The project is one Python package, `tsllm`, in a `src/` layout. uv builds it with `uv_build`. The design defines 7 layers. Dependencies go down only (see "Layer Rules").
 
 Configuration files (YAML) live in `configs/`. Generated data lives in `cache/` and `runs/`. The web UI lives in `web/` (see `.trellis/spec/frontend/`).
 
@@ -18,31 +20,32 @@ Configuration files (YAML) live in `configs/`. Generated data lives in `cache/` 
 pyproject.toml
 configs/
   datasets/<id>.yaml          # one DatasetConfig per file; file name == id
-  runs/<name>.yaml            # RunConfig samples and templates
+  runs/<name>.yaml            # planned: RunConfig samples and templates
 src/tsllm/
   __init__.py                 # main() calls cli.app()
-  cli.py                      # typer entry point: data, run, runs, schema, serve, api
+  cli.py                      # typer entry point: data list, ingest, profile
   errors.py                   # TsllmError base class
-  reporting.py                # Reporter protocol and NullReporter
-  config/                     # Pydantic models, YAML io, JSON Schema export
-    base.py  io.py  dataset.py  backbone.py  run.py  schema.py
+  reporting.py                # Reporter protocol, NullReporter, PrintReporter
+  config/                     # Pydantic models and YAML io
+    base.py  io.py  dataset.py  labels.py
+    backbone.py  run.py  schema.py  # planned
   data/                       # source read, resample, segments, splits, windows, labels, cache
     types.py  registry.py  source.py  rules.py  prepare.py  cache.py
     stats.py  windows.py  labels.py  profile.py
-  backbones/                  # adapter protocol, registry, one module per adapter
+  backbones/                  # planned: adapter protocol and registry
     base.py  registry.py  checkpoint.py  windows.py  nan.py  training.py
     persistence.py  ridge.py  features.py  chronos2.py  timesfm25.py  ttm.py
-  tasks/                      # task registry, forecast and classify pipelines
+  tasks/                      # planned: task registry and pipelines
     registry.py  context.py  forecast.py  classify.py
-  evaluation/                 # metrics and resource measurement
+  evaluation/                 # planned: metrics and resource measurement
     metrics.py  resources.py
-  runs/                       # run store, file reporter, env snapshot, worker entry
+  runs/                       # planned: run store, file reporter, worker entry
     store.py  reporter.py  env.py  seeding.py  worker.py
-  service/                    # FastAPI app, job manager, SSE, routes
+  service/                    # planned: FastAPI app, job manager, SSE, routes
     app.py  settings.py  errors.py  models.py  jobs.py  sse.py  static.py
     routes/{system,schema,datasets,backbones,runs,compare,templates}.py
 tests/                        # mirrors src/tsllm; fixtures make synthetic data
-web/                          # React UI
+web/                          # planned: React UI
 cache/                        # Parquet cache (gitignored)
 runs/                         # run directories (gitignored)
 data/  ref/                   # raw data and research pack (gitignored, never commit)
@@ -91,12 +94,12 @@ service ─▶ runs ─▶ tasks, evaluation ─▶ backbones ─▶ data ─▶
 
 ---
 
-## Reference Examples
+## Verified References
 
-No implementation file exists yet. Use these design sections as the reference until the first child task lands:
+- CLI dispatch: `src/tsllm/__init__.py` and `src/tsllm/cli.py`; tests in `tests/test_cli.py`.
+- Strict config models and duration parsing: `src/tsllm/config/base.py`, `src/tsllm/config/dataset.py`, `src/tsllm/config/labels.py`; tests in `tests/config/test_dataset.py`.
+- Public data exports and containers: `src/tsllm/data/__init__.py` and `src/tsllm/data/types.py`.
+- YAML-backed discovery: `src/tsllm/data/registry.py`; source parsing tests in `tests/data/test_source.py`.
+- No model imports: `tests/data/test_stats_windows.py` checks the AST and imports the data package in an independent process.
 
-- Layer and layout contract: `.trellis/tasks/09-28-tsfm-platform/design.md` §1–§2.
-- Data module list: `.trellis/tasks/09-28-data-contract/design.md` §1.
-- Adapter module list: `.trellis/tasks/09-28-backbone-adapters/design.md` §1.
-- Runner module list: `.trellis/tasks/09-28-experiment-runner/design.md` §1.
-- Service module list: `.trellis/tasks/09-28-service-api/design.md` §1.
+Planned adapter, runner, and service placement remains defined by the parent design §1–§2 and the matching child designs. Their listed paths are not implementation evidence.

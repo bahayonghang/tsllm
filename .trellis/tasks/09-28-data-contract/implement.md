@@ -10,7 +10,7 @@
    - `src/tsllm/__init__.py` 的 `main()` 调用 `tsllm.cli.app()`。
    - 验证：`uv sync`、`uv run tsllm --help`。
 2. `tsllm.config`：`base.py`、`dataset.py`、`io.py`；测试 Duration 解析与 `extra="forbid"`。
-3. `tsllm.data.source` + `registry`；测试类型声明、去重、编码。
+3. `tsllm.data.source` + `registry`；测试类型声明、去重、编码、自动数值通道识别（含字符串标识列、前 N 行为空的数值列与全空列），以及显式非法数值通道的脱敏错误。
 4. `prepare.py` 重采样与网格补齐；测试右端点标记与 `observed`。
 5. `rules.py` + 分段 + 划分；测试 `max_gap`、`min_length`、划分比例。
 6. `cache.py` + `profile.py`；测试哈希与过期判定。
