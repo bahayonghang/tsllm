@@ -16,10 +16,10 @@ export function CompareBarChart({ metric, splits, runs, values }: Props) {
       tooltip: { trigger: "axis" as const },
       legend: {
         type: "scroll" as const,
-        top: 0,
+        bottom: 0,
         textStyle: { color: colors.text },
       },
-      grid: { left: 64, right: 24, top: 40, bottom: 32 },
+      grid: { left: 64, right: 24, top: 40, bottom: 64 },
       xAxis: {
         type: "category" as const,
         data: splits,
