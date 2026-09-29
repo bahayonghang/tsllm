@@ -8,7 +8,7 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 2
+- **Total Sessions**: 3
 - **Last Active**: 2026-09-29
 <!-- @@@/auto:current-status -->
 
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~67 | Active |
+| `journal-1.md` | ~89 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits | Branch |
 |---|------|-------|---------|--------|
+| 3 | 2026-09-29 | 实验运行器实现与本机验收 | `65b6f11` | `codex/experiment-runner` |
 | 2 | 2026-09-29 | 基座适配层提交与归档 | `6f94aa2`, `c81d304` | `codex/backbone-adapters` |
 | 1 | 2026-09-28 | Complete data contract and local validation | `04bd695`, `05ba246` | `codex/data-contract` |
 <!-- @@@/auto:session-history -->

@@ -65,3 +65,25 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Status
 
 [OK] **Completed**
+
+
+## Session 3: 实验运行器实现与本机验收
+<!-- trellis-session: v=2 fp=429f55bb16ca5eb5 -->
+
+**Date**: 2026-09-29
+**Task**: 实验运行器实现与本机验收
+**Branch**: `codex/experiment-runner`
+
+### Summary
+
+实现 RunConfig/JobSpec、预测与分类指标、RunStore 状态机、FileReporter、环境快照、worker 与 run/runs/schema 命令及 11 个样例配置；离线门禁全部通过（pytest 146 passed）；水泥 9 个运行经 CLI 全部成功，修复 CPU 峰值显存与 TTM revision 记录两处缺陷；Chronos-2 表示分类弱于统计特征，原因未查明。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `65b6f11` | feat(runner): 实现实验运行器并完成本机验收 |
+
+### Status
+
+[OK] **Completed**
