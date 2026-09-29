@@ -1,0 +1,17 @@
+name: kiln-timesfm25-zero-shot
+dataset: yangquan_kiln
+task:
+  type: forecast
+  context_length: 120
+  horizon: 30
+  eval_leads: [5, 15, 30]
+  eval_splits: [val, test]
+  eval_origin_stride: 30
+backbone:
+  name: timesfm25
+  checkpoint: google/timesfm-2.5-200m-transformers
+  revision: 5a9806b9b291fad9233b5249d88263f1846304d3
+  device: cuda
+  dtype: bf16
+mode: zero_shot
+seed: 0

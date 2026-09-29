@@ -1,0 +1,14 @@
+name: etth1-persistence
+dataset: ETTh1
+task:
+  type: forecast
+  context_length: 512
+  horizon: 96
+  eval_leads: [24, 48, 96]
+  eval_splits: [val, test]
+  eval_origin_stride: 24
+backbone:
+  name: persistence
+  device: cpu
+mode: zero_shot
+seed: 0

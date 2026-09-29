@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for data/adapter domain exceptions, loading boundaries, and CLI handling. Worker failure and API envelope contracts remain Decided.
+Status: **Verified** for data/adapter/task/run domain exceptions, loading boundaries, worker failure, and CLI handling. The API envelope contract remains Decided.
 
 - Domain errors inherit `tsllm.errors.TsllmError`. Each class has a stable `code` string.
 - Each layer raises the error. Only 2 places catch all errors: the worker entry (`tsllm.runs.worker.main`) and the service exception handlers (`tsllm.service.errors`).
@@ -16,7 +16,7 @@ Status: **Verified** for data/adapter domain exceptions, loading boundaries, and
 
 ## Error Types
 
-The base class is `src/tsllm/errors.py::TsllmError`, with `code: ClassVar[str] = "TSLLM_ERROR"`. Data subclasses are implemented in `src/tsllm/data/registry.py` and `src/tsllm/data/cache.py`. Adapter subclasses are in `src/tsllm/backbones/base.py`. Run classes in the table below remain planned.
+The base class is `src/tsllm/errors.py::TsllmError`, with `code: ClassVar[str] = "TSLLM_ERROR"`. Data subclasses are implemented in `src/tsllm/data/registry.py` and `src/tsllm/data/cache.py`. Adapter subclasses are in `src/tsllm/backbones/base.py`. Task and run subclasses are in `src/tsllm/tasks/validation.py` and `src/tsllm/runs/store.py`.
 
 Define each subclass in the module that owns the condition. Do not collect all classes in `errors.py`.
 
@@ -27,6 +27,7 @@ Define each subclass in the module that owns the condition. Do not collect all c
 | `DatasetNotIngested` | `tsllm.data.cache`     | `DATASET_NOT_INGESTED`   | Cache is missing or stale                                            |
 | `CapabilityError`    | `tsllm.backbones.base` | `CAPABILITY_UNSUPPORTED` | The backbone does not support the mode, embed, or horizon            |
 | `BackboneLoadError`  | `tsllm.backbones.base` | `BACKBONE_LOAD_FAILED`   | A library is missing, or the checkpoint cannot be resolved or loaded |
+| `TaskConfigError`    | `tsllm.tasks.validation` | `TASK_CONFIG_INVALID` | A split has no legal origins for the task lengths, or training labels have one class |
 | `InvalidTransition`  | `tsllm.runs.store`     | `INVALID_TRANSITION`     | `(from, to, writer)` is not in the state table                       |
 | `RunNotFound`        | `tsllm.runs.store`     | `RUN_NOT_FOUND`          | No run directory for the id                                          |
 
@@ -60,23 +61,30 @@ Use `ValueError` only for programming errors inside one module (wrong array shap
 - `tests/backbones/test_contract.py::test_invalid_model_checkpoint_is_domain_error` covers all three foundation models with an invalid local checkpoint. `test_missing_model_dependency_is_domain_error` covers unavailable dependencies. `tests/backbones/test_chronos2_tiny.py` covers the no-full-fallback rule.
 - A validation channel-order mismatch is a caller programming error. `src/tsllm/backbones/training.py` rejects the mismatch before optimization; `tests/backbones/test_training.py` checks unchanged parameters and absent progress.
 
-## Worker Failure (Planned)
+## Worker Failure
+
+Implemented in `src/tsllm/runs/worker.py::main`.
 
 ```python
-# tsllm.runs.worker.main (reference pattern, experiment-runner design §8)
+store.transition(run_id, "running", writer="worker", pid=os.getpid())
+reporter = FileReporter(run_dir / "events.jsonl", mirror=mirror)
 try:
     ...
     store.transition(run_id, "succeeded", writer="worker")
     return 0
 except Exception as exc:
     reporter.log(traceback.format_exc(), level="error")
-    store.transition(run_id, "failed", writer="worker", error=f"{type(exc).__name__}: {exc}")
+    summary = " ".join(f"{type(exc).__name__}: {exc}".split())
+    store.transition(run_id, "failed", writer="worker", error=summary)
     return 1
 ```
 
+- The `running` transition is outside `try`. If the run is no longer `queued` (for example `cancelled`), `InvalidTransition` propagates and the process exits non-zero without a state write.
 - The full traceback goes to `events.jsonl` (kind `log`, level `error`).
-- `status.json.error` holds one line: `<ExceptionClass>: <message>`.
+- `status.json.error` holds one line: `<ExceptionClass>: <message>`. Whitespace, including newlines, collapses to single spaces.
+- `validate_job` runs inside the worker before data or model loading, and in `tsllm run` before the run directory is created. A job that the CLI rejects creates no directory.
 - If the worker process exits with a non-zero code and `status.json` is still `running`, the service writes `failed` with `error = "worker exited with code N"`.
+- Tests: `tests/runs/test_worker_e2e.py::test_failure_records_traceback_and_summary` and `tests/runs/test_store.py::test_transition_matrix`.
 
 ---
 

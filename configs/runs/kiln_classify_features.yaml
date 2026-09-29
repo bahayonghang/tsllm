@@ -1,0 +1,22 @@
+name: kiln-classify-features
+dataset: yangquan_kiln
+task:
+  type: classify
+  context_length: 120
+  eval_splits: [val, test]
+  train_origin_stride: 5
+  eval_origin_stride: 10
+  max_train_origins: 20000
+  label:
+    type: future_event
+    channel: 烟室NOX反馈
+    op: gt
+    threshold: {quantile: 0.95}
+    window: 30
+    min_duration: 3
+  head: {type: logistic, class_weight: balanced}
+backbone:
+  name: features
+  device: cpu
+mode: head
+seed: 0

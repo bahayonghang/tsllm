@@ -1,3 +1,4 @@
+import json
 from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
@@ -9,7 +10,9 @@ from typer.testing import CliRunner
 from tsllm.cli import app
 from tsllm.config.dataset import DatasetConfig
 from tsllm.config.io import dump_yaml
+from tsllm.config.run import RunConfig
 from tsllm.data.cache import cache_dir, config_hash, read_cache
+from tsllm.runs.store import RunStore
 
 runner = CliRunner()
 
@@ -89,3 +92,43 @@ def test_cli_errors_are_sanitized(
     assert sentinel not in result.output and "Traceback" not in result.output
     missing = runner.invoke(app, ["data", "ingest", "unknown"])
     assert missing.exit_code == 1 and "DATASET_NOT_FOUND" in missing.output
+
+
+def test_cli_run_list_show_and_schema(
+    synthetic_config: DatasetConfig,
+    forecast_run: Callable[..., RunConfig],
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.chdir(tmp_path)
+    register(synthetic_config, tmp_path)
+    config = tmp_path / "persistence.yaml"
+    dump_yaml(forecast_run("persistence", "zero_shot"), config)
+
+    refused = runner.invoke(app, ["run", str(config)])
+    assert refused.exit_code == 1 and "DATASET_NOT_INGESTED" in refused.output
+    assert not (tmp_path / "runs").exists()
+
+    result = runner.invoke(app, ["run", str(config), "--ingest"])
+    assert result.exit_code == 0, result.output
+    assert result.output.count("state=succeeded") == 2
+    assert "[evaluate:test]" in result.output and "test: mae_norm_macro=" in result.output
+    runs = RunStore(tmp_path / "runs").list()
+    assert [s.kind for s in runs] == ["experiment", "ingest"]
+
+    listed = runner.invoke(app, ["runs", "list"])
+    assert listed.exit_code == 0 and runs[0].run_id in listed.output
+    assert "mae_norm_macro=" in listed.output
+    shown = runner.invoke(app, ["runs", "show", runs[0].run_id])
+    assert shown.exit_code == 0 and '"origin_set_hash"' in shown.output
+    missing = runner.invoke(app, ["runs", "show", "missing"])
+    assert missing.exit_code == 1 and "RUN_NOT_FOUND" in missing.output
+
+    invalid = tmp_path / "invalid.yaml"
+    invalid.write_text("name: x\n", encoding="utf-8")
+    rejected = runner.invoke(app, ["run", str(invalid)])
+    assert rejected.exit_code == 1 and "VALIDATION_ERROR" in rejected.output
+
+    schema = runner.invoke(app, ["schema"])
+    assert schema.exit_code == 0
+    assert set(json.loads(schema.output)) == {"run_config", "backbone_options"}

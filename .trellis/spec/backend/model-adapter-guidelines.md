@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for the six implemented adapters, configuration, capabilities, lazy discovery, checkpoint resolution, NaN handling, training, and adapter round trips. Offline tests and local real-checkpoint/CUDA acceptance are recorded in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md` and its `research/real-acceptance.md`. Runner, service, and web integration remain Decided.
+Status: **Verified** for the six implemented adapters, configuration, capabilities, lazy discovery, checkpoint resolution, NaN handling, training, and adapter round trips. Offline tests and local real-checkpoint/CUDA acceptance are recorded in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md` and its `research/real-acceptance.md`. Runner integration is Verified in `src/tsllm/tasks/`. Service and web integration remain Decided.
 
 An adapter wraps one time-series model (a foundation model or a baseline) behind the `Backbone` protocol. Tasks, evaluation, service, and web code use only the protocol, the registry, and `Capabilities`. They never use a model name in a condition.
 
@@ -84,7 +84,7 @@ The concrete `load` method imports `TimesFm2_5ModelForPrediction` inside the met
 
 ### 1. Scope / Trigger
 
-Status: **Verified** for adapters and their tests. The user approved these protocol changes during backbone-adapters implementation. The planned runner uses the same signatures; runner execution remains Decided. Data containers and the Reporter protocol do not change.
+Status: **Verified** for adapters and their tests. The user approved these protocol changes during backbone-adapters implementation. The runner in `src/tsllm/tasks/` calls these signatures. Data containers and the Reporter protocol do not change.
 
 ### 2. Signatures
 
@@ -99,11 +99,11 @@ Status: **Verified** for adapters and their tests. The user approved these proto
 
 ### 4. Validation & Error Matrix
 
-| Condition | Behavior |
-| --- | --- |
-| Mode is absent from `forecast_modes` | Raise `CapabilityError` before parameter updates |
-| LoRA dependency cannot be imported | Raise `BackboneLoadError` before training |
-| Checkpoint revision is not specified | Report a warning and expose the resolved revision |
+| Condition                             | Behavior                                                 |
+| ------------------------------------- | -------------------------------------------------------- |
+| Mode is absent from `forecast_modes`  | Raise `CapabilityError` before parameter updates         |
+| LoRA dependency cannot be imported    | Raise `BackboneLoadError` before training                |
+| Checkpoint revision is not specified  | Report a warning and expose the resolved revision        |
 | Features input has an all-NaN channel | Emit zero features and report the affected channel count |
 
 ### 5. Good / Base / Bad Cases
@@ -130,7 +130,7 @@ Correct: call `backbone.load(cfg, fit_stats, reporter=reporter)` and `backbone.f
 
 - Resolve with `tsllm.backbones.checkpoint.resolve_checkpoint(cfg)`. It accepts a Hugging Face repo id or a local directory. It returns the local path, the resolved revision (commit hash), and the source.
 - `huggingface.co` is not reachable from this machine. Set `HF_ENDPOINT=https://hf-mirror.com` or use a local directory. Do not hard-code the mirror in code.
-- If `revision` is `null`, warn through the injected Reporter and expose `resolved_checkpoint.revision`. Writing `env.json` belongs to the planned experiment runner.
+- If `revision` is `null`, warn through the injected Reporter and expose `resolved_checkpoint.revision`. The worker writes it to `env.json` (see `logging-guidelines.md`).
 - Default checkpoints: `amazon/chronos-2`, `google/timesfm-2.5-200m-transformers`, `ibm-granite/granite-timeseries-ttm-r2`.
 - Do not add TimesFM-3. Its license does not allow this use. Record `license` and `license_url` for foundation-model adapters. The 2026-09-29 model-card audit confirms Apache-2.0 for the three pinned cards; see the child task's `research/library-api-audit.md`. Baselines have no external model-card license.
 

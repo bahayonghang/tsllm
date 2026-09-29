@@ -6,7 +6,7 @@
 
 ## Toolchain
 
-Status: **Verified** for the data-contract and backbone-adapters implementations, offline synthetic/tiny-model tests, and local real-checkpoint/CUDA acceptance. Evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md` and `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`. Runner and service requirements below remain planned.
+Status: **Verified** for the data-contract and backbone-adapters implementations, offline synthetic/tiny-model tests, and local real-checkpoint/CUDA acceptance. Evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md` and `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`. The experiment runner is Verified by the offline tests listed below and by local CLI acceptance recorded in `.trellis/tasks/09-28-experiment-runner/prd.md`. Service requirements remain planned.
 
 | Tool    | Use                                              | Command                                           |
 | ------- | ------------------------------------------------ | ------------------------------------------------- |
@@ -66,7 +66,7 @@ Every change in `tsllm.data`, `tsllm.tasks`, or an adapter `finetune` must keep 
 4. No window crosses a segment boundary.
 5. The evaluation origin set (`origin_set_hash`) is the same for 2 backbones with the same task config.
 
-Current evidence: `tests/data/test_stats_windows.py` covers fit-only statistics, masks, legal manifests, extraction boundaries, and deterministic origin hashes. `tests/data/test_labels.py` covers fit-only thresholds and exact future-window endpoints. Both test files exclude ineligible fit rows from statistics and thresholds. Cross-backbone comparison remains an experiment-runner acceptance requirement.
+Current evidence: `tests/data/test_stats_windows.py` covers fit-only statistics, masks, legal manifests, extraction boundaries, and deterministic origin hashes. `tests/data/test_labels.py` covers fit-only thresholds and exact future-window endpoints. Both test files exclude ineligible fit rows from statistics and thresholds. `tests/tasks/test_origin_hash.py` covers cross-backbone origin sets (item 5). `tests/tasks/test_classify_leakage.py` covers the end-to-end label threshold (item 3).
 
 Adapter evidence: `tests/backbones/test_baselines.py::test_windows_never_cross_arrays` checks seeded sampling, legal context/target endpoints, and insufficient-length rejection in `src/tsllm/backbones/windows.py`. `tests/backbones/test_training.py` checks fixed validation samples and restoration of the lowest-loss trainable weights. The data layer remains responsible for clipping `SegmentSet` arrays to the fit split before training.
 

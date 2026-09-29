@@ -11,6 +11,7 @@ src/tsllm/
   tasks/
     __init__.py
     registry.py             # register_task、get_task；键为 task.type
+    validation.py           # validate_job(job)：通道角色、基座能力与长度上限、缓存新鲜度；TaskConfigError
     context.py              # TaskContext：run_dir、job、prepared、fit_stats、reporter、rng
     forecast.py             # run_forecast(ctx) -> dict（metrics）
     classify.py             # run_classify(ctx) -> dict
@@ -69,7 +70,7 @@ class RunStore:
 - 每提前量 `k ∈ eval_leads`：只取第 k 步（1 起算）计算上述量。
 - 分位数损失：对每个分位 `q`，`mean(max(q·(y-ŷ_q), (q-1)·(y-ŷ_q))) / std_fit_c`，再对通道与分位数取平均。
 - 80% 区间：需要 0.1 与 0.9 分位数，`coverage_80 = mean(ŷ_0.1 ≤ y ≤ ŷ_0.9)`，`width_80 = mean_c(mean(ŷ_0.9 - ŷ_0.1) / std_fit_c)`；缺少任一分位数时两项为 null。
-- `origin_set_hash`：对该划分起点时间（ISO 字符串，换行连接）求 SHA-256，取前 12 位。
+- `origin_set_hash`：复用数据层 `tsllm.data.windows.origin_set_hash(manifest)`，对该划分起点时间的 int64 微秒值（小端字节序列）求 SHA-256，取前 12 位。实现时改为复用该已验证函数，不另写 ISO 字符串版本。
 
 分类：`auroc`（`roc_auc_score`）、`auprc`（`average_precision_score`）、`brier`（`brier_score_loss`）；判决阈值在验证划分上扫描 `precision_recall_curve` 的阈值，取 F1 最大者；该阈值用于所有划分的 `f1` 与 `confusion`。某划分只有一个类别时，`auroc` 与 `auprc` 为 null 并写入 `warnings`。
 
@@ -77,7 +78,7 @@ class RunStore:
 
 1. 同预测任务第 1–2 步。
 2. `threshold = resolve_threshold(prepared, rule)`；训练与评价起点沿用父设计 4.3 的窗口规则，上下文长度为 L，目标长度 H 替换为标签窗口 W。
-3. 训练起点超过 `max_train_origins` 时按时间均匀抽取。
+3. 训练起点超过 `max_train_origins` 时用 `np.linspace` 按时间均匀抽取（确定性，与 `max_eval_origins` 规则相同，不需要随机种子）。
 4. `backbone.load(cfg, fit_stats, reporter=ctx.reporter)`；对训练与各评价划分分批 `embed`（`embed_batch_size` 默认 64）。加载时注入的 Reporter 用于表示提取警告。
 5. `labels = future_event_labels(...)`；写 `label_info.json`（规则、阈值、各划分样本数与正类比例）。
 6. 训练分类头；`joblib.dump` 到 `adapter/head.joblib`。

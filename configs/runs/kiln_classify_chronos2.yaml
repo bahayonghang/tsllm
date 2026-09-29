@@ -1,0 +1,25 @@
+name: kiln-classify-chronos2
+dataset: yangquan_kiln
+task:
+  type: classify
+  context_length: 120
+  eval_splits: [val, test]
+  train_origin_stride: 5
+  eval_origin_stride: 10
+  max_train_origins: 20000
+  label:
+    type: future_event
+    channel: 烟室NOX反馈
+    op: gt
+    threshold: {quantile: 0.95}
+    window: 30
+    min_duration: 3
+  head: {type: logistic, class_weight: balanced}
+backbone:
+  name: chronos2
+  checkpoint: amazon/chronos-2
+  revision: 29ec3766d36d6f73f0696f85560a422f50e8498c
+  device: cuda
+  dtype: bf16
+mode: head
+seed: 0

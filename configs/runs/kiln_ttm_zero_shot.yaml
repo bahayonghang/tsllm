@@ -1,0 +1,17 @@
+name: kiln-ttm-zero-shot
+dataset: yangquan_kiln
+task:
+  type: forecast
+  context_length: 120
+  horizon: 30
+  eval_leads: [5, 15, 30]
+  eval_splits: [val, test]
+  eval_origin_stride: 30
+backbone:
+  name: ttm
+  checkpoint: ibm-granite/granite-timeseries-ttm-r2
+  revision: null  # The adapter selects the branch from context_length and horizon.
+  device: cuda
+  dtype: bf16
+mode: zero_shot
+seed: 0

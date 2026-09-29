@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for config, data, adapters, errors, reporting, and the data CLI. The other layers below are planned and remain Decided.
+Status: **Verified** for config, data, adapters, tasks, evaluation, runs, errors, reporting, and the data/run CLI. `service/` and `web/` are planned and remain Decided.
 
 The project is one Python package, `tsllm`, in a `src/` layout. uv builds it with `uv_build`. The design defines 7 layers. Dependencies go down only (see "Layer Rules").
 
@@ -20,7 +20,7 @@ Configuration files (YAML) live in `configs/`. Generated data lives in `cache/` 
 pyproject.toml
 configs/
   datasets/<id>.yaml          # one DatasetConfig per file; file name == id
-  runs/<name>.yaml            # planned: RunConfig samples and templates
+  runs/<name>.yaml            # RunConfig samples and templates
 src/tsllm/
   __init__.py                 # main() calls cli.app()
   cli.py                      # typer entry point: data list, ingest, profile
@@ -29,18 +29,18 @@ src/tsllm/
   config/                     # Pydantic models and YAML io
     base.py  io.py  dataset.py  labels.py
     backbone.py                # BackboneConfig, FinetuneConfig, LoraSpec
-    run.py  schema.py           # planned
+    run.py  schema.py           # RunConfig, JobSpec; run_config_schema()
   data/                       # source read, resample, segments, splits, windows, labels, cache
     types.py  registry.py  source.py  rules.py  prepare.py  cache.py
     stats.py  windows.py  labels.py  profile.py
   backbones/                  # adapter base, registry, and six adapters
     base.py  registry.py  checkpoint.py  windows.py  nan.py  training.py
     persistence.py  ridge.py  features.py  chronos2.py  timesfm25.py  ttm.py
-  tasks/                      # planned: task registry and pipelines
-    registry.py  context.py  forecast.py  classify.py
-  evaluation/                 # planned: metrics and resource measurement
+  tasks/                      # task registry, job validation, and pipelines
+    registry.py  context.py  validation.py  forecast.py  classify.py
+  evaluation/                 # metrics and resource measurement
     metrics.py  resources.py
-  runs/                       # planned: run store, file reporter, worker entry
+  runs/                       # run store, file reporter, worker entry
     store.py  reporter.py  env.py  seeding.py  worker.py
   service/                    # planned: FastAPI app, job manager, SSE, routes
     app.py  settings.py  errors.py  models.py  jobs.py  sse.py  static.py
@@ -65,6 +65,7 @@ service ─▶ runs ─▶ tasks, evaluation ─▶ backbones ─▶ data ─▶
 - `tsllm.data` does not import torch or any model library.
 - `tsllm.service` does not import torch or any model library. Training and inference run only in the worker subprocess. The service must start on a machine without a GPU.
 - Model libraries (`chronos`, `transformers`, `tsfm_public`, `peft`, `torch`) are imported only inside adapter methods. Importing `tsllm.backbones.registry` must not import them.
+- Function-level exceptions: `tsllm.config.schema.run_config_schema` imports `tsllm.backbones` inside the function, because the parent design §3.3 places the schema export in `config` and the export needs adapter `Options`. `tsllm.runs.seeding` and `tsllm.runs.env` import torch inside functions, because the worker must seed torch and record CUDA facts. `tsllm.evaluation.resources.peak_vram_mb` reads torch only from `sys.modules` and never imports it. `tsllm.tasks` and `tsllm.evaluation.metrics` import sklearn and joblib inside functions.
 - `tsllm.backbones` gets data only as `ContextBatch` and `SegmentSet`. An adapter does not read files and does not know split names.
 - Route functions in `tsllm.service.routes` validate input, call lower layers, and build responses. Put business logic in `runs`, `data`, or `config`.
 
@@ -110,4 +111,10 @@ service ─▶ runs ─▶ tasks, evaluation ─▶ backbones ─▶ data ─▶
 - Shared fit-window sampling, NaN treatment, and training: `src/tsllm/backbones/windows.py`, `nan.py`, and `training.py`; tests in `tests/backbones/test_baselines.py` and `test_training.py`.
 - Adapter behavior: the six named modules in `backbones/`, with baseline and tiny-model tests under `tests/backbones/`. Real-checkpoint and CUDA acceptance are separate from offline checks.
 
-Runner and service placement remains defined by the parent design §1–§2 and the matching child designs. Their listed paths are not implementation evidence.
+## Runner Implementation References
+
+- Config: `src/tsllm/config/run.py`, `schema.py`, and `io.py::dump_json`; tests in `tests/config/test_schema.py`.
+- Tasks: `src/tsllm/tasks/`. The task layer reads data only through `tsllm.data` functions and `PreparedFrame.channels`. Tests in `tests/tasks/` and `tests/runs/test_worker_e2e.py`.
+- Runs: `src/tsllm/runs/`; tests in `tests/runs/`. CLI commands `tsllm run`, `tsllm runs list`, `tsllm runs show`, and `tsllm schema` are in `src/tsllm/cli.py`; tests in `tests/test_cli.py`.
+
+Service placement remains defined by the parent design §1–§2 and the service-api child design. Its listed paths are not implementation evidence.

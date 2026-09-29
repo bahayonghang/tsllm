@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for dataset YAML files and the prepared-data cache. Run directories and service config writes remain Decided.
+Status: **Verified** for dataset YAML files, the prepared-data cache, and run directories. Service config writes remain Decided.
 
 All state is in files. There is no ORM, no SQL, and no migration tool. There are 3 storage areas:
 
@@ -101,14 +101,18 @@ Parser errors suppress raw exception chains. Post-write source changes invalidat
 
 ---
 
-## Run Directories (Planned)
+## Run Directories
 
-- One directory per job: `runs/<YYYYmmdd-HHMMSS>-<slug>-<4 random chars>/`. The layout is in the parent design §6.
-- `status.json` changes only through `RunStore.transition(run_id, to, writer=...)`. The allowed transitions and writers are in the parent design §6 table. Do not write `status.json` directly.
-- Atomic write for every JSON file that another process reads (`status.json`, `metrics.json`): write `<name>.tmp`, then `os.replace`.
-- `events.jsonl` is append-only. Write one complete line per event, then call `flush()`. Readers send only lines that end with `\n`.
+Status: **Verified** in `src/tsllm/runs/store.py`, `reporter.py`, and `worker.py`; tests in `tests/runs/test_store.py` and `tests/runs/test_worker_e2e.py`.
+
+- One directory per job: `runs/<YYYYmmdd-HHMMSS>-<slug>-<4 hex chars>/`. The timestamp is UTC. The slug keeps only `[a-z0-9-]` from the run name; a name without such characters gives `run`. The layout is in the parent design §6.
+- `RunStore.create` writes `config.yaml` first and `status.json` last. `RunStore.list` skips a directory without `status.json`, because that directory is incomplete.
+- `status.json` changes only through `RunStore.transition(run_id, to, writer=...)`. `ALLOWED_TRANSITIONS` holds the parent design §6 table. Any other `(from, to, writer)` raises `InvalidTransition` and leaves the file unchanged. `running` sets `started_at`; a terminal state sets `finished_at`.
+- Atomic write for every JSON file that another process reads (`status.json`, `metrics.json`, `env.json`, `fit_stats.json`, `label_info.json`): `tsllm.config.io.dump_json` writes `<name>.tmp`, then calls `os.replace`. It converts numpy values to Python values and non-finite floats to `null`.
+- `events.jsonl` is append-only. `FileReporter` writes one complete line per event, then calls `flush()`. Readers send only lines that end with `\n`.
 - `config.yaml` in a run directory is a snapshot (`JobSpec`). Never change it after the job is created.
-- Predictions are long-format Parquet (`origin_time, channel, lead, y_true, y_pred, q_<level>...`).
+- Predictions are long-format Parquet: forecast `origin_time, channel, lead, y_true, y_pred, q_<level>...` (missing values are null); classification `origin_time, label, score`.
+- The transition check reads and then writes without a lock. A concurrent service cancel and worker completion can race; the service-api task owns that case.
 
 ---
 

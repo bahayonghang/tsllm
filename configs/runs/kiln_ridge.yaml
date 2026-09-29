@@ -1,0 +1,15 @@
+name: kiln-ridge
+dataset: yangquan_kiln
+task:
+  type: forecast
+  context_length: 120
+  horizon: 30
+  eval_leads: [5, 15, 30]
+  eval_splits: [val, test]
+  eval_origin_stride: 30
+backbone:
+  name: ridge
+  device: cpu
+  options: {alpha: 1.0, max_samples: 20000, seed: 0}
+mode: full
+seed: 0

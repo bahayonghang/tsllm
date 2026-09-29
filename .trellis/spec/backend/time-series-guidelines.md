@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for source parsing, preparation, splits, windows, batches, fit statistics, rule labels, and adapter sampling/normalization. API time serialization, run artifacts, and evaluation metrics remain Decided.
+Status: **Verified** for source parsing, preparation, splits, windows, batches, fit statistics, rule labels, and adapter sampling/normalization. Evaluation metrics and run artifacts are also Verified. API time serialization remains Decided.
 
 The data contract is in the parent design §3.1 and §4 (`.trellis/tasks/09-28-tsfm-platform/design.md`). This file states the rules that every layer must keep. If code breaks one of these rules, the metrics are not valid.
 
@@ -90,14 +90,18 @@ Verified implementations: `src/tsllm/data/stats.py::fit_rows` and `compute_fit_s
 - The label is positive if the condition holds for at least `min_duration` consecutive steps inside the window.
 - Null target points interrupt the consecutive event. See `src/tsllm/data/labels.py::future_event_labels`. The eligible-row filter applies when fitting quantile thresholds.
 - `tests/data/test_labels.py` checks the origin, first target, final target, and the row after the window. The cases detect both a backward-shifted window and an included origin.
-- The experiment runner will write the rule, threshold, and per-split positive rates to `label_info.json` (planned).
+- `src/tsllm/tasks/classify.py` writes the rule, the resolved threshold, and per-split sample counts and positive rates to `label_info.json`. `tests/tasks/test_classify_leakage.py` multiplies later-split source values by 1000 and asserts an unchanged threshold that equals the eligible-fit quantile.
 
 ---
 
-## Metrics (Planned)
+## Metrics
 
-- Report errors in physical units per channel (`mae`, `rmse`).
-- Aggregate across channels only after division by the fit std: `mae_norm_macro = mean_c(mae_c / std_fit_c)`. List channels with zero fit std and exclude them.
-- Compute metrics only where the target mask is true.
-- Record `origin_set_hash` per split. Two runs are comparable on a split only if the hashes are equal.
+Implemented in `src/tsllm/evaluation/metrics.py`; hand-computed and sklearn-agreement tests in `tests/evaluation/test_metrics.py`.
+
+- Report errors in physical units per channel (`mae`, `rmse`, `n`).
+- Aggregate across channels only after division by the fit std: `mae_norm_macro = mean_c(mae_c / std_fit_c)`. The same rule applies to `rmse_norm_macro`, `pinball`, and `width_80`. List channels with zero or null fit std in `excluded_channels` and exclude them.
+- Compute metrics only where the target mask is true and the prediction is finite. `n_missing_predictions` counts observed targets with a non-finite prediction; the task adds a warning when the count is not zero.
+- `coverage_80` and `width_80` need both the 0.1 and the 0.9 quantile levels; otherwise they are null.
+- Record `origin_set_hash` per split with `tsllm.data.windows.origin_set_hash`. Two runs are comparable on a split only if the hashes are equal. `tests/tasks/test_origin_hash.py` runs `persistence` and `ridge` with one task config and asserts equal hashes.
+- Classification: the decision threshold maximizes F1 on the validation split and applies to all splits. A split with one class gives null `auroc` and `auprc` and a warning. A one-class validation split uses threshold 0.5 and a warning.
 - Gate: if a foundation model error is more than 2 times the `persistence` error, check units, channel order, and time alignment before you trust the result.

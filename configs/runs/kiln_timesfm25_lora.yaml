@@ -1,0 +1,22 @@
+name: kiln-timesfm25-lora
+dataset: yangquan_kiln
+task:
+  type: forecast
+  context_length: 120
+  horizon: 30
+  eval_leads: [5, 15, 30]
+  eval_splits: [val, test]
+  eval_origin_stride: 30
+backbone:
+  name: timesfm25
+  checkpoint: google/timesfm-2.5-200m-transformers
+  revision: 5a9806b9b291fad9233b5249d88263f1846304d3
+  device: cuda
+  dtype: bf16
+mode: lora
+finetune:
+  learning_rate: 1.0e-5
+  num_steps: 1000
+  batch_size: 64
+  lora: {r: 8, alpha: 16, dropout: 0.05, target_modules: null}
+seed: 0

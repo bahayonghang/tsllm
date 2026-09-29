@@ -1,0 +1,14 @@
+name: kiln-persistence
+dataset: yangquan_kiln
+task:
+  type: forecast
+  context_length: 120
+  horizon: 30
+  eval_leads: [5, 15, 30]
+  eval_splits: [val, test]
+  eval_origin_stride: 30
+backbone:
+  name: persistence
+  device: cpu
+mode: zero_shot
+seed: 0

@@ -3,7 +3,7 @@
 from collections.abc import Callable
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import numpy as np
 import polars as pl
@@ -11,6 +11,9 @@ import pytest
 
 from tsllm.config.dataset import DatasetConfig
 from tsllm.data.types import PreparedFrame
+
+if TYPE_CHECKING:
+    from tsllm.config.run import RunConfig
 
 
 @pytest.fixture
@@ -91,3 +94,75 @@ def prepared_frame() -> PreparedFrame:
         pl.col("split").cast(pl.Categorical),
     )
     return PreparedFrame(frame, ["x", "y"], timedelta(minutes=1), {})
+
+
+@pytest.fixture
+def ingested_config(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> DatasetConfig:
+    """Synthetic dataset with a fresh cache under the temporary working directory."""
+    from tsllm.data.prepare import ingest_dataset
+    from tsllm.reporting import NullReporter
+
+    monkeypatch.chdir(tmp_path)
+    cfg = make_synthetic_csv(tmp_path)[1]
+    ingest_dataset(cfg, NullReporter())
+    return cfg
+
+
+@pytest.fixture
+def forecast_run() -> Callable[..., "RunConfig"]:
+    return _forecast_run
+
+
+@pytest.fixture
+def classify_run() -> Callable[..., "RunConfig"]:
+    return _classify_run
+
+
+def _forecast_run(backbone: str, mode: str, **task: Any) -> "RunConfig":
+    from tsllm.config.run import RunConfig
+
+    return RunConfig.model_validate(
+        {
+            "name": f"{backbone}-{mode}",
+            "dataset": "synthetic",
+            "task": {
+                "type": "forecast",
+                "context_length": 60,
+                "horizon": 10,
+                "eval_leads": [1, 10],
+                "eval_splits": ["val", "test"],
+                "eval_origin_stride": 7,
+            }
+            | task,
+            "backbone": {"name": backbone, "device": "cpu"},
+            "mode": mode,
+            "finetune": {"num_steps": 1},
+        }
+    )
+
+
+def _classify_run(**task: Any) -> "RunConfig":
+    from tsllm.config.run import RunConfig
+
+    return RunConfig.model_validate(
+        {
+            "name": "features-classify",
+            "dataset": "synthetic",
+            "task": {
+                "type": "classify",
+                "context_length": 30,
+                "train_origin_stride": 3,
+                "eval_origin_stride": 3,
+                "label": {
+                    "channel": "signal",
+                    "op": "gt",
+                    "threshold": {"quantile": 0.9},
+                    "window": 5,
+                    "min_duration": 1,
+                },
+            }
+            | task,
+            "backbone": {"name": "features", "device": "cpu"},
+            "mode": "head",
+        }
+    )

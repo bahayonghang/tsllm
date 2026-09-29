@@ -1,0 +1,17 @@
+name: etth1-chronos2-zero-shot
+dataset: ETTh1
+task:
+  type: forecast
+  context_length: 512
+  horizon: 96
+  eval_leads: [24, 48, 96]
+  eval_splits: [val, test]
+  eval_origin_stride: 24
+backbone:
+  name: chronos2
+  checkpoint: amazon/chronos-2
+  revision: 29ec3766d36d6f73f0696f85560a422f50e8498c
+  device: cuda
+  dtype: bf16
+mode: zero_shot
+seed: 0
