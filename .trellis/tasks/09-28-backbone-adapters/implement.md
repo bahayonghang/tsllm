@@ -7,8 +7,10 @@
 1. 依赖
    - `pyproject.toml` 加入 R1 依赖；`[[tool.uv.index]] name = "pytorch-cu128"`、`url = "https://download.pytorch.org/whl/cu128"`、`explicit = true`；`[tool.uv.sources] torch = [{ index = "pytorch-cu128", marker = "sys_platform == 'win32' or sys_platform == 'linux'" }]`。
    - `uv lock`、`uv sync`。
+   - 按父 PRD 的 Python 3.13 目标声明 `requires-python = ">=3.13,<3.14"`，与已安装 granite-tsfm 的 Python 上限一致；由 uv 更新锁文件。
    - 验证 AC7：`uv run python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_capability())"`。
 2. `config/backbone.py`、`backbones/base.py`、`registry.py`、`checkpoint.py`；测试注册表与无重型导入。
+   - 使用已批准的共享协议：`load(..., *, reporter)`、`finetune(..., *, mode)`；测试模式能力校验和 Reporter 注入，不向配置复制 mode。
 3. `persistence.py`、`ridge.py`、`features.py`、`windows.py`、`nan.py`；基线测试。
 4. `timesfm25.py` + `training.py`（共享训练循环）；随机小模型测试。
 5. `ttm.py`；随机小模型测试。

@@ -7,7 +7,8 @@ The first dataset is the Yangquan rotary kiln DCS data (`data/阳泉回转窑联
 ## Status
 
 - Data-contract implementation and AC1–AC6 validation are complete. Its six applicable backend guides are Verified for the implemented scope. The implementation is committed as `04bd695`. Completion evidence is retained with the data-contract task under `.trellis/tasks/archive/`.
-- The remaining four child tasks are planned; their implementation has not started.
+- Backbone-adapters implementation and local checkpoint/CUDA acceptance are complete on `codex/backbone-adapters`. Its task retains failure and rerun evidence. Final full-scope review passed. Evidence is retained in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`.
+- Experiment-runner, service-api, and web-ui remain planned; their implementation has not started.
 - Parent task: `.trellis/tasks/09-28-tsfm-platform/`. Read its `prd.md` and `design.md` before any work. `design.md` holds the shared contracts.
 - Child tasks, in order: `09-28-data-contract` → `09-28-backbone-adapters` → `09-28-experiment-runner` → `09-28-service-api` → `09-28-web-ui`. Each child has `prd.md`, `design.md`, `implement.md`.
 

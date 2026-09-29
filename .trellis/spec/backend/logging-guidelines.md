@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for `Reporter`, `NullReporter`, `PrintReporter`, and ingestion CLI output. `FileReporter`, SSE, and worker diagnostics remain Decided.
+Status: **Verified** for `Reporter`, `NullReporter`, `PrintReporter`, adapter warnings/training metrics, and ingestion CLI output. `FileReporter`, SSE, and worker diagnostics remain Decided.
 
 There are 2 output paths. Use the correct one.
 
@@ -41,6 +41,12 @@ class Reporter(Protocol):
 - `src/tsllm/data/prepare.py::ingest_dataset` emits `done` after cache reuse or successful writing. `tests/data/test_ingest.py` asserts the full preparation stage order. CLI tests are in `tests/test_cli.py`.
 
 ---
+
+## Adapter Reporting
+
+Adapter reporting is implemented in `src/tsllm/backbones/base.py`, `features.py`, `training.py`, `chronos2.py`, and `ttm.py`. `load(..., reporter=...)` retains the caller's Reporter for checkpoint warnings and embeddings. `finetune(..., reporter, mode=...)` reports `train_loss`, optional `val_loss`, `trainable_params`, `total_params`, and step progress. TTM reports `requested_context_length` and `effective_context_length` when the requested context changes.
+
+`tests/backbones/conftest.py::RecordingReporter` captures logs, metrics, and progress. Baseline and tiny-model tests assert warnings and training reports; `test_smoke_weights.py` requires exactly five progress steps and five finite training losses. Acceptance logs contain only synthetic loss values and resource/provenance metadata.
 
 ## stdlib logging
 

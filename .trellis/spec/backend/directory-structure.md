@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for config, data, errors, reporting, and the data CLI. The other layers below are planned and remain Decided.
+Status: **Verified** for config, data, adapters, errors, reporting, and the data CLI. The other layers below are planned and remain Decided.
 
 The project is one Python package, `tsllm`, in a `src/` layout. uv builds it with `uv_build`. The design defines 7 layers. Dependencies go down only (see "Layer Rules").
 
@@ -28,11 +28,12 @@ src/tsllm/
   reporting.py                # Reporter protocol, NullReporter, PrintReporter
   config/                     # Pydantic models and YAML io
     base.py  io.py  dataset.py  labels.py
-    backbone.py  run.py  schema.py  # planned
+    backbone.py                # BackboneConfig, FinetuneConfig, LoraSpec
+    run.py  schema.py           # planned
   data/                       # source read, resample, segments, splits, windows, labels, cache
     types.py  registry.py  source.py  rules.py  prepare.py  cache.py
     stats.py  windows.py  labels.py  profile.py
-  backbones/                  # planned: adapter protocol and registry
+  backbones/                  # adapter base, registry, and six adapters
     base.py  registry.py  checkpoint.py  windows.py  nan.py  training.py
     persistence.py  ridge.py  features.py  chronos2.py  timesfm25.py  ttm.py
   tasks/                      # planned: task registry and pipelines
@@ -74,7 +75,7 @@ service ─▶ runs ─▶ tasks, evaluation ─▶ backbones ─▶ data ─▶
 | New item         | Location                                                                              | Also update                                                                   |
 | ---------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | Dataset          | `configs/datasets/<id>.yaml`                                                          | Nothing. Code changes are not allowed for a new dataset.                      |
-| Backbone adapter | `src/tsllm/backbones/<name>.py` + one `register_backbone(...)` entry in `registry.py` | `tests/backbones/test_<name>*.py`; `pyproject.toml` if it needs a new library |
+| Backbone adapter | `src/tsllm/backbones/<name>.py` with `@register_backbone(...)`; import the module in `backbones/__init__.py` | `tests/backbones/test_<name>*.py`; `pyproject.toml` if it needs a new library |
 | Task type        | `src/tsllm/tasks/<type>.py` + `register_task(...)`                                    | Task config model in `config/run.py` (discriminated union on `type`)          |
 | Metric           | `src/tsllm/evaluation/metrics.py`                                                     | `metrics.json` contract in the parent design §6.1                             |
 | API route        | `src/tsllm/service/routes/<area>.py`                                                  | Response model in `service/models.py`; regenerate `web/openapi.json`          |
@@ -102,4 +103,11 @@ service ─▶ runs ─▶ tasks, evaluation ─▶ backbones ─▶ data ─▶
 - YAML-backed discovery: `src/tsllm/data/registry.py`; source parsing tests in `tests/data/test_source.py`.
 - No model imports: `tests/data/test_stats_windows.py` checks the AST and imports the data package in an independent process.
 
-Planned adapter, runner, and service placement remains defined by the parent design §1–§2 and the matching child designs. Their listed paths are not implementation evidence.
+## Adapter Implementation References
+
+- Config: `src/tsllm/config/backbone.py`; configuration and schema tests in `tests/backbones/test_contract.py` and `test_registry.py`.
+- Base contract and discovery: `src/tsllm/backbones/base.py`, `registry.py`, and `__init__.py`; isolated import assertions in `tests/backbones/test_contract.py`.
+- Shared fit-window sampling, NaN treatment, and training: `src/tsllm/backbones/windows.py`, `nan.py`, and `training.py`; tests in `tests/backbones/test_baselines.py` and `test_training.py`.
+- Adapter behavior: the six named modules in `backbones/`, with baseline and tiny-model tests under `tests/backbones/`. Real-checkpoint and CUDA acceptance are separate from offline checks.
+
+Runner and service placement remains defined by the parent design §1–§2 and the matching child designs. Their listed paths are not implementation evidence.

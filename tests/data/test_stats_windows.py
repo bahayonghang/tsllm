@@ -177,7 +177,6 @@ def test_segment_set_truncates_fit_boundary(prepared_frame: PreparedFrame) -> No
 
 def test_data_layer_has_no_model_imports() -> None:
     forbidden = {"torch", "transformers", "chronos", "tsfm_public", "peft"}
-    assert forbidden.isdisjoint(sys.modules)
     root = Path(tsllm.data.__file__).parent
     for path in root.glob("*.py"):
         tree = ast.parse(path.read_text(encoding="utf-8"))

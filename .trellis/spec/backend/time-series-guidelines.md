@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for source parsing, preparation, splits, windows, batches, fit statistics, and rule labels. API time serialization, adapter behavior, run artifacts, and evaluation metrics remain Decided.
+Status: **Verified** for source parsing, preparation, splits, windows, batches, fit statistics, rule labels, and adapter sampling/normalization. API time serialization, run artifacts, and evaluation metrics remain Decided.
 
 The data contract is in the parent design §3.1 and §4 (`.trellis/tasks/09-28-tsfm-platform/design.md`). This file states the rules that every layer must keep. If code breaks one of these rules, the metrics are not valid.
 
@@ -64,6 +64,8 @@ Implementation: `src/tsllm/data/prepare.py::resample`. `tests/data/test_prepare.
 - `max_eval_origins` picks evenly spaced origins with `np.linspace` over the legal list.
 - Implementations: `src/tsllm/data/windows.py::build_train_manifest`, `build_eval_manifest`, `context_batch`, `targets`, and `segment_set`. `segment_set` clips segments at the requested split boundary. `targets` returns values and a non-missing/eligible target mask. Tests: `tests/data/test_stats_windows.py`.
 - `validate_origins` rechecks extraction boundaries even when a caller supplies origin rows directly. A legal manifest does not remove the extraction-time checks.
+- Adapter sampling is implemented in `src/tsllm/backbones/windows.py::sample_training_windows`. Each context and target comes from one `SegmentSet` array. The caller supplies a seeded `np.random.Generator`; short arrays are excluded, and no legal window raises `ValueError`. `tests/backbones/test_baselines.py::test_windows_never_cross_arrays` checks boundaries and deterministic sampling.
+- Adapters accept split-clipped `SegmentSet` values from the data layer. They do not read datasets or reconstruct split boundaries. Validation channels must use the same order as training channels. `src/tsllm/backbones/training.py` selects validation windows once with a fixed generator, uses validation only for model selection, and restores the lowest-loss trainable parameters. Regression coverage is in `tests/backbones/test_training.py`.
 
 ---
 

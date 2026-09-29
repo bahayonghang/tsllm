@@ -6,7 +6,7 @@
 
 ## Toolchain
 
-Status: **Verified** for the data-contract application and synthetic tests. Adapter, runner, and service test requirements below remain planned. Full gate evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md`.
+Status: **Verified** for the data-contract and backbone-adapters implementations, offline synthetic/tiny-model tests, and local real-checkpoint/CUDA acceptance. Evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md` and `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`. Runner and service requirements below remain planned.
 
 | Tool    | Use                                              | Command                                           |
 | ------- | ------------------------------------------------ | ------------------------------------------------- |
@@ -49,8 +49,10 @@ The active configuration is in `pyproject.toml`; resolved dependency versions ar
 - Use synthetic fixtures from `tests/conftest.py` (a small multichannel series with known running segments, gaps, and duplicate timestamps).
 - `tests/data/test_stats_windows.py` uses AST checks and an independent Python process to verify that importing `tsllm.data` does not import model libraries. An already-imported test process alone is insufficient evidence.
 - `tests/data/test_source.py`, `tests/data/test_ingest.py`, and `tests/test_cli.py` use temporary files for source errors, cache changes, and CLI privacy. Local real-data acceptance runs separately and records only aggregate counts, timings, and time metadata.
-- Adapter tests without weights build tiny random models from a config (TimesFM 2.5, TTM). Tests with real weights carry `@pytest.mark.weights`. Tests that need CUDA carry `@pytest.mark.gpu`.
+- Adapter tests without weights build tiny random models from the installed library config classes (Chronos-2, TimesFM 2.5, TTM), save them in a temporary directory, and use CPU fp32. `tests/backbones/test_*_tiny.py` covers shape, NaN handling, loss reduction, and adapter round trips. Tests with real weights carry `@pytest.mark.weights`. Tests that need CUDA carry `@pytest.mark.gpu`.
 - Run the marked tests on a machine with weights: `HF_ENDPOINT=https://hf-mirror.com uv run pytest -m "gpu or weights"`.
+- The marked tests in `tests/backbones/test_smoke_weights.py` and `test_cuda.py` do not skip missing checkpoints or hardware. Record failed attempts separately from corrected reruns. LoRA acceptance requires `0 < trainable_params < 0.05 * total_params`; TTM uses head training.
+- `tests/backbones/test_contract.py::test_registry_import_is_light` imports and lists all six adapters in a fresh Python process, then checks that torch, chronos, transformers, tsfm_public, peft, and sklearn remain absent from `sys.modules`. A parent pytest process can already contain libraries used by tiny-model tests.
 - The service tests use `fastapi.testclient.TestClient` and a real worker subprocess for the `persistence` backbone.
 - Assert numbers with a stated tolerance: `np.testing.assert_allclose(actual, expected, rtol=1e-6)`.
 
@@ -65,6 +67,8 @@ Every change in `tsllm.data`, `tsllm.tasks`, or an adapter `finetune` must keep 
 5. The evaluation origin set (`origin_set_hash`) is the same for 2 backbones with the same task config.
 
 Current evidence: `tests/data/test_stats_windows.py` covers fit-only statistics, masks, legal manifests, extraction boundaries, and deterministic origin hashes. `tests/data/test_labels.py` covers fit-only thresholds and exact future-window endpoints. Both test files exclude ineligible fit rows from statistics and thresholds. Cross-backbone comparison remains an experiment-runner acceptance requirement.
+
+Adapter evidence: `tests/backbones/test_baselines.py::test_windows_never_cross_arrays` checks seeded sampling, legal context/target endpoints, and insufficient-length rejection in `src/tsllm/backbones/windows.py`. `tests/backbones/test_training.py` checks fixed validation samples and restoration of the lowest-loss trainable weights. The data layer remains responsible for clipping `SegmentSet` arrays to the fit split before training.
 
 An isolated mutation check must fail through a relevant assertion or missing expected exception. Import, syntax, and setup failures do not prove that a leakage test detects the removed constraint. The eight checks for this task are recorded in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md`.
 

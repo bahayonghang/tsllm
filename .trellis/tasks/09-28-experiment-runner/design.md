@@ -54,8 +54,8 @@ class RunStore:
 1. `prepared = load_prepared(job.dataset)`；不新鲜时抛 `DatasetNotIngested`。
 2. `fit_stats = compute_fit_stats(prepared)`，写 `fit_stats.json`。
 3. 取目标通道（`role == target`）与过去协变量（`role == past_covariate`）。本轮适配器输入只含目标通道；存在 `past_covariate` 时报 `NotImplementedError("past covariates")`，并在 schema 描述中注明。
-4. 校验能力；`backbone.load(cfg, fit_stats)`，计时。
-5. `mode != zero_shot`：`segment_set(prepared, "fit", min_rows=L+H)`、`segment_set(prepared, "val", ...)`；`backbone.finetune(...)`；`save_adapter(run_dir/"adapter")`。
+4. 校验能力；`backbone.load(cfg, fit_stats, reporter=ctx.reporter)`，计时。
+5. `mode != zero_shot`：`segment_set(prepared, "fit", min_rows=L+H)`、`segment_set(prepared, "val", ...)`；调用 `backbone.finetune(..., reporter=ctx.reporter, mode=job.run.mode)`；`save_adapter(run_dir/"adapter")`。模式来自 RunConfig，不在 FinetuneConfig 中复制。
 6. 对每个评价划分：`build_eval_manifest` → 按 `eval_batch_size`（默认 64）分批 → `context_batch` → `forecast` → 累积 → `targets`。
 7. `forecast_metrics(y_true, mask, mean, quantiles, levels, fit_std, leads)`。
 8. 写 `predictions/<split>.parquet` 与 `metrics.json`。
@@ -78,7 +78,7 @@ class RunStore:
 1. 同预测任务第 1–2 步。
 2. `threshold = resolve_threshold(prepared, rule)`；训练与评价起点沿用父设计 4.3 的窗口规则，上下文长度为 L，目标长度 H 替换为标签窗口 W。
 3. 训练起点超过 `max_train_origins` 时按时间均匀抽取。
-4. `backbone.load`；对训练与各评价划分分批 `embed`（`embed_batch_size` 默认 64）。
+4. `backbone.load(cfg, fit_stats, reporter=ctx.reporter)`；对训练与各评价划分分批 `embed`（`embed_batch_size` 默认 64）。加载时注入的 Reporter 用于表示提取警告。
 5. `labels = future_event_labels(...)`；写 `label_info.json`（规则、阈值、各划分样本数与正类比例）。
 6. 训练分类头；`joblib.dump` 到 `adapter/head.joblib`。
 7. 验证划分选判决阈值；计算各划分指标与曲线；写 `predictions/<split>.parquet` 与 `metrics.json`。

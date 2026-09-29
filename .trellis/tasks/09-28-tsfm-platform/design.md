@@ -217,10 +217,12 @@ class Backbone(Protocol):
     name: ClassVar[str]
     capabilities: ClassVar[Capabilities]
     Options: ClassVar[type[BaseModel]]
-    def load(self, cfg: BackboneConfig, fit_stats: FitStats | None) -> None: ...
+    def load(self, cfg: BackboneConfig, fit_stats: FitStats | None, *,
+             reporter: Reporter) -> None: ...
     def forecast(self, batch: ContextBatch, horizon: int) -> ForecastOutput: ...
     def finetune(self, train: SegmentSet, val: SegmentSet | None, cfg: FinetuneConfig,
-                 context_length: int, horizon: int, reporter: Reporter) -> None: ...
+                 context_length: int, horizon: int, reporter: Reporter, *,
+                 mode: Literal["lora", "head", "full"]) -> None: ...
     def embed(self, batch: ContextBatch) -> np.ndarray: ...     # (B, D)
     def save_adapter(self, path: Path) -> None: ...
     def load_adapter(self, path: Path) -> None: ...
@@ -230,6 +232,8 @@ class Backbone(Protocol):
 - 不支持的方法抛 `CapabilityError`。
 - `Reporter` 定义在 `tsllm/reporting.py`（Protocol + `NullReporter` + `PrintReporter`），方法为 `log(msg, level="info")`（level 为 `debug | info | warning | error`）、`progress(step, total)`、`metric(name, value, step=None)`、`stage(name)`。数据入库、适配器与 worker 共用。适配器不直接写运行目录。
 - 模式含义：`zero_shot` 不训练；`lora` 在基座上加 LoRA 参数；`full` 训练全部参数（岭回归为从零拟合）；`head` 冻结基座、只训练预测头。
+- `RunConfig.mode` 是唯一序列化模式字段。调用方将其显式传给 `finetune(mode=...)`；适配器在更新参数前检查模式是否属于 `forecast_modes`，不支持时抛 `CapabilityError`。不得猜测模式或静默切换模式。
+- 调用方通过 `load(..., reporter=...)` 注入 Reporter，适配器保存该实例用于加载和表示提取阶段的警告；微调继续使用 `finetune` 的 Reporter 参数。
 - 任务层校验：预测任务要求 `RunConfig.mode ∈ forecast_modes`；分类任务要求 `embed == True`，`RunConfig.mode` 固定为 `head`，含义为冻结基座、只训练分类头。
 - 本轮注册名：
 

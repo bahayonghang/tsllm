@@ -53,6 +53,8 @@ class BackboneConfig(StrictModel):
 
 `options` 在 `load()` 开头用适配器的 `Options` 模型校验。
 
+按已批准的父协议，`load(cfg, fit_stats, *, reporter)` 保存注入的 Reporter；`finetune(train, val, cfg, context_length, horizon, reporter, *, mode)` 显式接收 `lora | head | full`。模式只来自 RunConfig.mode，不复制到上述配置中。每个适配器在训练前校验自身能力，不支持时抛 `CapabilityError`。
+
 ## 3. 注册信息
 
 ```python
@@ -83,7 +85,7 @@ class BackboneInfo(BaseModel):
 
 ### 4.3 features
 
-- `embed()`：每通道计算 nanmean、nanstd、最后一个非 NaN 值、最小二乘斜率（忽略 NaN）、nanmin、nanmax，输出 `(B, 6C)`；全 NaN 通道输出 0 并在 reporter 中计数警告。
+- `embed()`：每通道计算 nanmean、nanstd、最后一个非 NaN 值、最小二乘斜率（忽略 NaN）、nanmin、nanmax，输出 `(B, 6C)`；全 NaN 通道输出 0，并通过 `load` 保存的 Reporter 记录计数警告。
 
 ### 4.4 chronos2
 
@@ -92,6 +94,7 @@ class BackboneInfo(BaseModel):
 - 预测：`pipeline.predict(torch.tensor(values), prediction_length=H, context_length=L, cross_learning=False)`，NaN 直接传入；`mean` 取 0.5 分位数。
 - 微调：`mode` 为 `lora` 时先 `importlib.util.find_spec("peft")`，缺失抛 `BackboneLoadError`；调用 `pipeline.fit(inputs=train.arrays, validation_inputs=val.arrays, prediction_length=H, context_length=L, finetune_mode=..., lora_config=LoraSpec 转换, learning_rate, num_steps, batch_size, output_dir=<临时目录>, callbacks=[ReporterCallback])`，用返回的 pipeline 替换 `self.pipeline`。
 - LoRA 生效检查：统计 `requires_grad` 参数数量，写入 reporter metric `trainable_params` 与 `total_params`。
+- `finetune` 的必填关键字参数 `mode` 原样传给 `pipeline.fit(finetune_mode=mode)`；分别测试 lora/full 的传递和不支持模式的拒绝。
 - 保存：`fit()` 输出目录中的最终检查点复制到 `save_adapter(path)`；`load_adapter` 从该目录重新加载 pipeline。
 - 表示：`pipeline.embed(values, context_length=L)`；每个元素 `(C, P+2, D)` 去掉最后一个输出 patch token，对 patch 维取平均得 `(C, D)`；按 `embed_channel_pool` 展平或平均。
 
@@ -100,7 +103,7 @@ class BackboneInfo(BaseModel):
 - Options：`predict_batch_size: int = 512`、`window_size: int | None = None`、`embed_channel_pool` 同上。
 - `load()`：`TimesFm2_5ModelForPrediction.from_pretrained(path, torch_dtype=...)`，`max_horizon = config.horizon_length`。
 - NaN：每条通道序列先去掉开头连续 NaN（由模型自身左填充处理），内部 NaN 线性插值，末尾 NaN 用最后一个非 NaN 值填补；全 NaN 通道输出 NaN 且不送入模型。
-- 预测：`(B, C, L)` 展开为 `B×C` 条一维张量，分批调用 `forward(past_values=list, forecast_context_len=L)`；取均值与分位数输出前 H 步，重排回 `(B, C, H)`。
+- 预测：`(B, C, L)` 展开为 `B×C` 条一维张量。transformers 5.17.0 要求内部上下文长度为 `patch_length` 的整数倍；令 `effective_context_length = ceil(L / patch_length) * patch_length`，分批调用 `forward(past_values=list, forecast_context_len=effective_context_length)`。由模型执行左侧填充及掩码处理，适配器不读取用户窗口以外的历史，不改变原始 L。取均值与分位数输出前 H 步，重排回 `(B, C, H)`。
 - 微调（lora）：
   - `peft.LoraConfig(r, lora_alpha, lora_dropout, target_modules)`；默认 `target_modules` 为注意力与 MLP 中的线性层名称，实施时从 `model.named_modules()` 确认并写死在适配器常量中。
   - 每步从拟合段抽 `batch_size` 个 (窗口, 通道) 对，`forward(past_values, future_values)` 取 `loss`。
@@ -112,9 +115,14 @@ class BackboneInfo(BaseModel):
 ### 4.6 ttm
 
 - Options：`predict_batch_size: int = 256`。
-- `load()`：`tsfm_public.toolkit.get_model(path, context_length=L, prediction_length=H)`；`load()` 需要 L 与 H，因此 `ttm` 的 `load` 延迟到首次 `forecast` 或 `finetune` 调用时执行（在 docstring 写明）。不支持的 L / H 组合抛 `BackboneLoadError`，信息中列出可用组合。
+- `load()` 保存配置、FitStats 和 Reporter；TTM 的模型选择及实例加载延迟到首次 `forecast` 或 `finetune` 获得 L/H 后执行（在 docstring 写明）。
+- HF 检查点未指定 revision 时，先用库的 `get_model(HF_id, context_length=L, prediction_length=H, return_model_key=True)` 选择模型键，再按库内元数据取得实际分支，最后通过统一解析器得到本地快照和 commit。模型键与分支可能不同，例如 `512-96-r2` 对应 `main`。显式 revision 绕过自动分支选择，始终尊重用户指定值。
+- granite-tsfm 0.3.9 的 `get_model(local_path, ...)` 会因内部 revision 为 None 而在字符串检查处报 TypeError。加载本地快照时，向 `get_model` 显式传入非空 `model_revision`；保留所选分支或显式 revision 的语义。真正本地目录无 revision 时，仅在该库调用中使用 `local` 占位标识；`resolved_checkpoint.revision` 继续为未知，不制造 commit。transformers 对已存在的本地文件直接解析，该占位值不改变读取文件。
+- 库选择器不支持的 L/H 组合抛 `BackboneLoadError` 并列出可用组合，不启用 `force_return` 降级。模型原生预测长度不足 H 时也明确报错。TTM 库会将较长上下文截取为最后的原生长度，较短上下文在左侧补零并同步掩码；适配器不另外裁剪输入。加载后通过 Reporter 记录请求长度及模型有效上下文长度，长度不同时发出警告，避免隐藏实际模型输入范围。
 - 标准化：按 FitStats 均值与标准差；上下文 NaN 用前向填补后后向填补，仍为 NaN 的置 0（标准化后）。
 - 预测：输入 `(B, L, C)`，取 `prediction_outputs` 前 H 步，反标准化。
+- 启用 `resolution_prefix_tuning` 的检查点必须接收 `freq_token`。预测使用已有 `ContextBatch.freq`，微调使用已有 `SegmentSet.freq`，通过锁定库的 `TimeSeriesPreprocessor.get_frequency_token` 映射。传入同设备、形状 `(B,)` 的 long 张量，不新增共享配置字段或公共方法参数。验证集频率不一致时，在参数更新前拒绝。
+- 保留库的频率规范化语义；例如 `1min` 映射为 1。合法但未映射的频率使用库定义的 OOV=0，并通过调用方 Reporter 显式告警，保留库警告。非法频率报 `ValueError`；token 超出实际检查点词表报 `CapabilityError`。禁止换模型、改分支或替换 token 规避错误。未启用 prefix 的检查点不添加频率 token。
 - head 微调：冻结 `backbone` 参数，只训练解码器与预测头；训练循环与 timesfm25 共用抽样和验证逻辑（放在 `backbones/training.py`，两个适配器调用）。
 
 ## 5. 测试
@@ -131,6 +139,8 @@ class BackboneInfo(BaseModel):
 
 随机小模型测试中，"损失下降"定义为 20 步后训练损失低于第 1 步损失，使用固定种子与可学习的合成正弦数据。
 
+TimesFM 小模型另覆盖 L 非 patch 整数倍的输入。首次接口探针中，patch_length=8、L=30 触发 reshape 错误，L=32 通过；适配器须在内部补齐后使 L=30 通过，并保持用户输入和输出窗口长度不变。该修正只细化适配器内部的库调用，父共享数据及方法契约不变。
+
 ## 6. 风险
 
 | 风险 | 处理 |
@@ -138,4 +148,4 @@ class BackboneInfo(BaseModel):
 | transformers 5.x 中 TimesFM 2.5 类的前向参数在后续版本变化 | 锁定 `uv.lock`；适配器集中在一个文件 |
 | TTM 不支持 L=120 / H=30 | `get_model` 失败时报出可用组合；任务层允许为 TTM 单独设置 L |
 | Chronos-2 `fit()` 在 Windows 上的 DataLoader 多进程问题 | 通过 `extra_trainer_kwargs` 设置 `dataloader_num_workers=0` |
-| 权重下载失败 | weights 测试跳过并提示设置 `HF_ENDPOINT` 或本地路径 |
+| 权重下载失败 | weights 测试失败并保留首次失败证据；配置 `HF_ENDPOINT` 或有效本地路径后复测。未完成真实执行不得标记 AC5/AC6 通过 |

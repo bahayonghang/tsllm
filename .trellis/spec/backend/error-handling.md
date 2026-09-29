@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for data-domain exceptions and CLI handling. Worker failure and API envelope contracts remain Decided.
+Status: **Verified** for data/adapter domain exceptions, loading boundaries, and CLI handling. Worker failure and API envelope contracts remain Decided.
 
 - Domain errors inherit `tsllm.errors.TsllmError`. Each class has a stable `code` string.
 - Each layer raises the error. Only 2 places catch all errors: the worker entry (`tsllm.runs.worker.main`) and the service exception handlers (`tsllm.service.errors`).
@@ -16,7 +16,7 @@ Status: **Verified** for data-domain exceptions and CLI handling. Worker failure
 
 ## Error Types
 
-The base class is `src/tsllm/errors.py::TsllmError`, with `code: ClassVar[str] = "TSLLM_ERROR"`. Data subclasses are implemented in `src/tsllm/data/registry.py` and `src/tsllm/data/cache.py`. The adapter and run classes in the table below remain planned.
+The base class is `src/tsllm/errors.py::TsllmError`, with `code: ClassVar[str] = "TSLLM_ERROR"`. Data subclasses are implemented in `src/tsllm/data/registry.py` and `src/tsllm/data/cache.py`. Adapter subclasses are in `src/tsllm/backbones/base.py`. Run classes in the table below remain planned.
 
 Define each subclass in the module that owns the condition. Do not collect all classes in `errors.py`.
 
@@ -52,6 +52,13 @@ Use `ValueError` only for programming errors inside one module (wrong array shap
 - `src/tsllm/cli.py` disables Typer local-variable display with `pretty_exceptions_show_locals=False` on both apps.
 - `src/tsllm/data/source.py::read_source`, `src/tsllm/data/registry.py::load_dataset`, and the cache read/write boundary suppress unsafe parser causes.
 - `tests/data/test_source.py` and `tests/test_cli.py` assert that malformed synthetic values do not appear in formatted exception chains or CLI output. `tests/data/test_ingest.py` covers inaccessible and changing sources.
+
+## Adapter Loading Boundaries
+
+- `src/tsllm/backbones/checkpoint.py::checkpoint_loading` converts known import, filesystem, value, and runtime failures at model-loading boundaries to `BackboneLoadError`. The message names the adapter and checkpoint. Do not catch arbitrary exceptions or continue with another model or training mode.
+- Validate adapter Options and required FitStats before loading. An unsupported fine-tuning mode raises `CapabilityError` before parameter updates. A missing or broken peft import raises `BackboneLoadError`; a module-spec check alone does not prove that peft can import.
+- `tests/backbones/test_contract.py::test_invalid_model_checkpoint_is_domain_error` covers all three foundation models with an invalid local checkpoint. `test_missing_model_dependency_is_domain_error` covers unavailable dependencies. `tests/backbones/test_chronos2_tiny.py` covers the no-full-fallback rule.
+- A validation channel-order mismatch is a caller programming error. `src/tsllm/backbones/training.py` rejects the mismatch before optimization; `tests/backbones/test_training.py` checks unchanged parameters and absent progress.
 
 ## Worker Failure (Planned)
 
