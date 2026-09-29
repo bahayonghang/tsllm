@@ -6,13 +6,20 @@ readme = "README.md"
 authors = [
     { name = "李永航", email = "bahayonghang@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"
 dependencies = [
+    "chronos-forecasting>=2.3.2,<3",
+    "granite-tsfm>=0.3.9,<0.4",
+    "huggingface-hub",
     "numpy>=2.5.3",
+    "peft>=0.21,<1",
     "polars>=1.44.2",
     "pyarrow>=25.0.1",
     "pydantic>=2.13.5",
     "pyyaml>=6.0.3",
+    "scikit-learn<1.8",
+    "torch==2.11.*",
+    "transformers>=5.17,<6",
     "typer>=0.27.2",
 ]
 
@@ -22,6 +29,14 @@ tsllm = "tsllm:main"
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu128", marker = "sys_platform == 'win32' or sys_platform == 'linux'" }]
 
 [tool.ruff]
 line-length = 100
