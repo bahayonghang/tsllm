@@ -87,3 +87,25 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Status
 
 [OK] **Completed**
+
+
+## Session 4: service-api：FastAPI 服务与任务执行器
+<!-- trellis-session: v=2 fp=e06f12f04f3b3361 -->
+
+**Date**: 2026-09-29
+**Task**: service-api：FastAPI 服务与任务执行器
+**Branch**: `codex/service-api`
+
+### Summary
+
+实现 tsllm.service（REST、SSE、JobManager gpu/cpu 池、进程树取消、重启恢复、静态文件、serve 与 api openapi 命令）；状态表新增 queued→failed；AC1–AC8 满足，165 passed；本机 serve 提交水泥 persistence 运行并读取 SSE。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `212ccf2` | feat(service): 实现 FastAPI 服务与任务执行器并完成本机验收 |
+
+### Status
+
+[OK] **Completed**
