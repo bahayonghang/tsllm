@@ -21,7 +21,7 @@
 | 7 真实权重与 GPU 验收 | 已完成 | 首轮 4 passed/1 failed；修复 TTM 频率 token 后相同 revision 定向复测通过 |
 | 最终全范围 trellis-check | 已完成，通过 | 125 passed；全部代码、契约、规范、原始验收日志一致；见 research/final-review.md |
 | Phase 3.3 规范同步 | 已完成并通过最终核验 | 7 个 backend guide/index 同步实际路径；仅已验证范围标记 Verified，runner/service/web 仍为 Decided |
-| Phase 3.4 提交方案 | 已获用户确认，执行中 | 2 组共 54 个候选文件，见 commit-plan.md；依赖独立提交，用户已同时批准本任务归档 |
+| Phase 3.4 本地提交 | 已完成 | 依赖提交 `6f94aa2`、功能提交 `c81d304`；2 组共 54 个文件，用户已同时批准本任务归档 |
 
 ## 验收状态
 
@@ -111,3 +111,10 @@ transformers 5.17.0 的 TimesFM 内置 quantile-loss 列索引与导出分位数
 - 本机验收使用明确的 `weights` / `gpu` 标记。未执行、跳过与通过分别报告。
 - `data/`、`ref/`、`runs/`、`cache/`、`*.log` 不进入 Git；`.trellis/workspace/` 保持跟踪。
 - 验收文档仅包含汇总指标和必要元信息。
+
+## 提交与归档授权
+
+- 用户于 2026-09-29 确认按两组执行本地提交，并归档对应完成的 backbone-adapters。
+- 两组工作提交为 `6f94aa2368152a7482f5e38b26c96355f895d1c4` 与 `c81d304ad26a39fbd0f11ff852b65870c9706206`；提交范围与已批准的 54 文件清单一致。
+- 本次收尾只更新授权、提交记录及归档引用，未修改最终质量门禁之后的应用代码、测试或依赖；未重复训练或质量门禁。
+- `task.py archive` 记录实际完成状态与日期；归档后的工作日志记录两组工作提交。父任务及其余三个子任务继续保留，不开始后续实施，不推送。

@@ -7,7 +7,7 @@
 {"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Reporter use in finetune"}
 {"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Test markers and offline tests"}
 {"file": ".trellis/tasks/09-28-tsfm-platform/research/library-compatibility.md", "reason": "Versions and API facts for chronos, transformers, peft, granite-tsfm, torch"}
-{"file": ".trellis/tasks/09-28-backbone-adapters/research/contract-adjustments.md", "reason": "User-approved explicit finetune mode and injected load Reporter"}
-{"file": ".trellis/tasks/09-28-backbone-adapters/research/dependency-validation.md", "reason": "Installed versions, CUDA acceptance, and Python 3.13 support boundary"}
-{"file": ".trellis/tasks/09-28-backbone-adapters/research/library-api-audit.md", "reason": "Verified installed model APIs, checkpoint branch mapping, and pinned model cards"}
-{"file": ".trellis/tasks/09-28-backbone-adapters/research/step6-review.md", "reason": "Preserve independent regression fixes when running real checkpoint acceptance"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/contract-adjustments.md", "reason": "User-approved explicit finetune mode and injected load Reporter"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/dependency-validation.md", "reason": "Installed versions, CUDA acceptance, and Python 3.13 support boundary"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/library-api-audit.md", "reason": "Verified installed model APIs, checkpoint branch mapping, and pinned model cards"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/step6-review.md", "reason": "Preserve independent regression fixes when running real checkpoint acceptance"}

@@ -1,0 +1,10 @@
+{"file": ".trellis/tasks/09-28-tsfm-platform/design.md", "reason": "Shared contracts: layers, config, data, adapter, run directory, API"}
+{"file": ".trellis/spec/backend/model-adapter-guidelines.md", "reason": "Adapter checklist"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Toolchain and forbidden patterns"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Fine-tuning must use fit rows only"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "No silent fallback"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/contract-adjustments.md", "reason": "Verify approved mode and Reporter protocol corrections"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/library-api-audit.md", "reason": "Verify adapters against pinned library APIs and preserve failure evidence"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/dependency-validation.md", "reason": "Verify locked package versions, CUDA support, and installation attempts"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/step6-review.md", "reason": "Retain independently reproduced failures and regression fixes for final review"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-backbone-adapters/research/real-acceptance.md", "reason": "Verify actual checkpoint revisions, five-step training, CUDA bf16, and resource evidence"}
