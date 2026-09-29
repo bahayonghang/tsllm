@@ -6,7 +6,7 @@
 - 活动任务：`09-28-data-contract`；分支：`codex/data-contract`。
 - 已执行 `python ./.trellis/scripts/task.py start 09-28-data-contract`。
 - 本记录只覆盖 data-contract。父设计未修改，其他子任务未开始。
-- 步骤 1–10 与最终全范围审查完成；用户批准基准修正后，AC1–AC6 全部通过。Phase 3.3 已完成；Phase 3.4 提交方案待用户确认。
+- 步骤 1–10 与最终全范围审查完成；用户批准基准修正后，AC1–AC6 全部通过。Phase 3.3 与 Phase 3.4 已完成，功能提交为 `04bd695`。用户已要求完成当前任务收尾，归档随后由 task.py archive 执行。
 
 ## 已批准的设计修正
 
@@ -26,7 +26,7 @@
 | 10 AC5 本机入库 | 已通过 | 17,420 有效点等于独立 CSV 核对的非全空行数 |
 | 最终完整质量检查 | 已通过 | 独立 trellis-check 覆盖全部 data-contract 改动；四项命令退出 0，pytest 87 passed |
 | Phase 3.3 | 已完成 | 六项适用后端规范标记 Verified，引用实际实现与测试路径；后续模块保留 Decided |
-| Phase 3.4 | 等待确认 | 仅准备本任务提交方案；未暂存或提交 |
+| Phase 3.4 | 已完成 | 用户批准后创建本地提交 `04bd695`；49 个文件与批准方案一致 |
 
 步骤 9 后命令摘要：`uv run ruff check` 无诊断；`uv run ruff format --check` 为 `32 files already formatted`；`uv run pyright` 为 `0 errors, 0 warnings, 0 informations`；`uv run pytest` 为 `86 passed`。全部退出 0。
 
@@ -68,7 +68,8 @@ Ruff 文件发现覆盖全部 **30 个 src/tests Python 文件**。格式检查�
 
 - 测试使用合成数据。真实数据验收独立执行。
 - `data/`、`ref/`、`runs/`、`cache/` 不加入 Git。
-- 未执行提交、归档或推送。归档会自动提交，必须另获用户确认。
+- 功能已提交为 `04bd695`。用户已要求完成收尾，允许归档本任务；不推送。
+- `.trellis/workspace/` 保持跟踪。误加的目录忽略规则与取消跟踪操作已撤销；仅 `*.log` 诊断日志和既有运行态路径保持忽略。
 
 ## 工具链检查范围修正
 
@@ -107,13 +108,13 @@ Ruff 文件发现覆盖全部 **30 个 src/tests Python 文件**。格式检查�
 | 标签切片向前偏移一行 | 精确边界用例：起点与目标末行 | 2 |
 | 标签切片包含起点 | 精确边界用例：起点 | 1 |
 
-## Phase 3.4 提交方案（等待用户确认）
+## Phase 3.4 提交方案（历史记录，已批准执行）
 
 建议按一项完整功能提交：数据契约实现、测试、工具链、数据集 YAML、已批准的设计和基准修正、规范及验收记录共同构成 AC1–AC6。将这些文件合为一个提交，可独立验证和撤回。父共享设计未修改。
 
-当前分支 `codex/data-contract`，HEAD 为 `9e1904d`，暂存区为空。49 个候选文件全部来自本任务；未发现来源不明的改动。候选文件均为 UTF-8 文本，最大文件为 `uv.lock`（72,953 bytes）。根目录 `data/`、`ref/`、`runs/`、`cache/` 不在候选范围。
+提出方案时分支为 `codex/data-contract`，HEAD 为 `9e1904d`，暂存区为空。49 个候选文件全部来自本任务；未发现来源不明的改动。候选文件均为 UTF-8 文本，最大文件为 `uv.lock`（72,953 bytes）。根目录 `data/`、`ref/`、`runs/`、`cache/` 不在候选范围。
 
-本方案仅请求对下列精确文件集合执行暂存和一次本地 `git commit -F` 的确认。没有执行暂存或提交。归档需要另行确认；不推送，不开始下一子任务。
+用户已批准下列精确文件集合，已通过本地 `git commit -F` 创建 `04bd695`。提交后工作区干净，私有目录未被跟踪。用户后续要求在本次对话完成行政收尾；不推送，不开始下一子任务。
 
 提交信息使用中文；沿用仓库无 emoji 的格式；标题不含 `[AI]`。包含 Why 和 Tested，以及 Agent-Task、Agent-Model、Generated-By 结构化尾注。提交信息由 git-commit 技能的 compose_commit_message.ps1 生成。
 
@@ -134,7 +135,7 @@ Generated-By: agent
 
 ### 候选文件
 
-`M` 为已跟踪文件的未暂存改动，`??` 为未跟踪文件。下列文件尚未获准暂存。
+`M` 为已跟踪文件的未暂存改动，`??` 为未跟踪文件。下列状态保留方案提出时的快照；文件现已全部进入功能提交。
 
 ```text
  M .gitignore

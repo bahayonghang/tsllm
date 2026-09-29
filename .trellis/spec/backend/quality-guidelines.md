@@ -6,7 +6,7 @@
 
 ## Toolchain
 
-Status: **Verified** for the data-contract application and synthetic tests. Adapter, runner, and service test requirements below remain planned. Full gate evidence is in `.trellis/tasks/09-28-data-contract/verification.md`.
+Status: **Verified** for the data-contract application and synthetic tests. Adapter, runner, and service test requirements below remain planned. Full gate evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md`.
 
 | Tool    | Use                                              | Command                                           |
 | ------- | ------------------------------------------------ | ------------------------------------------------- |
@@ -66,7 +66,7 @@ Every change in `tsllm.data`, `tsllm.tasks`, or an adapter `finetune` must keep 
 
 Current evidence: `tests/data/test_stats_windows.py` covers fit-only statistics, masks, legal manifests, extraction boundaries, and deterministic origin hashes. `tests/data/test_labels.py` covers fit-only thresholds and exact future-window endpoints. Both test files exclude ineligible fit rows from statistics and thresholds. Cross-backbone comparison remains an experiment-runner acceptance requirement.
 
-An isolated mutation check must fail through a relevant assertion or missing expected exception. Import, syntax, and setup failures do not prove that a leakage test detects the removed constraint. The eight checks for this task are recorded in `.trellis/tasks/09-28-data-contract/verification.md`.
+An isolated mutation check must fail through a relevant assertion or missing expected exception. Import, syntax, and setup failures do not prove that a leakage test detects the removed constraint. The eight checks for this task are recorded in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md`.
 
 ---
 

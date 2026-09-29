@@ -6,7 +6,7 @@
 
 ## Status
 
-The data-contract implementation is Verified. Evidence is in `.trellis/tasks/09-28-data-contract/verification.md`: all four quality commands pass, 87 synthetic tests pass, and both configured datasets pass local ingestion acceptance.
+The data-contract implementation is Verified. Evidence is in `.trellis/tasks/archive/2026-09/09-28-data-contract/verification.md`: all four quality commands pass, 87 synthetic tests pass, and both configured datasets pass local ingestion acceptance.
 
 `Verified` covers the implemented config, data, error, reporting, CLI, and test contracts only. Each guide identifies its implementation files and tests. Adapter, experiment-runner, service, web, and metric contracts remain Decided until their child tasks verify them. The parent `design.md` remains the shared contract.
 
