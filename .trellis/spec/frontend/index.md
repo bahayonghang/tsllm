@@ -6,7 +6,7 @@
 
 ## Status
 
-The team decided these conventions on 2026-09-28, before `web/` exists. The source is `.trellis/tasks/09-28-web-ui/` (`prd.md`, `design.md`). Package versions were checked on the npm registry on 2026-09-28. When the web-ui child lands, replace the reference examples with real file paths and set Status to `Verified`.
+Status: **Verified** on 2026-09-29 by the web-ui child (`.trellis/tasks/09-28-web-ui/`). `check`, `test`, `build`, and `gen:api` pass. The in-app browser acceptance (web-ui AC4–AC6) passed against the running service. The examples in these guides name real files in `web/`.
 
 ---
 
@@ -14,10 +14,10 @@ The team decided these conventions on 2026-09-28, before `web/` exists. The sour
 
 | Guide                                           | Description                                                 | Status  |
 | ----------------------------------------------- | ----------------------------------------------------------- | ------- |
-| [Directory Structure](./directory-structure.md) | `web/` layout, routes, naming                               | Decided |
-| [API Client](./api-client.md)                   | Generated types, fetch client, errors, TanStack Query, SSE  | Decided |
-| [Forms and Charts](./forms-and-charts.md)       | Schema-driven forms, ECharts components, time display       | Decided |
-| [Quality Guidelines](./quality-guidelines.md)   | pnpm scripts, Biome, TypeScript, Vitest, forbidden patterns | Decided |
+| [Directory Structure](./directory-structure.md) | `web/` layout, routes, naming                               | Verified |
+| [API Client](./api-client.md)                   | Generated types, fetch client, errors, TanStack Query, SSE  | Verified |
+| [Forms and Charts](./forms-and-charts.md)       | Schema-driven forms, ECharts components, time display       | Verified |
+| [Quality Guidelines](./quality-guidelines.md)   | pnpm scripts, Biome, TypeScript, Vitest, forbidden patterns | Verified |
 
 ---
 

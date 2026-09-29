@@ -1,0 +1,549 @@
+{
+  "$defs": {
+    "BackboneConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Backbone registry name.",
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "checkpoint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Hugging Face repository or local checkpoint directory.",
+          "title": "Checkpoint"
+        },
+        "revision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Checkpoint revision to resolve.",
+          "title": "Revision"
+        },
+        "device": {
+          "default": "cuda",
+          "description": "Execution device.",
+          "enum": ["cuda", "cpu"],
+          "title": "Device",
+          "type": "string"
+        },
+        "dtype": {
+          "default": "bf16",
+          "description": "CUDA numeric type.",
+          "enum": ["fp32", "bf16"],
+          "title": "Dtype",
+          "type": "string"
+        },
+        "options": {
+          "additionalProperties": true,
+          "description": "Adapter-specific options.",
+          "title": "Options",
+          "type": "object"
+        }
+      },
+      "required": ["name"],
+      "title": "BackboneConfig",
+      "type": "object"
+    },
+    "ClassifyTaskConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "classify",
+          "default": "classify",
+          "description": "Task type.",
+          "title": "Type",
+          "type": "string"
+        },
+        "context_length": {
+          "description": "Context length in grid steps.",
+          "exclusiveMinimum": 0,
+          "title": "Context Length",
+          "type": "integer"
+        },
+        "eval_splits": {
+          "description": "Evaluated splits.",
+          "items": {
+            "enum": ["val", "cal", "test"],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Eval Splits",
+          "type": "array"
+        },
+        "train_origin_stride": {
+          "default": 1,
+          "description": "Training origin stride.",
+          "exclusiveMinimum": 0,
+          "title": "Train Origin Stride",
+          "type": "integer"
+        },
+        "eval_origin_stride": {
+          "default": 1,
+          "description": "Evaluation origin stride.",
+          "exclusiveMinimum": 0,
+          "title": "Eval Origin Stride",
+          "type": "integer"
+        },
+        "max_train_origins": {
+          "default": 20000,
+          "description": "Evenly spaced training origin limit.",
+          "exclusiveMinimum": 0,
+          "title": "Max Train Origins",
+          "type": "integer"
+        },
+        "max_eval_origins": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Evenly spaced evaluation origin limit; null is no limit.",
+          "title": "Max Eval Origins"
+        },
+        "label": {
+          "$ref": "#/$defs/FutureEventRule",
+          "description": "Future event label rule."
+        },
+        "head": {
+          "$ref": "#/$defs/HeadConfig",
+          "description": "Classifier head."
+        },
+        "embed_batch_size": {
+          "default": 64,
+          "description": "Representation batch size.",
+          "exclusiveMinimum": 0,
+          "title": "Embed Batch Size",
+          "type": "integer"
+        }
+      },
+      "required": ["context_length", "label"],
+      "title": "ClassifyTaskConfig",
+      "type": "object"
+    },
+    "FinetuneConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "learning_rate": {
+          "default": 1e-5,
+          "description": "Optimizer learning rate.",
+          "exclusiveMinimum": 0,
+          "title": "Learning Rate",
+          "type": "number"
+        },
+        "num_steps": {
+          "default": 1000,
+          "description": "Number of optimizer steps.",
+          "exclusiveMinimum": 0,
+          "title": "Num Steps",
+          "type": "integer"
+        },
+        "batch_size": {
+          "default": 64,
+          "description": "Training batch size.",
+          "exclusiveMinimum": 0,
+          "title": "Batch Size",
+          "type": "integer"
+        },
+        "eval_every": {
+          "default": 100,
+          "description": "Validation interval in steps.",
+          "exclusiveMinimum": 0,
+          "title": "Eval Every",
+          "type": "integer"
+        },
+        "grad_clip": {
+          "default": 1.0,
+          "description": "Maximum gradient norm.",
+          "exclusiveMinimum": 0,
+          "title": "Grad Clip",
+          "type": "number"
+        },
+        "lora": {
+          "$ref": "#/$defs/LoraSpec",
+          "description": "Low-rank adapter settings."
+        }
+      },
+      "title": "FinetuneConfig",
+      "type": "object"
+    },
+    "ForecastTaskConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "forecast",
+          "default": "forecast",
+          "description": "Task type.",
+          "title": "Type",
+          "type": "string"
+        },
+        "context_length": {
+          "description": "Context length in grid steps.",
+          "exclusiveMinimum": 0,
+          "title": "Context Length",
+          "type": "integer"
+        },
+        "horizon": {
+          "description": "Forecast horizon in grid steps.",
+          "exclusiveMinimum": 0,
+          "title": "Horizon",
+          "type": "integer"
+        },
+        "eval_leads": {
+          "description": "Lead steps (1-based) that get separate metrics.",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Eval Leads",
+          "type": "array"
+        },
+        "eval_splits": {
+          "description": "Evaluated splits.",
+          "items": {
+            "enum": ["val", "cal", "test"],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Eval Splits",
+          "type": "array"
+        },
+        "train_origin_stride": {
+          "default": 1,
+          "description": "Training origin stride. Adapters sample forecast training windows from fit segments, so forecast runs do not use this value.",
+          "exclusiveMinimum": 0,
+          "title": "Train Origin Stride",
+          "type": "integer"
+        },
+        "eval_origin_stride": {
+          "default": 1,
+          "description": "Evaluation origin stride.",
+          "exclusiveMinimum": 0,
+          "title": "Eval Origin Stride",
+          "type": "integer"
+        },
+        "max_eval_origins": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Evenly spaced evaluation origin limit; null is no limit.",
+          "title": "Max Eval Origins"
+        },
+        "eval_batch_size": {
+          "default": 64,
+          "description": "Forecast batch size.",
+          "exclusiveMinimum": 0,
+          "title": "Eval Batch Size",
+          "type": "integer"
+        }
+      },
+      "required": ["context_length", "horizon"],
+      "title": "ForecastTaskConfig",
+      "type": "object"
+    },
+    "FutureEventRule": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "future_event",
+          "default": "future_event",
+          "description": "Label rule type.",
+          "title": "Type",
+          "type": "string"
+        },
+        "channel": {
+          "description": "Event channel.",
+          "minLength": 1,
+          "title": "Channel",
+          "type": "string"
+        },
+        "op": {
+          "description": "Event comparison.",
+          "enum": ["gt", "lt", "outside"],
+          "title": "Op",
+          "type": "string"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ThresholdSpec"
+            },
+            {
+              "$ref": "#/$defs/OutsideThreshold"
+            }
+          ],
+          "description": "Threshold definition.",
+          "title": "Threshold"
+        },
+        "window": {
+          "description": "Future window length in grid steps.",
+          "exclusiveMinimum": 0,
+          "title": "Window",
+          "type": "integer"
+        },
+        "min_duration": {
+          "description": "Consecutive event steps required.",
+          "exclusiveMinimum": 0,
+          "title": "Min Duration",
+          "type": "integer"
+        }
+      },
+      "required": ["channel", "op", "threshold", "window", "min_duration"],
+      "title": "FutureEventRule",
+      "type": "object"
+    },
+    "HeadConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "logistic",
+          "description": "Classifier head.",
+          "enum": ["logistic", "mlp"],
+          "title": "Type",
+          "type": "string"
+        },
+        "class_weight": {
+          "anyOf": [
+            {
+              "const": "balanced",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "balanced",
+          "description": "Class weighting; null gives equal sample weights.",
+          "title": "Class Weight"
+        },
+        "C": {
+          "default": 1.0,
+          "description": "Inverse regularization for logistic heads.",
+          "exclusiveMinimum": 0,
+          "title": "C",
+          "type": "number"
+        },
+        "hidden_layer_sizes": {
+          "description": "Hidden layer sizes for MLP heads.",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Hidden Layer Sizes",
+          "type": "array"
+        },
+        "max_iter": {
+          "default": 1000,
+          "description": "Maximum solver iterations.",
+          "exclusiveMinimum": 0,
+          "title": "Max Iter",
+          "type": "integer"
+        }
+      },
+      "title": "HeadConfig",
+      "type": "object"
+    },
+    "LoraSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "r": {
+          "default": 8,
+          "description": "Low-rank adapter rank.",
+          "exclusiveMinimum": 0,
+          "title": "R",
+          "type": "integer"
+        },
+        "alpha": {
+          "default": 16,
+          "description": "Low-rank adapter scaling factor.",
+          "exclusiveMinimum": 0,
+          "title": "Alpha",
+          "type": "integer"
+        },
+        "dropout": {
+          "default": 0.05,
+          "description": "Adapter dropout rate.",
+          "exclusiveMaximum": 1,
+          "minimum": 0,
+          "title": "Dropout",
+          "type": "number"
+        },
+        "target_modules": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Module names; null selects the adapter defaults.",
+          "title": "Target Modules"
+        }
+      },
+      "title": "LoraSpec",
+      "type": "object"
+    },
+    "OutsideThreshold": {
+      "additionalProperties": false,
+      "properties": {
+        "low": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ThresholdSpec"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "Lower fixed threshold or fit quantile.",
+          "title": "Low"
+        },
+        "high": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ThresholdSpec"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "Upper fixed threshold or fit quantile.",
+          "title": "High"
+        }
+      },
+      "required": ["low", "high"],
+      "title": "OutsideThreshold",
+      "type": "object"
+    },
+    "ThresholdSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "quantile": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Eligible fit quantile.",
+          "title": "Quantile"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Fixed threshold.",
+          "title": "Value"
+        }
+      },
+      "title": "ThresholdSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "description": "Run name.",
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "dataset": {
+      "description": "Dataset id.",
+      "minLength": 1,
+      "title": "Dataset",
+      "type": "string"
+    },
+    "task": {
+      "description": "Task configuration.",
+      "discriminator": {
+        "mapping": {
+          "classify": "#/$defs/ClassifyTaskConfig",
+          "forecast": "#/$defs/ForecastTaskConfig"
+        },
+        "propertyName": "type"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ForecastTaskConfig"
+        },
+        {
+          "$ref": "#/$defs/ClassifyTaskConfig"
+        }
+      ],
+      "title": "Task"
+    },
+    "backbone": {
+      "$ref": "#/$defs/BackboneConfig",
+      "description": "Backbone configuration."
+    },
+    "mode": {
+      "description": "Training mode; classification requires head.",
+      "enum": ["zero_shot", "lora", "head", "full"],
+      "title": "Mode",
+      "type": "string"
+    },
+    "finetune": {
+      "$ref": "#/$defs/FinetuneConfig",
+      "description": "Fine-tuning settings; zero_shot ignores them."
+    },
+    "seed": {
+      "default": 0,
+      "description": "Random seed.",
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "notes": {
+      "default": "",
+      "description": "Free-text notes.",
+      "title": "Notes",
+      "type": "string"
+    }
+  },
+  "required": ["name", "dataset", "task", "backbone", "mode"],
+  "title": "RunConfig",
+  "type": "object"
+}

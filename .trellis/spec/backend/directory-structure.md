@@ -6,7 +6,7 @@
 
 ## Overview
 
-Status: **Verified** for config, data, adapters, tasks, evaluation, runs, errors, reporting, the service, and the CLI. `web/` is planned and remains Decided.
+Status: **Verified** for config, data, adapters, tasks, evaluation, runs, errors, reporting, the service, and the CLI. `web/` is Verified in `.trellis/spec/frontend/`.
 
 The project is one Python package, `tsllm`, in a `src/` layout. uv builds it with `uv_build`. The design defines 7 layers. Dependencies go down only (see "Layer Rules").
 
@@ -47,7 +47,7 @@ src/tsllm/
     app.py  settings.py  errors.py  models.py  deps.py  jobs.py  sse.py  static.py
     routes/{system,schema,datasets,backbones,runs,compare,templates}.py
 tests/                        # mirrors src/tsllm; fixtures make synthetic data
-web/                          # planned: React UI
+web/                          # React UI (see .trellis/spec/frontend/)
 cache/                        # Parquet cache (gitignored)
 runs/                         # run directories (gitignored)
 data/  ref/                   # raw data and research pack (gitignored, never commit)

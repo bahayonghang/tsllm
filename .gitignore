@@ -24,3 +24,7 @@ __pycache__/
 
 # Generated diagnostic logs.
 *.log
+
+# Web build output and packages.
+/web/dist/
+/web/node_modules/

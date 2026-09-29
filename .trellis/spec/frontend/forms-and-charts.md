@@ -11,8 +11,13 @@
 - Change the schema only with pure functions in `components/forms/schemaTransforms.ts`:
   - `withBackboneOptions(schema, optionsSchema)` replaces `backbone.options` with the selected backbone's Options schema.
   - `withAllowedModes(schema, capabilities, taskType)` keeps only allowed `mode` values. A `classify` task allows only `head`.
+  - `withChoices(schema, path, values)` sets the `enum` of the dataset id and the backbone name from the API lists.
+  - `toExtraErrors(detail, formData)` maps a 422 `detail` to `extraErrors`.
 - Render with `@rjsf/antd` `Form` and `@rjsf/validator-ajv8`. `liveValidate` is off. Validate on submit.
-- A backbone with `installed: false` shows as disabled with the missing requirement.
+- A backbone with `installed: false` shows as disabled with the missing requirement (`ui:enumDisabled`, `ui:enumNames`).
+- Create the form with `generateForm<FormValue>()` from `@rjsf/antd`. The default `Form` export is not generic.
+- Give the `Form` a `key` from the backbone name and the task type. rjsf 6.10 does not apply a new schema that the parent sets during a user change (`isProcessingUserChange`), so the Options fields stay stale. The `key` remounts the form when the schema changes.
+- When the backbone changes, reset `backbone.options` and set `mode` to an allowed value in `onChange`.
 - Do not write a form field for one backbone or one task by hand. If the schema is not enough, add `title`, `description`, or `json_schema_extra` in the Pydantic model.
 
 ---
@@ -22,7 +27,7 @@
 Use ECharts with modular imports to keep the bundle small:
 
 ```ts
-// reference pattern
+// src/components/charts/EChart.tsx
 import * as echarts from "echarts/core";
 import { LineChart, BarChart, CustomChart } from "echarts/charts";
 import {
@@ -46,10 +51,14 @@ echarts.use([
 ]);
 ```
 
+- `EChart.tsx` wraps `ReactEChartsCore` from `echarts-for-react/esm/core`. Do not import `echarts-for-react/lib/core`: in the Vite production build its default export is a module object, and React fails with error #130.
+- Tests mock `echarts-for-react/esm/core` in `tests/setup.ts`, because jsdom has no canvas.
+- echarts-for-react creates the chart only after the first ECharts `finished` event, which needs `requestAnimationFrame`. A hidden browser tab or pane does not run `requestAnimationFrame` or `ResizeObserver`, so no canvas appears there. Check chart options in that case by rendering them with the ECharts SVG server-side renderer.
+
 | Component         | Content                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------- |
-| `ForecastChart`   | Context, truth, prediction mean, q0.1–q0.9 band (two lines with `areaStyle`), vertical line at the origin |
-| `SeriesChart`     | Bucket means from the series API. A `dataZoom` change requests the new range.                             |
+| `ForecastChart`   | Context, truth, prediction mean, band between the quantile levels nearest 0.1 and 0.9 (a stacked lower line and a width line with `areaStyle`), vertical line at the origin |
+| `SeriesChart`     | Bucket means from the series API. A `dataZoom` change requests the new range after 500 ms without change. |
 | `SegmentTimeline` | Segments as intervals (`custom` series). Split boundaries `fit`, `val`, `cal`, `test` in 4 colors.        |
 | `RocPrChart`      | `curves.roc` and `curves.pr`, one line per split                                                          |
 | `ConfusionMatrix` | antd `Table`, not ECharts                                                                                 |
@@ -65,7 +74,8 @@ echarts.use([
 
 - Data times (series, origins, segments, split boundaries) are ISO strings without an offset. Show them unchanged. Do not convert them to a time zone.
 - System times (`created_at`, `finished_at`, event `ts`) are UTC with an offset. Show them in the browser time zone.
-- Format all times in `utils/format.ts`. Do not format times inline in components.
+- Format all times in `utils/format.ts` (`formatDataTime`, `formatSystemTime`). Do not format times inline in components.
+- `shiftDataTime(value, freq, steps)` adds grid steps to a data time with UTC arithmetic on the wall-clock value, so no daylight-saving shift occurs. Use it for the context start of a forecast chart and for prediction target times.
 
 ---
 
