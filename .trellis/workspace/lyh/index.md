@@ -8,7 +8,7 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 4
+- **Total Sessions**: 5
 - **Last Active**: 2026-09-29
 <!-- @@@/auto:current-status -->
 
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~111 | Active |
+| `journal-1.md` | ~133 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits | Branch |
 |---|------|-------|---------|--------|
+| 5 | 2026-09-29 | web-ui：React 配置与结果展示网页 | `2b26ac4` | `codex/web-ui` |
 | 4 | 2026-09-29 | service-api：FastAPI 服务与任务执行器 | `212ccf2` | `codex/service-api` |
 | 3 | 2026-09-29 | 实验运行器实现与本机验收 | `65b6f11` | `codex/experiment-runner` |
 | 2 | 2026-09-29 | 基座适配层提交与归档 | `6f94aa2`, `c81d304` | `codex/backbone-adapters` |

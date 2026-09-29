@@ -109,3 +109,25 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Status
 
 [OK] **Completed**
+
+
+## Session 5: web-ui：React 配置与结果展示网页
+<!-- trellis-session: v=2 fp=2cb6fa9364b67c40 -->
+
+**Date**: 2026-09-29
+**Task**: web-ui：React 配置与结果展示网页
+**Branch**: `codex/web-ui`
+
+### Summary
+
+实现 web/（Vite 8、React 19、antd 6、rjsf schema 表单、ECharts、TanStack Query、SSE 续读）；AC1–AC6 满足，20 项测试通过；内置浏览器完成配置、提交、监控、结果、对比与 ETTh1 入库；修复 SSE 回放重复请求、390 px 顶栏溢出、入库作业可选入对比。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `2b26ac4` | feat(web): 实现 React 配置与结果展示网页并完成浏览器验收 |
+
+### Status
+
+[OK] **Completed**
