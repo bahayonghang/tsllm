@@ -10,11 +10,11 @@ The data-contract implementation is Verified. Evidence is in `.trellis/tasks/arc
 
 The backbone-adapters implementation is also Verified for its six adapters, config, registry, checkpoint, training, and save/load contracts. Its offline and local real-checkpoint/CUDA evidence is in `.trellis/tasks/archive/2026-09/09-28-backbone-adapters/verification.md`. The first TTM real-checkpoint failure and the corrected rerun are retained.
 
-The experiment-runner implementation is Verified for run config and schema, metrics, run store, file events, worker, tasks, and the run CLI. Offline tests cover synthetic end-to-end runs; local CLI acceptance on the kiln dataset is recorded in `.trellis/tasks/09-28-experiment-runner/prd.md`.
+The experiment-runner implementation is Verified for run config and schema, metrics, run store, file events, worker, tasks, and the run CLI. Offline tests cover synthetic end-to-end runs; local CLI acceptance on the kiln dataset is recorded in `.trellis/tasks/archive/2026-09/09-28-experiment-runner/prd.md`.
 
-The service-api implementation is Verified for the HTTP API, error envelope, job queue, cancel, restart recovery, SSE, and CLI. Offline tests are in `tests/service/`; local manual acceptance is recorded in `.trellis/tasks/09-28-service-api/prd.md`.
+The service-api implementation is Verified for the HTTP API, error envelope, job queue, cancel, restart recovery, SSE, and CLI. Offline tests are in `tests/service/`; local manual acceptance is recorded in `.trellis/tasks/archive/2026-09/09-28-service-api/prd.md`.
 
-`Verified` covers only the implemented scopes identified in each guide and their tests. Web contracts remain Decided. The parent `design.md` remains the shared contract.
+`Verified` covers only the implemented scopes identified in each guide and their tests. Web contracts are Verified for the implemented web-ui scope. Evidence is in `.trellis/tasks/archive/2026-09/09-28-web-ui/prd.md` and the frontend guides. The parent `design.md` remains the shared contract.
 
 ---
 
@@ -22,7 +22,7 @@ The service-api implementation is Verified for the HTTP API, error envelope, job
 
 | Guide                                                     | Description                                                          | Status  |
 | --------------------------------------------------------- | -------------------------------------------------------------------- | ------- |
-| [Directory Structure](./directory-structure.md)           | Config/data/adapter/task/evaluation/run modules and dependency boundaries; service; web planned | Verified |
+| [Directory Structure](./directory-structure.md)           | Config/data/adapter/task/evaluation/run modules and dependency boundaries; service; web | Verified |
 | [Storage Guidelines](./database-guidelines.md)            | YAML registry, Parquet cache, and run directories; service config writes | Verified |
 | [Error Handling](./error-handling.md)                     | Data/adapter/task/run errors, worker failure, CLI privacy; API envelope; service/worker race | Verified |
 | [Logging Guidelines](./logging-guidelines.md)             | Reporter, adapter metrics, CLI, file events, environment snapshot; SSE; service logging | Verified |

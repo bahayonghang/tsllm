@@ -6,7 +6,7 @@
 
 ## Status
 
-Status: **Verified** on 2026-09-29 by the web-ui child (`.trellis/tasks/09-28-web-ui/`). `check`, `test`, `build`, and `gen:api` pass. The in-app browser acceptance (web-ui AC4–AC6) passed against the running service. The examples in these guides name real files in `web/`.
+Status: **Verified** on 2026-09-29 by the web-ui child (`.trellis/tasks/archive/2026-09/09-28-web-ui/`). `check`, `test`, `build`, and `gen:api` pass. The in-app browser acceptance (web-ui AC4–AC6) passed against the running service. The examples in these guides name real files in `web/`.
 
 ---
 

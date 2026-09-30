@@ -98,7 +98,7 @@
 
 ## 跨子任务验收标准
 
-- [ ] AC1 在一台未联网的机器上，`uv run pytest` 通过，测试不下载权重。
+- [x] AC1 依赖已预装，在空模型缓存和进程级离线设置下，`uv run pytest` 通过且不下载权重。
 - [x] AC2 `uv run tsllm data ingest yangquan_kiln` 生成 Parquet 缓存与画像，画像中的行数、运行段数与 `research/data-profile.md` 的口径一致（重采样后按 1 min 计）。
 - [x] AC3 同一份水泥数据上，保持值、岭回归、Chronos-2 零样本、Chronos-2 LoRA、TimesFM 2.5 零样本、TimesFM 2.5 LoRA、TTM 零样本 7 个预测运行使用同一窗口清单与同一评价器完成，结果可在网页对比页并列显示。需要权重的运行在有权重的环境中执行，运行目录记录 revision。
 - [x] AC4 同一份水泥数据上，统计特征基线与 Chronos-2 表示两个分类运行完成，标签规则与阈值写入运行记录，阈值来自拟合段。
@@ -108,9 +108,13 @@
 
 ## 备注
 
+### AC1 验收范围调整（2026-09-29，用户确认）
+
+用户在本次收尾会话中明确确认“不需要断网测试”。AC1 调整为依赖预先安装、空模型缓存、进程级离线设置下的默认测试通过且不下载权重。整机断网环境未验证，不再作为本任务验收条件。原有进程级离线记录和未取得整机隔离证据的历史说明保留。本轮当前 HEAD 的干净克隆复验通过，AC1 已按批准后的条件勾选。
+
 ### 集成审查状态（2026-09-29）
 
-分支 `codex/web-ui`，验证基线 `e53b17ce8f3b22d50120fd5643d69716996c8c42`。AC2–AC7 已核对并勾选。AC1 的默认套件在进程级离线设置下通过，但原定的未联网机器环境条件尚未验证，保持未勾选。两项缺陷已修复并提交为 `4b46719`（见下文“缺陷修复”）。提交 `63d747d` 的默认 Windows 干净克隆统一验证全部通过（见“提交后干净克隆复验”），顺序 6 清单全部勾选。父任务仍因 AC1 未完成。未推送或归档。
+分支 `codex/web-ui`，初次集成审查基线 `e53b17ce8f3b22d50120fd5643d69716996c8c42`。两项缺陷已修复并提交为 `4b46719`（见下文“缺陷修复”）。提交 `63d747d` 的默认 Windows 干净克隆统一验证全部通过（见“提交后干净克隆复验”），顺序 6 清单全部勾选。本轮在 `ee9649505ce8d8150da708340ec3b6c86de436fc` 的干净克隆上完成批准后的 AC1 进程级离线复验；AC1–AC7 全部勾选，父任务进入提交和归档收尾。整机断网环境未验证。
 
 ### 验收证据
 
@@ -118,7 +122,7 @@
 
 | 验收项 | 证据 |
 | --- | --- |
-| AC1 | 临时干净克隆的 `uv run pytest`：165 passed、5 deselected、3 warnings。设置 `HF_HUB_OFFLINE=1`、`TRANSFORMERS_OFFLINE=1`、`UV_OFFLINE=1`，使用独立空 `HF_HOME`；外部 HTTP/HTTPS/ALL 代理指向 `127.0.0.1:9`，保留回环地址例外。没有下载权重。未实施物理断网或防火墙隔离，原始套接字访问不在该隔离证据范围内。 |
+| AC1 | 当前 HEAD 干净克隆的 `uv run pytest`：165 passed、5 deselected、3 warnings，退出码 0。依赖联网预装，测试使用离线标志、独立空模型缓存和拒绝外部连接的代理地址，模型缓存前后均为 0 个文件；详见“AC1 当前 HEAD 进程级离线复验”。用户已取消整机断网要求，未验证整机隔离或原始套接字阻断。 |
 | AC2 | 缓存 `cache/datasets/yangquan_kiln/07c6f11007c2/` 为 fresh，未重新入库。Parquet 独立汇总与 `meta.json` 的计数、段数、划分边界一致，网格间隔均为 60 s。复用 `09-28-data-contract/prd.md` 备注与 `verification.md` 的入库验收。 |
 | AC3 | 下表 7 个预测目录全部 succeeded，error 为 null；各划分起点逐项等于当前缓存生成的合法清单，预测文件独立重算 hash 与指标一致。统一使用 `src/tsllm/tasks/forecast.py` 的 `forecast_metrics`。网页列表勾选这 7 项后进入对比页，7 项并列显示，可比性警告数为 0。 |
 | AC4 | 下表 2 个分类目录全部 succeeded。两项 `label_info.json.rule` 分别等于配置且互相相等；记录阈值均等于独立筛选 `split == fit && eligible` 后的线性分位数。规则和阈值保留于运行记录，本文不抄录物理阈值。复用 `09-28-experiment-runner/prd.md` 的 CLI 验收。 |
@@ -216,9 +220,9 @@
 
 ### 提交后干净克隆复验
 
-克隆：会话暂存目录下 `verify-63d747d/repo`，HEAD `63d747da9e818b029a0d56f804b6edb4121ffc62`，继承 `core.autocrlf=true`。检出后 278 个文本文件为 `w/lf`，2 个为空文件，`web/` 下 48 个文件全部为 `w/lf`。日志与 `results-*.txt` 位于克隆上一级目录。
+克隆：`C:/Users/lyh/AppData/Local/Temp/claude/D--Documents-Code-Python-Exp-tsllm/0ff699d9-867b-47f3-8e6f-90b6e50365cf/scratchpad/verify-63d747d/repo`，HEAD `63d747da9e818b029a0d56f804b6edb4121ffc62`，继承 `core.autocrlf=true`。检出后 278 个文本文件为 `w/lf`，2 个为空文件，`web/` 下 48 个文件全部为 `w/lf`。日志、`results-run2.txt` 和 `results-py.txt` 位于克隆上一级目录；前者保留锁等待失败及前端通过结果，后者记录 Python 五步重跑通过结果。
 
-工具版本：Python 3.13.14、uv 0.12.19、Ruff 0.16.9、Pyright 1.1.414、pytest 9.1.1、Node 26.7.0、pnpm 12.8.1。
+工具版本：Python 3.13.14、uv 0.12.19、Ruff 0.16.9、Pyright 1.1.414、pytest 9.1.1、Node 26.7.0、pnpm 12.8.0（以本次 `pnpm-install.log` 的完成记录为准）。
 
 | 命令 | 退出码 | 结果 |
 | --- | ---: | --- |
@@ -234,7 +238,30 @@
 
 离线 pytest 的环境设置与前次相同：`HF_HUB_OFFLINE=1`、`TRANSFORMERS_OFFLINE=1`、`UV_OFFLINE=1`、独立空 `HF_HOME`，外部代理指向 `127.0.0.1:9`，保留回环地址例外。结束时 `git status --porcelain` 为空，`git diff --check` 通过。
 
-前两次复验尝试未计入结果：第一次在 `uv sync` 下载 torch 时被中断；第二次的五个 Python 步骤因该中断进程持有的 uv 缓存锁等待 300 s 超时（退出码 2），同次四个前端步骤通过。确认无残留 uv 进程后单独重跑 Python 步骤，结果见上表。
+前两次复验尝试未计入结果：第一次在 `uv sync` 下载 torch 时被中断；第二次的五个 Python 步骤因残留进程持有 uv 缓存锁而等待超时（退出码 2；`results-run2.txt` 记录每步 600–601 s），同次四个前端步骤通过。确认无残留 uv 进程后单独重跑 Python 步骤，结果见上表。
+
+### AC1 当前 HEAD 进程级离线复验（2026-09-29）
+
+干净克隆：`C:/Users/lyh/AppData/Local/Temp/tsllm-ac1-20260929-205800-ea1620d6/repo`，固定 HEAD `ee9649505ce8d8150da708340ec3b6c86de436fc`。通过默认 Windows 设置执行 `git clone --no-local --no-checkout` 后检出该提交，继承 `core.autocrlf=true`。没有复制源仓库的 `.venv` 或私有目录。
+
+**依赖在联网时预先安装**：2026-09-29 20:58:01–20:58:13（America/Chicago）在该克隆执行 `uv sync`，退出码 0，新建 `.venv` 并安装 88 个包。准备记录和完整同步输出分别在克隆上一级的 `preparation.json`、`uv-sync.log`。运行 uv 命令前确认没有其他 `uv sync` 进程，未终止其他项目的 uv 进程。
+
+测试环境：Windows 11（10.0.26200）、Python 3.13.11、uv 0.12.19、pytest 9.1.1。设置 `HF_HUB_OFFLINE=1`、`TRANSFORMERS_OFFLINE=1`、`UV_OFFLINE=1`、`UV_PYTHON_DOWNLOADS=never`；`HF_HOME`、Hub、Xet、Torch 及相关缓存全部指向本次记录目录内的新建空目录。HTTP/HTTPS/ALL 代理指向 `http://127.0.0.1:9`，`NO_PROXY=localhost,127.0.0.1,::1`。清除可能改变项目环境的继承控制变量，拒绝额外 pytest 选择参数；未设置空 `CUDA_VISIBLE_DEVICES`。
+
+| 命令 | 退出码 | 结果 |
+| --- | ---: | --- |
+| `uv run pytest` | 0 | 165 passed、5 deselected、3 warnings；pytest 报告 54.01 s，进程耗时 58.641 s |
+| `git diff --check`（前、后） | 0 | 均通过 |
+
+测试区间：2026-09-29 21:16:19–21:17:18（America/Chicago；日志使用 UTC）。命令没有添加筛选参数，5 项 deselected 来自仓库默认的 `gpu`、`weights` 排除设置。3 项警告为已有的 Starlette/httpx 弃用提示和两项 Chronos CPU 训练提示。模型缓存前后文件数均为 0，权重文件数为 0，没有下载权重。测试前后 HEAD 均匹配，`git status --porcelain` 为空，`data/`、`ref/`、`runs/`、`cache/` 四个私有根目录均不存在。
+
+完整证据目录：`C:/Users/lyh/AppData/Local/Temp/tsllm-ac1-20260929-205800-ea1620d6/process-offline-20260930T021618306177Z-4a01ae/`，包含 `pytest.log`、`summary.json`、`environment.json`、准备记录、缓存清单和前后完整性记录。目录时间戳采用 UTC。结果明确标记 `whole_machine_offline=false`、`whole_machine_isolation_tested=false`；未修改网络、防火墙或系统设置。此前的手动断网脚本只完成联网预检，没有执行整机断网验收，相关准备记录保留。
+
+### 本轮规范更新检查（2026-09-29）
+
+本轮没有新增或修改产品代码、配置契约、数据处理规则、API 或依赖。按 `trellis-update-spec` 检查后，仅更正规范索引的归档路径和 web 验收状态，并更新 `AGENTS.md` 状态。父任务归档时同步指向该任务的现行说明路径。继承的 web-ui 已记录事项保持原状。
+
+`63d747d..ee96495` 仅修改父任务 `prd.md`、`implement.md`，因此复用 `63d747d` 的九条统一验证命令及 AC2–AC7 的已记录证据。本轮新增上述当前 HEAD 的默认 pytest 复验；未重复下载权重、训练、入库或网页操作。
 
 ### AC7 泄漏测试映射
 
@@ -254,13 +281,13 @@
 
 - 按用户要求复用 fresh 缓存与九个成功运行，替代重复入库、训练。
 - 背景中的 40% 与已批准画像的 45.4% 不一致，本次修正为 45.4%；原始 98 段与重采样 43 段分别注明口径。
-- AC1 使用进程级离线控制，未实施物理断网；首次额外 CUDA 屏蔽失败保留为验证环境偏差。
+- 初次 AC1 仅取得进程级离线证据；本轮用户批准取消整机断网条件，并以当前 HEAD 复验完成调整后的 AC1。整机断网未验证；首次额外 CUDA 屏蔽失败保留为验证环境偏差。
 - 默认 Windows 克隆前端格式检查失败；受控 LF 克隆只用于定位原因，未在克隆内格式化或修改代码。
 - 可见 canvas 截图补足 web-ui 子任务仅检查 SVG option 的证据边界；截图仅留在会话。
 
 ### 遗留问题
 
-- AC1 的未联网机器环境条件尚无证据；现有离线标志、空模型缓存与代理设置仅构成进程级离线验证。未修改原验收条件。
-- 规范索引仍有归档前子任务路径，backend 索引仍写 `Web contracts remain Decided`；本次记录差异，未扩大到规范清理。
-- `AGENTS.md` 的父任务状态仍写集成证据未记录；该文件在本轮开始前已有未提交改动，本轮未修改。父任务当前状态以本备注为准。
+- AC1 原定的整机断网条件未验证；用户已明确取消该条件，当前 HEAD 的进程级离线复验已通过。
+- 规范索引的归档前子任务路径已更正；backend 索引的 web 契约状态已按 web-ui 实际验收更新为 Verified。
+- `AGENTS.md` 已更新父任务集成验收状态及可见图表检查说明。
 - 继承 web-ui 已记录事项：`ETTh1.acc-backup` 保留；服务对比警告为英文；接口未警告“实验 + 入库作业”组合，但网页已禁止该组合；约 2.4 MB 构建块仍有警告。
