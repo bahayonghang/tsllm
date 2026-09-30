@@ -1,0 +1,8 @@
+{
+  "outer_command_exit_code": 0,
+  "python_traceback": "CalledProcessError: task.py current returned non-zero exit status 1",
+  "cause": "Receipt script initially treated the expected empty current-task status as an error. Later add_session.py --help masked the shell exit code.",
+  "archive_exit_code": 0,
+  "archive_auto_commit": "40648784376a5d3dc165e75f2aa981f9843722c4",
+  "repair": "Use subprocess.run and require exit 1 with empty stdout/stderr; no archive retry or history changes."
+}

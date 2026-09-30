@@ -1,0 +1,28 @@
+{
+  "work_commit": "934ba580e39a3ecee53abe936cc41ff5aaef0049",
+  "archive_commit": "40648784376a5d3dc165e75f2aa981f9843722c4",
+  "archive_path": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading",
+  "archived_files": 289,
+  "unchanged_file_objects": 288,
+  "changed_metadata": {
+    "status": {
+      "before": "in_progress",
+      "after": "completed"
+    },
+    "completedAt": {
+      "before": null,
+      "after": "2026-09-30"
+    }
+  },
+  "archive_commit_scope_exact": true,
+  "old_task_absent": true,
+  "current_task": {
+    "exit_code": 1,
+    "stdout": "",
+    "meaning": "No current task; exit 1 is the command contract."
+  },
+  "protected_old_assessment_463_equal": true,
+  "old_dist_2_equal": true,
+  "launch_equal": true,
+  "push_amend_publish": false
+}

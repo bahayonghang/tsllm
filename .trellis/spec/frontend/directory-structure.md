@@ -57,7 +57,7 @@ Page state that a user can share (selected split, channel, origin, run ids) goes
 - The error UI shows `页面加载失败` and `重新加载页面`. The recovery link uses `pathname + search + hash`. Its click handler first calls `event.preventDefault()`, then calls `location.reload()` to reload the document. Router reconstruction or client navigation alone does not satisfy recovery.
 - Page internals retain their existing imports. Route loading does not change chart registration, forms, generated types, dependency versions, or build settings.
 
-Verified by the route-loading task in `.trellis/tasks/09-30-frontend-route-lazy-loading/`: deferred and rejected import tests, final production builds, and visible recovery of the same hashed module with empty and non-empty fragments.
+Verified by the route-loading task in `.trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/`: deferred and rejected import tests, final production builds, and visible recovery of the same hashed module with empty and non-empty fragments.
 
 ---
 

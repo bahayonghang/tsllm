@@ -1,0 +1,9 @@
+docs(web): 同步路由加载归档引用与收尾记录
+
+更新 frontend spec 的任务引用，记录工作提交、独立归档提交和字节保真核对。
+保留冻结验收与首次失败，旧评估任务和范围外文件保持不变。
+
+Tested: 归档任务 validate、git diff --check、归档范围和历史对象核对通过
+Agent-Task: frontend-route-lazy-loading
+Agent-Model: gpt-6
+Generated-By: agent
