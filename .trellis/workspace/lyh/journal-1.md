@@ -168,3 +168,41 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Next Steps
 
 - 推送 codex/web-ui 后，等待用户选择整体 PR 或按子任务分支分别合并；不启用 auto-merge。
+
+
+## Session 7: 对比警告本地收尾与归档
+<!-- trellis-session: v=2 fp=f3d4fd5d2bb34b8a -->
+
+**Date**: 2026-09-30
+**Task**: 对比警告本地收尾与归档
+**Branch**: `codex/compare-warnings`
+
+### Summary
+
+按用户本轮授权完成 compare-warnings 的工作提交、任务归档及开发者日志。AC1–AC8 保持通过，产品与规范的验收哈希匹配，复用已有验证。
+
+### Main Changes
+
+- 工作提交包含 8 个产品/测试/生成文件、2 份规范和 8 份任务材料，合计 18 个明确路径。
+- 正式 task.py archive --no-commit 将八份材料移至 .trellis/tasks/archive/2026-09/09-29-compare-warnings/，状态为 completed。修正后端规范及两份上下文清单引用，归档改动已独立提交。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `1060a432e384b96d326ce4e5530809b17ef4532d` | fix(compare): 补全对比警告并提供中文展示 |
+
+### Testing
+
+- [OK] 本轮核对 HEAD、main、本地 origin/main 与实际远端 main 的交接基线；暂存区起初为空，无额外改动，未出现远端任务分支。
+- [OK] 10 项 SHA-256 与独立验收相同；复用后端四门槛（pytest 180 passed、5 deselected、3 warnings）、前端三门槛（27 passed）、独立检查、实际 HTTP 六组合、16 文件不变、390/1280 px 可见浏览器及双轮生成一致性证据。
+- [OK] 本轮 git diff --check 与暂存差异检查通过，包含新增文件；task.py validate 的 11+10 条上下文通过；八份归档文件及目标路径完整，活动任务和本任务指针均为空。data/ref/runs/cache 的跟踪文件数为 0。
+- [OK] 本轮未重跑应用门槛、启动服务或调用 uv；未执行真实实验、训练、入库、GPU/weights 验收、权重下载或整机断网。未处置 ETTh1.acc-backup，未修改 launch.json 或构建阈值。
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- 下一候选：前端加载影响与拆分收益评估。等待用户另行选择；未创建、激活或实施。未合并、推送、创建 PR、发布或删除分支。
