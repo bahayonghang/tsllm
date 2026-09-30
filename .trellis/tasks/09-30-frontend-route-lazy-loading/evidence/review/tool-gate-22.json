@@ -1,0 +1,10 @@
+{
+  "command": [
+    ".venv/Scripts/ruff.exe",
+    "check",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_final_documents.py"
+  ],
+  "exit_code": 1,
+  "stdout": "UP017 [*] Use `datetime.UTC` alias\n   --> .trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_final_documents.py:223:37\n    |\n221 |     result = {\n222 |         \"passed\": not failed,\n223 |         \"recorded_at\": datetime.now(timezone.utc).isoformat(),\n    |                                     ^^^^^^^^^^^^\n224 |         \"checks\": len(checks),\n225 |         \"failures\": failed,\n    |\nhelp: Convert to `datetime.UTC` alias\n    |\n6   | import statistics\n    - from datetime import datetime, timezone\n7   + from datetime import datetime, timezone, UTC\n8   | from pathlib import Path\n--------------------------------------------------------------------------------\n222 |         \"passed\": not failed,\n    -         \"recorded_at\": datetime.now(timezone.utc).isoformat(),\n223 +         \"recorded_at\": datetime.now(UTC).isoformat(),\n224 |         \"checks\": len(checks),\n    |\n\nFound 1 error.\n[*] 1 fixable with the `--fix` option.\n",
+  "stderr": ""
+}

@@ -1,0 +1,1 @@
+{"complete_60_matrix": true, "valid_primary_observations": 60, "valid_supplementary_observations": 0, "browser_versions": ["154.0.4258.37"]}

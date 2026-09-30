@@ -1,0 +1,16 @@
+{
+  "action": "hold",
+  "asset": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B1-r1\\web\\dist\\assets\\RunDetailPage-ZaeUnRMC.js",
+  "held": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B1-r1\\web\\dist\\assets\\RunDetailPage-ZaeUnRMC.js.route-lazy-held",
+  "before": {
+    "sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e",
+    "bytes": 47745,
+    "mtime_ns": 1790765672551420200
+  },
+  "held_stamp": {
+    "sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e",
+    "bytes": 47745,
+    "mtime_ns": 1790765672551420200
+  },
+  "original_absent": true
+}

@@ -1,0 +1,2120 @@
+{
+  "recorded_at": "2026-09-30T11:33:26.161299+00:00",
+  "authorization": "用户：请提交改动和归档任务然后给出下一步执行的Prompt",
+  "head": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "branch": "codex/frontend-route-lazy-loading",
+  "original_git_status": [
+    "M .trellis/spec/frontend/directory-structure.md",
+    " M .trellis/spec/frontend/quality-guidelines.md",
+    " M web/src/components/AppLayout.tsx",
+    " M web/src/router.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/check.jsonl",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/design.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/fixtures/create_fixtures.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/fixtures/manifest.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/README.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/browser_probe.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/execution-manifest.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey-summary-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey-summary.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey/B0-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey/B1-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey/B2-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey/lifecycle-s1-1-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/journey/order-s1-1-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/measure.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot-summary-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot-summary.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/B0-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/B0-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/B0-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/B0-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/B0-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/B0-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/lifecycle-s1-1-a1-B0.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/pilot/order-s1-1-a1-B0.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/preflight.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B0-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B1-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/B2-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/lifecycle-s1-5-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/raw/order-s1-5-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/README.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/after/browser_probe.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/after/measure.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/before/browser_probe.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/before/measure.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/before/snapshot.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-1-command-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-1-command-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-1-command-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-2-command-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-2-command-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-2-command-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/lint-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/paint-collection.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/paint_collection.test.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/revision.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/validation-1-command-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/validation-1-command-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/validation-1-command-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/validation-1-command-4.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/validation-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey-instrumentation.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey-summary-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey-summary.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey/B0-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey/B1-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey/B2-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey/lifecycle-s1-1-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/journey/order-s1-1-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/pilot-instrumentation.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/pilot-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/pilot/B0-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/pilot/B0-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/pilot/lifecycle-s1-1-a1-B0.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/pilot/order-s1-1-a1-B0.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw-instrumentation.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B0-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B1-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/B2-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/lifecycle-s1-5-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/raw/order-s1-5-a1-B0-B1-B2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/summary-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/summary.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/run_matrix.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/serve_variant.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/summarize.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/summary-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/summary.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/report/README.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/report/original-recomputed.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/report/original-report.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/report/recompute_report.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/report/recomputed.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/accounting-regression.mjs",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-artifact-audit-initial.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-artifact-audit.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-http-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-journey-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-numeric-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-review.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-scope.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation_audit.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/http-cache-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/independent-review.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/journey-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/numeric-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/paint-collection-analysis.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/preflight.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-artifact-audit.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-cleanup-command-failure.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-cleanup-review-initial.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-cleanup-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-http-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-journey-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-numeric-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-paint-review.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-scope.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/recovery-r1-variant-integrity.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/scope-preflight.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/variant-integrity.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/verify_cleanup.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/verify_http.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/verify_numerics.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/verify_paint_revision.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/review/verify_variants.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/scope/baseline-protected.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/scope/baseline-tracked-sha256.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/scope/checkpoint.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/scope/verify_scope.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-4.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-build-4.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-4.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-check-4.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-test-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-test-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-test-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-test-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-test-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B0-test-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-build-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-build-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-build-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-build-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-build-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-build-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-check-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-check-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-check-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-check-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-4.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B1-test-4.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-build-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-build-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-build-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-build-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-build-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-build-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-check-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-check-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-check-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-check-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-1.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-1.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-2.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-2.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-3.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-3.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-4.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variant-gates/B2-test-4.txt",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B0-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B0-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B0.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B1-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B1-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B1.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B2-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B2-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/B2.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/README.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/assessmentGraph.ts",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/dependency-reuse-check.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/record_variants.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B0-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B0-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B0.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B1-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B1-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B1.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B2-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B2-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/after/B2.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B0-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B0-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B0.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B1-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B1-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B1.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B1/src/components/RouteLoading.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B1/tests/LazyRouting.test.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2-graph.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2-inventory.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2.patch",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2/src/components/FeatureLoading.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2/src/components/RouteLoading.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2/tests/FeatureLoading.test.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/B2/tests/LazyRouting.test.tsx",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/README.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/assessmentGraph.ts",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/dependency-reuse-check.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/record_variants.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/reproduction-check-initial.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/reproduction-check.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/run_gates.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/setup_variants.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/before/snapshot.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/reproduction-check.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/revision.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/validation.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/reproduction-check-initial.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/reproduction-check.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/run_gates.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/setup_variants.py",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/cleanup-after-matrix.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/cleanup-before-matrix.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/continuation.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/module-failure.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/module-recovery-r1-feature.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/module-recovery-r1-route.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/evidence/visible/observations.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/implement.jsonl",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/implement.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/prd.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/report.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/research/baseline-findings.md",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/task.json",
+    "?? .trellis/tasks/09-30-frontend-load-assessment/verification.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/check.jsonl",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/design.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/log-preservation.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-2-biome.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-2-tsc.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-3-biome.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-3-tsc.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/format-1-biome.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-1-vitest.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-2-vitest.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-3-vitest.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-4-vitest.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/visible/service.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/dispatch/dispatch.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/after-performance.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/before-performance.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/created.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-build-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-build-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-test-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-test-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-build-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-build-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-test-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-test-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/check-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/check-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/check-3.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/format-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/launcher-failure-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/launcher-failure-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-3.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-4.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/git-status-after.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/implementation.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/source-freeze.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/analyze_build-syntax-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/analyze_build-syntax-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/browser_probe-syntax-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/browser_probe-syntax-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/context-loading.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/diff-check-performance.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/diff-check-performance.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/final-preparation.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/initial-analyzer-failure.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/measure-syntax-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/measure-syntax-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/node-tests-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/node-tests-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/output_guards.test-syntax-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/output_guards.test-syntax-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/paint_collection.test-syntax-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/paint_collection.test-syntax-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/provenance.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/reference-probe-before.mjs",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/reference-probe-provenance.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-2.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-format-check-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-format-check-2.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/runtime-roles.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-2.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-3.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-3.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-4.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-4.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-3.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-3.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-4.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-4.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-repair.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/cleanup-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/execution-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1-instrumentation.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1-summary-attempt-2.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/B0-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/B1-journey-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/lifecycle-s1-1-a1-B0-B1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B0-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B1-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/order-s1-1-a1-B0-B1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/service-B0-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/service-B1-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-summary-r1-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-summary-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/key-results-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/observation-manifest-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/preflight-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1-instrumentation.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1-summary-attempt-2.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s1-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s2-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s3-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s4-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s5-a1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/lifecycle-s1-5-a1-B0-B1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s2-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s3-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s4-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s5-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s2-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s3-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s4-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s5-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/order-s1-5-a1-B0-B1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s2-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s3-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s4-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s5-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s1-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s2-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s3-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s4-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s5-a1.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/results-r1.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/runs-route-modules-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-attempt-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-attempt-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-before-variable-repair.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-r1-asset-headers.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/warm-readiness-analysis-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/report-launcher-failure.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_final_documents.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_measurements.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_product.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_scope.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final-audit-launcher-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final-documents.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/numeric-command.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/numeric-review.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/preflight.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/product-gates.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/product-review.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/scope-final.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/scope-initial.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/test_audit_measurements.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-10.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-11.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-12.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-13.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-14.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-15.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-16.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-17.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-18.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-19.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-21.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-22.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-23.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-24.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-25.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-3.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-4.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-5.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-6.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-7.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-8.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-9.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/visible-review.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-command-launcher-failure.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-commands-2.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-commands.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/git-status-before.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/git-status-final.txt",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/port-before.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/preflight.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-baseline.diff",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B0-build-node-gzip-initial.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B0-build.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B0-source.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B1-r1-build.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B1-r1-source.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/backend-source.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/experiment-r1.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/cleanup.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-RunDetailPage-hold.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-RunDetailPage-restore.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-SystemPage-hold.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-SystemPage-restore.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault_asset.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/observations.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/observations.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/recovery.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/implement.jsonl",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/implement.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/isolation/.gitignore",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/prd.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/report.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/task.json",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/README.md",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/acceptance_common.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/analyze_build.mjs",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/browser_probe.mjs",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/create_fixtures.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/freeze_experiment.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/measure.mjs",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/output_guards.test.mjs",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/paint_collection.test.mjs",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/preflight.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/prepare_isolation.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/run_gates.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/run_matrix.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/serve_variant.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/tools/summarize.py",
+    "?? .trellis/tasks/09-30-frontend-route-lazy-loading/verification.md",
+    "?? web/src/components/RouteLoading.tsx",
+    "?? web/tests/LazyRouting.test.tsx",
+    "?? web/tests/RouteResolution.test.tsx"
+  ],
+  "frozen_product_and_specs_match": true,
+  "frozen_documents_match": true,
+  "final_review_match": true,
+  "protected_old_assessment_files": 463,
+  "protected_old_assessment_match": true,
+  "protected_dist_match": true,
+  "protected_launch_match": true,
+  "archive_and_workspace_clean": true,
+  "unsafe_candidates": [],
+  "candidate_files_before_closure": {
+    ".trellis/spec/frontend/directory-structure.md": {
+      "sha256": "dc181f83a9a67f83119bea61f83d662f400abbd5145bc0a26f6adf464dd4cf20",
+      "size": 4887,
+      "mtime_ns": 1790766864100658200
+    },
+    ".trellis/spec/frontend/quality-guidelines.md": {
+      "sha256": "9175fee8d214d4f2887643e6a694b62179d0678ef0626e8176a042371e5fb771",
+      "size": 4817,
+      "mtime_ns": 1790766604917017800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/check.jsonl": {
+      "sha256": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+      "size": 1545,
+      "mtime_ns": 1790765149503614700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/design.md": {
+      "sha256": "88719c32657adab415802fd5d8deb6911380341c4439977158905fe6a1cca507",
+      "size": 4019,
+      "mtime_ns": 1790765129601402700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/dispatch/dispatch.md": {
+      "sha256": "bb2162b9e9daabd4103325ed484e34acf49ca228ef8a1651bf81f9de360bb461",
+      "size": 3778,
+      "mtime_ns": 1790767258121481600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/after-performance.json": {
+      "sha256": "1d976bb0a0c7006fde3cf3badbc5ac1b7811faf7c7e241a852df63eb6eb01bcf",
+      "size": 7289,
+      "mtime_ns": 1790766876047410200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/before-performance.json": {
+      "sha256": "1d976bb0a0c7006fde3cf3badbc5ac1b7811faf7c7e241a852df63eb6eb01bcf",
+      "size": 7289,
+      "mtime_ns": 1790766417410674400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/created.json": {
+      "sha256": "949e9879119d058814e6c193bdfc4000a0d0898a80478ef24e958263b46cd845",
+      "size": 8315,
+      "mtime_ns": 1790765445052984900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-build-1.json": {
+      "sha256": "bb9f7815365d76601fa6eda71029da397e4ee355bbf62f7793e71dc4d97b2c30",
+      "size": 1546,
+      "mtime_ns": 1790765408396257800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-build-1.txt": {
+      "sha256": "26f6e7ec64681d2289691d6443267a5fac3d08d0e74d1dac8a94f0c48d2b8180",
+      "size": 656,
+      "mtime_ns": 1790765408395256500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-check-1.json": {
+      "sha256": "e392b16046bcea5e5c648c94fba0e994d8cfc8062ed95d63da2bbd457744940f",
+      "size": 1563,
+      "mtime_ns": 1790765397439174100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-check-1.txt": {
+      "sha256": "55449a1c07a8fe572648eb65acb75bd195d7c551b998ada927b5eb49233a9d34",
+      "size": 44,
+      "mtime_ns": 1790765397438169000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-test-1.json": {
+      "sha256": "82bd74088fb9d292a9f1b8beb70c0deba6fa3771d5c3c7502470e37241249688",
+      "size": 1120,
+      "mtime_ns": 1790765405468926000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B0-test-1.txt": {
+      "sha256": "e98c01dcf1d19bc965948ff680f79b7c8c02a033b8a14c959e6018982334654e",
+      "size": 1379,
+      "mtime_ns": 1790765405467920000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-build-1.json": {
+      "sha256": "859a84ba2ad6c4f355c4399e86d1b9786bf490b3b280f4fced2f381aea5cea42",
+      "size": 1558,
+      "mtime_ns": 1790765672652329200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-build-1.txt": {
+      "sha256": "efb8b75b7dce4d12e0d0d1a72bbc8c5c5295ae999f6876f98454e411a1cd8e25",
+      "size": 1702,
+      "mtime_ns": 1790765672651329300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-check-1.json": {
+      "sha256": "a65792ead044a757111fd1fe0585c124f08b803b74976d0145ab4329a60721cd",
+      "size": 1575,
+      "mtime_ns": 1790765664047266100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-check-1.txt": {
+      "sha256": "cbe78e5e1d755275b7051ea5cb339161031c7700592dcfef9d8c3bc539d22d24",
+      "size": 44,
+      "mtime_ns": 1790765664046265600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-test-1.json": {
+      "sha256": "c14f179d87b3b5ece4ac1bebf7875ae7b9046827940365584cd46cd432ea38f9",
+      "size": 1129,
+      "mtime_ns": 1790765669905182300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/gates/B1-r1-test-1.txt": {
+      "sha256": "3e59ff00ca55a9c913bb425481ed1226960a27238a83d33e054e838c80e2440d",
+      "size": 1752,
+      "mtime_ns": 1790765669904175900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/check-1.json": {
+      "sha256": "bc897962ebce976bbe81f92821a19d72f926f348be3bcd7f1f346421e0b2423d",
+      "size": 1494,
+      "mtime_ns": 1790765447054695100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/check-2.json": {
+      "sha256": "8c34304b0c52c034e4910883f8f2cb9593e7720b237b060c1f28d2ccc4392eba",
+      "size": 2763,
+      "mtime_ns": 1790765552066848500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/check-3.json": {
+      "sha256": "517365e3707b04e2c4c58bcc62d7e3f0396af1f400664a6dd31de4cf261a68b4",
+      "size": 2194,
+      "mtime_ns": 1790765595585511700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/format-1.json": {
+      "sha256": "ba8f8c1690f5a0ff3020bbb1f6923fbcbb310a7e36ed4e9c7bd3fe167d09a74c",
+      "size": 2255,
+      "mtime_ns": 1790765549967394900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/launcher-failure-1.json": {
+      "sha256": "42189803c4e31dc9f56a5092edf202f9cafa3d9fd41e9663c723cf236008e089",
+      "size": 296,
+      "mtime_ns": 1790765446503232000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/launcher-failure-2.json": {
+      "sha256": "587493900cf84bc59d15ac1262a6b01f975b0320584263047139efed07f42089",
+      "size": 426,
+      "mtime_ns": 1790765511510891100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-2.json": {
+      "sha256": "4f182a8af5f316b9dfcb3130c248e470715c0e8ed49a5b47eda210c5470d4dbe",
+      "size": 552,
+      "mtime_ns": 1790765517529268400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-3.json": {
+      "sha256": "17d7c9a91930be941651bbf5e436d0f495ada56d35cc2b07cb601468c588bf62",
+      "size": 2157,
+      "mtime_ns": 1790765558125578100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-4.json": {
+      "sha256": "d1b3f43c434058c2e027981831a8826237c4288b6b7efdd453dc88f2b770ea07",
+      "size": 1590,
+      "mtime_ns": 1790765601781316700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/git-status-after.txt": {
+      "sha256": "403431a5ff7a42d044365312c24a7fbbbbb3161f1a32507aa26ea0f5dcf55844",
+      "size": 46716,
+      "mtime_ns": 1790765658752657900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/implementation.md": {
+      "sha256": "a9c559db233909e47a78b6b597a40d34a5400ab58ce9301fd7bfbfd1acd3f1b0",
+      "size": 7102,
+      "mtime_ns": 1790765716868360400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/source-freeze.json": {
+      "sha256": "94d107346b522e5cdc661a1708448dc2473d12f8eba361c27f01eae7ed19b2b8",
+      "size": 3707,
+      "mtime_ns": 1790765658922018900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/analyze_build-syntax-1.json": {
+      "sha256": "47d60bb844e76fc03763ba6bb5b573b5c226be330cc6607749055b41b8233be6",
+      "size": 159,
+      "mtime_ns": 1790765818720102700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/analyze_build-syntax-1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765818719103400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/browser_probe-syntax-1.json": {
+      "sha256": "4aa2c44b249425012436353692946c4e482a390e9f52f613f0a99f4962e78bc4",
+      "size": 159,
+      "mtime_ns": 1790765818782040700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/browser_probe-syntax-1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765818781523900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/context-loading.json": {
+      "sha256": "a6a84c2261b75f6d750fd7b2dbf6b743dea2573a6e8c296f1b33407f22a18a2b",
+      "size": 1587,
+      "mtime_ns": 1790765380384556600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/diff-check-performance.json": {
+      "sha256": "95a9c6d6e2dda4dbb875043250286a11e0d13a5d527b06f3231d80cca8b8f5d1",
+      "size": 198,
+      "mtime_ns": 1790767078682236900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/diff-check-performance.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790767078681233300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/final-preparation.json": {
+      "sha256": "bc062a820846c46a29ef2ee6ee8f6503e43312a30c53eacc5fc93635001070d6",
+      "size": 997,
+      "mtime_ns": 1790765845416901700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/initial-analyzer-failure.json": {
+      "sha256": "683b26913720931a91323d4f9ddee5af7dce9012466c980092d05f5bd42a5d8a",
+      "size": 471,
+      "mtime_ns": 1790765654698722600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/measure-syntax-1.json": {
+      "sha256": "26a7f66a1e6d94f1126b466566b0f64bdd1094c65c467f732d04cfa44eedfd8f",
+      "size": 153,
+      "mtime_ns": 1790765818842706600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/measure-syntax-1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765818841707200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/node-tests-1.json": {
+      "sha256": "88cd3c5e8814fab149985d50cafeea48d0efdfa1d3c7047e0e1aaacdaa058196",
+      "size": 256,
+      "mtime_ns": 1790765819156833500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/node-tests-1.txt": {
+      "sha256": "c299fb90dacfc71597633717fe29ed24850ec2c06e8a60c09efeef0d77f96447",
+      "size": 1104,
+      "mtime_ns": 1790765819156313200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/output_guards.test-syntax-1.json": {
+      "sha256": "03619b1efb53e83b4e5a16516fafd84c8cb59ae06213e5d7183d0d0c972e6bcc",
+      "size": 164,
+      "mtime_ns": 1790765818905930800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/output_guards.test-syntax-1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765818904925400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/paint_collection.test-syntax-1.json": {
+      "sha256": "510473ead4c062a8b3d7a7bc8cfeb55590475fcffc0687861f54d2a3c7dbd6e3",
+      "size": 167,
+      "mtime_ns": 1790765818968069300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/paint_collection.test-syntax-1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765818967068100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/provenance.json": {
+      "sha256": "4f51c95a160f8a83165ee6247a02d5cc2e3aec32ff0428d8c39584b332f83a66",
+      "size": 1828,
+      "mtime_ns": 1790765380382992000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/reference-probe-before.mjs": {
+      "sha256": "3e6ec1156a323e6a5a18c0e6232bc0db604cb96297d9af6577181bb4e1a43003",
+      "size": 10478,
+      "mtime_ns": 1790765818453420900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/reference-probe-provenance.json": {
+      "sha256": "f17d4a90ab9b181decff4e098ebebf2b3d970445b7e7a36f48ee90df8e84851a",
+      "size": 215,
+      "mtime_ns": 1790765818454421600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-1.json": {
+      "sha256": "be710012f62a043913abaef8208ef47c6f0e329d58a199054e9a98d49c2aa8a7",
+      "size": 834,
+      "mtime_ns": 1790765654483316500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-1.txt": {
+      "sha256": "4c9ce947c786a3770e2bf7e0b43a923bcadba8c11ec8b34dc812bb6f98424445",
+      "size": 14899,
+      "mtime_ns": 1790765654482316700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-2.json": {
+      "sha256": "770af7ba7efb2a00673989ef8a1d83eb7966f83fb8281f207f5846e48690fbbb",
+      "size": 834,
+      "mtime_ns": 1790765818556157600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-2.txt": {
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "size": 20,
+      "mtime_ns": 1790765818555156800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-format-check-2.json": {
+      "sha256": "61adeacf98d3cda1f621cad7a169d453019704ed2281da26da12492f1ae2e7c5",
+      "size": 851,
+      "mtime_ns": 1790765818656759900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-format-check-2.txt": {
+      "sha256": "3fa62c94b1301255f0c64c429c668a4fabc4cb9d3848edb2790b607266d16092",
+      "size": 27,
+      "mtime_ns": 1790765818656242700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/runtime-roles.json": {
+      "sha256": "fa83bdefb3db9e6bdd424a4922753d9c81e1a6cc228f910110866b0132e79b5e",
+      "size": 739,
+      "mtime_ns": 1790766744291803200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-1.json": {
+      "sha256": "906968761fa87979b740fd1a67109f43e86619bc9dfbb32e6c3530881d456ba1",
+      "size": 237,
+      "mtime_ns": 1790765968316507000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-1.txt": {
+      "sha256": "8c52b39f9e90bf4dddd5f914f1cb4e6c83e000fd420f4a066e91ccec2af31348",
+      "size": 572,
+      "mtime_ns": 1790765968316507000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-2.json": {
+      "sha256": "03cb9e6845ae3edf57d1372cea81a388b481f97cc8f0757fb06e767469688644",
+      "size": 237,
+      "mtime_ns": 1790766010302132000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-2.txt": {
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "size": 20,
+      "mtime_ns": 1790766010301610100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-3.json": {
+      "sha256": "a17a029b2731b7117a9115184038170cca5209adf412b36afb915329bcd26a33",
+      "size": 270,
+      "mtime_ns": 1790767078534170700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-3.txt": {
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "size": 20,
+      "mtime_ns": 1790767078533642800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-4.json": {
+      "sha256": "a17a029b2731b7117a9115184038170cca5209adf412b36afb915329bcd26a33",
+      "size": 270,
+      "mtime_ns": 1790767106717331400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-4.txt": {
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "size": 20,
+      "mtime_ns": 1790767106716827700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-1.json": {
+      "sha256": "8447dc3a53b214535f068de59245ee805e28cbc3c1ad8ba7bc57f2b4a2b2c966",
+      "size": 238,
+      "mtime_ns": 1790765968218476000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-1.txt": {
+      "sha256": "1dd2717ff253e2a4b96ebfd3258f1e73a83b9bf353fc8731f2b35465b3cce292",
+      "size": 23,
+      "mtime_ns": 1790765968217471300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-3.json": {
+      "sha256": "9dd39c6f6594687187a4137f0a98050d7fc3ec7c51c17cdb7e6079c86ab22a80",
+      "size": 286,
+      "mtime_ns": 1790767078638325400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-3.txt": {
+      "sha256": "f6c0a6fc98b9cb4cffb941fdb9adb5c462d6048dd55f04382ce569f2af6c9127",
+      "size": 457,
+      "mtime_ns": 1790767078637805500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-4.json": {
+      "sha256": "41a52a303526b98f5895a7197db7e6c58a8d41e287f139cdfc3a4b28d5c7daa5",
+      "size": 286,
+      "mtime_ns": 1790767106819644500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-4.txt": {
+      "sha256": "7688ae71c60af2e4266827abb3678cc2145655f587daf33dfa649dbac2c619c3",
+      "size": 26,
+      "mtime_ns": 1790767106818639000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-repair.json": {
+      "sha256": "1505d14e067ad53bdfbaeaeeb1151ad8de0bf7418798cb79067f328d2c8772ed",
+      "size": 528,
+      "mtime_ns": 1790767106607423000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/cleanup-r1.json": {
+      "sha256": "da62fbedd8cdd46cb74a1b23d6e0f881ad0b9e19926d02da2f44268525c81197",
+      "size": 4225,
+      "mtime_ns": 1790766876069419700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/execution-r1.json": {
+      "sha256": "05b0575a904f3234b889f8e75dafbb8f7b36cea3764948785504187be3f3c27a",
+      "size": 1475,
+      "mtime_ns": 1790767006437696400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1-instrumentation.json": {
+      "sha256": "68fb7208054dd0f38221998c907750e5094c74524a76303a4a731b0a6ac46734",
+      "size": 1267,
+      "mtime_ns": 1790766584984613500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1-summary-attempt-2.txt": {
+      "sha256": "a46c8cf176e93fa098bda98180bd13d6cd445299fefb6405cb4fec7de96ded97",
+      "size": 142,
+      "mtime_ns": 1790766764581319000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/B0-journey-s1-a1.json": {
+      "sha256": "a849cbf1b3fdab051831e7321c7625e165e831c2a0334d29e3786716c64ef956",
+      "size": 460042,
+      "mtime_ns": 1790766597225902500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/B1-journey-s1-a1.json": {
+      "sha256": "4345fa6aab4b32786aca3ccafa9767bce4d11ff52459ff672bfe7219dfae7e1b",
+      "size": 729919,
+      "mtime_ns": 1790766610632137400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/lifecycle-s1-1-a1-B0-B1.json": {
+      "sha256": "b8d73ae80454a346f581c41d8c6b66c708eb840fab61de14a8c7208b74757794",
+      "size": 2175,
+      "mtime_ns": 1790766615163773000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B0-s1-a1.txt": {
+      "sha256": "e6b805c7935095299c05e281cf7b972d2742150bdc16fdd1726ff5ea56cf037c",
+      "size": 121,
+      "mtime_ns": 1790766597431099600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B1-s1-a1.txt": {
+      "sha256": "2e59943a451d2ca0ab427ebded7cb75b6a57800191b9e949b27e67bace41cb29",
+      "size": 108,
+      "mtime_ns": 1790766610853846500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/order-s1-1-a1-B0-B1.json": {
+      "sha256": "8a420812c8b0a5ef2642dbda3dbae0ee4e0b8e12dc58605547718a4cb0d9a660",
+      "size": 1703,
+      "mtime_ns": 1790766587022428200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/service-B0-s1-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766589117621900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/service-B1-s1-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766601649762900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-summary-r1-asset-headers.json": {
+      "sha256": "f7ed59da6d6e1beb0150e4fcf7152835f21c816ac69edb92e2f86531cc583f79",
+      "size": 10908,
+      "mtime_ns": 1790766764568801600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-summary-r1.json": {
+      "sha256": "90e8b6e30314f0cab3aa9bbabb3800ab6c2d24b83acf320df181bf2d4080e18a",
+      "size": 41173,
+      "mtime_ns": 1790766764568801600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/key-results-r1.json": {
+      "sha256": "877539be4e26f71bdd5a32658ce4df8b1c4bc7244d3f473b6beb64c3b662cd2e",
+      "size": 4113,
+      "mtime_ns": 1790767006427047000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/observation-manifest-r1.json": {
+      "sha256": "3d9d3f9ac314660e63a1dacf5e8541e5a0de66c9934c17d0b800838f19646a01",
+      "size": 12139,
+      "mtime_ns": 1790767078394554200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/preflight-r1.json": {
+      "sha256": "6c03b818f482839a47ecc69d78daf2adecaeb41c9794541f8dd6b7e9bbe16b5b",
+      "size": 1566,
+      "mtime_ns": 1790766417411676900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1-instrumentation.json": {
+      "sha256": "68fb7208054dd0f38221998c907750e5094c74524a76303a4a731b0a6ac46734",
+      "size": 1267,
+      "mtime_ns": 1790766429153738100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1-summary-attempt-2.txt": {
+      "sha256": "be0f8d7dfffd0244ba5793fe76248020dce58b6f9c14d6ebba84931792b3c6f6",
+      "size": 142,
+      "mtime_ns": 1790766764468408000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s1-a1.json": {
+      "sha256": "43c166463ae4000128fe2a4006e13e4ea735b321d8d617dd5af3ca7733cace4b",
+      "size": 22938,
+      "mtime_ns": 1790766435933973100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s2-a1.json": {
+      "sha256": "73a3620eabbf866c9b23472dd48109086830a23a501534a5f69a4fc357c09c5b",
+      "size": 22853,
+      "mtime_ns": 1790766462565892600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s3-a1.json": {
+      "sha256": "1f65f83973db8501bbc1d999fdd98a4e774070d93346e7fb0ed2fcc1a9e7bc23",
+      "size": 23044,
+      "mtime_ns": 1790766490012608600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s4-a1.json": {
+      "sha256": "182924cc6213a385e3850cc0614f625e219b468c215494287d5abaf5c811856d",
+      "size": 23024,
+      "mtime_ns": 1790766516994661000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-cold-runs-s5-a1.json": {
+      "sha256": "72ad62e3b8b8090caf6218f3dc4e165406b83e93c61ad136df986a7c151da0ae",
+      "size": 23030,
+      "mtime_ns": 1790766544816114700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s1-a1.json": {
+      "sha256": "25fbcd5d2a114359444cbe32d0eb4e43cc3939b0370750bef84eb5b7672215ab",
+      "size": 47073,
+      "mtime_ns": 1790766438901626000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s2-a1.json": {
+      "sha256": "1bbce9d3973e45730b7848ec6c22e4eb6b162e8c3dee0c63490354d54eb3cce0",
+      "size": 47322,
+      "mtime_ns": 1790766466645845900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s3-a1.json": {
+      "sha256": "46b48b451e0d8c1f147db18303624cd7db1d7c55d48246755a15da8aafef7f57",
+      "size": 47484,
+      "mtime_ns": 1790766494108605300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s4-a1.json": {
+      "sha256": "a0f4766f2f328e7971f9b0be3928826c75a0fd75aaeabb9e911c7af035e40571",
+      "size": 46909,
+      "mtime_ns": 1790766520866586000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-compare-s5-a1.json": {
+      "sha256": "6badf282bc1b957f7c7b29a5ab98e529433cdf75037fe04fbd876da1758f64d5",
+      "size": 47180,
+      "mtime_ns": 1790766547968981300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s1-a1.json": {
+      "sha256": "4216bdf43f69f2277e67d1ca4d20da34431617c07db2909b9839321be8c0b0c5",
+      "size": 45716,
+      "mtime_ns": 1790766440563882000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s2-a1.json": {
+      "sha256": "1a506f9809187d52d84a590e2e37fa0e4d41cf01824914c3285ce792e7234369",
+      "size": 45767,
+      "mtime_ns": 1790766468221511900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s3-a1.json": {
+      "sha256": "b382917d02d69ad3bcbbbfa6e81595b5d6abc51404b1ade62f94cd94ee24e0a0",
+      "size": 46054,
+      "mtime_ns": 1790766495682652600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s4-a1.json": {
+      "sha256": "eb5c0d2c77adf0f1bf42c4ea7da4adb3187e7a0d404bd745d3ea2e25f4738fa8",
+      "size": 45814,
+      "mtime_ns": 1790766522463857800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-dataset-s5-a1.json": {
+      "sha256": "1b4a51c6a33348b536c264a080d5ed3b68aa2232da26db78b067019ee80e17ea",
+      "size": 45972,
+      "mtime_ns": 1790766549563752000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s1-a1.json": {
+      "sha256": "5099ddf609565202494daf935c440c469201bb3cca7cd453783123a2fe0f4d3f",
+      "size": 71114,
+      "mtime_ns": 1790766442193546800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s2-a1.json": {
+      "sha256": "7a36ef18b019372874e31a71120b16de598129d2d5e4ea31fb2b060e8d94068b",
+      "size": 70753,
+      "mtime_ns": 1790766470216906900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s3-a1.json": {
+      "sha256": "4f46007dd9a774722047736149fcd95479ade2e371bff6381365aea0a162739c",
+      "size": 70640,
+      "mtime_ns": 1790766497290464600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s4-a1.json": {
+      "sha256": "ef5b873f63d911afefebd412f4788615cd75352d5812e7a6e4083fb4ad619609",
+      "size": 70575,
+      "mtime_ns": 1790766524090897300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-forecast-s5-a1.json": {
+      "sha256": "bc495f138a348605c328a399e79d519b5c03c371f63ee58e051e8f730b0bb8a7",
+      "size": 70827,
+      "mtime_ns": 1790766551213203900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s1-a1.json": {
+      "sha256": "ee9bd8dfa0875cb9f038f35399f22d9147cdeb03b6a77e64aec64d1baeff73bc",
+      "size": 76834,
+      "mtime_ns": 1790766437346211900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s2-a1.json": {
+      "sha256": "4a894eeee58a000431bfab138d5283b8a908bb52b95697a46f83846947cf7fbd",
+      "size": 77010,
+      "mtime_ns": 1790766465101253200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s3-a1.json": {
+      "sha256": "81e939b8c30f12cb4ea1f40a76106be6ca887bd0758d034d8931cd75c50c1c6b",
+      "size": 76941,
+      "mtime_ns": 1790766492533014700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s4-a1.json": {
+      "sha256": "727753f28bd5fe6e024e54f4e125a726f8c64677f84c340fac4bfd0f24670208",
+      "size": 77096,
+      "mtime_ns": 1790766519301133200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-first-form-s5-a1.json": {
+      "sha256": "ebbcdc20119470a17b8bd05479ce56e118d2dfa798c8207d394d3d1d78fe83d2",
+      "size": 77801,
+      "mtime_ns": 1790766546377216500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s1-a1.json": {
+      "sha256": "afdbca5149e69604669dd49aabf7978457a9f5124cd5cab9c9247146eee57686",
+      "size": 38471,
+      "mtime_ns": 1790766436450446600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s2-a1.json": {
+      "sha256": "17159ef8f875d0f9138132918cb43c0213e3e7618e33dd6e226dc13dfc4eb55c",
+      "size": 38506,
+      "mtime_ns": 1790766463084057800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s3-a1.json": {
+      "sha256": "1da0d4c9e794e4d231ee70ecb4fe7179b332689dd171602dee4136ddefbe3b3c",
+      "size": 38435,
+      "mtime_ns": 1790766490533244800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s4-a1.json": {
+      "sha256": "0b3901e0209a5884698f32820c18e374e742562087e818e806f9268aec527292",
+      "size": 38640,
+      "mtime_ns": 1790766517558747700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B0-warm-runs-s5-a1.json": {
+      "sha256": "d35947b6576acf86e6250b21b01488ff59b0b4f6d674f78cda748ae78162cb41",
+      "size": 38994,
+      "mtime_ns": 1790766545391574300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s1-a1.json": {
+      "sha256": "cac4a58f5b0ed4526a02ea77b8ac84f054511554ff5f68b44d555aa078f9c575",
+      "size": 55563,
+      "mtime_ns": 1790766448954414500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s2-a1.json": {
+      "sha256": "51ece5ed623d185b05256ab0ef0dd88b0739c45f9148ff9886c9720451201520",
+      "size": 55696,
+      "mtime_ns": 1790766477080869600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s3-a1.json": {
+      "sha256": "2e2741e076cd16df4bad57007308e5d025db73435115e10953a143a170bf7d93",
+      "size": 55667,
+      "mtime_ns": 1790766504152938500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s4-a1.json": {
+      "sha256": "d000c57ab98ac208d155b5b05fbbdd8abd538331de39fdb9a39ed7704e9cc580",
+      "size": 55800,
+      "mtime_ns": 1790766530946661000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-cold-runs-s5-a1.json": {
+      "sha256": "b89a30e96744e237e51ebe8823a080d7a06f4dbeb5f7ea8516d0c7e76d2dc53d",
+      "size": 55308,
+      "mtime_ns": 1790766558216606100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s1-a1.json": {
+      "sha256": "eb87ae6e1b2f7983a00a6fa51c371bdc128780869911cb17b88491bf5678e622",
+      "size": 103055,
+      "mtime_ns": 1790766452543858900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s2-a1.json": {
+      "sha256": "6876a8e747a8f953e7d33093b9a92f6c9a7352bd7b808f91568dadc095063e0f",
+      "size": 103397,
+      "mtime_ns": 1790766479916126000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s3-a1.json": {
+      "sha256": "7d77f9b896ca7280062f1cfc724b8f583ef38f31712063edec1f4c8ec4c76156",
+      "size": 103246,
+      "mtime_ns": 1790766506872519300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s4-a1.json": {
+      "sha256": "f671f14902f4444795747bf9ff7ee650e067a9d5e4abb991869eadef17490956",
+      "size": 103224,
+      "mtime_ns": 1790766534666156100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-compare-s5-a1.json": {
+      "sha256": "e6750f7388c0507f4dd6bc6409f668944dd386f5f6055b0d0e53d2ed0a059af7",
+      "size": 103324,
+      "mtime_ns": 1790766561259475600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s1-a1.json": {
+      "sha256": "c91c3570b081469a22ac7cb2f0f6ad2551f0fac3e80b8dd43d924e3b8949d305",
+      "size": 109139,
+      "mtime_ns": 1790766454081827000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s2-a1.json": {
+      "sha256": "620557d6ffabf7e2763a6d9cdaf7fb109d23213ec932899e2b64233a99768808",
+      "size": 108950,
+      "mtime_ns": 1790766481446810700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s3-a1.json": {
+      "sha256": "bf376f4c7afb5e16b9e7556f65e2e72cd23e10e44552b415124a0c3d06b6d00c",
+      "size": 108913,
+      "mtime_ns": 1790766508445978800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s4-a1.json": {
+      "sha256": "62b54889b46cdbbeceac9352d5758899d30f8279954df844269c6cdf610b3b35",
+      "size": 109158,
+      "mtime_ns": 1790766536213753400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-dataset-s5-a1.json": {
+      "sha256": "58aa3fba9aea5b6a2ac0c137a8648c23a396cde791f5827b5cc435ebe74955d7",
+      "size": 108590,
+      "mtime_ns": 1790766562879212900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s1-a1.json": {
+      "sha256": "3ab651c14ec640f0ba69cec9c5cd05d552ac4490a417fc4d393551f855980d38",
+      "size": 135170,
+      "mtime_ns": 1790766455640460100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s2-a1.json": {
+      "sha256": "229126fddf2f5eb783ef1f7de4b1799f3374a1c8b48f6013214505aef35469a2",
+      "size": 134901,
+      "mtime_ns": 1790766482999119200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s3-a1.json": {
+      "sha256": "fd1dd72e3c5c18fa8073fe203e8ae2a3cefbaba47c1e9cca0f30ec0a367e21d7",
+      "size": 135365,
+      "mtime_ns": 1790766510020837100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s4-a1.json": {
+      "sha256": "e6f1ba9cec349d1b5be19447539364ea165a2fbb9882ca197f7aa0b2ce2b986e",
+      "size": 135122,
+      "mtime_ns": 1790766537780823700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-forecast-s5-a1.json": {
+      "sha256": "4b8b3ac01c5a32d593981da93daf4bbb307fdaea338c92026d222d8513c4abab",
+      "size": 135145,
+      "mtime_ns": 1790766564475158000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s1-a1.json": {
+      "sha256": "14aa8e23f4748d906a28afdf88dd099c374cca0d8f827608399f020f48f28217",
+      "size": 152919,
+      "mtime_ns": 1790766451001664500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s2-a1.json": {
+      "sha256": "bfd0ad38d0623cb27e51da21b34ae50e46ce6c602b5d8a97dde880f848927b1a",
+      "size": 154022,
+      "mtime_ns": 1790766478413251700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s3-a1.json": {
+      "sha256": "15ec8ef29691622df3cda616decab6de69285b6803ab7f31734ce117d35e1bcd",
+      "size": 153037,
+      "mtime_ns": 1790766505390747000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s4-a1.json": {
+      "sha256": "8cc2ce054af031b02f1b0e4c1726e986e510865e7e5a5af281b22344fdf4fbe5",
+      "size": 153427,
+      "mtime_ns": 1790766533082365300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-first-form-s5-a1.json": {
+      "sha256": "8993c1d2d478253ff9bb41916bc79a8f5116fde2458560c864e09a39a6cfca82",
+      "size": 153566,
+      "mtime_ns": 1790766559681801600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s1-a1.json": {
+      "sha256": "be16bf506b774900f9347463669542e1c4d4b6ec0e8cb522f5a5e32b89e036b5",
+      "size": 96164,
+      "mtime_ns": 1790766449380508300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s2-a1.json": {
+      "sha256": "e59403b3e5285ac989b6d192234acd5a3f2bca227ea6730c5b82d4eaf8b70b6d",
+      "size": 95121,
+      "mtime_ns": 1790766477548934100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s3-a1.json": {
+      "sha256": "84e342b2f3a3da088afe7cdea4556ac0ccfc3fe0777fd0ab0d8d4976f02b9993",
+      "size": 95811,
+      "mtime_ns": 1790766504577039600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s4-a1.json": {
+      "sha256": "42d2ac1b14e15a3de17b24215b250a2653f73c71008bfd9b5a14b83dc298eb78",
+      "size": 95602,
+      "mtime_ns": 1790766531408873000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/B1-warm-runs-s5-a1.json": {
+      "sha256": "8e3435976cc0aa1d1f126d449d260d2b096a5ccd5a8584d03b94dd3878458ace",
+      "size": 95554,
+      "mtime_ns": 1790766558704796600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/lifecycle-s1-5-a1-B0-B1.json": {
+      "sha256": "39148d747a2f5e65da2906c92f54a96c0a94fc3ec809860585ec0d7dadeb8ab4",
+      "size": 4879,
+      "mtime_ns": 1790766568988877800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s1-a1.txt": {
+      "sha256": "a6593fbd0028451d9dbc3ce255e76c57efe02533b1fe73d2f287e2c89d7d36a9",
+      "size": 705,
+      "mtime_ns": 1790766442415342100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s2-a1.txt": {
+      "sha256": "b52fe59f0a7aae865d647c77c6e17031d9531b624afaefe40364a17421c573f0",
+      "size": 746,
+      "mtime_ns": 1790766470409759000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s3-a1.txt": {
+      "sha256": "25e655a9dd1a082a63d12a8fba87e9079617c1d3948eda3916e0e15c8f34b161",
+      "size": 734,
+      "mtime_ns": 1790766497500289600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s4-a1.txt": {
+      "sha256": "594714c90d667b68df2627956f536d43ccacda032718ffa9fd080f3164956681",
+      "size": 734,
+      "mtime_ns": 1790766524299137600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s5-a1.txt": {
+      "sha256": "1cf2253a6cd38b990f5035cbf86e3adb52ccd314f2a1d4656c737e437740b572",
+      "size": 735,
+      "mtime_ns": 1790766551433543400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s1-a1.txt": {
+      "sha256": "bd4563ebe2e6cb493a80f5912a59604de78cd383a1b21e18c13ce4321bdf1a6c",
+      "size": 733,
+      "mtime_ns": 1790766455844287200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s2-a1.txt": {
+      "sha256": "8bdc1081a3ac7d66c7dee0b2519db711752885c7905f1258a4e0f8b2a284178d",
+      "size": 721,
+      "mtime_ns": 1790766483214323500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s3-a1.txt": {
+      "sha256": "fd2390c24a7cdd28a63775ff9804302c53bff053362421032ba8d9045d747140",
+      "size": 719,
+      "mtime_ns": 1790766510249095200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s4-a1.txt": {
+      "sha256": "7e20ad20a58cd476c368c32e0c63fb0cfdd71bc136faf842f6ad4a4b7a7517a2",
+      "size": 733,
+      "mtime_ns": 1790766537995777500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s5-a1.txt": {
+      "sha256": "73e764f928883061bc51ee4cda77057c4526c532fda0b04b17aedbdbfde33e99",
+      "size": 735,
+      "mtime_ns": 1790766564680100100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/order-s1-5-a1-B0-B1.json": {
+      "sha256": "af977263ac170ef6c45df4add04a3fbdb12a2031d92ae76e7ee9202c53fdfa97",
+      "size": 2273,
+      "mtime_ns": 1790766431215968000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s1-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766433288903700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s2-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766460126954400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s3-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766487527898200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s4-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766514516926400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B0-s5-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766542290813800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s1-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766446649400100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s2-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766474670737300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s3-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766501824654700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s4-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766528628034700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/service-B1-s5-a1.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790766555683421700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/results-r1.md": {
+      "sha256": "fe2cda20c9263dee33f821debd057911d50b6691c062624dedc741821aacff05",
+      "size": 4930,
+      "mtime_ns": 1790767054382649200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/runs-route-modules-r1.json": {
+      "sha256": "ad799f91e0aa1e42b19b38b64263deb448405625964b549ad2fc0398d2fa6522",
+      "size": 17442,
+      "mtime_ns": 1790766876103444100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-attempt-1.json": {
+      "sha256": "36e6b973992dd0f83caa0ec2a562a319435dedb5865981a2a374ca8feda8cd95",
+      "size": 1266,
+      "mtime_ns": 1790766744290773300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-attempt-2.json": {
+      "sha256": "046c4fb8f4eacccf5c370530e05ebc9e4ba10cf1bbe410cc93a4b247e37d5e0f",
+      "size": 1844,
+      "mtime_ns": 1790766764582355600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-before-variable-repair.py": {
+      "sha256": "415a5af0d112c6a23de1fac3eac612a5d085047e4165000eb214262dfd4de76c",
+      "size": 13968,
+      "mtime_ns": 1790766744289734700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-r1-asset-headers.json": {
+      "sha256": "28f01b6867b55bb62b4f848d46c5eb0c4f8b46268635b21329051da4cf549de2",
+      "size": 227748,
+      "mtime_ns": 1790766764456540800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-r1.json": {
+      "sha256": "ee409cbf05c42f0e607687ae73d0dc9390dcaf65e04831b59869505547c3d429",
+      "size": 188973,
+      "mtime_ns": 1790766764454971600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/warm-readiness-analysis-r1.json": {
+      "sha256": "2b54b887d315ead222a4d307a18611407e2596b41201f6caa4f6236a0c06065b",
+      "size": 6494,
+      "mtime_ns": 1790766876104446400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/report-launcher-failure.json": {
+      "sha256": "9013b243ef437c4a9475ca2e569bcbefdb30bc6ba4b5cc14e1211744828b7a92",
+      "size": 285,
+      "mtime_ns": 1790767041294969400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_final_documents.py": {
+      "sha256": "2b93df1eff4e12b56d204e1d8641793fd85768634326c0478936f72f629ed34d",
+      "size": 10547,
+      "mtime_ns": 1790767431477894700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_measurements.py": {
+      "sha256": "5b1254ea9b9ff352086b3e98a8a903a0fadea6f9caffc38005874fffdc76f5a5",
+      "size": 19268,
+      "mtime_ns": 1790766184566528100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_product.py": {
+      "sha256": "edaa6d98a74d497c345e0af8c6d90bb1c9b9f27471dd6b678eb491e50bf2d1c6",
+      "size": 5797,
+      "mtime_ns": 1790765941655596500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/audit_scope.py": {
+      "sha256": "8dc5d930e8b93735365a78d5ef5b1491c9f91668fa4d3b0f2a4979ac281273e0",
+      "size": 6797,
+      "mtime_ns": 1790765842860840500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final-audit-launcher-1.json": {
+      "sha256": "f91eb9bb635710d2a7db537036f7f897094f15888abbe5c69f19792a74d30080",
+      "size": 418,
+      "mtime_ns": 1790767422152811400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final-documents.json": {
+      "sha256": "74c54627a5966d9b9a3dd148a730e43098bc6492839867db4edf644e5cfbb6e0",
+      "size": 13103,
+      "mtime_ns": 1790767433857832700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final.md": {
+      "sha256": "f223f0d66fcb55f39edc6efb47d94c21cacb3c10d17c7271f9a071cf837dd9c7",
+      "size": 5361,
+      "mtime_ns": 1790767615064082500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/numeric-command.json": {
+      "sha256": "d0263effc529925e1e430d4c585840c94483e25c3bbf3f86a6fb3c026aad36e0",
+      "size": 853,
+      "mtime_ns": 1790766663281791900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/numeric-review.json": {
+      "sha256": "cd588467b3cfd9f0198480d14374a62a2e6d3b08b580381552b33661f39fef4c",
+      "size": 834418,
+      "mtime_ns": 1790766663259941700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/preflight.md": {
+      "sha256": "b86bebe55f1bca0f64d58e04bda756e62866873c009f66ab6f962f66322a9010",
+      "size": 2385,
+      "mtime_ns": 1790765579730320600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/product-gates.json": {
+      "sha256": "cd8988107e8d7b528e34a73c41dc09ab226e9e16cc855273fe5b98dcda02dbb2",
+      "size": 4806,
+      "mtime_ns": 1790765946190194200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/product-review.md": {
+      "sha256": "32b988ae763812ec6b2c638703a5cd8992657fcc7e13fd4fa03ecf0fb808fbc0",
+      "size": 4319,
+      "mtime_ns": 1790766379921808300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/scope-final.json": {
+      "sha256": "6061de3b058c05159edc8fb9530b898bdedca7e619959341e0076b1e5249bc58",
+      "size": 66665,
+      "mtime_ns": 1790766845254597500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/scope-initial.json": {
+      "sha256": "c3226426ecb40f55326895cdeee6c36c6cd180ee9a700a0394630c8e59dae8ed",
+      "size": 52672,
+      "mtime_ns": 1790765845785966800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/test_audit_measurements.py": {
+      "sha256": "4b373326bd1757ae3ec77579f17dbf8a1254e627fb095017b60636c8820ce1d1",
+      "size": 2427,
+      "mtime_ns": 1790766184566001700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-1.json": {
+      "sha256": "c7e5cce17cc8aa95c4fb4eb179a10397699ccc2013ddc47361b169027ec027e2",
+      "size": 4525,
+      "mtime_ns": 1790765733684980500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-10.json": {
+      "sha256": "991cbb8bce2cee65c271aa162827235462e42c4dc0c380151db2e6c72cc21ed5",
+      "size": 239,
+      "mtime_ns": 1790765941694132100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-11.json": {
+      "sha256": "9447429e22187ab72b8ae570b55c05be206e3ace864facb6bb97329e97a9842e",
+      "size": 246,
+      "mtime_ns": 1790765943916632200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-12.json": {
+      "sha256": "925d146f059ec976beb35aa1c458dc4578fd51293fe4c04ab828776ccee7b316",
+      "size": 603,
+      "mtime_ns": 1790765946199965800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-13.json": {
+      "sha256": "fd6cdfb26a68fbde4aa72a6f434b242db85186b387569573ae841059f9c7f264",
+      "size": 563,
+      "mtime_ns": 1790766184572735900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-14.json": {
+      "sha256": "9703fe56d416cd26b315144e9a4103542bcb395c5423d0669eadf0d6e6e92f11",
+      "size": 537,
+      "mtime_ns": 1790766184607311800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-15.json": {
+      "sha256": "ede90d841acf6d93188e46c93b52d8fdd6974ec5ee722d0fae99cfccc2ccec53",
+      "size": 544,
+      "mtime_ns": 1790766186631455800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-16.json": {
+      "sha256": "a3a9021d6a0096445896fd87d43659f417b6621fc6204620e818c0e250bc4706",
+      "size": 316,
+      "mtime_ns": 1790766186752890400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-17.json": {
+      "sha256": "6199431e09875b691a2415c94825505bc1b99ac934715c0ebb9c3c62ad9ff062",
+      "size": 257,
+      "mtime_ns": 1790766842481738000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-18.json": {
+      "sha256": "c6f275786de1b2a40af24ecba3a155a20a1d01f1ad9f1be716121f7817f0ab84",
+      "size": 937,
+      "mtime_ns": 1790766842641021400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-19.json": {
+      "sha256": "7e7fe40ceed983b847e44769cc07115a2201326e89c5a39c9e75cdb932b6c15b",
+      "size": 666,
+      "mtime_ns": 1790766845263890900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-2.json": {
+      "sha256": "6416323f8866eb52cd57d5aefaab91ed1321caf64d620a2afe4f3ed0695dafc8",
+      "size": 245,
+      "mtime_ns": 1790765733726651500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-21.json": {
+      "sha256": "696d639e5ffdfac1988699282bb49f4cc0ae95f53a5067ede5a02e7814528d1d",
+      "size": 246,
+      "mtime_ns": 1790767422203407500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-22.json": {
+      "sha256": "4921066f0fd436378b4b0169f61faefd3cb7b75e26b552fff367fd846b3b330e",
+      "size": 1214,
+      "mtime_ns": 1790767422239557300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-23.json": {
+      "sha256": "de2e9b2807c9b928ad23d5cdf4d3fce7a363677b2bbd3fb86faf82126e1d5612",
+      "size": 279,
+      "mtime_ns": 1790767431484000500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-24.json": {
+      "sha256": "353be3a9290706002ddfc3900976b36e65d77187ccd22330738a33bc19235a6e",
+      "size": 252,
+      "mtime_ns": 1790767433773612500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-25.json": {
+      "sha256": "110758f73291e895c0060e1d7aacea9ff76ab3ed8d2ad9cdc34f6ea161f295db",
+      "size": 260,
+      "mtime_ns": 1790767433866837700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-3.json": {
+      "sha256": "b7ceb613febb00e8b28c846af1b2fd3f7efe79ed4bd3020bb42c5d5201429df5",
+      "size": 258,
+      "mtime_ns": 1790765733760708100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-4.json": {
+      "sha256": "e3de4d7fc4b52314ba87a26b2c39cb12156c7d302be95be7862204aa64b181f3",
+      "size": 251,
+      "mtime_ns": 1790765735388979000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-5.json": {
+      "sha256": "7ddcf343443518722f8988f5a494714c14962ea9669ab9606d3d4a2a11f10a2e",
+      "size": 238,
+      "mtime_ns": 1790765842866735200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-6.json": {
+      "sha256": "34fc8f40df2cff36c82c4a6a0b0c31278c3dfef81f314ad1118138e3330652f5",
+      "size": 337,
+      "mtime_ns": 1790765842901272900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-7.json": {
+      "sha256": "319ec06387279e4c04f74551dd1886a826a108aced902341ab1eb4e1f683b341",
+      "size": 344,
+      "mtime_ns": 1790765845275439000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-8.json": {
+      "sha256": "762b9c7934867d2b12b9ed0e41b7dc5ed622ef12ea0aad507af2fc935f1fe9b4",
+      "size": 543,
+      "mtime_ns": 1790765845796505900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-9.json": {
+      "sha256": "afaff0abae1599e20deec46020eeef58201bca23a123a66f4e78f1c819a86579",
+      "size": 240,
+      "mtime_ns": 1790765941661110600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/visible-review.json": {
+      "sha256": "9b5b3a20f54740c64bdb8dd4d8102d1637b036e4464191bd7e1dd7dea93e45f7",
+      "size": 14454,
+      "mtime_ns": 1790766795114551400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-command-launcher-failure.json": {
+      "sha256": "708b28367a3d31b828110d34f0317e8dacf6b86eec06e88680d84d6a38f4aa36",
+      "size": 233,
+      "mtime_ns": 1790767159329117900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-commands-2.json": {
+      "sha256": "e02dc84e3d7dac0c9413139a8e3b20001e3e21521d42398887465596098d907d",
+      "size": 2441,
+      "mtime_ns": 1790767259436224200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-commands.json": {
+      "sha256": "240b6fcf347b3a2e451f6d61194ab590c27522578036d208a6686e33111bcb8e",
+      "size": 1380,
+      "mtime_ns": 1790767159329117900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final.json": {
+      "sha256": "6fa319500850129726e94b73c213ae3cd4b664c611602121787b0bad6296357a",
+      "size": 2193,
+      "mtime_ns": 1790766865488490000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/git-status-before.txt": {
+      "sha256": "1e42598cd4aee0a8693cecb74279479afaf06330c249b12b6af1e86880067f60",
+      "size": 42706,
+      "mtime_ns": 1790765150179511300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/git-status-final.txt": {
+      "sha256": "0d80307f07a0ba65ddd2d31686cfe6f27da0c6f1fd779a4f868b3a98f3780943",
+      "size": 65535,
+      "mtime_ns": 1790766865497860000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/port-before.json": {
+      "sha256": "c7af13e220dbce1e7fed0e6c3d45fead9b4230a6a7eb3947191e315f159bc22e",
+      "size": 235,
+      "mtime_ns": 1790765390168748400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/preflight.json": {
+      "sha256": "abade418873f0b9fe333d85416f2f028cd285c258cc4afaa7e623fc9080573f8",
+      "size": 175677,
+      "mtime_ns": 1790765150178867900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-baseline.diff": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765150179511300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff": {
+      "sha256": "fb60bb9da111440eec0951b11982af9be37541a2b57595a0f898bc4d5c033a60",
+      "size": 3995,
+      "mtime_ns": 1790766865497860000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B0-build-node-gzip-initial.json": {
+      "sha256": "18838591dd53109c13035b6048ef58b2a3b7767d11109157ddbd0671e2e3c209",
+      "size": 1614,
+      "mtime_ns": 1790765636096802800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B0-build.json": {
+      "sha256": "82047dd384d44358c46c1b2489ce8d156d196aefffb1445379e38cc50145ab7e",
+      "size": 1733,
+      "mtime_ns": 1790765713148969200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B0-source.json": {
+      "sha256": "4d7df498c97a9eb5523fe62285ca935e5b03486efd54cbd093642d1c92329a4b",
+      "size": 10117,
+      "mtime_ns": 1790765385963878700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B1-r1-build.json": {
+      "sha256": "974a22e4a035d440b4c2b2e9af9c94221c42670080e118b0496627754d5cbfeb",
+      "size": 11806,
+      "mtime_ns": 1790765713985583400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/B1-r1-source.json": {
+      "sha256": "4cdad36ed02aa8f28aea2892549def30352a2cab14f4968bf7c3f82265103a65",
+      "size": 10698,
+      "mtime_ns": 1790765654919009800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/backend-source.json": {
+      "sha256": "b8ca67bd8037bfc1be80136df5ebe543115072c9194386443245f692a0481e4f",
+      "size": 14067,
+      "mtime_ns": 1790765383858550600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/snapshots/experiment-r1.json": {
+      "sha256": "b301cf4c79742aa2c4ff5f89519db087388e538329f0ca06ef20c08c9941044e",
+      "size": 42176,
+      "mtime_ns": 1790765845286856200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/cleanup.json": {
+      "sha256": "83461c04a33b8ea597480665797841cc9b0e3403cfa23e0b9fe50d6e58ad7eb2",
+      "size": 987,
+      "mtime_ns": 1790766487680537300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-RunDetailPage-hold.json": {
+      "sha256": "103cb92ca2122f4202b6bf1aee283794ab309da421ec7d9941959c7180634ba3",
+      "size": 723,
+      "mtime_ns": 1790765818210643400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-RunDetailPage-restore.json": {
+      "sha256": "d95d6f62ae83d8f51d76233860f034f1d4523d2fc5c77c2b038501a3b2e8bb7c",
+      "size": 532,
+      "mtime_ns": 1790765834682715200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-SystemPage-hold.json": {
+      "sha256": "1237515d92313050cfd2f2b2f2846a4fb7cc2c68cec4cfb1641c3d4b093d02f1",
+      "size": 715,
+      "mtime_ns": 1790765904501038700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault-SystemPage-restore.json": {
+      "sha256": "99c202b0b90b361a4ea149c9ac57641c5c4e740bd05959fc89be69f1b52a238e",
+      "size": 527,
+      "mtime_ns": 1790765945320592900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/fault_asset.py": {
+      "sha256": "6fcbc8f9afddec0bce82a26fe50d3b632537a8d1ab1e4bde372d929f526105c9",
+      "size": 2177,
+      "mtime_ns": 1790765747354923700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/observations.json": {
+      "sha256": "1688d79e5bdfb10bb264cb462a8b194d048fe7d0d020d0bcbf3a62ee7691586b",
+      "size": 24772,
+      "mtime_ns": 1790766438430724300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/observations.md": {
+      "sha256": "c5aa4e3a287026c58939aae0bdcbf6a8b7d82d7cf12a32111826d098edfc8258",
+      "size": 3762,
+      "mtime_ns": 1790766486741571500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/recovery.json": {
+      "sha256": "8ceaaf3445c1c771c657c97cab7bc61e6bad2966559902e45acd717318aca1b7",
+      "size": 2177,
+      "mtime_ns": 1790766606126328300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/implement.jsonl": {
+      "sha256": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+      "size": 1545,
+      "mtime_ns": 1790765149503614700
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/implement.md": {
+      "sha256": "0baaab20458277457e5d160294a4917150b7b2e8f6ac0288ccb7e2549825b364",
+      "size": 3357,
+      "mtime_ns": 1790767233143785300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/isolation/.gitignore": {
+      "sha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d",
+      "size": 14,
+      "mtime_ns": 1790765606540603400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/prd.md": {
+      "sha256": "637457efabecf8c6a0bbcbeafc4daa7f8480139dedb3c1861f9cb5932bbfcfe8",
+      "size": 4283,
+      "mtime_ns": 1790767233142243900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/report.md": {
+      "sha256": "e6de1081975ffd6eb27884733855cc210a59ec12873ba79eb292735d68042342",
+      "size": 8053,
+      "mtime_ns": 1790767193857805800
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/task.json": {
+      "sha256": "cfba907b2d8b7a19ba207cc0c3a6715dc41be40b1e26a4e107df3691cde14f9c",
+      "size": 778,
+      "mtime_ns": 1790765375343923200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/README.md": {
+      "sha256": "ca8f52527e7ba45338e5b05d0f8a9661bee9292931e63e0dc0344932d803648f",
+      "size": 6790,
+      "mtime_ns": 1790766744763106000
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/acceptance_common.py": {
+      "sha256": "a9675bcfd2b3fe46f18d1ad236319e3aaca422b877ccec92682165e1552b9e6b",
+      "size": 1664,
+      "mtime_ns": 1790765654685879400
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/analyze_build.mjs": {
+      "sha256": "9bc5942b97d1a26e508f517ee3dc8336e4a8ab8d3f1082014a3a454b1de540c3",
+      "size": 4829,
+      "mtime_ns": 1790765711445168100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/browser_probe.mjs": {
+      "sha256": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd",
+      "size": 12975,
+      "mtime_ns": 1790765380378846300
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/create_fixtures.py": {
+      "sha256": "5b7882f8dbf6b821d8bb200effb7a697855969884b0fddb513ed89c679501904",
+      "size": 13310,
+      "mtime_ns": 1790765654684843100
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/freeze_experiment.py": {
+      "sha256": "083f35be7e96b0f48aa9fef9246147785a8e5cc58abcca05d86ec90863279f5b",
+      "size": 2538,
+      "mtime_ns": 1790765654686653200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/measure.mjs": {
+      "sha256": "5ec80f5fcf6389561f3aa66ffd8bd78bd675c6e2e6bd83eaf25ae44b9d587746",
+      "size": 17977,
+      "mtime_ns": 1790765552295886600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/output_guards.test.mjs": {
+      "sha256": "50500d48019dd75f26cfcb08f5e6bc215ce0de9f114f9f9a12677fc3f0f12d39",
+      "size": 3167,
+      "mtime_ns": 1790765792404742900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/paint_collection.test.mjs": {
+      "sha256": "5238699bc395534f44e7670f37383f6ee4eddde40e3b10248e79f82ecafe823e",
+      "size": 7707,
+      "mtime_ns": 1790765792403742900
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/preflight.py": {
+      "sha256": "5daffdaf20d8e8e3203647dde157a04123810c892251b47d07e3b8ad5415f7de",
+      "size": 2293,
+      "mtime_ns": 1790765129604108200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/prepare_isolation.py": {
+      "sha256": "62f41c5a1cd13ce5db859e9efc4e94483ecb89772c11263256d5b575ed2094ad",
+      "size": 3750,
+      "mtime_ns": 1790765792402738200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/run_gates.py": {
+      "sha256": "9cfaae9ffd5515cfe53fe3f8872ab74504ff017aac68ad9bf233282429809ad4",
+      "size": 3856,
+      "mtime_ns": 1790765792402738200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/run_matrix.py": {
+      "sha256": "1c2a30b62afcd0fde12461815437b0554493763867a8fd0f367073aac68f6bc5",
+      "size": 10984,
+      "mtime_ns": 1790765654686653200
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/serve_variant.py": {
+      "sha256": "9a1943c8387e560789915495beb7d412798f31935481e8442f5137fd6541d71a",
+      "size": 3734,
+      "mtime_ns": 1790765552295068600
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/tools/summarize.py": {
+      "sha256": "b2c90fcd62a506dae79c86b7593874fff1a635196cd636e685ec9c4d2a0e87eb",
+      "size": 13972,
+      "mtime_ns": 1790767106590011500
+    },
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/verification.md": {
+      "sha256": "bb6b498a1920aa4438b7038ee5d9cf77c30ee174a7cfd1e8ac5802ed102da21f",
+      "size": 10546,
+      "mtime_ns": 1790767233146327500
+    },
+    "web/src/components/AppLayout.tsx": {
+      "sha256": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+      "size": 2086,
+      "mtime_ns": 1790765378694604800
+    },
+    "web/src/components/RouteLoading.tsx": {
+      "sha256": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+      "size": 941,
+      "mtime_ns": 1790765378694604800
+    },
+    "web/src/router.tsx": {
+      "sha256": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+      "size": 1882,
+      "mtime_ns": 1790765378693599600
+    },
+    "web/tests/LazyRouting.test.tsx": {
+      "sha256": "614a18a136674f48dc874c5f423c222da0f44e9425029fc165b34fc4e846bec2",
+      "size": 6251,
+      "mtime_ns": 1790765571189987800
+    },
+    "web/tests/RouteResolution.test.tsx": {
+      "sha256": "95505e0b53aae9d324a4b8f422b873b6a22a68ff02a61d61efd996d14202c17d",
+      "size": 3932,
+      "mtime_ns": 1790765528391475000
+    }
+  },
+  "preserved_log_count": 11,
+  "formal_gates": "Existing final gates retained; unchanged frozen product does not require a repeated full run."
+}

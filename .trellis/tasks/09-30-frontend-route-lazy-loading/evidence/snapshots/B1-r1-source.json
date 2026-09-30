@@ -1,0 +1,284 @@
+{
+  "variant": "B1",
+  "baseline": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "root": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B1-r1",
+  "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+  "files": {
+    ".gitignore": {
+      "sha256": "8b8ca5ef11e3d180a39a81d673d3a7604c50fcb39498dfaf719b4323a4b39cdc",
+      "bytes": 393,
+      "mtime_ns": 1790735658846869800
+    },
+    ".gitattributes": {
+      "sha256": "237784946379cd36f5afae643182bb03f982e043d1b79ec9925435b9c6cbd8a0",
+      "bytes": 671,
+      "mtime_ns": 1790735658845764800
+    },
+    "web/biome.json": {
+      "sha256": "be40a89ace0a0e712ef632cc4d7b1cc0b8e988fa0bfd328eabf02975c79de789",
+      "bytes": 743,
+      "mtime_ns": 1790735659063838200
+    },
+    "web/index.html": {
+      "sha256": "2a243bffd0eb61257cae908951c5f2dd6c8ab66d370034ba23dc6ced04220b49",
+      "bytes": 307,
+      "mtime_ns": 1790735659063838200
+    },
+    "web/openapi.json": {
+      "sha256": "19551dd7600e92bb4f4f5e5162b5275ada2e929adcc716b1c458de8bdbaa00df",
+      "bytes": 92848,
+      "mtime_ns": 1790746513225315100
+    },
+    "web/package.json": {
+      "sha256": "30173edd41287a6b1a5b808d9351345e5a5cf02c2270c84c2c7926bb4e3467b9",
+      "bytes": 1226,
+      "mtime_ns": 1790735659065920400
+    },
+    "web/pnpm-lock.yaml": {
+      "sha256": "636cd49d8cd5a5f67dd9a5ad2652ad188040541f398fd299ad253acc981ae2d4",
+      "bytes": 93158,
+      "mtime_ns": 1790735659066920400
+    },
+    "web/src/api/client.ts": {
+      "sha256": "acc04c511909e3c257da28159c1ce71d7e28a14b6d395f15d0d042379936b34b",
+      "bytes": 1737,
+      "mtime_ns": 1790735659068919000
+    },
+    "web/src/api/hooks.ts": {
+      "sha256": "bc4ab3667be27c562cf773c865a3851bc5b615ecf24bb9e84b585850ca871c4b",
+      "bytes": 7080,
+      "mtime_ns": 1790735659069919400
+    },
+    "web/src/api/schema.d.ts": {
+      "sha256": "1f31ea208a2f7dc4ed4c3bcb85fe581df66e18bfcd74497f3743def868aa4d34",
+      "bytes": 71714,
+      "mtime_ns": 1790746513146813300
+    },
+    "web/src/api/sse.ts": {
+      "sha256": "d93904309cb0ae9e92f592ee8ceb831a3a75d350b47604499cf18c3649bff599",
+      "bytes": 3650,
+      "mtime_ns": 1790735659072423200
+    },
+    "web/src/components/AppLayout.tsx": {
+      "sha256": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+      "bytes": 2086,
+      "mtime_ns": 1790765378694604800
+    },
+    "web/src/components/ClassifyResults.tsx": {
+      "sha256": "171e9d502a6b64c1fc662d7e7f7af95d1200740b5a84dbb2f671061d3d876e30",
+      "bytes": 3797,
+      "mtime_ns": 1790735659074428400
+    },
+    "web/src/components/CompareWarnings.tsx": {
+      "sha256": "9d65d39a9943733d4b2214b8a28502e391c5951ff3e188300239abbf69adcddc",
+      "bytes": 2389,
+      "mtime_ns": 1790746347733617000
+    },
+    "web/src/components/ErrorAlert.tsx": {
+      "sha256": "68c2ce8c4607310115a09cbf4b0d038e2bcf45d0bfdeba2c1b86144d4d484b94",
+      "bytes": 1876,
+      "mtime_ns": 1790735659075427900
+    },
+    "web/src/components/ForecastResults.tsx": {
+      "sha256": "48fe3d10f4b1779929cda61e8028626b4be951c86224722b2b0d8c36a47877eb",
+      "bytes": 7427,
+      "mtime_ns": 1790735659076427600
+    },
+    "web/src/components/MetricTable.tsx": {
+      "sha256": "d95f5a538905848fe7538d86ce2b9f82116d7ca198eb4f5bc4da28ccc71c0ed5",
+      "bytes": 975,
+      "mtime_ns": 1790735659076427600
+    },
+    "web/src/components/RunLog.tsx": {
+      "sha256": "6a7c6fd7b379f00a3166743da4c0c2387360d7cfac333a7bffc30a1701e04212",
+      "bytes": 2438,
+      "mtime_ns": 1790735659077453400
+    },
+    "web/src/components/StateTag.tsx": {
+      "sha256": "3ed17a546fe70c8dbe887bdba0ddcca547c87e327b697fc6b4b2f92bf2e348ad",
+      "bytes": 740,
+      "mtime_ns": 1790735659077453400
+    },
+    "web/src/components/charts/CompareBarChart.tsx": {
+      "sha256": "224233bf704bc1b6551f98a9665b290f0edf7793c1993987ea7d12382eacb938",
+      "bytes": 1324,
+      "mtime_ns": 1790735659079962400
+    },
+    "web/src/components/charts/ConfusionMatrix.tsx": {
+      "sha256": "1b509a655f1d7143e97a599a5173be77b56daebd0aa51ede7f9daece91defce8",
+      "bytes": 722,
+      "mtime_ns": 1790735659081465000
+    },
+    "web/src/components/charts/EChart.tsx": {
+      "sha256": "b31ea5a4023048a2c9042360386dcb4ce2e2a701ea5183b41f1a9007fdde32d8",
+      "bytes": 1727,
+      "mtime_ns": 1790735659081967100
+    },
+    "web/src/components/charts/ForecastChart.tsx": {
+      "sha256": "d93eefb87a6b94f65a5b84dc34be72040667131f58aaa58b9164257dbac6a66e",
+      "bytes": 3988,
+      "mtime_ns": 1790735659082970700
+    },
+    "web/src/components/charts/RocPrChart.tsx": {
+      "sha256": "a8731a5e3cc0de3e6552cc6d46c83ef90e07b05b5828c7630ae51f1d9368868c",
+      "bytes": 1897,
+      "mtime_ns": 1790735659083970500
+    },
+    "web/src/components/charts/SegmentTimeline.tsx": {
+      "sha256": "6a351ebc7dc4ce8d35c6e29b8754590a4d209c9f2b32479d7a24a18dfaff9f2c",
+      "bytes": 3122,
+      "mtime_ns": 1790735659084972800
+    },
+    "web/src/components/charts/SeriesChart.tsx": {
+      "sha256": "d4dd958bfbd5ce41c7cd6c76d02b319b338f8dad9da616e89fdfcd5be0df8443",
+      "bytes": 3037,
+      "mtime_ns": 1790735659085971300
+    },
+    "web/src/components/forms/RunConfigForm.tsx": {
+      "sha256": "43880ebed51d724b0f8771a356cf68f3c2167fe0d0f625e3d71f1241bb6ede49",
+      "bytes": 3477,
+      "mtime_ns": 1790735659086971000
+    },
+    "web/src/components/forms/schemaTransforms.ts": {
+      "sha256": "871669081576a0ccda2b0dd7281a645bebdf8f00bb54df55d04576ceadbc46b1",
+      "bytes": 5101,
+      "mtime_ns": 1790735659088478200
+    },
+    "web/src/main.tsx": {
+      "sha256": "e47fc2f771aa8c44b61376193b6dda1757ff5c24649c81a0f50e4fb4032fed32",
+      "bytes": 864,
+      "mtime_ns": 1790735659089478400
+    },
+    "web/src/pages/ComparePage.tsx": {
+      "sha256": "92cb05f8d9621c39e0cb13b2068d4c845528a0a0d090a841e1113a46f2eab353",
+      "bytes": 5675,
+      "mtime_ns": 1790746392449729300
+    },
+    "web/src/pages/DatasetDetailPage.tsx": {
+      "sha256": "c085b83f740193b3f6ccee133211ae54e8862fc8244f66e1c32b15bbbdefbaea",
+      "bytes": 9887,
+      "mtime_ns": 1790735659092491400
+    },
+    "web/src/pages/DatasetsPage.tsx": {
+      "sha256": "439d9aca674ad4bbff23c271c1b99527793ade98dd7bcae6ac1f59db473e1fd8",
+      "bytes": 2358,
+      "mtime_ns": 1790735659092491400
+    },
+    "web/src/pages/RunDetailPage.tsx": {
+      "sha256": "e99ff3fdadb6117e71b9db99eb8ed9f372e333570dc7684212ff9eb314d9fa3e",
+      "bytes": 6007,
+      "mtime_ns": 1790735659093496200
+    },
+    "web/src/pages/RunNewPage.tsx": {
+      "sha256": "1bb82479a394d7ca28cfbeb55635d8837718ac32e26f7a1f8e8fb77cdcf7d11e",
+      "bytes": 6760,
+      "mtime_ns": 1790735659094496900
+    },
+    "web/src/pages/RunsPage.tsx": {
+      "sha256": "111795864ab4f76fdd2f28daf278f957619f1cab5585ba08bbe27c36250b7a57",
+      "bytes": 4248,
+      "mtime_ns": 1790735659095000800
+    },
+    "web/src/pages/SystemPage.tsx": {
+      "sha256": "856148c44fdd7a9fa59c325324e9e83c811e3c9ff130b569b4e21921180daadd",
+      "bytes": 2554,
+      "mtime_ns": 1790735659096006000
+    },
+    "web/src/router.tsx": {
+      "sha256": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+      "bytes": 1882,
+      "mtime_ns": 1790765378693599600
+    },
+    "web/src/utils/datasetMeta.ts": {
+      "sha256": "f561235f9d1180c7c5f9e4a3a99ea059d0e9ad4fa7f8166a55ebe8644ef10523",
+      "bytes": 1776,
+      "mtime_ns": 1790735659097510700
+    },
+    "web/src/utils/format.ts": {
+      "sha256": "0220c4307990f9cf11860dc27c5be950f43fd40e0d6d73c00872a757c7205f0a",
+      "bytes": 2152,
+      "mtime_ns": 1790735659098516000
+    },
+    "web/src/utils/guards.ts": {
+      "sha256": "25f5ded32383bea87f7a0ea473e63673e2bb2030f8e55609edda5dfd09494ac5",
+      "bytes": 1528,
+      "mtime_ns": 1790735659099516700
+    },
+    "web/src/utils/metrics.ts": {
+      "sha256": "85488776fb65ed27cf742c4202b34e699a0fe7bfbc2451dc27ecbb4b60cf9183",
+      "bytes": 2871,
+      "mtime_ns": 1790735659100517900
+    },
+    "web/tests/api/sse.test.tsx": {
+      "sha256": "bc16deda3be514f169bf1e9af02c6e925286d1bbb8a5ace8f44badbad04283f3",
+      "bytes": 4363,
+      "mtime_ns": 1790735659102514900
+    },
+    "web/tests/components/forms/RunConfigForm.test.tsx": {
+      "sha256": "44cda7f53a4c0f4aeb03a97f3cc694d640f4189df1729a01b5306ff086dfd139",
+      "bytes": 4928,
+      "mtime_ns": 1790735659103515600
+    },
+    "web/tests/components/forms/schemaTransforms.test.ts": {
+      "sha256": "a038782d464e388f1a2a525d26cd7cbd729afd2179c8add27ed1c8643819a442",
+      "bytes": 3968,
+      "mtime_ns": 1790735659104515600
+    },
+    "web/tests/fixtures/run-config.schema.json": {
+      "sha256": "17ce940b213aed7ff7e40279d974f750326d79031fd5293012da9e5e1aa90a9c",
+      "bytes": 14810,
+      "mtime_ns": 1790735659106018700
+    },
+    "web/tests/helpers.tsx": {
+      "sha256": "9ed11837cc83e1d805a53495ba8b38746ddbbd60038bb266e3c7b32c09324eac",
+      "bytes": 1985,
+      "mtime_ns": 1790735659107062100
+    },
+    "web/tests/pages/ComparePage.test.tsx": {
+      "sha256": "0cf8c893027adfa096a575b7be98e9717e67eaecb11b35c162283a41b0716521",
+      "bytes": 10333,
+      "mtime_ns": 1790746392450728700
+    },
+    "web/tests/setup.ts": {
+      "sha256": "5702b996bd7da9b962a66f7240beb30fdeae8442a743f502cc6f9d1d9cd56dd2",
+      "bytes": 696,
+      "mtime_ns": 1790735659109066400
+    },
+    "web/tests/utils/format.test.ts": {
+      "sha256": "8c0e5e8d73b39337b1be5b7f13d7f496c3608e2433d090133c003e9f0266e23f",
+      "bytes": 1213,
+      "mtime_ns": 1790735659111065700
+    },
+    "web/tsconfig.json": {
+      "sha256": "05c6660861648df9550ba1e24e958151ca6ed59428305f6318e0366566b289ac",
+      "bytes": 578,
+      "mtime_ns": 1790735659111065700
+    },
+    "web/vite.config.ts": {
+      "sha256": "2d3b9b3a2181b9abc8e0bd0c94847f75b4b7d8cbb7c88e78ac8f0a2e8031b00f",
+      "bytes": 437,
+      "mtime_ns": 1790735659112065700
+    },
+    "web/src/components/RouteLoading.tsx": {
+      "sha256": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+      "bytes": 941,
+      "mtime_ns": 1790765378694604800
+    },
+    "web/tests/LazyRouting.test.tsx": {
+      "sha256": "614a18a136674f48dc874c5f423c222da0f44e9425029fc165b34fc4e846bec2",
+      "bytes": 6251,
+      "mtime_ns": 1790765571189987800
+    },
+    "web/tests/RouteResolution.test.tsx": {
+      "sha256": "95505e0b53aae9d324a4b8f422b873b6a22a68ff02a61d61efd996d14202c17d",
+      "bytes": 3932,
+      "mtime_ns": 1790765528391475000
+    }
+  },
+  "revision": "r1",
+  "tool": {
+    "sha256": "fac7aac37b73477bde82d085f05d5e3e3df14a375487ea2777eb2147a71e7c70",
+    "bytes": 3747,
+    "mtime_ns": 1790765654684843100
+  }
+}

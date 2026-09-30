@@ -1,0 +1,9 @@
+{
+  "command": [
+    "node",
+    "--test",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\paint_collection.test.mjs",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\output_guards.test.mjs"
+  ],
+  "exit_code": 0
+}

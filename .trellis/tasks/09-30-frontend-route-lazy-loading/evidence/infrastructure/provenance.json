@@ -1,0 +1,37 @@
+{
+  "create_fixtures.py": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/fixtures/create_fixtures.py",
+    "source_sha256": "9b91b28d45020c82fe45c638e0d31e0132e5ea35488a2b1be4d4cda58f6ca0c3",
+    "source_bytes": 13125
+  },
+  "browser_probe.mjs": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/after/browser_probe.mjs",
+    "source_sha256": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd",
+    "source_bytes": 12975
+  },
+  "measure.mjs": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/after/measure.mjs",
+    "source_sha256": "e5b7f96d90898082450b2c76d688fa8e4838101c57905af52e618919477d45cd",
+    "source_bytes": 16301
+  },
+  "paint_collection.test.mjs": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/paint_collection.test.mjs",
+    "source_sha256": "162af0f981ee0fa1883dc05c26b5d2b719da4ed9d6d521f82b340003d40e1621",
+    "source_bytes": 7692
+  },
+  "serve_variant.py": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/serve_variant.py",
+    "source_sha256": "3df53fe243de31907c5230c00ad048f562d4332db11c30485eb8a006bd12cc13",
+    "source_bytes": 3655
+  },
+  "run_matrix.py": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/run_matrix.py",
+    "source_sha256": "28ad4298c50aea14cf54a16b4eac809e810cdda00902f0bf6dc7a0dbc555f7ab",
+    "source_bytes": 8730
+  },
+  "summarize.py": {
+    "source": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/summarize.py",
+    "source_sha256": "82bd6bba8b1fcc7c01eb260d2f1e4ee4865d621460195754ef020ed95adda27b",
+    "source_bytes": 11071
+  }
+}

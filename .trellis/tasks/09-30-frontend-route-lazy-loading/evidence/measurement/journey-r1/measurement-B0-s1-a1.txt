@@ -1,0 +1,2 @@
+{"variant":"B0","sample":1,"attempt":1,"scenario":"journey","valid":true,"primaryReadyMilliseconds":186.40000000596046}
+

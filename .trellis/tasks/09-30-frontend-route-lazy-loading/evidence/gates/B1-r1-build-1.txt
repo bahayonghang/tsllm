@@ -1,0 +1,30 @@
+
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 4155 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.57 kB │ gzip:   0.33 kB
+dist/assets/format-DJgdk6Jc.js               0.93 kB │ gzip:   0.56 kB
+dist/assets/DatasetsPage-B_tIBJzF.js         1.36 kB │ gzip:   0.81 kB
+dist/assets/fast-deep-equal-DMTWy6R9.js      1.62 kB │ gzip:   0.75 kB
+dist/assets/SystemPage-D01M2jNg.js           1.78 kB │ gzip:   0.89 kB
+dist/assets/RunsPage-DR8Ns_w6.js             2.32 kB │ gzip:   1.26 kB
+dist/assets/row-C_YvIpeN.js                  2.46 kB │ gzip:   1.28 kB
+dist/assets/ComparePage-RNU3_j0K.js          4.59 kB │ gzip:   2.26 kB
+dist/assets/descriptions-CMc-Ltgv.js         7.89 kB │ gzip:   2.80 kB
+dist/assets/DatasetDetailPage-CnQc9Ktq.js    8.11 kB │ gzip:   3.78 kB
+dist/assets/StateTag-Dr4yVMIJ.js             9.08 kB │ gzip:   3.62 kB
+dist/assets/card-CrEYUjZ-.js                44.46 kB │ gzip:  13.56 kB
+dist/assets/RunDetailPage-ZaeUnRMC.js       47.74 kB │ gzip:  17.02 kB
+dist/assets/hooks-BIRQC-dQ.js               72.79 kB │ gzip:  24.20 kB
+dist/assets/input-DrqXIbCD.js              114.72 kB │ gzip:  36.68 kB
+dist/assets/index-Bw4YU1Ku.js              146.01 kB │ gzip:  48.71 kB
+dist/assets/table-CeaGE0R5.js              183.75 kB │ gzip:  57.21 kB
+dist/assets/ErrorAlert-B4_5QW98.js         185.54 kB │ gzip:  59.54 kB
+dist/assets/RunNewPage-ckpljBXr.js         469.76 kB │ gzip: 153.05 kB
+dist/assets/button-CCZs0Voe.js             491.99 kB │ gzip: 162.09 kB
+dist/assets/EChart-CygN2abW.js             633.01 kB │ gzip: 213.27 kB
+
+✓ built in 484ms

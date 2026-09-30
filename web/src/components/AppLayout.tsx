@@ -1,5 +1,6 @@
 import { Layout, Menu, theme } from "antd";
-import { Link, Outlet, useLocation } from "react-router";
+import { Link, Outlet, useLocation, useNavigation } from "react-router";
+import { RouteLoading } from "./RouteLoading";
 
 const ITEMS = [
   { key: "/runs", label: <Link to="/runs">运行</Link> },
@@ -17,6 +18,7 @@ function selectedKey(pathname: string): string {
 
 export function AppLayout() {
   const { pathname } = useLocation();
+  const navigation = useNavigation();
   const { token } = theme.useToken();
   return (
     <Layout style={{ minHeight: "100vh" }}>
@@ -52,6 +54,7 @@ export function AppLayout() {
         />
       </Layout.Header>
       <Layout.Content style={{ padding: 16, maxWidth: 1600, width: "100%", margin: "0 auto" }}>
+        {navigation.state === "loading" && <RouteLoading />}
         <Outlet />
       </Layout.Content>
     </Layout>

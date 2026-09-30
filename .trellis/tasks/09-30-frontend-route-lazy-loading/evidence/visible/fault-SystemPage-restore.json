@@ -1,0 +1,15 @@
+{
+  "action": "restore",
+  "asset": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B1-r1\\web\\dist\\assets\\SystemPage-D01M2jNg.js",
+  "before": {
+    "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52",
+    "bytes": 1780,
+    "mtime_ns": 1790765672552998000
+  },
+  "after": {
+    "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52",
+    "bytes": 1780,
+    "mtime_ns": 1790765672552998000
+  },
+  "held_absent": true
+}

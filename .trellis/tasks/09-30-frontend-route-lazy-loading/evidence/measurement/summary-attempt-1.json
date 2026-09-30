@@ -1,0 +1,28 @@
+{
+  "attempt": 1,
+  "source_sha256": "415a5af0d112c6a23de1fac3eac612a5d085047e4165000eb214262dfd4de76c",
+  "commands": [
+    {
+      "script": "tools/summarize.py",
+      "experiment": "evidence/snapshots/experiment-r1.json",
+      "input": "evidence/measurement/raw-r1",
+      "output": "evidence/measurement/summary-r1.json",
+      "require_complete": true,
+      "exit_code": 1,
+      "error": "AssertionError: Mixed instrument: raw-r1/B0-cold-runs-s2-a1.json"
+    },
+    {
+      "script": "tools/summarize.py",
+      "experiment": "evidence/snapshots/experiment-r1.json",
+      "input": "evidence/measurement/journey-r1",
+      "output": "evidence/measurement/journey-summary-r1.json",
+      "require_complete": false,
+      "exit_code": 1,
+      "error": "AssertionError: Mixed instrument: journey-r1/B1-journey-s1-a1.json"
+    }
+  ],
+  "root_cause": "The duplicate-observation identity tuple overwrote the measurement identity dictionary after the first record. All 62 raw instrumentation dictionaries independently equal the frozen experiment identity.",
+  "raw_measurement_failure": false,
+  "summary_files_created": false,
+  "repair": "Rename observation tuple to sample_identity; retain strict measurement identity assertions."
+}

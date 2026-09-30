@@ -1,0 +1,8 @@
+{
+  "phase": "gate launcher preparation",
+  "exit_code": 1,
+  "tool_chunk_id": "ac0d54",
+  "reason": "The transport expanded a newline escape inside the Python stdin source.",
+  "error": "SyntaxError: unterminated string literal (detected at line 34)",
+  "product_gates_started": false
+}

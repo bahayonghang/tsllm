@@ -1,0 +1,15 @@
+{
+  "before": {
+    "sha256": "fb895b9755b53bb10b5ab97b4e83f0ec4b8f458dfd3d6b1bb01a649523fb213d",
+    "bytes": 13987,
+    "mtime_ns": 1790766744762104600
+  },
+  "after": {
+    "sha256": "b2c90fcd62a506dae79c86b7593874fff1a635196cd636e685ec9c4d2a0e87eb",
+    "bytes": 13972,
+    "mtime_ns": 1790767106590011500
+  },
+  "exit_code": 0,
+  "output": "1 file reformatted\n",
+  "change": "Formatting only: combine two adjacent string literals inside summary_role parentheses. Runtime string and calculated results remain unchanged."
+}

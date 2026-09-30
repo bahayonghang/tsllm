@@ -1,0 +1,52 @@
+tests\LazyRouting.test.tsx format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     70  70 │       mockFetch({ "/api/runs": [] });
+     71  71 │       const pending = delayedModule();
+     72     │ - ····mount("/runs",·configured("runs",·()·=>·pending.promise));
+         72 │ + ····mount(
+         73 │ + ······"/runs",
+         74 │ + ······configured("runs",·()·=>·pending.promise),
+         75 │ + ····);
+     73  76 │       expect(screen.getByRole("status").textContent).toContain("正在加载页面");
+     74  77 │       await act(async () => {
+    ······· │ 
+     82  85 │       mockFetch({ "/api/runs": [], "/api/datasets": [] });
+     83  86 │       const pending = delayedModule();
+     84     │ - ····const·view·=·mount("/runs",·configured("datasets",·()·=>·pending.promise));
+         87 │ + ····const·view·=·mount(
+         88 │ + ······"/runs",
+         89 │ + ······configured("datasets",·()·=>·pending.promise),
+         90 │ + ····);
+     85  91 │       await screen.findByRole("heading", { name: "运行" });
+     86  92 │       fireEvent.click(screen.getByRole("link", { name: "数据集" }));
+    ······· │ 
+    105 111 │         vi.stubGlobal("location", { ...window.location, reload });
+    106 112 │         const pending = delayedModule();
+    107     │ - ······const·view·=·mount(url,·configured("runs",·()·=>·pending.promise));
+        113 │ + ······const·view·=·mount(
+        114 │ + ········url,
+        115 │ + ········configured("runs",·()·=>·pending.promise),
+        116 │ + ······);
+    108 117 │         await act(async () => {
+    109 118 │           pending.reject(new Error("Synthetic module download failure"));
+    ······· │ 
+    124 133 │       mockFetch({ "/api/runs": [] });
+    125 134 │       const pending = delayedModule();
+    126     │ - ····const·view·=·mount("/runs",·configured("system",·()·=>·pending.promise));
+        135 │ + ····const·view·=·mount(
+        136 │ + ······"/runs",
+        137 │ + ······configured("system",·()·=>·pending.promise),
+        138 │ + ····);
+    127 139 │       await screen.findByRole("heading", { name: "运行" });
+    128 140 │       const url = "/system?view=versions#restore";
+  
+
+Checked 49 files in 20ms. No fixes applied.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

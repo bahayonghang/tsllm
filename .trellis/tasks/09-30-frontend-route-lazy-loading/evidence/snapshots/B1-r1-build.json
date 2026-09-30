@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "variant": "B1",
+  "root": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B1-r1",
+  "baseline": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+  "source_snapshot": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\snapshots\\B1-r1-source.json",
+  "dist_version": "a27404802c27827e1f4c2955517400f8fd4e56b77cd8862f93d6c0fad8b937a7",
+  "files": {
+    "assets/ComparePage-RNU3_j0K.js": {
+      "sha256": "dd13cdee2cc01a03ffa4c9c71d634b01c65db2ccb2e3aadd7fae43fe92028339",
+      "bytes": 4597,
+      "mtime_ns": "1790765672549318300",
+      "gzip_bytes": 2243
+    },
+    "assets/DatasetDetailPage-CnQc9Ktq.js": {
+      "sha256": "d383fc8d0b3634e8f63a0dd5135932716d1420693a456b8e5124435f81f0d1dc",
+      "bytes": 8118,
+      "mtime_ns": "1790765672549843700",
+      "gzip_bytes": 3746
+    },
+    "assets/DatasetsPage-B_tIBJzF.js": {
+      "sha256": "8e402ac8439845f48e1ea92c6575848ad3a2ae14deeb76ca1a390075e6068140",
+      "bytes": 1365,
+      "mtime_ns": "1790765672550367600",
+      "gzip_bytes": 816
+    },
+    "assets/EChart-CygN2abW.js": {
+      "sha256": "24bb9df3fefc1edb056510c5e3d7c3bd377246827a4b1dafc10d6852102ad32f",
+      "bytes": 633014,
+      "mtime_ns": "1790765672550892500",
+      "gzip_bytes": 211170
+    },
+    "assets/ErrorAlert-B4_5QW98.js": {
+      "sha256": "a93bfa3bf34d9fca2dca71d88c08c09e5b0ce0e0ec12b8e0340acdce3effa1bd",
+      "bytes": 185549,
+      "mtime_ns": "1790765672551420200",
+      "gzip_bytes": 58987
+    },
+    "assets/RunDetailPage-ZaeUnRMC.js": {
+      "sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e",
+      "bytes": 47745,
+      "mtime_ns": "1790765672551420200",
+      "gzip_bytes": 16920
+    },
+    "assets/RunNewPage-ckpljBXr.js": {
+      "sha256": "750048c597cfad9b47ec377414af59257674c51dd13a17562f863c8dd41c5e31",
+      "bytes": 469769,
+      "mtime_ns": "1790765672551942800",
+      "gzip_bytes": 151591
+    },
+    "assets/RunsPage-DR8Ns_w6.js": {
+      "sha256": "838ba90d9ae3c50e14dc4c79d9c56148c11566651e5cd798ab0bfdd4fbd568a0",
+      "bytes": 2326,
+      "mtime_ns": "1790765672552471900",
+      "gzip_bytes": 1268
+    },
+    "assets/StateTag-Dr4yVMIJ.js": {
+      "sha256": "ee9d60d25da779f098b5d51a9e995295efb8f2aeec2a78778eb04eeeec9bf7c3",
+      "bytes": 9083,
+      "mtime_ns": "1790765672552998000",
+      "gzip_bytes": 3623
+    },
+    "assets/SystemPage-D01M2jNg.js": {
+      "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52",
+      "bytes": 1780,
+      "mtime_ns": "1790765672552998000",
+      "gzip_bytes": 899
+    },
+    "assets/button-CCZs0Voe.js": {
+      "sha256": "4d540596ae2ba255c6bd34da0817b0f07823fb2886141f18ba9c9148006db7d0",
+      "bytes": 491991,
+      "mtime_ns": "1790765672553520500",
+      "gzip_bytes": 160204
+    },
+    "assets/card-CrEYUjZ-.js": {
+      "sha256": "73976b0e365119d94ab8991c1bd21e52aef121b741b3173c0079920d35254f16",
+      "bytes": 44467,
+      "mtime_ns": "1790765672553520500",
+      "gzip_bytes": 13506
+    },
+    "assets/descriptions-CMc-Ltgv.js": {
+      "sha256": "2df725a8250ad1e654e771b20a5d79fb6ac838bcc69c7598ed529bd06e82f73f",
+      "bytes": 7896,
+      "mtime_ns": "1790765672553520500",
+      "gzip_bytes": 2790
+    },
+    "assets/fast-deep-equal-DMTWy6R9.js": {
+      "sha256": "46129daa0f0fda0a9bbf19ec6078c310261f31d678529e12868ec66e93b16f89",
+      "bytes": 1625,
+      "mtime_ns": "1790765672554525500",
+      "gzip_bytes": 756
+    },
+    "assets/format-DJgdk6Jc.js": {
+      "sha256": "1213d6c1a7697ca30455782f12b8e9ee449095e3d25f1411a82c9d3db3e0ff03",
+      "bytes": 937,
+      "mtime_ns": "1790765672554525500",
+      "gzip_bytes": 565
+    },
+    "assets/hooks-BIRQC-dQ.js": {
+      "sha256": "0a9ed869c43ea5d624dec7cc33bd1ab69bf997423524c10e28d2648f6e5946f2",
+      "bytes": 72796,
+      "mtime_ns": "1790765672554525500",
+      "gzip_bytes": 24061
+    },
+    "assets/index-Bw4YU1Ku.js": {
+      "sha256": "a0677e03c73effbb739e6350c1e78ba8c90754503542e5cae630e191f535f2ef",
+      "bytes": 146015,
+      "mtime_ns": "1790765672548793400",
+      "gzip_bytes": 48179
+    },
+    "assets/input-DrqXIbCD.js": {
+      "sha256": "c01ef8f2deec194479f335174839d006c9d065b0cfc59b7877988e2e7f56abab",
+      "bytes": 114725,
+      "mtime_ns": "1790765672554525500",
+      "gzip_bytes": 36463
+    },
+    "assets/row-C_YvIpeN.js": {
+      "sha256": "3ae07e43223b72fac3ad5ac7c90ff8d9e19306fab7a77c80650044881bd17bfd",
+      "bytes": 2461,
+      "mtime_ns": "1790765672556030500",
+      "gzip_bytes": 1277
+    },
+    "assets/table-CeaGE0R5.js": {
+      "sha256": "5049f4583917634e9790dbe2de928ef52d6393f0bac81fde09ac66f0fad71253",
+      "bytes": 183756,
+      "mtime_ns": "1790765672556683900",
+      "gzip_bytes": 56715
+    },
+    "index.html": {
+      "sha256": "0c4ce5b8fc0bb706324551c044099d5982bf6f973129e05043e01844000d6b13",
+      "bytes": 570,
+      "mtime_ns": "1790765672556683900",
+      "gzip_bytes": 339
+    }
+  },
+  "entry_assets": [
+    "assets/index-Bw4YU1Ku.js",
+    "assets/fast-deep-equal-DMTWy6R9.js",
+    "assets/button-CCZs0Voe.js",
+    "assets/hooks-BIRQC-dQ.js"
+  ],
+  "initial_static_closure": [
+    "assets/button-CCZs0Voe.js",
+    "assets/fast-deep-equal-DMTWy6R9.js",
+    "assets/hooks-BIRQC-dQ.js",
+    "assets/index-Bw4YU1Ku.js"
+  ],
+  "imports": {
+    "assets/ComparePage-RNU3_j0K.js": {
+      "static": [
+        "assets/EChart-CygN2abW.js",
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/card-CrEYUjZ-.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "dynamic": []
+    },
+    "assets/DatasetDetailPage-CnQc9Ktq.js": {
+      "static": [
+        "assets/EChart-CygN2abW.js",
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/card-CrEYUjZ-.js",
+        "assets/descriptions-CMc-Ltgv.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/input-DrqXIbCD.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "dynamic": []
+    },
+    "assets/DatasetsPage-B_tIBJzF.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "dynamic": []
+    },
+    "assets/EChart-CygN2abW.js": {
+      "static": [
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/index-Bw4YU1Ku.js"
+      ],
+      "dynamic": []
+    },
+    "assets/ErrorAlert-B4_5QW98.js": {
+      "static": [
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js"
+      ],
+      "dynamic": []
+    },
+    "assets/RunDetailPage-ZaeUnRMC.js": {
+      "static": [
+        "assets/EChart-CygN2abW.js",
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/card-CrEYUjZ-.js",
+        "assets/descriptions-CMc-Ltgv.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/row-C_YvIpeN.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "dynamic": []
+    },
+    "assets/RunNewPage-ckpljBXr.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/card-CrEYUjZ-.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/input-DrqXIbCD.js",
+        "assets/row-C_YvIpeN.js"
+      ],
+      "dynamic": []
+    },
+    "assets/RunsPage-DR8Ns_w6.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "dynamic": []
+    },
+    "assets/StateTag-Dr4yVMIJ.js": {
+      "static": [
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/hooks-BIRQC-dQ.js"
+      ],
+      "dynamic": []
+    },
+    "assets/SystemPage-D01M2jNg.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/card-CrEYUjZ-.js",
+        "assets/descriptions-CMc-Ltgv.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "dynamic": []
+    },
+    "assets/button-CCZs0Voe.js": {
+      "static": [
+        "assets/fast-deep-equal-DMTWy6R9.js"
+      ],
+      "dynamic": []
+    },
+    "assets/card-CrEYUjZ-.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/index-Bw4YU1Ku.js"
+      ],
+      "dynamic": []
+    },
+    "assets/descriptions-CMc-Ltgv.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js"
+      ],
+      "dynamic": []
+    },
+    "assets/fast-deep-equal-DMTWy6R9.js": {
+      "static": [],
+      "dynamic": []
+    },
+    "assets/format-DJgdk6Jc.js": {
+      "static": [
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/index-Bw4YU1Ku.js"
+      ],
+      "dynamic": []
+    },
+    "assets/hooks-BIRQC-dQ.js": {
+      "static": [
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js"
+      ],
+      "dynamic": []
+    },
+    "assets/index-Bw4YU1Ku.js": {
+      "static": [
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/hooks-BIRQC-dQ.js"
+      ],
+      "dynamic": []
+    },
+    "assets/input-DrqXIbCD.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/index-Bw4YU1Ku.js"
+      ],
+      "dynamic": []
+    },
+    "assets/row-C_YvIpeN.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/index-Bw4YU1Ku.js"
+      ],
+      "dynamic": []
+    },
+    "assets/table-CeaGE0R5.js": {
+      "static": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/index-Bw4YU1Ku.js"
+      ],
+      "dynamic": []
+    }
+  },
+  "route_chunks": [
+    "assets/ComparePage-RNU3_j0K.js",
+    "assets/DatasetDetailPage-CnQc9Ktq.js",
+    "assets/DatasetsPage-B_tIBJzF.js",
+    "assets/RunDetailPage-ZaeUnRMC.js",
+    "assets/RunNewPage-ckpljBXr.js",
+    "assets/RunsPage-DR8Ns_w6.js",
+    "assets/SystemPage-D01M2jNg.js"
+  ],
+  "totals": {
+    "bytes": 2430585,
+    "gzip_bytes": 796118
+  },
+  "gzip_method": {
+    "function": "gzip.compress",
+    "compresslevel": 9,
+    "mtime": 0,
+    "python": "3.14.7",
+    "zlib": "1.3.1.zlib-ng",
+    "meaning": "Offline estimate per file; HTTP transfer is measured separately"
+  },
+  "graph_method": "TypeScript parser on emitted JavaScript import/export declarations and import() calls; no Vite plugin",
+  "analyzer_sha256": "9bc5942b97d1a26e508f517ee3dc8336e4a8ab8d3f1082014a3a454b1de540c3"
+}

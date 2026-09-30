@@ -1,0 +1,219 @@
+// The same external observer runs in every unmodified production build.
+export function installProbe(configuration) {
+  const longTasks = [];
+  const supported = PerformanceObserver.supportedEntryTypes;
+  if (supported.includes('longtask')) {
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) longTasks.push(entry.toJSON());
+    }).observe({ type: 'longtask', buffered: true });
+  }
+  performance.setResourceTimingBufferSize(10000);
+  const chartState = new WeakMap();
+  const observerCost = { calls: 0, totalMilliseconds: 0, maxMilliseconds: 0, pixelScans: 0, pixelScanMilliseconds: 0, pixelScanMaxMilliseconds: 0 };
+  const results = {};
+  let pending = null;
+  let frame = null;
+  const text = () => document.body?.innerText ?? '';
+  const button = (label) => [...document.querySelectorAll('button')].find((node) => node.innerText.trim() === label && !node.disabled);
+  const resource = (path, required = []) => performance.getEntriesByType('resource').some((entry) => {
+    const url = new URL(entry.name);
+    return url.pathname === path && entry.responseEnd > 0 && required.every((key) => url.searchParams.has(key));
+  });
+  const hasNumeric = (value) => typeof value === 'number' && Number.isFinite(value) || Array.isArray(value) && value.some(hasNumeric) || value && typeof value === 'object' && hasNumeric(value.value);
+
+  function chartInfo(container) {
+    const fiberKey = Object.keys(container).find((key) => key.startsWith('__reactFiber$'));
+    let fiber = fiberKey ? container[fiberKey] : null;
+    let wrapper = null;
+    while (fiber) {
+      if (fiber.stateNode?.ele === container && typeof fiber.stateNode.getEchartsInstance === 'function') { wrapper = fiber.stateNode; break; }
+      fiber = fiber.return;
+    }
+    const instance = wrapper?.getEchartsInstance();
+    if (!instance || instance.isDisposed()) return null;
+    let state = chartState.get(instance);
+    if (!state) {
+      state = { finishedAt: null, renderedAt: null, pixels: null };
+      instance.on('finished', () => { state.finishedAt = performance.now(); });
+      instance.on('rendered', () => { state.renderedAt = performance.now(); state.pixels = null; });
+      chartState.set(instance, state);
+    }
+    const animationFinished = instance.getZr().animation.isFinished();
+    const schedulerFinished = !instance._scheduler?.unfinished;
+    const correctSize = instance.getWidth() === container.clientWidth && instance.getHeight() === container.clientHeight;
+    if (!animationFinished || !schedulerFinished || !correctSize || !state.finishedAt || state.finishedAt < (state.renderedAt ?? 0)) return null;
+    const series = (instance.getOption().series ?? []).map((item) => ({
+      name: item.name ?? '', type: item.type, points: item.data?.length ?? 0,
+      nonempty: (item.data ?? []).filter(hasNumeric).length,
+    }));
+    if (!series.some((item) => item.nonempty > 0)) return null;
+    if (state.pixels) return { series, width: instance.getWidth(), height: instance.getHeight(), finishedAt: state.finishedAt, renderedAt: state.renderedAt, animationFinished, schedulerFinished, ...state.pixels };
+    const canvases = [...container.querySelectorAll('canvas')];
+    const pixelScanStart = performance.now();
+    let opaquePixels = 0;
+    let coloredPixels = 0;
+    for (const canvas of canvases) {
+      if (canvas.width === 0 || canvas.height === 0) return null;
+      const context = canvas.getContext('2d');
+      if (!context) return null;
+      const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+      for (let index = 0; index < pixels.length; index += 4) {
+        if (pixels[index + 3] > 0) {
+          opaquePixels++;
+          if (Math.max(pixels[index], pixels[index + 1], pixels[index + 2]) - Math.min(pixels[index], pixels[index + 1], pixels[index + 2]) > 20) coloredPixels++;
+        }
+      }
+    }
+    if (opaquePixels === 0 || coloredPixels === 0) return null;
+    const pixelScanTime = performance.now() - pixelScanStart;
+    observerCost.pixelScans++;
+    observerCost.pixelScanMilliseconds += pixelScanTime;
+    observerCost.pixelScanMaxMilliseconds = Math.max(observerCost.pixelScanMaxMilliseconds, pixelScanTime);
+    state.pixels = { opaquePixels, coloredPixels };
+    return { series, width: instance.getWidth(), height: instance.getHeight(), finishedAt: state.finishedAt, renderedAt: state.renderedAt, animationFinished, schedulerFinished, opaquePixels, coloredPixels };
+  }
+
+  function predicate(kind) {
+    const body = text();
+    const ids = configuration.ids;
+    let valid = false;
+    let charts = [];
+    if (kind === 'runs') valid = location.pathname === '/runs' && Object.values(ids).every((id) => document.querySelector('a[href="/runs/' + id + '"]')) && !!button('新建运行') && resource('/api/runs');
+    if (kind === 'datasets') valid = location.pathname === '/datasets' && configuration.datasets.every((id) => document.querySelector('a[href="/datasets/' + id + '"]')) && resource('/api/datasets');
+    if (kind === 'form') valid = location.pathname === '/runs/new' && !!document.querySelector('form input') && !!button('预览并提交') && resource('/api/schema/run-config') && resource('/api/backbones') && resource('/api/datasets');
+    if (kind === 'preview') {
+      const dialog = [...document.querySelectorAll('[role=dialog]')].find((node) => node.getBoundingClientRect().width > 0 && node.innerText.includes('提交前预览'));
+      let config = null;
+      try { config = JSON.parse(dialog?.querySelector('pre')?.innerText ?? 'null'); } catch {}
+      valid = !!config && config.name === 'Synthetic forecast' && config.dataset === 'synthetic-alpha' && config.task?.context_length === 12 && config.task?.horizon === 6;
+    }
+    if (['compare', 'dataset', 'forecast', 'classify'].includes(kind)) {
+      const containers = [...document.querySelectorAll('.echarts-for-react')];
+      charts = containers.map(chartInfo);
+      const expectedCount = kind === 'dataset' || kind === 'classify' ? 2 : 1;
+      const readyCharts = charts.length === expectedCount && charts.every(Boolean);
+      if (kind === 'compare') valid = location.pathname === '/compare' && configuration.warning_codes.every((code) => body.includes(code)) && document.querySelectorAll('.ant-alert-warning').length === configuration.warning_count && resource('/api/compare') && readyCharts;
+      if (kind === 'dataset') valid = location.pathname === '/datasets/synthetic-alpha' && body.includes('通道曲线') && resource('/api/datasets/synthetic-alpha/series') && readyCharts;
+      if (kind === 'forecast') {
+        const resultSeries = charts[0]?.series ?? [];
+        valid = location.pathname === '/runs/' + ids.forecast && resource('/api/runs/' + ids.forecast + '/metrics') && resource('/api/runs/' + ids.forecast + '/predictions', ['origin_time']) && resource('/api/datasets/synthetic-alpha/series', ['start', 'end']) && ['上下文', '真值', '预测均值'].every((name) => resultSeries.some((series) => series.name === name && series.nonempty > 0)) && readyCharts;
+      }
+      if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+    }
+    if (kind === 'system') valid = location.pathname === '/system' && resource('/api/system') && resource('/api/backbones') && body.includes('CPU') && !document.querySelector('.ant-skeleton-active');
+    return { valid: valid && document.fonts.status === 'loaded', charts: charts.filter(Boolean) };
+  }
+
+  function poll() {
+    frame = null;
+    if (!pending) return;
+    try {
+      const checkStart = performance.now();
+      const result = predicate(pending.kind);
+      const checkDuration = performance.now() - checkStart;
+      observerCost.calls++;
+      observerCost.totalMilliseconds += checkDuration;
+      observerCost.maxMilliseconds = Math.max(observerCost.maxMilliseconds, checkDuration);
+      if (pending.start !== null && result.valid) {
+        pending.stableFrames++;
+        if (pending.stableFrames >= 2) {
+          const end = performance.now();
+          results[pending.id] = {
+            id: pending.id, kind: pending.kind, start: pending.start, end, duration: end - pending.start,
+            action: pending.action, route: location.pathname + location.search, charts: result.charts,
+            timeOrigin: performance.timeOrigin, visibility: document.visibilityState,
+            resources: performance.getEntriesByType('resource').filter((entry) => entry.startTime <= end && entry.responseEnd <= end).map((entry) => entry.toJSON()),
+            navigation: performance.getEntriesByType('navigation').map((entry) => entry.toJSON()),
+            paint: performance.getEntriesByType('paint').map((entry) => entry.toJSON()),
+            longTasks: longTasks.filter((entry) => entry.startTime + entry.duration <= end),
+            observerCostCumulative: { ...observerCost },
+            observerCostAtStart: pending.costAtStart,
+          };
+          pending = null;
+          return;
+        }
+      } else pending.stableFrames = 0;
+    } catch (error) {
+      window.__tsllmAssessment.lastProbeError = String(error);
+    }
+    frame = requestAnimationFrame(poll);
+  }
+
+  function arm(id, kind, action, start = null) {
+    delete results[id];
+    pending = { id, kind, action, start, stableFrames: 0, costAtStart: { ...observerCost } };
+    if (frame === null) frame = requestAnimationFrame(poll);
+  }
+  document.addEventListener('click', (event) => {
+    if (pending && pending.action === 'trusted-ui-click' && pending.start === null && event.isTrusted) pending.start = performance.now();
+  }, true);
+  window.__tsllmAssessment = {
+    results, arm, lastProbeError: null,
+    capabilities: { supportedEntryTypes: supported, chartAccess: 'Existing React wrapper getEchartsInstance; no source instrumentation' },
+    navigate(id, kind, route) {
+      arm(id, kind, 'programmatic-router-navigation', performance.now());
+      history.pushState({}, '', route);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    },
+    diagnostic() { return { route: location.pathname + location.search, pending, lastProbeError: this.lastProbeError, heading: document.querySelector('h3')?.textContent, chartContainers: document.querySelectorAll('.echarts-for-react').length }; },
+  };
+  arm('entry', configuration.initialKind, 'document-navigation', 0);
+}
+
+// Readiness and resources stay frozen. Native paint publication can follow rAF.
+export function collectPaint({ id, timeoutMs = 1000 }) {
+  const stage = window.__tsllmAssessment?.results[id];
+  if (!stage) throw new Error('Missing ready stage: ' + id);
+  if (!Number.isFinite(timeoutMs) || timeoutMs < 0) throw new Error('Invalid paint collection timeout');
+  const startedAt = performance.now();
+  const paintAtReady = stage.paint.map((entry) => ({ ...entry }));
+  const observed = new Map();
+  const remember = (entry) => observed.set(entry.entryType + ':' + entry.name + ':' + entry.startTime, entry);
+  for (const entry of paintAtReady) remember(entry);
+  const appendNative = (entries) => { for (const entry of entries) remember(entry.toJSON()); };
+  const hasFcp = () => [...observed.values()].some((entry) => entry.name === 'first-contentful-paint');
+
+  return new Promise((resolve) => {
+    let observer = null;
+    let timer = null;
+    let settled = false;
+    const finish = (status, error = null) => {
+      if (settled) return;
+      settled = true;
+      if (timer !== null) clearTimeout(timer);
+      try {
+        appendNative(performance.getEntriesByType('paint'));
+        if (observer) appendNative(observer.takeRecords());
+      } catch (failure) {
+        error = String(failure);
+        status = 'error';
+      }
+      observer?.disconnect();
+      const collectedAt = performance.now();
+      resolve({
+        ...stage,
+        paintAtReady,
+        paint: [...observed.values()].sort((left, right) => left.startTime - right.startTime),
+        paintCollection: {
+          status: hasFcp() ? 'observed' : status,
+          startedAt, collectedAt, waitMs: collectedAt - startedAt, timeoutMs,
+          readyEndpoint: stage.end, scope: 'document',
+          source: 'native-performance-timeline-and-buffered-observer',
+          ...(error === null ? {} : { error }),
+        },
+      });
+    };
+    try {
+      if (!PerformanceObserver.supportedEntryTypes.includes('paint')) return finish('unsupported');
+      appendNative(performance.getEntriesByType('paint'));
+      if (hasFcp()) return finish('observed');
+      observer = new PerformanceObserver((list) => {
+        if (settled) return;
+        appendNative(list.getEntries());
+        if (hasFcp()) finish('observed');
+      });
+      timer = setTimeout(() => finish('timeout'), timeoutMs);
+      observer.observe({ type: 'paint', buffered: true });
+    } catch (error) { finish('error', String(error)); }
+  });
+}

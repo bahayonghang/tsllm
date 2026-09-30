@@ -1,0 +1,7 @@
+{"variant":"B0","sample":4,"attempt":1,"scenario":"cold-runs","valid":true,"primaryReadyMilliseconds":303.40000000596046}
+{"variant":"B0","sample":4,"attempt":1,"scenario":"warm-runs","valid":true,"primaryReadyMilliseconds":98.69999999552965}
+{"variant":"B0","sample":4,"attempt":1,"scenario":"first-form","valid":true,"primaryReadyMilliseconds":183.59999999403954}
+{"variant":"B0","sample":4,"attempt":1,"scenario":"first-compare","valid":true,"primaryReadyMilliseconds":1128.7000000029802}
+{"variant":"B0","sample":4,"attempt":1,"scenario":"first-dataset","valid":true,"primaryReadyMilliseconds":1134.5}
+{"variant":"B0","sample":4,"attempt":1,"scenario":"first-forecast","valid":true,"primaryReadyMilliseconds":1127.0999999940395}
+

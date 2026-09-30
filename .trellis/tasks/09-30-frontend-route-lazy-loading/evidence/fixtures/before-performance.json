@@ -1,0 +1,177 @@
+{
+  "unchanged": true,
+  "file_count": 34,
+  "files": {
+    "configs/datasets/synthetic-alpha.yaml": {
+      "sha256": "7dbfbf273a792eb46ca625b1338bfe110b09f033b0f7386e7879547a9eb315e9",
+      "bytes": 636,
+      "mtime_ns": 1790765444941412800
+    },
+    "configs/datasets/synthetic-beta.yaml": {
+      "sha256": "0a0d68756e428bade037e36e14d1d8f24705331c4e904c40ed94f232661d2963",
+      "bytes": 634,
+      "mtime_ns": 1790765444988687300
+    },
+    "configs/runs/synthetic-preview.yaml": {
+      "sha256": "afe65b4ce29d25bdbb2f2837d8069ea1dc3552fe3e9df44cdfd5f5cde16c312d",
+      "bytes": 658,
+      "mtime_ns": 1790765445026610700
+    },
+    "cache/datasets/synthetic-alpha/a149b1a9a45c/frame.parquet": {
+      "sha256": "375b4bcbc9bba81e2f7ced4c869be6e04cc418eeeddd87b867f24a02719d3a86",
+      "bytes": 4961,
+      "mtime_ns": 1790765444979861300
+    },
+    "cache/datasets/synthetic-alpha/a149b1a9a45c/meta.json": {
+      "sha256": "2be31315a563738d83830f0113ecc28b08f436e14340ed6071f864361cf07117",
+      "bytes": 1860,
+      "mtime_ns": 1790765444983370700
+    },
+    "cache/datasets/synthetic-beta/d1f46a725c99/frame.parquet": {
+      "sha256": "6eaada8d83ed512b71c3d8ef3bcf8cfc628fac549b7347e5b53557d1cbb4135b",
+      "bytes": 4931,
+      "mtime_ns": 1790765444991688200
+    },
+    "cache/datasets/synthetic-beta/d1f46a725c99/meta.json": {
+      "sha256": "2f0049e339b265ecf357368aff9cdc701610249fd2beab87852ad0ad52375471",
+      "bytes": 1861,
+      "mtime_ns": 1790765444991688200
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/config.yaml": {
+      "sha256": "8d575e59c004bc3acb28056814027b4a90ca49408bcce56ca5ba6faad1ab9f8a",
+      "bytes": 1466,
+      "mtime_ns": 1790765444995225500
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/env.json": {
+      "sha256": "022587ce817a7d56852e8b61d542cb02df82c4e71069a624d4d5b0f13a25b695",
+      "bytes": 75,
+      "mtime_ns": 1790765444997220900
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/events.jsonl": {
+      "sha256": "e75e50ca8c3e7274e37f8bebab357755eaf68f7b6b48a88b3a7abc709108e421",
+      "bytes": 130,
+      "mtime_ns": 1790765444998225300
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/metrics.json": {
+      "sha256": "d13f5cfca1a7cb8045aebb221e7df4c1dddb41c54656f215d42c64235900a765",
+      "bytes": 1563,
+      "mtime_ns": 1790765444999229300
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/predictions/test.parquet": {
+      "sha256": "7f8568fa841505294a5f61d787e172cbd3cc1b25874cf35d7ee5da59cbd950c4",
+      "bytes": 3288,
+      "mtime_ns": 1790765445025080600
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/predictions/val.parquet": {
+      "sha256": "2f8be8f10a1ab98d8c7feccb79c6acaec21c175b926c32a4c80052d0c7e6dada",
+      "bytes": 3288,
+      "mtime_ns": 1790765445024430000
+    },
+    "runs/20260101-000001-synthetic-forecast-0001/status.json": {
+      "sha256": "cb7d37a2e7dc2ea0303e51c044efc02c9f5cd5c326af3632379f1c33411fbe6f",
+      "bytes": 186,
+      "mtime_ns": 1790765444995225500
+    },
+    "runs/20260101-000002-synthetic-different-0002/config.yaml": {
+      "sha256": "720fd99f3dcf5da8ee7ad6a9925d1b06daea6d1d85d1b75e41e103154d8bb751",
+      "bytes": 1471,
+      "mtime_ns": 1790765445001230900
+    },
+    "runs/20260101-000002-synthetic-different-0002/env.json": {
+      "sha256": "022587ce817a7d56852e8b61d542cb02df82c4e71069a624d4d5b0f13a25b695",
+      "bytes": 75,
+      "mtime_ns": 1790765445003232500
+    },
+    "runs/20260101-000002-synthetic-different-0002/events.jsonl": {
+      "sha256": "e75e50ca8c3e7274e37f8bebab357755eaf68f7b6b48a88b3a7abc709108e421",
+      "bytes": 130,
+      "mtime_ns": 1790765445004231300
+    },
+    "runs/20260101-000002-synthetic-different-0002/metrics.json": {
+      "sha256": "21ba2d76040a7ceb7dee060a54668530811ba6f2b2e339e7d2d5db059bd0fc03",
+      "bytes": 1573,
+      "mtime_ns": 1790765445005230500
+    },
+    "runs/20260101-000002-synthetic-different-0002/status.json": {
+      "sha256": "9bc1d1adcc276ca82a45b1623438a22c141f0cf3c84626f08054a70341859a05",
+      "bytes": 206,
+      "mtime_ns": 1790765445002231100
+    },
+    "runs/20260101-000003-synthetic-classify-0003/config.yaml": {
+      "sha256": "406bf350cf1b1612abd204d2cb6ca92854ee4090b480af348ce8253eca542352",
+      "bytes": 1755,
+      "mtime_ns": 1790765445008230200
+    },
+    "runs/20260101-000003-synthetic-classify-0003/env.json": {
+      "sha256": "022587ce817a7d56852e8b61d542cb02df82c4e71069a624d4d5b0f13a25b695",
+      "bytes": 75,
+      "mtime_ns": 1790765445010231300
+    },
+    "runs/20260101-000003-synthetic-classify-0003/events.jsonl": {
+      "sha256": "e75e50ca8c3e7274e37f8bebab357755eaf68f7b6b48a88b3a7abc709108e421",
+      "bytes": 130,
+      "mtime_ns": 1790765445011230800
+    },
+    "runs/20260101-000003-synthetic-classify-0003/metrics.json": {
+      "sha256": "fcf23c411ea1895b1d6af7659ccfe1e655726a3cb37d29167d003745021b3f3b",
+      "bytes": 2123,
+      "mtime_ns": 1790765445012001000
+    },
+    "runs/20260101-000003-synthetic-classify-0003/status.json": {
+      "sha256": "cb7d37a2e7dc2ea0303e51c044efc02c9f5cd5c326af3632379f1c33411fbe6f",
+      "bytes": 186,
+      "mtime_ns": 1790765445008230200
+    },
+    "runs/20260101-000004-synthetic-ingest-0004/config.yaml": {
+      "sha256": "4b06890f3dfd2fb2c3405e79a0b655ee376f76cecc7d255705c9031a7f13f67d",
+      "bytes": 733,
+      "mtime_ns": 1790765445013513400
+    },
+    "runs/20260101-000004-synthetic-ingest-0004/env.json": {
+      "sha256": "022587ce817a7d56852e8b61d542cb02df82c4e71069a624d4d5b0f13a25b695",
+      "bytes": 75,
+      "mtime_ns": 1790765445015317000
+    },
+    "runs/20260101-000004-synthetic-ingest-0004/events.jsonl": {
+      "sha256": "e75e50ca8c3e7274e37f8bebab357755eaf68f7b6b48a88b3a7abc709108e421",
+      "bytes": 130,
+      "mtime_ns": 1790765445015834800
+    },
+    "runs/20260101-000004-synthetic-ingest-0004/status.json": {
+      "sha256": "9bc1d1adcc276ca82a45b1623438a22c141f0cf3c84626f08054a70341859a05",
+      "bytes": 206,
+      "mtime_ns": 1790765445014160800
+    },
+    "runs/20260101-000005-synthetic-ingest-0005/config.yaml": {
+      "sha256": "2f9d94296cba3bae5a576edabf6508eb9275e3f722beb810cd3a7b9f1e72e4fc",
+      "bytes": 731,
+      "mtime_ns": 1790765445017849900
+    },
+    "runs/20260101-000005-synthetic-ingest-0005/env.json": {
+      "sha256": "022587ce817a7d56852e8b61d542cb02df82c4e71069a624d4d5b0f13a25b695",
+      "bytes": 75,
+      "mtime_ns": 1790765445019595900
+    },
+    "runs/20260101-000005-synthetic-ingest-0005/events.jsonl": {
+      "sha256": "e75e50ca8c3e7274e37f8bebab357755eaf68f7b6b48a88b3a7abc709108e421",
+      "bytes": 130,
+      "mtime_ns": 1790765445020114600
+    },
+    "runs/20260101-000005-synthetic-ingest-0005/status.json": {
+      "sha256": "cb7d37a2e7dc2ea0303e51c044efc02c9f5cd5c326af3632379f1c33411fbe6f",
+      "bytes": 186,
+      "mtime_ns": 1790765445018464800
+    },
+    "source/synthetic-alpha.csv": {
+      "sha256": "51eae72043379c27ab4bf0925fb8089e0d1128ea89ada3b77e1e8aaf306eb204",
+      "bytes": 8633,
+      "mtime_ns": 1767225600000000000
+    },
+    "source/synthetic-beta.csv": {
+      "sha256": "6a273e8971bc054355f60695a3ff392d07b473e75c6f7f2516423f98ef016854",
+      "bytes": 8619,
+      "mtime_ns": 1767225600000000000
+    }
+  },
+  "model_cache_empty": true
+}

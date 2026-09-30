@@ -1,0 +1,83 @@
+{
+  "order": [
+    {
+      "sample": 1,
+      "variant": "B0"
+    },
+    {
+      "sample": 1,
+      "variant": "B1"
+    },
+    {
+      "sample": 2,
+      "variant": "B0"
+    },
+    {
+      "sample": 2,
+      "variant": "B1"
+    },
+    {
+      "sample": 3,
+      "variant": "B0"
+    },
+    {
+      "sample": 3,
+      "variant": "B1"
+    },
+    {
+      "sample": 4,
+      "variant": "B0"
+    },
+    {
+      "sample": 4,
+      "variant": "B1"
+    },
+    {
+      "sample": 5,
+      "variant": "B0"
+    },
+    {
+      "sample": 5,
+      "variant": "B1"
+    }
+  ],
+  "scenarios": [
+    "cold-runs",
+    "warm-runs",
+    "first-form",
+    "first-compare",
+    "first-dataset",
+    "first-forecast"
+  ],
+  "created_at": "2026-09-30T11:07:11.215899+00:00",
+  "measurement_identity": {
+    "revision": "route-lazy-final-r1",
+    "readiness_revision": "recovery-r1",
+    "paint_revision": "paint-collection-r1",
+    "scripts": {
+      "browser_probe.mjs": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd",
+      "measure.mjs": "5ec80f5fcf6389561f3aa66ffd8bd78bd675c6e2e6bd83eaf25ae44b9d587746",
+      "run_matrix.py": "1c2a30b62afcd0fde12461815437b0554493763867a8fd0f367073aac68f6bc5",
+      "serve_variant.py": "9a1943c8387e560789915495beb7d412798f31935481e8442f5137fd6541d71a",
+      "acceptance_common.py": "a9675bcfd2b3fe46f18d1ad236319e3aaca422b877ccec92682165e1552b9e6b"
+    },
+    "paintCollection": {
+      "timeoutMs": 1000,
+      "scope": "document",
+      "beforeNextNavigationOrClose": true,
+      "preservesReadySnapshot": true
+    },
+    "fixture_manifest_sha256": "949e9879119d058814e6c193bdfc4000a0d0898a80478ef24e958263b46cd845",
+    "variants": {
+      "B0": {
+        "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+        "dist_version": "8d7bc493b3c3dbcefbd4ef3987b82ee4eacac7bdcb4f5684f5e7e5d40065fa43"
+      },
+      "B1": {
+        "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+        "dist_version": "a27404802c27827e1f4c2955517400f8fd4e56b77cd8862f93d6c0fad8b937a7"
+      }
+    }
+  },
+  "experiment_sha256": "b301cf4c79742aa2c4ff5f89519db087388e538329f0ca06ef20c08c9941044e"
+}

@@ -1,0 +1,247 @@
+{
+  "finding": "Warm readiness median shows no measured gain: B0 97.1 ms and B1 97.5 ms. Ranges overlap. Native warm FCP medians are 88 and 40 ms.",
+  "cause": "Exact cause remains undetermined. No script, source, dist, route, document reload, or warm-cache mode mismatch was found. No attribution to a specific browser or API mechanism is claimed.",
+  "decision": "Retain all five values, including high values. Do not claim a warm readiness benefit. Cold-entry and initial resource reductions remain supported.",
+  "samples": [
+    {
+      "file": "B0-warm-runs-s1-a1.json",
+      "variant": "B0",
+      "sample": 1,
+      "ready_ms": 97.10000000149012,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766436058.5,
+        1790766436333.8
+      ],
+      "asset_count": 1,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 2419860,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 1
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        84
+      ],
+      "ready_start": 0,
+      "ready_end": 97.10000000149012,
+      "observer_cost_ms": 3
+    },
+    {
+      "file": "B0-warm-runs-s2-a1.json",
+      "variant": "B0",
+      "sample": 2,
+      "ready_ms": 92.29999999701977,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766462698.6,
+        1790766462971.4
+      ],
+      "asset_count": 1,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 2419860,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 1
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        80
+      ],
+      "ready_start": 0,
+      "ready_end": 92.29999999701977,
+      "observer_cost_ms": 2.9999999925494194
+    },
+    {
+      "file": "B0-warm-runs-s3-a1.json",
+      "variant": "B0",
+      "sample": 3,
+      "ready_ms": 96.80000000447035,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766490137.1,
+        1790766490412.7
+      ],
+      "asset_count": 1,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 2419860,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 1
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        88
+      ],
+      "ready_start": 0,
+      "ready_end": 96.80000000447035,
+      "observer_cost_ms": 3.8000000044703484
+    },
+    {
+      "file": "B0-warm-runs-s4-a1.json",
+      "variant": "B0",
+      "sample": 4,
+      "ready_ms": 98.69999999552965,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766517151.9,
+        1790766517432
+      ],
+      "asset_count": 1,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 2419860,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 1
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        88
+      ],
+      "ready_start": 0,
+      "ready_end": 98.69999999552965,
+      "observer_cost_ms": 3.399999998509884
+    },
+    {
+      "file": "B0-warm-runs-s5-a1.json",
+      "variant": "B0",
+      "sample": 5,
+      "ready_ms": 108.69999999552965,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766544949.2,
+        1790766545252.5
+      ],
+      "asset_count": 1,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 2419860,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 1
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        88
+      ],
+      "ready_start": 0,
+      "ready_end": 108.69999999552965,
+      "observer_cost_ms": 3.9000000059604645
+    },
+    {
+      "file": "B1-warm-runs-s1-a1.json",
+      "variant": "B1",
+      "sample": 1,
+      "ready_ms": 89.70000000298023,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766449075.3,
+        1790766449266.9
+      ],
+      "asset_count": 9,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 1094078,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 9
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        32
+      ],
+      "ready_start": 0,
+      "ready_end": 89.70000000298023,
+      "observer_cost_ms": 3.100000001490116
+    },
+    {
+      "file": "B1-warm-runs-s2-a1.json",
+      "variant": "B1",
+      "sample": 2,
+      "ready_ms": 97.60000000149012,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766477216.9,
+        1790766477433.2
+      ],
+      "asset_count": 9,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 1094078,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 9
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        40
+      ],
+      "ready_start": 0,
+      "ready_end": 97.60000000149012,
+      "observer_cost_ms": 3.5
+    },
+    {
+      "file": "B1-warm-runs-s3-a1.json",
+      "variant": "B1",
+      "sample": 3,
+      "ready_ms": 94.40000000596046,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766504272.2,
+        1790766504465.7
+      ],
+      "asset_count": 9,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 1094078,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 9
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        40
+      ],
+      "ready_start": 0,
+      "ready_end": 94.40000000596046,
+      "observer_cost_ms": 3.5000000074505806
+    },
+    {
+      "file": "B1-warm-runs-s4-a1.json",
+      "variant": "B1",
+      "sample": 4,
+      "ready_ms": 97.5,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766531082,
+        1790766531286.2
+      ],
+      "asset_count": 9,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 1094078,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 9
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        40
+      ],
+      "ready_start": 0,
+      "ready_end": 97.5,
+      "observer_cost_ms": 3.7999999970197678
+    },
+    {
+      "file": "B1-warm-runs-s5-a1.json",
+      "variant": "B1",
+      "sample": 5,
+      "ready_ms": 107.39999999850988,
+      "document_reloaded": true,
+      "time_origins": [
+        1790766558351.3,
+        1790766558580.6
+      ],
+      "asset_count": 9,
+      "asset_transfer_bytes": 0,
+      "asset_body_bytes": 1094078,
+      "cache_classifications": {
+        "cache-reported-no-disk-flag": 9
+      },
+      "paint_status": "observed",
+      "fcp_ms": [
+        36
+      ],
+      "ready_start": 0,
+      "ready_end": 107.39999999850988,
+      "observer_cost_ms": 4.100000001490116
+    }
+  ]
+}

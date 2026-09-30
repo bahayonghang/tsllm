@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "label": "task-validate",
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-B",
+        ".trellis/scripts/task.py",
+        "validate",
+        ".trellis\\tasks\\09-30-frontend-route-lazy-loading"
+      ],
+      "exit_code": 0,
+      "stdout": "\u001b[0;34m=== Validating Context Files ===\u001b[0m\nTarget dir: D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\n\n  \u001b[1;33mimplement.jsonl:9: Warning: .trellis/tasks/09-30-frontend-load-assessment/report.md is 37508 bytes, exceeds context_injection.max_file_bytes (32768); injection will truncate it\u001b[0m\n  \u001b[0;32mimplement.jsonl: ✓ (13 entries)\u001b[0m\n  \u001b[1;33mcheck.jsonl:9: Warning: .trellis/tasks/09-30-frontend-load-assessment/report.md is 37508 bytes, exceeds context_injection.max_file_bytes (32768); injection will truncate it\u001b[0m\n  \u001b[0;32mcheck.jsonl: ✓ (13 entries)\u001b[0m\n\n\u001b[0;32m✓ All validations passed\u001b[0m\n",
+      "stderr": ""
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "cached-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "staged-paths",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "document_sha256": {
+    "prd.md": "637457efabecf8c6a0bbcbeafc4daa7f8480139dedb3c1861f9cb5932bbfcfe8",
+    "design.md": "88719c32657adab415802fd5d8deb6911380341c4439977158905fe6a1cca507",
+    "implement.md": "0baaab20458277457e5d160294a4917150b7b2e8f6ac0288ccb7e2549825b364",
+    "verification.md": "bb6b498a1920aa4438b7038ee5d9cf77c30ee174a7cfd1e8ac5802ed102da21f",
+    "report.md": "e6de1081975ffd6eb27884733855cc210a59ec12873ba79eb292735d68042342",
+    "implement.jsonl": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+    "check.jsonl": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+    "evidence/dispatch/dispatch.md": "bb2162b9e9daabd4103325ed484e34acf49ca228ef8a1651bf81f9de360bb461"
+  }
+}

@@ -19,7 +19,7 @@ web/
       hooks.ts                  # one TanStack Query hook per endpoint; response types (RunDetail)
       sse.ts                    # useRunEvents(runId, enabled)
     components/
-      AppLayout.tsx  ErrorAlert.tsx  StateTag.tsx  MetricTable.tsx  RunLog.tsx
+      AppLayout.tsx  RouteLoading.tsx  ErrorAlert.tsx  StateTag.tsx  MetricTable.tsx  RunLog.tsx
       ForecastResults.tsx  ClassifyResults.tsx     # result sections of RunDetailPage, per task type
       charts/                   # EChart.tsx (module registration) + one file per chart
       forms/                    # RunConfigForm.tsx, schemaTransforms.ts
@@ -47,6 +47,17 @@ web/
 | `/system`       | `pages/SystemPage.tsx`        |
 
 Page state that a user can share (selected split, channel, origin, run ids) goes into URL search parameters.
+
+### Route Loading and Recovery
+
+- Keep `AppLayout` synchronous. Each of the seven page routes uses React Router `lazy` with a dynamic import in `router.tsx`. Resolve the named page export as `Component`. Do not import pages from the layout or from a shared barrel.
+- Keep the index route as `<Navigate to="/runs" replace />`. Route loading must preserve existing paths, search parameters, fragments, API requests, and page behavior.
+- `RouteLoading.tsx` owns the synchronous loading and error components. The root `HydrateFallback` shows `正在加载页面…` with `role="status"` during initial loading. `AppLayout` shows the same status when `useNavigation().state` is `loading`.
+- Wrap each dynamic import with `loadRoute`. A rejected import resolves to the synchronous `RouteLoadError` component at the requested location. Each page route also keeps a synchronous `ErrorBoundary`.
+- The error UI shows `页面加载失败` and `重新加载页面`. The recovery link uses `pathname + search + hash`. Its click handler first calls `event.preventDefault()`, then calls `location.reload()` to reload the document. Router reconstruction or client navigation alone does not satisfy recovery.
+- Page internals retain their existing imports. Route loading does not change chart registration, forms, generated types, dependency versions, or build settings.
+
+Verified by the route-loading task in `.trellis/tasks/09-30-frontend-route-lazy-loading/`: deferred and rejected import tests, final production builds, and visible recovery of the same hashed module with empty and non-empty fragments.
 
 ---
 

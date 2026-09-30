@@ -1,0 +1,8 @@
+{
+  "command": [
+    "node",
+    "--check",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\analyze_build.mjs"
+  ],
+  "exit_code": 0
+}

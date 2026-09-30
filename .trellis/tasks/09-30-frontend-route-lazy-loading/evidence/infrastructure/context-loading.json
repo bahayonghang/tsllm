@@ -1,0 +1,27 @@
+{
+  "mode": "native-injection-with-saved-output-and-omitted-file-readback",
+  "saved_output": "C:\\Users\\lyh\\AppData\\Local\\Temp\\hook_outputs\\01a0f1ec-5d85-7982-8237-5360c77ed84f\\5842ae08-0d09-4563-a843-a9ab0a6b09eb.txt",
+  "bytes": 129246,
+  "sha256": "50267d81ec7e29d0bab5fcf7d8d5decf55827b2760304231b22b4e979109dbd1",
+  "sections": [
+    "=== .trellis/spec/frontend/index.md ===",
+    "=== .trellis/spec/frontend/directory-structure.md ===",
+    "=== .trellis/spec/frontend/quality-guidelines.md ===",
+    "=== .trellis/spec/frontend/api-client.md ===",
+    "=== .trellis/spec/frontend/forms-and-charts.md ===",
+    "=== .trellis/spec/guides/code-reuse-thinking-guide.md ===",
+    "=== .trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md ===",
+    "=== .trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md ===",
+    "=== .trellis/tasks/09-30-frontend-load-assessment/report.md ===",
+    "=== .trellis/tasks/09-30-frontend-load-assessment/verification.md ===",
+    "=== .trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-review.md ===",
+    "=== .trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md ==="
+  ],
+  "child_current": {
+    "exit_code": 1,
+    "stdout": ""
+  },
+  "binding": ".trellis/tasks/09-30-frontend-route-lazy-loading",
+  "parent_confirmation": "Parent current uses codex_01a0f1e3-d669-7b92-80bb-d3bdfbc2ca76; do not change activation from child",
+  "scope": "tools except preflight.py; assigned infrastructure/gates/snapshots/fixtures/measurement/isolation only"
+}

@@ -1,0 +1,338 @@
+[
+  {
+    "file": "B0-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:09:50 GMT",
+      "etag": "\"33696535b95e7eaee2d9e018a20f7c8a\"",
+      "last-modified": "Wed, 30 Sep 2026 10:50:08 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-Bw4YU1Ku.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "146015",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"a4abfd684e0dfb92589698df8669be40\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/fast-deep-equal-DMTWy6R9.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "1625",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"28d18af999ebaea5e2031cea9865f17d\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/button-CCZs0Voe.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "491991",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"cb4097102818040382627561e56c3a41\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/hooks-BIRQC-dQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "72796",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"d5bce0aa1388deaf9e5b23261e69d4cc\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/RunsPage-DR8Ns_w6.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2326",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"9f0b186f10dd4f47ad7c957c5834d416\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/ErrorAlert-B4_5QW98.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "185549",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"b2b16ee935176a952e48786116dc25a2\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/table-CeaGE0R5.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "183756",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"eeddd658853c0554a66fa5641b9821ca\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/StateTag-Dr4yVMIJ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "9083",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"76746767b99864e8248874fceac65391\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/format-DJgdk6Jc.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "937",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"4f7b082e77616599aabbebded3750bbb\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/RunNewPage-ckpljBXr.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "469769",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"fd6c499837a7794db58feea7953dd149\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/input-DrqXIbCD.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "114725",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"7484ea528905288cdaa3fdaf2f0edff7\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/card-CrEYUjZ-.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "44467",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"f3927adbcdd6efb936ba3ec7fbdd3c36\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/row-C_YvIpeN.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2461",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:03 GMT",
+      "etag": "\"f12ef407282e8d9f5fc21171e662f61d\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/ComparePage-RNU3_j0K.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "4597",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:04 GMT",
+      "etag": "\"c1e7626c378baca63fd2374bd1adf1bf\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/EChart-CygN2abW.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "633014",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:04 GMT",
+      "etag": "\"6c8e04fab51d0103772fd029b00d12ec\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/DatasetsPage-B_tIBJzF.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "1365",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:05 GMT",
+      "etag": "\"d226f35803eee70dee44dafffe683efa\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/DatasetDetailPage-CnQc9Ktq.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "8118",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:06 GMT",
+      "etag": "\"6f3c1ed9258c0c6d6186774d1a154e4b\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/descriptions-CMc-Ltgv.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "7896",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:06 GMT",
+      "etag": "\"efa3df9a5ec8c51dbc0fe7a8a5e75ab9\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/RunDetailPage-ZaeUnRMC.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "47745",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:07 GMT",
+      "etag": "\"ed9c3638919ab9562504577f4eb224d4\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B1-journey-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/SystemPage-D01M2jNg.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "1780",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 11:10:10 GMT",
+      "etag": "\"2d2d787f9253ccbf90720ed42e62aca5\"",
+      "last-modified": "Wed, 30 Sep 2026 10:54:32 GMT",
+      "server": "uvicorn"
+    }
+  }
+]

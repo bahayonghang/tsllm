@@ -1,0 +1,38 @@
+{
+  "recorded_at": "2026-09-30T11:08:07.679783+00:00",
+  "fixture_count": 34,
+  "fixture_changes": [],
+  "fault_assets": [
+    {
+      "asset": "RunDetailPage-ZaeUnRMC.js",
+      "unchanged": true,
+      "sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e"
+    },
+    {
+      "asset": "SystemPage-D01M2jNg.js",
+      "unchanged": true,
+      "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52"
+    }
+  ],
+  "held_files": [],
+  "service_session": 17499,
+  "service_stop": "Ctrl+C",
+  "service_exit_code": 1,
+  "port_before_measurement_handoff": {
+    "address": "127.0.0.1:9000",
+    "connect_ex_1_second": 10035,
+    "bind_success": true,
+    "bind_closed": true
+  },
+  "browser": {
+    "tab_id": "2",
+    "url_before_close": "about:blank",
+    "viewport_restored": {
+      "width": 1280,
+      "height": 720
+    },
+    "closed": true,
+    "inline_images": 17,
+    "screenshots_written": false
+  }
+}

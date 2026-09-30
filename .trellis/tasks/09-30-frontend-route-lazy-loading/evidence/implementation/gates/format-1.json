@@ -1,0 +1,54 @@
+{
+  "gate": "format",
+  "attempt": 1,
+  "package_script": null,
+  "launcher": "installed web/node_modules/.bin/*.cmd; no install",
+  "versions": {
+    "biome": {
+      "exit_code": 0,
+      "output": "Version: 2.5.14"
+    },
+    "tsc": {
+      "exit_code": 0,
+      "output": "Version 5.9.3"
+    },
+    "vitest": {
+      "exit_code": 0,
+      "output": "vitest/5.0.2 win32-x64 node-v26.7.0"
+    },
+    "node": "v26.7.0"
+  },
+  "source_sha256_before": {
+    "web/src/router.tsx": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+    "web/src/components/AppLayout.tsx": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+    "web/src/components/RouteLoading.tsx": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+    "web/tests/LazyRouting.test.tsx": "3f73cc3c341d88ab01d4ff0b657280db266982f1545ba8d4b924df6de830f959",
+    "web/tests/RouteResolution.test.tsx": "95505e0b53aae9d324a4b8f422b873b6a22a68ff02a61d61efd996d14202c17d"
+  },
+  "steps": [
+    {
+      "command": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\web\\node_modules\\.bin\\biome.cmd",
+        "format",
+        "--write",
+        "tests/LazyRouting.test.tsx",
+        "tests/RouteResolution.test.tsx"
+      ],
+      "cwd": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\web",
+      "started_utc": "2026-09-30T10:52:29.821010+00:00",
+      "seconds": 0.14581239999824902,
+      "exit_code": 0,
+      "log": ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\implementation\\gates\\format-1-biome.log",
+      "source_encoding": "utf-8",
+      "source_output_sha256": "ec3664127d11d0780b8c9547a003a702d838414450d9f016e3d6a8afe87f42d0"
+    }
+  ],
+  "exit_code": 0,
+  "source_sha256_after": {
+    "web/src/router.tsx": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+    "web/src/components/AppLayout.tsx": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+    "web/src/components/RouteLoading.tsx": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+    "web/tests/LazyRouting.test.tsx": "c3f2bd80b9e6912f39f22ca45c584d88ef383511054062f48d2de2fee0485895",
+    "web/tests/RouteResolution.test.tsx": "95505e0b53aae9d324a4b8f422b873b6a22a68ff02a61d61efd996d14202c17d"
+  }
+}

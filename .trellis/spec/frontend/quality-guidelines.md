@@ -19,7 +19,8 @@ Run from the repository root with `pnpm -C web run <script>`. A change is comple
 
 - `biome.json` sets `vcs.root` to `".."`, because the `.gitignore` file is in the repository root.
 - On Windows, an editor hook can write CRLF line ends. Run `npx biome check --write .` in `web/` before `check`.
-- The build writes one chunk of about 2.4 MB (786 KB gzip). `chunkSizeWarningLimit` is 2000, so Vite prints a warning. Code splitting is not done.
+- The build emits seven page route chunks and shared dependency chunks. `AppLayout` stays synchronous. `chunkSizeWarningLimit` remains 2000. Routing work must preserve `minify`, `target`, and the existing build configuration.
+- Measure the initial route and the first use of deferred pages separately. Report actual HTTP transfer and offline per-file gzip estimates as separate quantities. Keep source, build, and collector versions with each performance record.
 
 ---
 
@@ -39,6 +40,8 @@ Run from the repository root with `pnpm -C web run <script>`. A change is comple
 - Required component tests (web-ui AC3): the form changes Options when the backbone changes; unsupported modes are disabled; the SSE hook resumes from `Last-Event-ID` without repeated events; the compare page shows warnings.
 - `tests/helpers.tsx` has `renderRoute(url)` (memory router with the app routes) and `mockFetch(routes)`. `tests/fixtures/run-config.schema.json` is the exported RunConfig schema.
 - Tests that use timers (`sse.test.tsx`) use `vi.useFakeTimers()` and advance the timers before they assert.
+- Route tests cover all seven resolved page components, the root redirect, initial and navigation loading, rejected imports, and history navigation. Recovery-click tests assert `location.reload()` and the complete pathname/search/hash, including empty and non-empty fragments. Keep the original page tests and assertions.
+- Recovery acceptance uses the final production build. Temporarily make one route module unavailable in an isolated copy, restore the same hashed file, and click the recovery control. Verify a document navigation and the restored page or Canvas. A mocked reload call alone does not prove browser recovery.
 - Manual acceptance uses the in-app browser at 1280 px and 390 px width. Do not commit screenshots: they contain plant data.
 - Check horizontal overflow with `document.documentElement.scrollWidth <= clientWidth` on each page. A same-origin `iframe` with a fixed width checks many pages from one script.
 - The header menu uses `disabledOverflow` and wraps. The antd overflow menu needs `ResizeObserver` measurement to collapse. It did not collapse in the hidden pane, and the page overflowed at 390 px.

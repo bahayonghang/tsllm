@@ -1,0 +1,65 @@
+{
+  "recorded_at": "2026-09-30T11:14:25.301504+00:00",
+  "head": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "branch": "codex/frontend-route-lazy-loading",
+  "staged": [],
+  "changed_tracked": [
+    ".trellis/spec/frontend/directory-structure.md",
+    ".trellis/spec/frontend/quality-guidelines.md",
+    "web/src/components/AppLayout.tsx",
+    "web/src/router.tsx"
+  ],
+  "outside_scope_changes": [],
+  "unexpected_status": [],
+  "old_assessment": {
+    "file_count": 463,
+    "hash_size_mtime_equal": true
+  },
+  "old_dist": {
+    "file_count": 2,
+    "hash_size_mtime_equal": true
+  },
+  "launch_hash_size_mtime_equal": true,
+  "unchanged_original_tests": 8,
+  "product_files": {
+    "web/src/components/AppLayout.tsx": {
+      "sha256": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+      "size": 2086,
+      "mtime_ns": 1790765378694604800
+    },
+    "web/src/components/RouteLoading.tsx": {
+      "sha256": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+      "size": 941,
+      "mtime_ns": 1790765378694604800
+    },
+    "web/src/router.tsx": {
+      "sha256": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+      "size": 1882,
+      "mtime_ns": 1790765378693599600
+    },
+    "web/tests/LazyRouting.test.tsx": {
+      "sha256": "614a18a136674f48dc874c5f423c222da0f44e9425029fc165b34fc4e846bec2",
+      "size": 6251,
+      "mtime_ns": 1790765571189987800
+    },
+    "web/tests/RouteResolution.test.tsx": {
+      "sha256": "95505e0b53aae9d324a4b8f422b873b6a22a68ff02a61d61efd996d14202c17d",
+      "size": 3932,
+      "mtime_ns": 1790765528391475000
+    }
+  },
+  "spec_files": {
+    ".trellis/spec/frontend/directory-structure.md": {
+      "sha256": "dc181f83a9a67f83119bea61f83d662f400abbd5145bc0a26f6adf464dd4cf20",
+      "size": 4887,
+      "mtime_ns": 1790766864100658200
+    },
+    ".trellis/spec/frontend/quality-guidelines.md": {
+      "sha256": "9175fee8d214d4f2887643e6a694b62179d0678ef0626e8176a042371e5fb771",
+      "size": 4817,
+      "mtime_ns": 1790766604917017800
+    }
+  },
+  "port_9000_bind_available": true,
+  "private_roots_read": false
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "label": "task-validate",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-B",
+      ".trellis/scripts/task.py",
+      "validate",
+      ".trellis\\tasks\\09-30-frontend-route-lazy-loading"
+    ],
+    "exit_code": 0,
+    "stdout": "\u001b[0;34m=== Validating Context Files ===\u001b[0m\nTarget dir: D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\n\n  \u001b[1;33mimplement.jsonl:9: Warning: .trellis/tasks/09-30-frontend-load-assessment/report.md is 37508 bytes, exceeds context_injection.max_file_bytes (32768); injection will truncate it\u001b[0m\n  \u001b[0;32mimplement.jsonl: ✓ (13 entries)\u001b[0m\n  \u001b[1;33mcheck.jsonl:9: Warning: .trellis/tasks/09-30-frontend-load-assessment/report.md is 37508 bytes, exceeds context_injection.max_file_bytes (32768); injection will truncate it\u001b[0m\n  \u001b[0;32mcheck.jsonl: ✓ (13 entries)\u001b[0m\n\n\u001b[0;32m✓ All validations passed\u001b[0m\n",
+    "stderr": ""
+  },
+  {
+    "label": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "cached-diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

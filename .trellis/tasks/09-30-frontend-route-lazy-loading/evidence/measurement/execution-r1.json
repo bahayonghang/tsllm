@@ -1,0 +1,60 @@
+{
+  "commands": [
+    {
+      "name": "main_matrix",
+      "tool_session": 91296,
+      "script": "tools/run_matrix.py",
+      "experiment": "evidence/snapshots/experiment-r1.json",
+      "output": "evidence/measurement/raw-r1",
+      "node": "D:/GreenSoftware/node/node.exe",
+      "playwright_root": "C:/Users/lyh/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+      "browser_executable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+      "sample_range": [
+        1,
+        5
+      ],
+      "scenarios": [
+        "cold-runs",
+        "warm-runs",
+        "first-form",
+        "first-compare",
+        "first-dataset",
+        "first-forecast"
+      ],
+      "variants": [
+        "B0",
+        "B1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "complete_journeys",
+      "tool_session": 2730,
+      "script": "tools/run_matrix.py",
+      "experiment": "evidence/snapshots/experiment-r1.json",
+      "output": "evidence/measurement/journey-r1",
+      "sample_range": [
+        1,
+        1
+      ],
+      "scenarios": [
+        "journey"
+      ],
+      "variants": [
+        "B0",
+        "B1"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "summary_attempt_records": [
+    "summary-attempt-1.json",
+    "summary-attempt-2.json"
+  ],
+  "raw_observations": 60,
+  "journeys": 2,
+  "invalid_measurements": 0,
+  "higher_values_retained": true,
+  "screenshots_written": 0,
+  "cleanup": "cleanup-r1.json"
+}

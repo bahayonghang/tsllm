@@ -1,0 +1,38 @@
+{
+  "source_sha256": "fb895b9755b53bb10b5ab97b4e83f0ec4b8f458dfd3d6b1bb01a649523fb213d",
+  "commands": [
+    {
+      "command": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.venv\\Scripts\\python.exe",
+        "-B",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\summarize.py",
+        "--experiment",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\snapshots\\experiment-r1.json",
+        "--input",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\measurement\\raw-r1",
+        "--output",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\measurement\\summary-r1.json",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "input": "raw-r1",
+      "output": "summary-r1.json"
+    },
+    {
+      "command": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.venv\\Scripts\\python.exe",
+        "-B",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\summarize.py",
+        "--experiment",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\snapshots\\experiment-r1.json",
+        "--input",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\measurement\\journey-r1",
+        "--output",
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\measurement\\journey-summary-r1.json"
+      ],
+      "exit_code": 0,
+      "input": "journey-r1",
+      "output": "journey-summary-r1.json"
+    }
+  ]
+}

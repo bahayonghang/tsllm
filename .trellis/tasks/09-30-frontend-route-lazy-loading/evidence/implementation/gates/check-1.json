@@ -1,0 +1,43 @@
+{
+  "gate": "check",
+  "attempt": 1,
+  "package_script": "biome check . && tsc --noEmit",
+  "launcher": "installed web/node_modules/.bin/*.cmd; no install",
+  "versions": {
+    "biome": {
+      "exit_code": 0,
+      "output": "Version: 2.5.14"
+    },
+    "tsc": {
+      "exit_code": 0,
+      "output": "Version 5.9.3"
+    },
+    "vitest": {
+      "exit_code": 0,
+      "output": "vitest/5.0.2 win32-x64 node-v26.7.0"
+    },
+    "node": "v26.7.0"
+  },
+  "source_sha256": {
+    "web/src/router.tsx": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+    "web/src/components/AppLayout.tsx": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+    "web/src/components/RouteLoading.tsx": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+    "web/tests/LazyRouting.test.tsx": "3f73cc3c341d88ab01d4ff0b657280db266982f1545ba8d4b924df6de830f959",
+    "web/tests/RouteResolution.test.tsx": "d2de77e3930b7d0411c6ca4d3e8e0296bc9054be5aa7fe493e85b3582a17bcbd"
+  },
+  "steps": [
+    {
+      "command": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\web\\node_modules\\.bin\\biome.cmd",
+        "check",
+        "."
+      ],
+      "cwd": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\web",
+      "started_utc": "2026-09-30T10:50:46.890401+00:00",
+      "seconds": 0.16331350000109524,
+      "exit_code": 1,
+      "log": ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\implementation\\gates\\check-1-biome.log"
+    }
+  ],
+  "exit_code": 1
+}

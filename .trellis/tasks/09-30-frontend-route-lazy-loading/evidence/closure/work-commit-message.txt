@@ -1,0 +1,11 @@
+perf(web): 实施路由级延迟加载并记录验收
+
+Why: 减少冷入口预先加载的页面资源，同时保留业务行为和可恢复的模块错误状态
+将七个页面改为路由 lazy import，保留同步布局、中文加载提示和真实文档重载恢复。
+纳入路由与恢复测试、frontend 规范、中文任务规划、60 个主观测、2 个完整流程及独立验收证据。
+冷 /runs 就绪中位数为 300.2→234.0 ms；首次使用增加 20.1–33.6 ms，完整访问 transferSize 增加 0.66%。
+
+Tested: 同修订完整 check/test/build 通过；B1 41 tests；390/1280 px 可见验收和独立复算通过
+Agent-Task: frontend-route-lazy-loading
+Agent-Model: gpt-6
+Generated-By: agent

@@ -1,0 +1,10 @@
+{
+  "command": [
+    ".venv/Scripts/ruff.exe",
+    "format",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_measurements.py"
+  ],
+  "exit_code": 0,
+  "stdout": "1 file reformatted\n",
+  "stderr": ""
+}

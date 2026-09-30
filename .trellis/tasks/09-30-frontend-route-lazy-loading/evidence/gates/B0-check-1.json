@@ -1,0 +1,45 @@
+{
+  "variant": "B0",
+  "root": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B0",
+  "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+  "gate": "check",
+  "attempt": 1,
+  "command": "biome check . && tsc --noEmit",
+  "components": [
+    {
+      "argv": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B0\\web\\node_modules\\.bin\\biome.CMD",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "launcher": {
+        "sha256": "090a9fb31d3338af6153458db2026bafa22b671b6eb0e7e7405f3cd4cf07545b",
+        "bytes": 860,
+        "mtime_ns": 1790675005518266300
+      }
+    },
+    {
+      "argv": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B0\\web\\node_modules\\.bin\\tsc.CMD",
+        "--noEmit"
+      ],
+      "exit_code": 0,
+      "launcher": {
+        "sha256": "ba8ec00dc97cf22cac8f5b0d972017476f3235139cc47ccd898294b7f453e077",
+        "bytes": 820,
+        "mtime_ns": 1790675005517266300
+      }
+    }
+  ],
+  "started_utc": "2026-09-30T10:49:54.784549+00:00",
+  "duration_seconds": 2.6540163999961806,
+  "exit_code": 0,
+  "log": "B0-check-1.txt",
+  "runner": {
+    "sha256": "7419d880b65c85e601ec1ab712e1b2ffa048fc793cbcadd9ce518601ad6d5104",
+    "bytes": 3385,
+    "mtime_ns": 1790765341869555000
+  },
+  "invocation": "Installed .bin launchers; exact package.json script; no pnpm preparation or installation"
+}

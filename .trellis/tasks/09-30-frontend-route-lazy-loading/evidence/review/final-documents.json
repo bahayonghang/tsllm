@@ -1,0 +1,529 @@
+{
+  "passed": true,
+  "recorded_at": "2026-09-30T11:23:53.856267+00:00",
+  "checks": 62,
+  "failures": [],
+  "items": [
+    {
+      "name": "document:prd.md",
+      "passed": true,
+      "actual": "637457efabecf8c6a0bbcbeafc4daa7f8480139dedb3c1861f9cb5932bbfcfe8"
+    },
+    {
+      "name": "document:design.md",
+      "passed": true,
+      "actual": "88719c32657adab415802fd5d8deb6911380341c4439977158905fe6a1cca507"
+    },
+    {
+      "name": "document:implement.md",
+      "passed": true,
+      "actual": "0baaab20458277457e5d160294a4917150b7b2e8f6ac0288ccb7e2549825b364"
+    },
+    {
+      "name": "document:verification.md",
+      "passed": true,
+      "actual": "bb6b498a1920aa4438b7038ee5d9cf77c30ee174a7cfd1e8ac5802ed102da21f"
+    },
+    {
+      "name": "document:report.md",
+      "passed": true,
+      "actual": "e6de1081975ffd6eb27884733855cc210a59ec12873ba79eb292735d68042342"
+    },
+    {
+      "name": "document:implement.jsonl",
+      "passed": true,
+      "actual": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4"
+    },
+    {
+      "name": "document:check.jsonl",
+      "passed": true,
+      "actual": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4"
+    },
+    {
+      "name": "document:evidence/dispatch/dispatch.md",
+      "passed": true,
+      "actual": "bb2162b9e9daabd4103325ed484e34acf49ca228ef8a1651bf81f9de360bb461"
+    },
+    {
+      "name": "command:task-validate",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "command:diff-check",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "command:cached-diff-check",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "command:staged-paths",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "staged_empty",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "independent:product-gates.json",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "independent:numeric-review.json",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "independent:visible-review.json",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "independent:scope-final.json",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "readiness:cold-runs",
+      "passed": true,
+      "actual": [
+        "300.2（286.7–309.8）",
+        "234.0（227.5–246.7）",
+        "-66.2"
+      ]
+    },
+    {
+      "name": "readiness:warm-runs",
+      "passed": true,
+      "actual": [
+        "97.1（92.3–108.7）",
+        "97.5（89.7–107.4）",
+        "+0.4"
+      ]
+    },
+    {
+      "name": "readiness:first-form",
+      "passed": true,
+      "actual": [
+        "183.6（180.0–195.6）",
+        "203.7（184.6–228.9）",
+        "+20.1"
+      ]
+    },
+    {
+      "name": "readiness:first-compare",
+      "passed": true,
+      "actual": [
+        "1128.7（1120.4–1134.5）",
+        "1158.3（1149.6–1193.6）",
+        "+29.6"
+      ]
+    },
+    {
+      "name": "readiness:first-dataset",
+      "passed": true,
+      "actual": [
+        "1134.5（1127.3–1154.5）",
+        "1168.1（1148.7–1172.3）",
+        "+33.6"
+      ]
+    },
+    {
+      "name": "readiness:first-forecast",
+      "passed": true,
+      "actual": [
+        "1131.2（1127.1–1147.1）",
+        "1159.9（1152.5–1175.5）",
+        "+28.7"
+      ]
+    },
+    {
+      "name": "fcp:cold-runs",
+      "passed": true,
+      "actual": [
+        "296.0（284.0–312.0）",
+        "156.0（100.0–168.0）"
+      ]
+    },
+    {
+      "name": "fcp:warm-runs",
+      "passed": true,
+      "actual": [
+        "88.0（80.0–88.0）",
+        "40.0（32.0–40.0）"
+      ]
+    },
+    {
+      "name": "cold:资产请求及唯一URL数",
+      "passed": true,
+      "actual": [
+        "1",
+        "9"
+      ]
+    },
+    {
+      "name": "cold:资产正文 B",
+      "passed": true,
+      "actual": [
+        "2,419,860",
+        "1,094,078"
+      ]
+    },
+    {
+      "name": "cold:资产transferSize B",
+      "passed": true,
+      "actual": [
+        "2,420,160",
+        "1,096,778"
+      ]
+    },
+    {
+      "name": "cold:全部transferSize B",
+      "passed": true,
+      "actual": [
+        "2,423,336",
+        "1,100,432"
+      ]
+    },
+    {
+      "name": "cold_cdp:资产CDP encodedDataLength B",
+      "passed": true,
+      "actual": [
+        "2,420,106",
+        "1,096,273"
+      ]
+    },
+    {
+      "name": "cold_cdp:全部CDP encodedDataLength B",
+      "passed": true,
+      "actual": [
+        "2,422,997",
+        "1,099,642"
+      ]
+    },
+    {
+      "name": "cold_gzip",
+      "passed": true,
+      "actual": [
+        "776,403",
+        "354,358"
+      ]
+    },
+    {
+      "name": "first_use:first-form",
+      "passed": true,
+      "actual": [
+        "4",
+        "631,422",
+        "632,622",
+        "2,441,406 / 1,751,124"
+      ]
+    },
+    {
+      "name": "first_use:first-compare",
+      "passed": true,
+      "actual": [
+        "3",
+        "682,078",
+        "682,978",
+        "2,434,198 / 1,794,272"
+      ]
+    },
+    {
+      "name": "first_use:first-dataset",
+      "passed": true,
+      "actual": [
+        "6",
+        "809,157",
+        "810,957",
+        "2,435,963 / 1,921,818"
+      ]
+    },
+    {
+      "name": "first_use:first-forecast",
+      "passed": true,
+      "actual": [
+        "5",
+        "735,583",
+        "737,083",
+        "2,432,735 / 1,846,914"
+      ]
+    },
+    {
+      "name": "journey:请求条目数",
+      "passed": true,
+      "actual": [
+        "40",
+        "59"
+      ]
+    },
+    {
+      "name": "journey:完整URL并集数",
+      "passed": true,
+      "actual": [
+        "22",
+        "41"
+      ]
+    },
+    {
+      "name": "journey:全部transferSize B",
+      "passed": true,
+      "actual": [
+        "2,488,723",
+        "2,505,056"
+      ]
+    },
+    {
+      "name": "journey:资产transferSize B",
+      "passed": true,
+      "actual": [
+        "2,420,160",
+        "2,436,015"
+      ]
+    },
+    {
+      "name": "journey:API transferSize B",
+      "passed": true,
+      "actual": [
+        "67,301",
+        "67,301"
+      ]
+    },
+    {
+      "name": "journey_cdp",
+      "passed": true,
+      "actual": [
+        "2,484,052",
+        "2,499,315"
+      ]
+    },
+    {
+      "name": "build:全部构建文件正文 B",
+      "passed": true,
+      "actual": [
+        "2,420,191",
+        "2,430,585"
+      ]
+    },
+    {
+      "name": "build:全部构建文件离线gzip B",
+      "passed": true,
+      "actual": [
+        "776,665",
+        "796,118"
+      ]
+    },
+    {
+      "name": "prd_ten_accepted",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "implementation_ten_done",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "verification_ten_pass",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "reload_limit_disclosed",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "warm_cause_disclosed",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "fixture:raw-r1",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "fixture:journey-r1",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "lifecycle_summary_exact",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "twelve_owned_services",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "service_stop_codes",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:web/src/components/AppLayout.tsx",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:web/src/components/RouteLoading.tsx",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:web/src/router.tsx",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:web/tests/LazyRouting.test.tsx",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:web/tests/RouteResolution.test.tsx",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:.trellis/spec/frontend/directory-structure.md",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "current_file:.trellis/spec/frontend/quality-guidelines.md",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "name": "recovery_spec",
+      "passed": true,
+      "actual": null
+    }
+  ],
+  "script_sha256": "2b93df1eff4e12b56d204e1d8641793fd85768634326c0478936f72f629ed34d",
+  "document_sha256": {
+    "prd.md": "637457efabecf8c6a0bbcbeafc4daa7f8480139dedb3c1861f9cb5932bbfcfe8",
+    "design.md": "88719c32657adab415802fd5d8deb6911380341c4439977158905fe6a1cca507",
+    "implement.md": "0baaab20458277457e5d160294a4917150b7b2e8f6ac0288ccb7e2549825b364",
+    "verification.md": "bb6b498a1920aa4438b7038ee5d9cf77c30ee174a7cfd1e8ac5802ed102da21f",
+    "report.md": "e6de1081975ffd6eb27884733855cc210a59ec12873ba79eb292735d68042342",
+    "implement.jsonl": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+    "check.jsonl": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+    "evidence/dispatch/dispatch.md": "bb2162b9e9daabd4103325ed484e34acf49ca228ef8a1651bf81f9de360bb461"
+  },
+  "final_commands_sha256": "e02dc84e3d7dac0c9413139a8e3b20001e3e21521d42398887465596098d907d",
+  "cdp": {
+    "B0/cold-runs": {
+      "samples": [
+        {
+          "file": "evidence/measurement/raw-r1/B0-cold-runs-s1-a1.json",
+          "sha256": "43c166463ae4000128fe2a4006e13e4ea735b321d8d617dd5af3ca7733cace4b",
+          "all": 2422997,
+          "asset": 2420106
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B0-cold-runs-s2-a1.json",
+          "sha256": "73a3620eabbf866c9b23472dd48109086830a23a501534a5f69a4fc357c09c5b",
+          "all": 2422997,
+          "asset": 2420106
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B0-cold-runs-s3-a1.json",
+          "sha256": "1f65f83973db8501bbc1d999fdd98a4e774070d93346e7fb0ed2fcc1a9e7bc23",
+          "all": 2422997,
+          "asset": 2420106
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B0-cold-runs-s4-a1.json",
+          "sha256": "182924cc6213a385e3850cc0614f625e219b468c215494287d5abaf5c811856d",
+          "all": 2422997,
+          "asset": 2420106
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B0-cold-runs-s5-a1.json",
+          "sha256": "72ad62e3b8b8090caf6218f3dc4e165406b83e93c61ad136df986a7c151da0ae",
+          "all": 2422997,
+          "asset": 2420106
+        }
+      ],
+      "all_median": 2422997,
+      "asset_median": 2420106
+    },
+    "B1/cold-runs": {
+      "samples": [
+        {
+          "file": "evidence/measurement/raw-r1/B1-cold-runs-s1-a1.json",
+          "sha256": "cac4a58f5b0ed4526a02ea77b8ac84f054511554ff5f68b44d555aa078f9c575",
+          "all": 1099642,
+          "asset": 1096273
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B1-cold-runs-s2-a1.json",
+          "sha256": "51ece5ed623d185b05256ab0ef0dd88b0739c45f9148ff9886c9720451201520",
+          "all": 1099642,
+          "asset": 1096273
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B1-cold-runs-s3-a1.json",
+          "sha256": "2e2741e076cd16df4bad57007308e5d025db73435115e10953a143a170bf7d93",
+          "all": 1099642,
+          "asset": 1096273
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B1-cold-runs-s4-a1.json",
+          "sha256": "d000c57ab98ac208d155b5b05fbbdd8abd538331de39fdb9a39ed7704e9cc580",
+          "all": 1099642,
+          "asset": 1096273
+        },
+        {
+          "file": "evidence/measurement/raw-r1/B1-cold-runs-s5-a1.json",
+          "sha256": "b89a30e96744e237e51ebe8823a080d7a06f4dbeb5f7ea8516d0c7e76d2dc53d",
+          "all": 1099642,
+          "asset": 1096273
+        }
+      ],
+      "all_median": 1099642,
+      "asset_median": 1096273
+    },
+    "B0/journey": {
+      "samples": [
+        {
+          "file": "evidence/measurement/journey-r1/B0-journey-s1-a1.json",
+          "sha256": "a849cbf1b3fdab051831e7321c7625e165e831c2a0334d29e3786716c64ef956",
+          "all": 2484052,
+          "asset": 2420106
+        }
+      ],
+      "all_median": 2484052,
+      "asset_median": 2420106
+    },
+    "B1/journey": {
+      "samples": [
+        {
+          "file": "evidence/measurement/journey-r1/B1-journey-s1-a1.json",
+          "sha256": "4345fa6aab4b32786aca3ccafa9767bce4d11ff52459ff672bfe7219dfae7e1b",
+          "all": 2499315,
+          "asset": 2434891
+        }
+      ],
+      "all_median": 2499315,
+      "asset_median": 2434891
+    }
+  },
+  "evidence_sha256": {
+    "product-gates.json": "cd8988107e8d7b528e34a73c41dc09ab226e9e16cc855273fe5b98dcda02dbb2",
+    "numeric-review.json": "cd588467b3cfd9f0198480d14374a62a2e6d3b08b580381552b33661f39fef4c",
+    "visible-review.json": "9b5b3a20f54740c64bdb8dd4d8102d1637b036e4464191bd7e1dd7dea93e45f7",
+    "scope-final.json": "6061de3b058c05159edc8fb9530b898bdedca7e619959341e0076b1e5249bc58"
+  }
+}

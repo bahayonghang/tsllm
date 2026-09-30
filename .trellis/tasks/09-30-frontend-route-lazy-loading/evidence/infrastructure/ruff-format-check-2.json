@@ -1,0 +1,18 @@
+{
+  "command": [
+    "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.venv\\Scripts\\python.exe",
+    "-m",
+    "ruff",
+    "format",
+    "--check",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\acceptance_common.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\create_fixtures.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\freeze_experiment.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\prepare_isolation.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\run_gates.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\run_matrix.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\serve_variant.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\summarize.py"
+  ],
+  "exit_code": 0
+}

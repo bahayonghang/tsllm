@@ -1,0 +1,9 @@
+{
+  "command": [
+    ".venv/Scripts/pyright.exe",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_measurements.py"
+  ],
+  "exit_code": 0,
+  "stdout": "0 errors, 0 warnings, 0 informations\n",
+  "stderr": ""
+}

@@ -1,0 +1,28 @@
+{
+  "changed_files": [
+    "web/src/components/AppLayout.tsx",
+    "web/src/components/RouteLoading.tsx",
+    "web/src/router.tsx",
+    "web/tests/LazyRouting.test.tsx",
+    "web/tests/RouteResolution.test.tsx"
+  ],
+  "B0_source": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+  "B1_source": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+  "unchanged_existing_tests": 8,
+  "versions": {
+    "@biomejs/biome": "2.5.14",
+    "typescript": "5.9.3",
+    "vitest": "5.0.2",
+    "vite": "8.3.1",
+    "react": "19.3.0",
+    "react-router": "8.4.0",
+    "python": "3.13.11",
+    "zlib": "1.3.1",
+    "node": "v26.7.0",
+    "playwright": "1.62.1"
+  },
+  "dependency_installation": false,
+  "browser_executable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "playwright_root": "C:\\Users\\lyh\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright",
+  "probe_unchanged": true
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "variant": "B0",
+  "root": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B0",
+  "baseline": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+  "source_snapshot": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\snapshots\\B0-source.json",
+  "dist_version": "8d7bc493b3c3dbcefbd4ef3987b82ee4eacac7bdcb4f5684f5e7e5d40065fa43",
+  "files": {
+    "assets/index-DlIxrfbQ.js": {
+      "sha256": "9d4690a2705c2b1e2a906c9933ff9c88ee4fc37ca9cd048f7d6e1fd77fb9853f",
+      "bytes": 2419860,
+      "mtime_ns": "1790765408291492600",
+      "gzip_bytes": 777036
+    },
+    "index.html": {
+      "sha256": "be7c0918b0eda1d70b137245bcb27610317892dee160c429470e60ab41c9423a",
+      "bytes": 331,
+      "mtime_ns": "1790765408291492600",
+      "gzip_bytes": 261
+    }
+  },
+  "entry_assets": [
+    "assets/index-DlIxrfbQ.js"
+  ],
+  "initial_static_closure": [
+    "assets/index-DlIxrfbQ.js"
+  ],
+  "imports": {
+    "assets/index-DlIxrfbQ.js": {
+      "static": [],
+      "dynamic": []
+    }
+  },
+  "route_chunks": [],
+  "totals": {
+    "bytes": 2420191,
+    "gzip_bytes": 777297
+  },
+  "gzip_method": "Independent file gzip, zlib level 9; offline estimate; HTTP transfer is measured separately",
+  "graph_method": "TypeScript parser on emitted JavaScript import/export declarations and import() calls; no Vite plugin",
+  "analyzer_sha256": "6f039535b43210384ce54a735e25d685601841a849a49a666ecf423f41ec3b9a"
+}

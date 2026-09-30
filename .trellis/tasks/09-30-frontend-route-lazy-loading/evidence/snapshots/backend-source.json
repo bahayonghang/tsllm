@@ -1,0 +1,380 @@
+{
+  "baseline": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "files": {
+    "pyproject.toml": {
+      "sha256": "658c994a8bd3f8ce7c70774c400ae0e184e2be6846f97a3a44aff6bca6242680",
+      "bytes": 1623,
+      "mtime_ns": 1790765380605850400
+    },
+    "uv.lock": {
+      "sha256": "6ecd52c19ff5a0f4b40eef0900c0fc6d139b2bb7ce629ed52de28edb99f311e5",
+      "bytes": 221435,
+      "mtime_ns": 1790765380650138700
+    },
+    "src/tsllm/__init__.py": {
+      "sha256": "6d3c759fd370f6a2a40fa632275c545eb04d48322d664eb79787e9f8d24d0496",
+      "bytes": 61,
+      "mtime_ns": 1790765380692059800
+    },
+    "src/tsllm/backbones/__init__.py": {
+      "sha256": "0f95c1ee14795e5d1f97e69a60e03e75a10519378c1c2d2ebcff8f9387a66d61",
+      "bytes": 409,
+      "mtime_ns": 1790765380743343500
+    },
+    "src/tsllm/backbones/base.py": {
+      "sha256": "3721b835da125249955ed94c75ab7657cf3cd1a3250b3fa19311f3bbbf8b4310",
+      "bytes": 5253,
+      "mtime_ns": 1790765380786785200
+    },
+    "src/tsllm/backbones/checkpoint.py": {
+      "sha256": "d1b483b6e0c0e90407da480c220fcda1f2d19e10c4d54cd85dc94005aa337dbf",
+      "bytes": 1960,
+      "mtime_ns": 1790765380827508400
+    },
+    "src/tsllm/backbones/chronos2.py": {
+      "sha256": "971ec6b25a9cded3388a910236897162ab8cec5aecf3263361a4c715a265d495",
+      "bytes": 9478,
+      "mtime_ns": 1790765380867415200
+    },
+    "src/tsllm/backbones/features.py": {
+      "sha256": "1f6de90e55ffb37c92d0cbc54326df5ff3183e07e4f9802699fc4610839e111f",
+      "bytes": 1754,
+      "mtime_ns": 1790765380906358700
+    },
+    "src/tsllm/backbones/nan.py": {
+      "sha256": "ce88038b5042db3b987de51722624ac4677a1e20f5cf1bc4e4002b83c52a7ca9",
+      "bytes": 2489,
+      "mtime_ns": 1790765380949511200
+    },
+    "src/tsllm/backbones/persistence.py": {
+      "sha256": "e699184213b7457bb65ac3084ef10a97a85e99a0f427643e7128f68b4f10dfcd",
+      "bytes": 861,
+      "mtime_ns": 1790765380986824100
+    },
+    "src/tsllm/backbones/registry.py": {
+      "sha256": "68233831190ba7656d53eedebb36f2621ebffcb63b85e7f8aa54bbb4b3de477d",
+      "bytes": 2044,
+      "mtime_ns": 1790765381032632200
+    },
+    "src/tsllm/backbones/ridge.py": {
+      "sha256": "a910329c52feb53cdfcdc486e42ccfd237560a2308a0ffa679c9d5c79984f7b0",
+      "bytes": 4740,
+      "mtime_ns": 1790765381074325300
+    },
+    "src/tsllm/backbones/timesfm25.py": {
+      "sha256": "70959d0e576368474e8ddfe22dc915fea70c3ffe55abeb816b4659c6fd60126c",
+      "bytes": 8865,
+      "mtime_ns": 1790765381112693200
+    },
+    "src/tsllm/backbones/training.py": {
+      "sha256": "a1a01b681e2af92baa3c92a757910fcff836722097a86502e76e68d1a757e2e3",
+      "bytes": 4207,
+      "mtime_ns": 1790765381155538000
+    },
+    "src/tsllm/backbones/ttm.py": {
+      "sha256": "90ba2a89c757d2d8e644105eae598c0374766c4b3233897320b9766125be5d47",
+      "bytes": 13306,
+      "mtime_ns": 1790765381199506000
+    },
+    "src/tsllm/backbones/windows.py": {
+      "sha256": "8e7d4d7dd59fa31a0c155dce8b03c09008e41ed9608672a34bed0d52ce474ac0",
+      "bytes": 1523,
+      "mtime_ns": 1790765381241734400
+    },
+    "src/tsllm/cli.py": {
+      "sha256": "2dd91b79200f86f16c021330e4cb35d1edbefb40013a2b64918f744d99bb85cb",
+      "bytes": 8681,
+      "mtime_ns": 1790765381293976000
+    },
+    "src/tsllm/config/__init__.py": {
+      "sha256": "4810deacb28d06b02e3ad00704de1bf7de6dc07263dfcdf2b02df087bd5e7de9",
+      "bytes": 432,
+      "mtime_ns": 1790765381338035800
+    },
+    "src/tsllm/config/backbone.py": {
+      "sha256": "5d28b271be1f7959f5c3628eedfea22d49e195f70bbaa54c31beb0d30f4c82b4",
+      "bytes": 1956,
+      "mtime_ns": 1790765381381634800
+    },
+    "src/tsllm/config/base.py": {
+      "sha256": "e9c754e04213e171269eb987cea1c8eaa032fef169d81643425efe3e44d14548",
+      "bytes": 1610,
+      "mtime_ns": 1790765381424876400
+    },
+    "src/tsllm/config/dataset.py": {
+      "sha256": "551e009f43e936ba0bcd4a3e4550586411ab6b764562c0e5f0365a8c20fd41c2",
+      "bytes": 4641,
+      "mtime_ns": 1790765381476544600
+    },
+    "src/tsllm/config/io.py": {
+      "sha256": "0cc77bde2e9f22a79baa25cc98f9266ab7e3a86464e0afa305df1ff6395e1a98",
+      "bytes": 1674,
+      "mtime_ns": 1790765381522190600
+    },
+    "src/tsllm/config/labels.py": {
+      "sha256": "77c3a79906decc2fea5df3caa61f784fc5591fad0677b1fd912a04b8bed1a2a1",
+      "bytes": 1810,
+      "mtime_ns": 1790765381566279900
+    },
+    "src/tsllm/config/run.py": {
+      "sha256": "38bee44e62309f1445fa0f2860dfc16cd3bd56530b71f851b8d7f23cacf9dffe",
+      "bytes": 5737,
+      "mtime_ns": 1790765381606437500
+    },
+    "src/tsllm/config/schema.py": {
+      "sha256": "c999914f33750e305693a2473ee3d1523be7e59976fc6686dfc0e695bdad23cc",
+      "bytes": 360,
+      "mtime_ns": 1790765381644608800
+    },
+    "src/tsllm/config/templates.py": {
+      "sha256": "beb596315cf609a4d5f883bf286eb02764b8e19d450f4516737f2a290086a17e",
+      "bytes": 1262,
+      "mtime_ns": 1790765381683542900
+    },
+    "src/tsllm/data/__init__.py": {
+      "sha256": "1c406796fc808ab9297f0be0392d1c3edf36432d297f445fb664064ca9db5836",
+      "bytes": 385,
+      "mtime_ns": 1790765381727558200
+    },
+    "src/tsllm/data/cache.py": {
+      "sha256": "460b3fafbbb04a43c521c7ab7c359b15fd6e307fbd5a43b0151c4375617fbf09",
+      "bytes": 4700,
+      "mtime_ns": 1790765381773818700
+    },
+    "src/tsllm/data/channels.py": {
+      "sha256": "c4be97e141c9318adb0873b4e3d38c22c69d94c94889abac5b4552a0cde37f6b",
+      "bytes": 1697,
+      "mtime_ns": 1790765381813442600
+    },
+    "src/tsllm/data/labels.py": {
+      "sha256": "8b01e007720305f0d96374032f40bd3b800002a858d57ba714014b9969cfced5",
+      "bytes": 2937,
+      "mtime_ns": 1790765381852219000
+    },
+    "src/tsllm/data/prepare.py": {
+      "sha256": "837894f03acdb8fb80cecc392ee0c088c727b32f4f2e423eec4fdc640c468182",
+      "bytes": 5536,
+      "mtime_ns": 1790765381891366700
+    },
+    "src/tsllm/data/profile.py": {
+      "sha256": "ae02453bb0f48d30ac57ebff4828dbd5b666ca620f13ab153947b44a947b3d0f",
+      "bytes": 2320,
+      "mtime_ns": 1790765381935857300
+    },
+    "src/tsllm/data/registry.py": {
+      "sha256": "b16aaea55c5c42bc4901837390dec7d6264261cfbe8cede8b26d6577316b9965",
+      "bytes": 2023,
+      "mtime_ns": 1790765381974789000
+    },
+    "src/tsllm/data/rules.py": {
+      "sha256": "7d0816b2c8d6c07c349dce6c9f2240ad0c5876cf85cc06ff7a9ce570ff81384f",
+      "bytes": 1649,
+      "mtime_ns": 1790765382028527800
+    },
+    "src/tsllm/data/series.py": {
+      "sha256": "ea2ff555db2388152a24ab05121e20055758a8e9014856227b76fa7042e9a07a",
+      "bytes": 2442,
+      "mtime_ns": 1790765382077895600
+    },
+    "src/tsllm/data/source.py": {
+      "sha256": "0e66302bfa878e13b4615213aa48f194d791339f5e39819c54a345cc6f94efc9",
+      "bytes": 3687,
+      "mtime_ns": 1790765382124073000
+    },
+    "src/tsllm/data/stats.py": {
+      "sha256": "fa4b61ebd79c8ac864cec18f28aabb195471f45989e037b1665f95c984eee8f4",
+      "bytes": 1276,
+      "mtime_ns": 1790765382169862400
+    },
+    "src/tsllm/data/types.py": {
+      "sha256": "5c3109a9173fb90312b218e5f2b5dbc056bdcfdfbfa13bc9bd5e812252979287",
+      "bytes": 747,
+      "mtime_ns": 1790765382217804300
+    },
+    "src/tsllm/data/windows.py": {
+      "sha256": "fc7b1572fa72be1e2415b588f94d031786bafa35c7504565c65a3c56cfd5b3f6",
+      "bytes": 5391,
+      "mtime_ns": 1790765382261780800
+    },
+    "src/tsllm/errors.py": {
+      "sha256": "921bdb4665a165bba51b79369fa4290d33bfab3e84cf8b9352c29a4d1cfb211c",
+      "bytes": 132,
+      "mtime_ns": 1790765382308360600
+    },
+    "src/tsllm/evaluation/__init__.py": {
+      "sha256": "4c9eb333dac3c905af40bbe2351cc395340e5193989273d1aaf106d6abc64927",
+      "bytes": 51,
+      "mtime_ns": 1790765382347919700
+    },
+    "src/tsllm/evaluation/metrics.py": {
+      "sha256": "521b511c2341b2950ddd28dafbc590f5fe1abe75147127d9cd835d69a17a0356",
+      "bytes": 6332,
+      "mtime_ns": 1790765382388022200
+    },
+    "src/tsllm/evaluation/resources.py": {
+      "sha256": "eb8b55935e797c060eec5b5e519f57476ba3a1c0a52d22f4755cefabfe379131",
+      "bytes": 1171,
+      "mtime_ns": 1790765382430238400
+    },
+    "src/tsllm/reporting.py": {
+      "sha256": "f1e0a239f77dd7a8488c185ce75fac8daaf87108a1e79e8d36b832212248bea0",
+      "bytes": 1516,
+      "mtime_ns": 1790765382473935800
+    },
+    "src/tsllm/runs/__init__.py": {
+      "sha256": "d6dc22507bd438209b5ec8efb025f2b7c2da5562d9aef2574c5fc8b8128720c9",
+      "bytes": 63,
+      "mtime_ns": 1790765382517046200
+    },
+    "src/tsllm/runs/compare.py": {
+      "sha256": "3fbcb87ce74388cec4424702487745fcb2f571dc4db257deb57bb47bc8d984c5",
+      "bytes": 3625,
+      "mtime_ns": 1790765382560695800
+    },
+    "src/tsllm/runs/env.py": {
+      "sha256": "f65a6004b534aa165c9d0752caf4bdd1bdb1febf8912aa6f9a3ff1c546b8ce7e",
+      "bytes": 3480,
+      "mtime_ns": 1790765382602771600
+    },
+    "src/tsllm/runs/reporter.py": {
+      "sha256": "d387fd3cb5c208e411fc88fd3a9d91c0e732001b09b5035b8bca8a6598492bcc",
+      "bytes": 1930,
+      "mtime_ns": 1790765382645979300
+    },
+    "src/tsllm/runs/results.py": {
+      "sha256": "801fbef95e0fef995096cdcf12edee955dc9d1ef690b575de304693a5494dcbe",
+      "bytes": 2427,
+      "mtime_ns": 1790765382687305200
+    },
+    "src/tsllm/runs/seeding.py": {
+      "sha256": "252856df485bd83cded7c419e2c68b71dc09b9b05ff921ae1ce02558bb94c105",
+      "bytes": 396,
+      "mtime_ns": 1790765382727387700
+    },
+    "src/tsllm/runs/store.py": {
+      "sha256": "0aeecf16d784cfef21ab7bfa074110a9df5841d99872ca7d191b3450d420e62c",
+      "bytes": 6066,
+      "mtime_ns": 1790765382777711200
+    },
+    "src/tsllm/runs/worker.py": {
+      "sha256": "7c6d817d4011ebf9f4887564123feb9d1abcd40ce649447afe88bec99bc4df11",
+      "bytes": 3238,
+      "mtime_ns": 1790765382824956500
+    },
+    "src/tsllm/service/__init__.py": {
+      "sha256": "a0e712a9818631baa4631f37431c385a3865eff6d70b95aa677a366104b4223b",
+      "bytes": 78,
+      "mtime_ns": 1790765382869416500
+    },
+    "src/tsllm/service/app.py": {
+      "sha256": "9479bf4e353928b053dff8748097093205f0b6c63fa5f48b7016760c94f11473",
+      "bytes": 1341,
+      "mtime_ns": 1790765382909381500
+    },
+    "src/tsllm/service/deps.py": {
+      "sha256": "0f83d7a3affd2a7b6ed6b112445638a1cc41d18a253281c45ea5bd420a174a8f",
+      "bytes": 660,
+      "mtime_ns": 1790765382948588000
+    },
+    "src/tsllm/service/errors.py": {
+      "sha256": "e8add65eca536c1c7f6824b3cdf13ee21185e8d41de14d3b24a07e2cb705f107",
+      "bytes": 3341,
+      "mtime_ns": 1790765382989803700
+    },
+    "src/tsllm/service/jobs.py": {
+      "sha256": "2c707a166991da8055382ea36c2e028adb92e654bb96ff01749e32192c311bb3",
+      "bytes": 8640,
+      "mtime_ns": 1790765383031607000
+    },
+    "src/tsllm/service/models.py": {
+      "sha256": "dad6fc4e9cbb975fce72945752a8b0fba09a75bf26fa439a296d2e814b366df4",
+      "bytes": 3242,
+      "mtime_ns": 1790765383089358100
+    },
+    "src/tsllm/service/routes/__init__.py": {
+      "sha256": "de1b1fc520a2a6d258b0719ae5c26f86d17e7b2f256e8b6017b65992cafe097d",
+      "bytes": 91,
+      "mtime_ns": 1790765383143921600
+    },
+    "src/tsllm/service/routes/backbones.py": {
+      "sha256": "f95a47a2c420538e2d1ff9af90e4c55ff61d7087098f3e7af5bec91a993c385e",
+      "bytes": 294,
+      "mtime_ns": 1790765383187281200
+    },
+    "src/tsllm/service/routes/compare.py": {
+      "sha256": "4a4fa9b352300b010bf6329fc1a214ca74b6546f14feee403050d1fe0db7c66b",
+      "bytes": 595,
+      "mtime_ns": 1790765383228542200
+    },
+    "src/tsllm/service/routes/datasets.py": {
+      "sha256": "7a29812edddb807de0f2f70004c9955b07d295ee616b412216845dc3d0c1f3c7",
+      "bytes": 2982,
+      "mtime_ns": 1790765383268608200
+    },
+    "src/tsllm/service/routes/runs.py": {
+      "sha256": "0597d54820de6dd09f0679ffbdd1735d62228e626af73c810a7f8469d14695c1",
+      "bytes": 3766,
+      "mtime_ns": 1790765383310229300
+    },
+    "src/tsllm/service/routes/schema.py": {
+      "sha256": "1d7b80ec3dd949fb64c8d46aadbfb05bb495b3df0bae2b4ac35c2e451305a02a",
+      "bytes": 402,
+      "mtime_ns": 1790765383356463600
+    },
+    "src/tsllm/service/routes/system.py": {
+      "sha256": "b071073bc2edb11d9e6cfa0f6d1a95a45be5c5f929c34c945c4b8a4d7d407381",
+      "bytes": 879,
+      "mtime_ns": 1790765383398819000
+    },
+    "src/tsllm/service/routes/templates.py": {
+      "sha256": "8704cb854058a668dd65dc5009d9a7d164b03a5d1528510862a2c5c2e3b74b9d",
+      "bytes": 1005,
+      "mtime_ns": 1790765383437846300
+    },
+    "src/tsllm/service/settings.py": {
+      "sha256": "c72a3f46e1c8d97851dd9b863ae4eb181cbf89e25ef5a17b403c73f8eda4d8e4",
+      "bytes": 1879,
+      "mtime_ns": 1790765383480753100
+    },
+    "src/tsllm/service/sse.py": {
+      "sha256": "40a48b4e336decd85077751e36dfe8879ba964c5d36b2e41d646854c91c51f47",
+      "bytes": 2248,
+      "mtime_ns": 1790765383523620800
+    },
+    "src/tsllm/service/static.py": {
+      "sha256": "2900fb1d4a7c45e96b0a94f4d5e7ee06a3c44d20584df2176ad1cfeedecada87",
+      "bytes": 854,
+      "mtime_ns": 1790765383565652400
+    },
+    "src/tsllm/tasks/__init__.py": {
+      "sha256": "0f73f446abb4c3943fc6dd48ba7f2ae114daa3a12957aa465d5f4602946f82b2",
+      "bytes": 286,
+      "mtime_ns": 1790765383607321800
+    },
+    "src/tsllm/tasks/classify.py": {
+      "sha256": "0827743cfc8a0efe93b1b2f2bdb665d4cdde463a84b82ab962a262fc0cadd901",
+      "bytes": 6807,
+      "mtime_ns": 1790765383648194800
+    },
+    "src/tsllm/tasks/context.py": {
+      "sha256": "f42ca3a8d6813bd5983ffdefbe13d10bdab3b4bdd023627dedd35beb009c591f",
+      "bytes": 1117,
+      "mtime_ns": 1790765383688460600
+    },
+    "src/tsllm/tasks/forecast.py": {
+      "sha256": "27a7e90f65a586c28f8bb5c41457469e8435895825418b147e5fe43c76ca0894",
+      "bytes": 5562,
+      "mtime_ns": 1790765383729018300
+    },
+    "src/tsllm/tasks/registry.py": {
+      "sha256": "569598a6d31eb729fcede72ff31d03a8bf0bd2bb5030156fe76ac9a1a8e4b9fc",
+      "bytes": 679,
+      "mtime_ns": 1790765383776889200
+    },
+    "src/tsllm/tasks/validation.py": {
+      "sha256": "7f4a938de8f64a26bee66ec267c3b856f51485ee26cd26c0164dab819b85a782",
+      "bytes": 2006,
+      "mtime_ns": 1790765383819594800
+    }
+  }
+}

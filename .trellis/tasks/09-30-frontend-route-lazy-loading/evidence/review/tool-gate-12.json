@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_product.py",
+    "--experiment",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\snapshots\\experiment-r1.json",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\product-gates.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"passed\": true, \"failures\": [], \"gates\": 6, \"output\": \".trellis\\\\tasks\\\\09-30-frontend-route-lazy-loading\\\\evidence\\\\review\\\\product-gates.json\"}\n",
+  "stderr": ""
+}

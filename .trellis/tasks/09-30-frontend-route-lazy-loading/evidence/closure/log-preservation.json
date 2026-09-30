@@ -1,0 +1,82 @@
+{
+  "reason": "Git ignores *.log; preserve exact bytes without force-staging or changing original logs.",
+  "files": [
+    {
+      "original": "evidence/implementation/gates/check-1-biome.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt",
+      "sha256": "60d09024b1ffa7acb5b8244e64fc618de9b6f7af218196f22d2603a2a095f0aa",
+      "size": 3044,
+      "mtime_ns": 1790765447053689600
+    },
+    {
+      "original": "evidence/implementation/gates/check-2-biome.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/check-2-biome.txt",
+      "sha256": "d7c73d79ecaac76b1feb2b42e5514f4a6a9200a31fd6e2c4d79d81abec7c117a",
+      "size": 44,
+      "mtime_ns": 1790765550146432500
+    },
+    {
+      "original": "evidence/implementation/gates/check-2-tsc.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/check-2-tsc.txt",
+      "sha256": "52ced0425bd6764c72f002753c1f6bfca2b8c600c578c8bfcbc0612cae98099b",
+      "size": 340,
+      "mtime_ns": 1790765552065625900
+    },
+    {
+      "original": "evidence/implementation/gates/check-3-biome.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/check-3-biome.txt",
+      "sha256": "ad8e54cf519d349a2b7249e3d661d5bbc38e27b918ae7427880d01f3a8f672b5",
+      "size": 44,
+      "mtime_ns": 1790765593698434000
+    },
+    {
+      "original": "evidence/implementation/gates/check-3-tsc.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/check-3-tsc.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765595584474400
+    },
+    {
+      "original": "evidence/implementation/gates/format-1-biome.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/format-1-biome.txt",
+      "sha256": "ec3664127d11d0780b8c9547a003a702d838414450d9f016e3d6a8afe87f42d0",
+      "size": 40,
+      "mtime_ns": 1790765549966391200
+    },
+    {
+      "original": "evidence/implementation/gates/test-1-vitest.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/test-1-vitest.txt",
+      "sha256": "3aa95ccc287d527efd7aab81cb15e3de998c028b01eec2aed21c3d4d89b8bd6b",
+      "size": 8440,
+      "mtime_ns": 1790765453024733000
+    },
+    {
+      "original": "evidence/implementation/gates/test-2-vitest.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/test-2-vitest.txt",
+      "sha256": "f6b160597fe2dd0fed4e13713d88036917c5e41e66d79557ac913290a7a6a86a",
+      "size": 8441,
+      "mtime_ns": 1790765517529268400
+    },
+    {
+      "original": "evidence/implementation/gates/test-3-vitest.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/test-3-vitest.txt",
+      "sha256": "dba95cf565020446cc107dec59dac342c0f638f5998448eacb8c3c6307732022",
+      "size": 1686,
+      "mtime_ns": 1790765558124014500
+    },
+    {
+      "original": "evidence/implementation/gates/test-4-vitest.log",
+      "preserved": "evidence/closure/logs/evidence/implementation/gates/test-4-vitest.txt",
+      "sha256": "ce9c222e60b6bda832fbfa6ba2a25bdef981ab4296e8b5622fbcf48fe1eb1034",
+      "size": 1686,
+      "mtime_ns": 1790765601780308300
+    },
+    {
+      "original": "evidence/visible/service.log",
+      "preserved": "evidence/closure/logs/evidence/visible/service.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime_ns": 1790765759298408600
+    }
+  ]
+}

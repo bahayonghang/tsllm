@@ -1,0 +1,2 @@
+tests/LazyRouting.test.tsx(13,7): error TS2502: 'mounted' is referenced directly or indirectly in its own type annotation.
+tests/LazyRouting.test.tsx(34,10): error TS7023: 'mount' implicitly has return type 'any' because it does not have a return type annotation and is referenced directly or indirectly in one of its return expressions.

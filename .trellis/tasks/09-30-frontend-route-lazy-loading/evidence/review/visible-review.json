@@ -1,0 +1,586 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "label": "visible source identity",
+      "passed": true
+    },
+    {
+      "label": "visible build identity",
+      "passed": true
+    },
+    {
+      "label": "inline image limit",
+      "passed": true
+    },
+    {
+      "label": "retained DOM observations",
+      "passed": true
+    },
+    {
+      "label": "1280-root-redirect-runs overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-root-redirect-runs visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-root-redirect-runs full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-module-failure-query-hash overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-module-failure-query-hash visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-module-failure-query-hash full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-recovered-document-navigation overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-recovered-document-navigation visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-recovered-document-navigation full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-forecast-recovered-document-navigation real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-system-module-failure-empty-hash overflow",
+      "passed": true
+    },
+    {
+      "label": "390-system-module-failure-empty-hash visibility",
+      "passed": true
+    },
+    {
+      "label": "390-system-module-failure-empty-hash full URL",
+      "passed": true
+    },
+    {
+      "label": "390-system-recovered-document-navigation overflow",
+      "passed": true
+    },
+    {
+      "label": "390-system-recovered-document-navigation visibility",
+      "passed": true
+    },
+    {
+      "label": "390-system-recovered-document-navigation full URL",
+      "passed": true
+    },
+    {
+      "label": "390-runs overflow",
+      "passed": true
+    },
+    {
+      "label": "390-runs visibility",
+      "passed": true
+    },
+    {
+      "label": "390-runs full URL",
+      "passed": true
+    },
+    {
+      "label": "390-selected-experiments-comparison overflow",
+      "passed": true
+    },
+    {
+      "label": "390-selected-experiments-comparison visibility",
+      "passed": true
+    },
+    {
+      "label": "390-selected-experiments-comparison full URL",
+      "passed": true
+    },
+    {
+      "label": "390-selected-experiments-comparison real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-mixed-comparison-deep-link overflow",
+      "passed": true
+    },
+    {
+      "label": "390-mixed-comparison-deep-link visibility",
+      "passed": true
+    },
+    {
+      "label": "390-mixed-comparison-deep-link full URL",
+      "passed": true
+    },
+    {
+      "label": "390-mixed-comparison-deep-link real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-datasets overflow",
+      "passed": true
+    },
+    {
+      "label": "390-datasets visibility",
+      "passed": true
+    },
+    {
+      "label": "390-datasets full URL",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-detail overflow",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-detail visibility",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-detail full URL",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-detail real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-detail real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-history-back-datasets overflow",
+      "passed": true
+    },
+    {
+      "label": "390-history-back-datasets visibility",
+      "passed": true
+    },
+    {
+      "label": "390-history-back-datasets full URL",
+      "passed": true
+    },
+    {
+      "label": "390-history-forward-dataset overflow",
+      "passed": true
+    },
+    {
+      "label": "390-history-forward-dataset visibility",
+      "passed": true
+    },
+    {
+      "label": "390-history-forward-dataset full URL",
+      "passed": true
+    },
+    {
+      "label": "390-history-forward-dataset real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-history-forward-dataset real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-forecast-deep-link overflow",
+      "passed": true
+    },
+    {
+      "label": "390-forecast-deep-link visibility",
+      "passed": true
+    },
+    {
+      "label": "390-forecast-deep-link full URL",
+      "passed": true
+    },
+    {
+      "label": "390-forecast-deep-link real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-classification-deep-link overflow",
+      "passed": true
+    },
+    {
+      "label": "390-classification-deep-link visibility",
+      "passed": true
+    },
+    {
+      "label": "390-classification-deep-link full URL",
+      "passed": true
+    },
+    {
+      "label": "390-classification-deep-link real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-classification-deep-link real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-classification-details overflow",
+      "passed": true
+    },
+    {
+      "label": "390-classification-details visibility",
+      "passed": true
+    },
+    {
+      "label": "390-classification-details full URL",
+      "passed": true
+    },
+    {
+      "label": "390-classification-details real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-classification-details real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-form-template-preview overflow",
+      "passed": true
+    },
+    {
+      "label": "390-form-template-preview visibility",
+      "passed": true
+    },
+    {
+      "label": "390-form-template-preview full URL",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-channel-chart overflow",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-channel-chart visibility",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-channel-chart full URL",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-channel-chart real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-dataset-channel-chart real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-dataset-detail overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-dataset-detail visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-dataset-detail full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-dataset-detail real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-dataset-detail real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-datasets overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-datasets visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-datasets full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-history-back-datasets overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-history-back-datasets visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-history-back-datasets full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-history-forward-dataset overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-history-forward-dataset visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-history-forward-dataset full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-history-forward-dataset real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-history-forward-dataset real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-runs overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-runs visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-runs full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-runs-selected overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-runs-selected visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-runs-selected full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-selected-comparison overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-selected-comparison visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-selected-comparison full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-selected-comparison real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-mixed-compare overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-mixed-compare visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-mixed-compare full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-mixed-compare real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-classification overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-classification visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-classification full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-classification real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-classification real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-classification-matrix-rule overflow",
+      "passed": true
+    },
+    {
+      "label": "390-classification-matrix-rule visibility",
+      "passed": true
+    },
+    {
+      "label": "390-classification-matrix-rule full URL",
+      "passed": true
+    },
+    {
+      "label": "390-classification-matrix-rule real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "390-classification-matrix-rule real Canvas dimensions",
+      "passed": true
+    },
+    {
+      "label": "1280-form-template-preview overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-form-template-preview visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-form-template-preview full URL",
+      "passed": true
+    },
+    {
+      "label": "1280-system overflow",
+      "passed": true
+    },
+    {
+      "label": "1280-system visibility",
+      "passed": true
+    },
+    {
+      "label": "1280-system full URL",
+      "passed": true
+    },
+    {
+      "label": "390 seven routes",
+      "passed": true
+    },
+    {
+      "label": "390 template and real preview",
+      "passed": true
+    },
+    {
+      "label": "390 seven warning types and nulls",
+      "passed": true
+    },
+    {
+      "label": "390 ingestion disabled",
+      "passed": true
+    },
+    {
+      "label": "390 browser history",
+      "passed": true
+    },
+    {
+      "label": "1280 seven routes",
+      "passed": true
+    },
+    {
+      "label": "1280 template and real preview",
+      "passed": true
+    },
+    {
+      "label": "1280 seven warning types and nulls",
+      "passed": true
+    },
+    {
+      "label": "1280 ingestion disabled",
+      "passed": true
+    },
+    {
+      "label": "1280 browser history",
+      "passed": true
+    },
+    {
+      "label": "RunDetailPage error and recovered URL",
+      "passed": true
+    },
+    {
+      "label": "RunDetailPage actual click and navigation",
+      "passed": true
+    },
+    {
+      "label": "RunDetailPage original byte size mtime restoration",
+      "passed": true
+    },
+    {
+      "label": "RunDetailPage current restoration state",
+      "passed": true
+    },
+    {
+      "label": "SystemPage error and recovered URL",
+      "passed": true
+    },
+    {
+      "label": "SystemPage actual click and navigation",
+      "passed": true
+    },
+    {
+      "label": "SystemPage original byte size mtime restoration",
+      "passed": true
+    },
+    {
+      "label": "SystemPage current restoration state",
+      "passed": true
+    },
+    {
+      "label": "recovery restored real forecast Canvas",
+      "passed": true
+    },
+    {
+      "label": "visible fixture preservation",
+      "passed": true
+    },
+    {
+      "label": "visible tab closed",
+      "passed": true
+    },
+    {
+      "label": "screenshots not saved",
+      "passed": true
+    },
+    {
+      "label": "visible service released before matrix",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "recovery": [
+    {
+      "asset": "RunDetailPage",
+      "url": "http://127.0.0.1:9000/runs/20260101-000001-synthetic-forecast-0001?split=test&assessment=recovery-r1#restore",
+      "canvas_count": 1,
+      "method": "tab.playwright.expectNavigation(link.click, waitUntil=load)"
+    },
+    {
+      "asset": "SystemPage",
+      "url": "http://127.0.0.1:9000/system?assessment=empty-fragment",
+      "canvas_count": 0,
+      "method": "tab.playwright.expectNavigation(link.click, waitUntil=load)"
+    }
+  ],
+  "evidence_hashes": {
+    "cleanup.json": "83461c04a33b8ea597480665797841cc9b0e3403cfa23e0b9fe50d6e58ad7eb2",
+    "fault-RunDetailPage-hold.json": "103cb92ca2122f4202b6bf1aee283794ab309da421ec7d9941959c7180634ba3",
+    "fault-RunDetailPage-restore.json": "d95d6f62ae83d8f51d76233860f034f1d4523d2fc5c77c2b038501a3b2e8bb7c",
+    "fault-SystemPage-hold.json": "1237515d92313050cfd2f2b2f2846a4fb7cc2c68cec4cfb1641c3d4b093d02f1",
+    "fault-SystemPage-restore.json": "99c202b0b90b361a4ea149c9ac57641c5c4e740bd05959fc89be69f1b52a238e",
+    "observations.json": "1688d79e5bdfb10bb264cb462a8b194d048fe7d0d020d0bcbf3a62ee7691586b",
+    "recovery.json": "8ceaaf3445c1c771c657c97cab7bc61e6bad2966559902e45acd717318aca1b7"
+  },
+  "limits": [
+    "Independent checker reviewed structured observations and the main-session record; no second browser session.",
+    "CUA performance/timeOrigin was unavailable. Recovery evidence uses a trusted click, document-navigation wait, preserved URL, and restored page or Canvas.",
+    "Viewport restoration returned the actual default 1280x720."
+  ]
+}

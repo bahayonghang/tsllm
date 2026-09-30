@@ -1,0 +1,11 @@
+unformatted: File would be reformatted
+   --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\summarize.py:176:55
+    |
+175 |         "summary_role": (
+    -             "Implementation-side descriptive summary; "
+    -             "independent review must recompute raw records"
+176 +             "Implementation-side descriptive summary; independent review must recompute raw records"
+177 |         ),
+    |
+
+1 file would be reformatted

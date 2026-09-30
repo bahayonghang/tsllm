@@ -1,0 +1,592 @@
+{
+  "source": "Actual frozen Resource Timing snapshots, cross-checked with parsed formal build imports",
+  "snapshots": [
+    {
+      "file": "B1-cold-runs-s1-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-cold-runs-s2-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-cold-runs-s3-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-cold-runs-s4-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-cold-runs-s5-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-compare-s1-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-compare-s2-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-compare-s3-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-compare-s4-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-compare-s5-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-forecast-s1-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-forecast-s2-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-forecast-s3-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-forecast-s4-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-forecast-s5-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-form-s1-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-form-s2-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-form-s3-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-form-s4-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-first-form-s5-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s1-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s1-a1.json",
+      "stage": "warm",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s2-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s2-a1.json",
+      "stage": "warm",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s3-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s3-a1.json",
+      "stage": "warm",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s4-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s4-a1.json",
+      "stage": "warm",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s5-a1.json",
+      "stage": "entry",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    },
+    {
+      "file": "B1-warm-runs-s5-a1.json",
+      "stage": "warm",
+      "assets": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/RunsPage-DR8Ns_w6.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/format-DJgdk6Jc.js",
+        "assets/hooks-BIRQC-dQ.js",
+        "assets/index-Bw4YU1Ku.js",
+        "assets/table-CeaGE0R5.js"
+      ],
+      "route_chunks": [
+        "assets/RunsPage-DR8Ns_w6.js"
+      ],
+      "noncurrent_route_chunks": []
+    }
+  ],
+  "checked_count": 30,
+  "all_noncurrent_route_chunks_absent": true,
+  "routes": [
+    "assets/ComparePage-RNU3_j0K.js",
+    "assets/DatasetDetailPage-CnQc9Ktq.js",
+    "assets/DatasetsPage-B_tIBJzF.js",
+    "assets/RunDetailPage-ZaeUnRMC.js",
+    "assets/RunNewPage-ckpljBXr.js",
+    "assets/RunsPage-DR8Ns_w6.js",
+    "assets/SystemPage-D01M2jNg.js"
+  ],
+  "initial_static_closure": [
+    "assets/button-CCZs0Voe.js",
+    "assets/fast-deep-equal-DMTWy6R9.js",
+    "assets/hooks-BIRQC-dQ.js",
+    "assets/index-Bw4YU1Ku.js"
+  ]
+}

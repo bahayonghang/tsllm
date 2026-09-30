@@ -1,0 +1,7 @@
+{
+  "phase": "before command execution",
+  "exit_code": 1,
+  "error": "Python stdin newline escaping caused unterminated string literal",
+  "files_written_by_failed_call": false,
+  "repair": "Use chr(10) for newline output"
+}

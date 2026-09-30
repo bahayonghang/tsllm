@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "failures": [],
+  "experiment_sha256": "b301cf4c79742aa2c4ff5f89519db087388e538329f0ca06ef20c08c9941044e",
+  "script_sha256": "edaa6d98a74d497c345e0af8c6d90bb1c9b9f27471dd6b678eb491e50bf2d1c6",
+  "source_differences": [
+    "web/src/components/AppLayout.tsx",
+    "web/src/components/RouteLoading.tsx",
+    "web/src/router.tsx",
+    "web/tests/LazyRouting.test.tsx",
+    "web/tests/RouteResolution.test.tsx"
+  ],
+  "b0_source_count": 51,
+  "b1_source_count": 54,
+  "preserved_original_test_files": [
+    "web/tests/api/sse.test.tsx",
+    "web/tests/components/forms/RunConfigForm.test.tsx",
+    "web/tests/components/forms/schemaTransforms.test.ts",
+    "web/tests/fixtures/run-config.schema.json",
+    "web/tests/helpers.tsx",
+    "web/tests/pages/ComparePage.test.tsx",
+    "web/tests/setup.ts",
+    "web/tests/utils/format.test.ts"
+  ],
+  "gates": [
+    {
+      "record": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B0-check-1.json",
+      "sha256": "e392b16046bcea5e5c648c94fba0e994d8cfc8062ed95d63da2bbd457744940f",
+      "log": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B0-check-1.txt",
+      "log_sha256": "55449a1c07a8fe572648eb65acb75bd195d7c551b998ada927b5eb49233a9d34",
+      "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+      "command": "biome check . && tsc --noEmit",
+      "exit_code": 0,
+      "test_count": null
+    },
+    {
+      "record": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B0-test-1.json",
+      "sha256": "82bd74088fb9d292a9f1b8beb70c0deba6fa3771d5c3c7502470e37241249688",
+      "log": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B0-test-1.txt",
+      "log_sha256": "e98c01dcf1d19bc965948ff680f79b7c8c02a033b8a14c959e6018982334654e",
+      "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+      "command": "vitest run",
+      "exit_code": 0,
+      "test_count": 27
+    },
+    {
+      "record": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B0-build-1.json",
+      "sha256": "bb9f7815365d76601fa6eda71029da397e4ee355bbf62f7793e71dc4d97b2c30",
+      "log": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B0-build-1.txt",
+      "log_sha256": "26f6e7ec64681d2289691d6443267a5fac3d08d0e74d1dac8a94f0c48d2b8180",
+      "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+      "command": "tsc --noEmit && vite build",
+      "exit_code": 0,
+      "test_count": null
+    },
+    {
+      "record": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B1-r1-check-1.json",
+      "sha256": "a65792ead044a757111fd1fe0585c124f08b803b74976d0145ab4329a60721cd",
+      "log": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B1-r1-check-1.txt",
+      "log_sha256": "cbe78e5e1d755275b7051ea5cb339161031c7700592dcfef9d8c3bc539d22d24",
+      "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+      "command": "biome check . && tsc --noEmit",
+      "exit_code": 0,
+      "test_count": null
+    },
+    {
+      "record": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B1-r1-test-1.json",
+      "sha256": "c14f179d87b3b5ece4ac1bebf7875ae7b9046827940365584cd46cd432ea38f9",
+      "log": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B1-r1-test-1.txt",
+      "log_sha256": "3e59ff00ca55a9c913bb425481ed1226960a27238a83d33e054e838c80e2440d",
+      "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+      "command": "vitest run",
+      "exit_code": 0,
+      "test_count": 41
+    },
+    {
+      "record": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B1-r1-build-1.json",
+      "sha256": "859a84ba2ad6c4f355c4399e86d1b9786bf490b3b280f4fced2f381aea5cea42",
+      "log": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\gates\\B1-r1-build-1.txt",
+      "log_sha256": "efb8b75b7dce4d12e0d0d1a72bbc8c5c5295ae999f6876f98454e411a1cd8e25",
+      "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+      "command": "tsc --noEmit && vite build",
+      "exit_code": 0,
+      "test_count": null
+    }
+  ]
+}

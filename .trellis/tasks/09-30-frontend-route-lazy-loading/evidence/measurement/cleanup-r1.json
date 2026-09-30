@@ -1,0 +1,144 @@
+{
+  "owned_service_count": 12,
+  "lifecycles": [
+    {
+      "sample": 1,
+      "variant": "B0",
+      "pid": 49736,
+      "started_at": "2026-09-30T11:07:13.294502+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:07:22.561948+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 1,
+      "variant": "B1",
+      "pid": 53108,
+      "started_at": "2026-09-30T11:07:26.655079+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:07:36.018610+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 2,
+      "variant": "B0",
+      "pid": 79672,
+      "started_at": "2026-09-30T11:07:40.131766+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:07:50.566688+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 2,
+      "variant": "B1",
+      "pid": 41004,
+      "started_at": "2026-09-30T11:07:54.676172+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:08:03.419557+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 3,
+      "variant": "B0",
+      "pid": 65332,
+      "started_at": "2026-09-30T11:08:07.532905+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:08:17.734223+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 3,
+      "variant": "B1",
+      "pid": 43664,
+      "started_at": "2026-09-30T11:08:21.830389+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:08:30.411520+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 4,
+      "variant": "B0",
+      "pid": 38928,
+      "started_at": "2026-09-30T11:08:34.527722+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:08:44.522764+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 4,
+      "variant": "B1",
+      "pid": 85740,
+      "started_at": "2026-09-30T11:08:48.632692+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:08:58.213165+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 5,
+      "variant": "B0",
+      "pid": 85096,
+      "started_at": "2026-09-30T11:09:02.295531+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:09:11.587862+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 5,
+      "variant": "B1",
+      "pid": 77472,
+      "started_at": "2026-09-30T11:09:15.688091+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:09:24.899752+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 1,
+      "variant": "B0",
+      "pid": 85748,
+      "started_at": "2026-09-30T11:09:49.125452+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:09:57.566818+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 1,
+      "variant": "B1",
+      "pid": 85520,
+      "started_at": "2026-09-30T11:10:01.655865+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T11:10:11.067835+00:00",
+      "port_9000_free": true
+    }
+  ],
+  "all_measurement_exit_codes_zero": true,
+  "all_ports_released": true,
+  "final_port_bind_succeeded": true,
+  "fixture_files_unchanged": true,
+  "fixture_file_count": 34,
+  "bound_tools_and_products_unchanged": true,
+  "screenshots_written": 0
+}

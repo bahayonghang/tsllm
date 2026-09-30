@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_final_documents.py"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"passed\": true, \"checks\": 62, \"failures\": []}\n",
+  "stderr": ""
+}

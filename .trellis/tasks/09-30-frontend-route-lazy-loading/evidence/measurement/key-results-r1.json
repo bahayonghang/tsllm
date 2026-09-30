@@ -1,0 +1,146 @@
+{
+  "readiness_delta_cold_ms": -66.19999999552965,
+  "readiness_delta_cold_percent": -22.051965355268305,
+  "cold_asset_body_bytes": [
+    2419860,
+    1094078
+  ],
+  "cold_asset_body_reduction_percent": 54.78754969295745,
+  "cold_total_transfer_bytes": [
+    2423336,
+    1100432
+  ],
+  "cold_total_transfer_reduction_percent": 54.59020127625719,
+  "cold_offline_asset_gzip_bytes": [
+    776403,
+    354358
+  ],
+  "cold_offline_asset_gzip_reduction_percent": 54.35901200793918,
+  "journey": [
+    {
+      "variant": "B0",
+      "last_stage_ready_ms": 186.40000000596046,
+      "wall_document_end_ms": 6005.70000000298,
+      "sum_stage_ready_ms": 5228.3000000193715,
+      "asset_count": 1,
+      "asset_bytes": 2419860,
+      "transfer_bytes": 2488723,
+      "asset_gzip_bytes": 776403,
+      "stages": [
+        {
+          "id": "entry",
+          "route": "/runs",
+          "duration": 303.5
+        },
+        {
+          "id": "form",
+          "route": "/runs/new",
+          "duration": 188.60000000149012
+        },
+        {
+          "id": "compare",
+          "route": "/compare?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003,20260101-000004-synthetic-ingest-0004,20260101-000005-synthetic-ingest-0005",
+          "duration": 1145.4000000059605
+        },
+        {
+          "id": "datasets",
+          "route": "/datasets",
+          "duration": 20.100000001490116
+        },
+        {
+          "id": "dataset",
+          "route": "/datasets/synthetic-alpha",
+          "duration": 1109.2999999970198
+        },
+        {
+          "id": "runs-return",
+          "route": "/runs",
+          "duration": 29.600000001490116
+        },
+        {
+          "id": "forecast",
+          "route": "/runs/20260101-000001-synthetic-forecast-0001",
+          "duration": 1126.5
+        },
+        {
+          "id": "runs-again",
+          "route": "/runs",
+          "duration": 32.900000005960464
+        },
+        {
+          "id": "classify",
+          "route": "/runs/20260101-000003-synthetic-classify-0003",
+          "duration": 1086
+        },
+        {
+          "id": "system",
+          "route": "/system",
+          "duration": 186.40000000596046
+        }
+      ]
+    },
+    {
+      "variant": "B1",
+      "last_stage_ready_ms": 168.5,
+      "wall_document_end_ms": 6717.69999999553,
+      "sum_stage_ready_ms": 5337.599999986589,
+      "asset_count": 20,
+      "asset_bytes": 2430015,
+      "transfer_bytes": 2505056,
+      "asset_gzip_bytes": 795779,
+      "stages": [
+        {
+          "id": "entry",
+          "route": "/runs",
+          "duration": 266.79999999701977
+        },
+        {
+          "id": "form",
+          "route": "/runs/new",
+          "duration": 217.79999999701977
+        },
+        {
+          "id": "compare",
+          "route": "/compare?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003,20260101-000004-synthetic-ingest-0004,20260101-000005-synthetic-ingest-0005",
+          "duration": 1178.1000000014901
+        },
+        {
+          "id": "datasets",
+          "route": "/datasets",
+          "duration": 78
+        },
+        {
+          "id": "dataset",
+          "route": "/datasets/synthetic-alpha",
+          "duration": 1134.0999999940395
+        },
+        {
+          "id": "runs-return",
+          "route": "/runs",
+          "duration": 38.600000001490116
+        },
+        {
+          "id": "forecast",
+          "route": "/runs/20260101-000001-synthetic-forecast-0001",
+          "duration": 1133.3999999985099
+        },
+        {
+          "id": "runs-again",
+          "route": "/runs",
+          "duration": 29.5
+        },
+        {
+          "id": "classify",
+          "route": "/runs/20260101-000003-synthetic-classify-0003",
+          "duration": 1092.7999999970198
+        },
+        {
+          "id": "system",
+          "route": "/system",
+          "duration": 168.5
+        }
+      ]
+    }
+  ],
+  "formula": "(B1 - B0) / B0 * 100; reductions negate the percentage"
+}

@@ -1,26 +1,61 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import { AppLayout } from "./components/AppLayout";
-import { ComparePage } from "./pages/ComparePage";
-import { DatasetDetailPage } from "./pages/DatasetDetailPage";
-import { DatasetsPage } from "./pages/DatasetsPage";
-import { RunDetailPage } from "./pages/RunDetailPage";
-import { RunNewPage } from "./pages/RunNewPage";
-import { RunsPage } from "./pages/RunsPage";
-import { SystemPage } from "./pages/SystemPage";
+import { loadRoute, RouteLoadError, RouteLoading } from "./components/RouteLoading";
 
 export const routes = [
   {
     path: "/",
     element: <AppLayout />,
+    HydrateFallback: RouteLoading,
     children: [
       { index: true, element: <Navigate to="/runs" replace /> },
-      { path: "datasets", element: <DatasetsPage /> },
-      { path: "datasets/:id", element: <DatasetDetailPage /> },
-      { path: "runs", element: <RunsPage /> },
-      { path: "runs/new", element: <RunNewPage /> },
-      { path: "runs/:id", element: <RunDetailPage /> },
-      { path: "compare", element: <ComparePage /> },
-      { path: "system", element: <SystemPage /> },
+      {
+        path: "datasets",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({
+          Component: (await import("./pages/DatasetsPage")).DatasetsPage,
+        })),
+      },
+      {
+        path: "datasets/:id",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({
+          Component: (await import("./pages/DatasetDetailPage")).DatasetDetailPage,
+        })),
+      },
+      {
+        path: "runs",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({ Component: (await import("./pages/RunsPage")).RunsPage })),
+      },
+      {
+        path: "runs/new",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({
+          Component: (await import("./pages/RunNewPage")).RunNewPage,
+        })),
+      },
+      {
+        path: "runs/:id",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({
+          Component: (await import("./pages/RunDetailPage")).RunDetailPage,
+        })),
+      },
+      {
+        path: "compare",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({
+          Component: (await import("./pages/ComparePage")).ComparePage,
+        })),
+      },
+      {
+        path: "system",
+        ErrorBoundary: RouteLoadError,
+        lazy: loadRoute(async () => ({
+          Component: (await import("./pages/SystemPage")).SystemPage,
+        })),
+      },
     ],
   },
 ];

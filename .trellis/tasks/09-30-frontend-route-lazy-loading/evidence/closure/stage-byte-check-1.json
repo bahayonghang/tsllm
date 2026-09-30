@@ -1,0 +1,508 @@
+{
+  "exit_code": 1,
+  "staged_count": 293,
+  "scope_exact": true,
+  "mismatch_count": 83,
+  "mismatches": [
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/commit-files.txt",
+      "raw_sha256": "84cd0079cf2ff5d36fd1f13fa9941522daa2059fdb97a9d817d6af6cc5c4829c",
+      "index_blob": "55907cead786e550b2c3f9f0c2fd9148ef792a6b",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/log-preservation.json",
+      "raw_sha256": "feda3684b8a0390fbc52fc43e03f55babd12911eebb22a6af29db56ee95b39f1",
+      "index_blob": "7bdf461f177a6083bdd37b90e2af44da4016caa1",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-2-tsc.txt",
+      "raw_sha256": "52ced0425bd6764c72f002753c1f6bfca2b8c600c578c8bfcbc0612cae98099b",
+      "index_blob": "567d3e4c48111bea3d16adea49128123ebfb38f5",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/precommit.json",
+      "raw_sha256": "a4c80171523669bcfe25339057acfe437fdad2a176ae6ecbe801d89291fcce1e",
+      "index_blob": "1f012b85ed9a0b7288708dd14e94f1702962c690",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/fixtures/created.json",
+      "raw_sha256": "949e9879119d058814e6c193bdfc4000a0d0898a80478ef24e958263b46cd845",
+      "index_blob": "215eb7339b30ec0e048d60e02a62f1bfe980011e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/launcher-failure-1.json",
+      "raw_sha256": "42189803c4e31dc9f56a5092edf202f9cafa3d9fd41e9663c723cf236008e089",
+      "index_blob": "8f106275ad0edee808743cfe599ebde8ed598747",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/launcher-failure-2.json",
+      "raw_sha256": "587493900cf84bc59d15ac1262a6b01f975b0320584263047139efed07f42089",
+      "index_blob": "130abad5bbd3d60729cbfbaafa803468d5a5388e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/implementation/gates/test-2.json",
+      "raw_sha256": "4f182a8af5f316b9dfcb3130c248e470715c0e8ed49a5b47eda210c5470d4dbe",
+      "index_blob": "7af6861e6be410d0a281b05df5bf8ea0d414ebb7",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/analyze_build-syntax-1.json",
+      "raw_sha256": "47d60bb844e76fc03763ba6bb5b573b5c226be330cc6607749055b41b8233be6",
+      "index_blob": "4008f6c76e81edf67e515bd4515d32834d5c9917",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/browser_probe-syntax-1.json",
+      "raw_sha256": "4aa2c44b249425012436353692946c4e482a390e9f52f613f0a99f4962e78bc4",
+      "index_blob": "00f877f65ec8d2582f5fcbb17db12e3a5b7e4816",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/context-loading.json",
+      "raw_sha256": "a6a84c2261b75f6d750fd7b2dbf6b743dea2573a6e8c296f1b33407f22a18a2b",
+      "index_blob": "4929c2ec28408aec7f16e84e29f7bbc3dc36337c",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/final-preparation.json",
+      "raw_sha256": "bc062a820846c46a29ef2ee6ee8f6503e43312a30c53eacc5fc93635001070d6",
+      "index_blob": "d7829db67d822224008d24e1f3f9e03065025c38",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/initial-analyzer-failure.json",
+      "raw_sha256": "683b26913720931a91323d4f9ddee5af7dce9012466c980092d05f5bd42a5d8a",
+      "index_blob": "e19188255c56fe71dfcd163359c680c3b838cafc",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/measure-syntax-1.json",
+      "raw_sha256": "26a7f66a1e6d94f1126b466566b0f64bdd1094c65c467f732d04cfa44eedfd8f",
+      "index_blob": "a260c6c27b0f054599d3a225956f2c76399fa951",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/node-tests-1.json",
+      "raw_sha256": "88cd3c5e8814fab149985d50cafeea48d0efdfa1d3c7047e0e1aaacdaa058196",
+      "index_blob": "d01e8c2826efc195a7514fd19e15a63dca8e13d3",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/node-tests-1.txt",
+      "raw_sha256": "c299fb90dacfc71597633717fe29ed24850ec2c06e8a60c09efeef0d77f96447",
+      "index_blob": "020f302c2421efb7da36caa998ad4f7a9d6b242a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/output_guards.test-syntax-1.json",
+      "raw_sha256": "03619b1efb53e83b4e5a16516fafd84c8cb59ae06213e5d7183d0d0c972e6bcc",
+      "index_blob": "0518276d155d123d39065dd38bdaf93ffe728621",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/paint_collection.test-syntax-1.json",
+      "raw_sha256": "510473ead4c062a8b3d7a7bc8cfeb55590475fcffc0687861f54d2a3c7dbd6e3",
+      "index_blob": "03c3e6f59dd5930143da9121ec3df3910c247d96",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/provenance.json",
+      "raw_sha256": "4f51c95a160f8a83165ee6247a02d5cc2e3aec32ff0428d8c39584b332f83a66",
+      "index_blob": "f34c12f0e3d165a5445d5538391923e877aa3f42",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/reference-probe-provenance.json",
+      "raw_sha256": "f17d4a90ab9b181decff4e098ebebf2b3d970445b7e7a36f48ee90df8e84851a",
+      "index_blob": "eea6c459af39e40b2ba015b830d62b1b4f6db83b",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-1.json",
+      "raw_sha256": "be710012f62a043913abaef8208ef47c6f0e329d58a199054e9a98d49c2aa8a7",
+      "index_blob": "97d8db6352b614817ea01044c309bee7c9aa709e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-1.txt",
+      "raw_sha256": "4c9ce947c786a3770e2bf7e0b43a923bcadba8c11ec8b34dc812bb6f98424445",
+      "index_blob": "42e46b6990812d2548309446002ee3387684acfd",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-2.json",
+      "raw_sha256": "770af7ba7efb2a00673989ef8a1d83eb7966f83fb8281f207f5846e48690fbbb",
+      "index_blob": "7bfc90aacce63d627ed22b1792ad102e235fbb43",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-check-2.txt",
+      "raw_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "index_blob": "1f5f344d054fae10f39140fb7199c99321d9190a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-format-check-2.json",
+      "raw_sha256": "61adeacf98d3cda1f621cad7a169d453019704ed2281da26da12492f1ae2e7c5",
+      "index_blob": "e8ad62a1954ff0bab8294f88c7db4b8477760076",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/ruff-format-check-2.txt",
+      "raw_sha256": "3fa62c94b1301255f0c64c429c668a4fabc4cb9d3848edb2790b607266d16092",
+      "index_blob": "bca3ee507c1d69eaf29c54fa12b2bfe1ae507dcc",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/runtime-roles.json",
+      "raw_sha256": "fa83bdefb3db9e6bdd424a4922753d9c81e1a6cc228f910110866b0132e79b5e",
+      "index_blob": "7263375987ddb16c27c8c6a3fc7780f38884caef",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-1.json",
+      "raw_sha256": "906968761fa87979b740fd1a67109f43e86619bc9dfbb32e6c3530881d456ba1",
+      "index_blob": "4fafdb253d50b36709871acfc7dc97a31e57010a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-1.txt",
+      "raw_sha256": "8c52b39f9e90bf4dddd5f914f1cb4e6c83e000fd420f4a066e91ccec2af31348",
+      "index_blob": "1f062c9251b8528d7bd96812b895a457fdda8c4f",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-2.json",
+      "raw_sha256": "03cb9e6845ae3edf57d1372cea81a388b481f97cc8f0757fb06e767469688644",
+      "index_blob": "1525de5f8e695b584faf10a7a0ea856fb6d57b83",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-2.txt",
+      "raw_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "index_blob": "1f5f344d054fae10f39140fb7199c99321d9190a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-3.txt",
+      "raw_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "index_blob": "1f5f344d054fae10f39140fb7199c99321d9190a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-check-4.txt",
+      "raw_sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "index_blob": "1f5f344d054fae10f39140fb7199c99321d9190a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-1.json",
+      "raw_sha256": "8447dc3a53b214535f068de59245ee805e28cbc3c1ad8ba7bc57f2b4a2b2c966",
+      "index_blob": "15f58a235384e31510109ae816602e387161fa80",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-1.txt",
+      "raw_sha256": "1dd2717ff253e2a4b96ebfd3258f1e73a83b9bf353fc8731f2b35465b3cce292",
+      "index_blob": "851cc66af728b86508364f4f9cd02966ee8b548d",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-3.txt",
+      "raw_sha256": "f6c0a6fc98b9cb4cffb941fdb9adb5c462d6048dd55f04382ce569f2af6c9127",
+      "index_blob": "70ea7be5ec83bf572c5234574992bf406677f636",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/infrastructure/summary-format-check-4.txt",
+      "raw_sha256": "7688ae71c60af2e4266827abb3678cc2145655f587daf33dfa649dbac2c619c3",
+      "index_blob": "5e122f397b6d5d61b45621051851165eadce6a78",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1-summary-attempt-2.txt",
+      "raw_sha256": "a46c8cf176e93fa098bda98180bd13d6cd445299fefb6405cb4fec7de96ded97",
+      "index_blob": "530d244511a546b9eee86634465020849b5ca1d0",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/lifecycle-s1-1-a1-B0-B1.json",
+      "raw_sha256": "b8d73ae80454a346f581c41d8c6b66c708eb840fab61de14a8c7208b74757794",
+      "index_blob": "da10f3595540bcfd88d781a1aba4fa20400aafc7",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/order-s1-1-a1-B0-B1.json",
+      "raw_sha256": "8a420812c8b0a5ef2642dbda3dbae0ee4e0b8e12dc58605547718a4cb0d9a660",
+      "index_blob": "7d5285805d87651168b76af11fb177036774eb64",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1-summary-attempt-2.txt",
+      "raw_sha256": "be0f8d7dfffd0244ba5793fe76248020dce58b6f9c14d6ebba84931792b3c6f6",
+      "index_blob": "cc6b006ba92207c2fb8bef4418eb1cd1ea1622dd",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/lifecycle-s1-5-a1-B0-B1.json",
+      "raw_sha256": "39148d747a2f5e65da2906c92f54a96c0a94fc3ec809860585ec0d7dadeb8ab4",
+      "index_blob": "7ac7f0a28b2c2ca292ae486700ab19b6fccbec8e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/order-s1-5-a1-B0-B1.json",
+      "raw_sha256": "af977263ac170ef6c45df4add04a3fbdb12a2031d92ae76e7ee9202c53fdfa97",
+      "index_blob": "20ea35a833ede1e869a9f8fc75423644393ceeaa",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-attempt-1.json",
+      "raw_sha256": "36e6b973992dd0f83caa0ec2a562a319435dedb5865981a2a374ca8feda8cd95",
+      "index_blob": "82ce3956b17c9d82a7dcbff4bc0c861b23d53925",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/summary-attempt-2.json",
+      "raw_sha256": "046c4fb8f4eacccf5c370530e05ebc9e4ba10cf1bbe410cc93a4b247e37d5e0f",
+      "index_blob": "cb6d96d50417ad3cfa6915ec4a89254d3759af62",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/report-launcher-failure.json",
+      "raw_sha256": "9013b243ef437c4a9475ca2e569bcbefdb30bc6ba4b5cc14e1211744828b7a92",
+      "index_blob": "ff9aab843cfa69eb3d24cb5fac1ee01ee582f474",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/final-audit-launcher-1.json",
+      "raw_sha256": "f91eb9bb635710d2a7db537036f7f897094f15888abbe5c69f19792a74d30080",
+      "index_blob": "f108b5f346cd195f36d14ed5794a8cb099a9c3c2",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/numeric-command.json",
+      "raw_sha256": "d0263effc529925e1e430d4c585840c94483e25c3bbf3f86a6fb3c026aad36e0",
+      "index_blob": "3990ffdb74695d211fbf804b00441468b74bf391",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-1.json",
+      "raw_sha256": "c7e5cce17cc8aa95c4fb4eb179a10397699ccc2013ddc47361b169027ec027e2",
+      "index_blob": "1750b0b80b2bd59272e41a149d4abfea4c42949d",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-10.json",
+      "raw_sha256": "991cbb8bce2cee65c271aa162827235462e42c4dc0c380151db2e6c72cc21ed5",
+      "index_blob": "2031c6aa52b191f6e58dde764dd2d6720d5343af",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-11.json",
+      "raw_sha256": "9447429e22187ab72b8ae570b55c05be206e3ace864facb6bb97329e97a9842e",
+      "index_blob": "9f5668e4789a914281cee34a85549e785cb96cdb",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-12.json",
+      "raw_sha256": "925d146f059ec976beb35aa1c458dc4578fd51293fe4c04ab828776ccee7b316",
+      "index_blob": "3ca9f4d733379186396a2715ce300b73bf7d972e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-13.json",
+      "raw_sha256": "fd6cdfb26a68fbde4aa72a6f434b242db85186b387569573ae841059f9c7f264",
+      "index_blob": "2c7914549ae54c5b0f4657f9d0f0e5525074cdd2",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-14.json",
+      "raw_sha256": "9703fe56d416cd26b315144e9a4103542bcb395c5423d0669eadf0d6e6e92f11",
+      "index_blob": "2e71f47a0f68aff5cfe8586cbcf06c098405372d",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-15.json",
+      "raw_sha256": "ede90d841acf6d93188e46c93b52d8fdd6974ec5ee722d0fae99cfccc2ccec53",
+      "index_blob": "7646dd4c3e7c3d481e2dcea663f4683c99648723",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-16.json",
+      "raw_sha256": "a3a9021d6a0096445896fd87d43659f417b6621fc6204620e818c0e250bc4706",
+      "index_blob": "2e014e779698b287f2dd998e833cc3f0fb4d08e0",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-17.json",
+      "raw_sha256": "6199431e09875b691a2415c94825505bc1b99ac934715c0ebb9c3c62ad9ff062",
+      "index_blob": "56ce33cdb6d0881de8aea77d847bb397377b1124",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-18.json",
+      "raw_sha256": "c6f275786de1b2a40af24ecba3a155a20a1d01f1ad9f1be716121f7817f0ab84",
+      "index_blob": "0e6382130cfb39b795c30d676f3eeead443b8dea",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-19.json",
+      "raw_sha256": "7e7fe40ceed983b847e44769cc07115a2201326e89c5a39c9e75cdb932b6c15b",
+      "index_blob": "ae03157703b2ca594b05e0a5d0d2b8f1f4ea0f9f",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-2.json",
+      "raw_sha256": "6416323f8866eb52cd57d5aefaab91ed1321caf64d620a2afe4f3ed0695dafc8",
+      "index_blob": "7b746e5e258bae19995517b7608e06c4c32234d7",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-21.json",
+      "raw_sha256": "696d639e5ffdfac1988699282bb49f4cc0ae95f53a5067ede5a02e7814528d1d",
+      "index_blob": "43485fab7ee47c9185874ad75c0f4e66ac25aa7e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-22.json",
+      "raw_sha256": "4921066f0fd436378b4b0169f61faefd3cb7b75e26b552fff367fd846b3b330e",
+      "index_blob": "bc8bb67b5eb8d6bf2e3da861c78ddd4f43d98e2c",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-23.json",
+      "raw_sha256": "de2e9b2807c9b928ad23d5cdf4d3fce7a363677b2bbd3fb86faf82126e1d5612",
+      "index_blob": "aa0ecd90593440a20970e4f4dc84b7467600e2ec",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-24.json",
+      "raw_sha256": "353be3a9290706002ddfc3900976b36e65d77187ccd22330738a33bc19235a6e",
+      "index_blob": "43e4325e8b3a5f73e0962f06bb4df14a60b6a5e5",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-25.json",
+      "raw_sha256": "110758f73291e895c0060e1d7aacea9ff76ab3ed8d2ad9cdc34f6ea161f295db",
+      "index_blob": "6162f040db26857cd264136174e3a92281d83c15",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-3.json",
+      "raw_sha256": "b7ceb613febb00e8b28c846af1b2fd3f7efe79ed4bd3020bb42c5d5201429df5",
+      "index_blob": "87925ab059e1099a3a813015396fb3c5d48ef4c0",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-4.json",
+      "raw_sha256": "e3de4d7fc4b52314ba87a26b2c39cb12156c7d302be95be7862204aa64b181f3",
+      "index_blob": "cc3a4cdc2b13c84259cdbce9f25a9c8c63ab7688",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-5.json",
+      "raw_sha256": "7ddcf343443518722f8988f5a494714c14962ea9669ab9606d3d4a2a11f10a2e",
+      "index_blob": "28f2f4b8e2dd900ed375ee29d6e4ab5584b218bf",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-6.json",
+      "raw_sha256": "34fc8f40df2cff36c82c4a6a0b0c31278c3dfef81f314ad1118138e3330652f5",
+      "index_blob": "cad126bb906298d1d47883ea30aab771b73a4935",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-7.json",
+      "raw_sha256": "319ec06387279e4c04f74551dd1886a826a108aced902341ab1eb4e1f683b341",
+      "index_blob": "74a84fed08c4c77e93010a1dc18f0b1cc3a8bf16",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-8.json",
+      "raw_sha256": "762b9c7934867d2b12b9ed0e41b7dc5ed622ef12ea0aad507af2fc935f1fe9b4",
+      "index_blob": "ac0c3f3af194fad8ad3af10298eaed84c2a471ba",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/tool-gate-9.json",
+      "raw_sha256": "afaff0abae1599e20deec46020eeef58201bca23a123a66f4e78f1c819a86579",
+      "index_blob": "dac326db8e67c6724af4cc8eddafa6276ccbb042",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/review/visible-review.json",
+      "raw_sha256": "9b5b3a20f54740c64bdb8dd4d8102d1637b036e4464191bd7e1dd7dea93e45f7",
+      "index_blob": "1215619d8db6127dce88f081e433944ac75dc39a",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-command-launcher-failure.json",
+      "raw_sha256": "708b28367a3d31b828110d34f0317e8dacf6b86eec06e88680d84d6a38f4aa36",
+      "index_blob": "c8fca42cd4303064b8283ca011db5a5b3ff7a67e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-commands-2.json",
+      "raw_sha256": "e02dc84e3d7dac0c9413139a8e3b20001e3e21521d42398887465596098d907d",
+      "index_blob": "8adefab413c29f97729cd5b551c41313b94e3940",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final-commands.json",
+      "raw_sha256": "240b6fcf347b3a2e451f6d61194ab590c27522578036d208a6686e33111bcb8e",
+      "index_blob": "7fb36e4f9810af0d81a78459d86e99efc1bf379c",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/final.json",
+      "raw_sha256": "6fa319500850129726e94b73c213ae3cd4b664c611602121787b0bad6296357a",
+      "index_blob": "5b8e609c0417cd5df020cba5085d51f52b902305",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/git-status-final.txt",
+      "raw_sha256": "0d80307f07a0ba65ddd2d31686cfe6f27da0c6f1fd779a4f868b3a98f3780943",
+      "index_blob": "21abfb9a4fe4a92a98f0c56fa94b17aa4922480e",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/port-before.json",
+      "raw_sha256": "c7af13e220dbce1e7fed0e6c3d45fead9b4230a6a7eb3947191e315f159bc22e",
+      "index_blob": "d7ed7073ef684f884e8f867399dd217cf8782c30",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff",
+      "raw_sha256": "fb60bb9da111440eec0951b11982af9be37541a2b57595a0f898bc4d5c033a60",
+      "index_blob": "f328f436511c84e537bfce1e6732a2c7708a4d58",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/cleanup.json",
+      "raw_sha256": "83461c04a33b8ea597480665797841cc9b0e3403cfa23e0b9fe50d6e58ad7eb2",
+      "index_blob": "a34b18d200f10c92c397fe13304ce8bbaa699d35",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/visible/recovery.json",
+      "raw_sha256": "8ceaaf3445c1c771c657c97cab7bc61e6bad2966559902e45acd717318aca1b7",
+      "index_blob": "dc89a6f0374b555ff094f993600e4aced6a7aea1",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    },
+    {
+      "file": ".trellis/tasks/09-30-frontend-route-lazy-loading/task.json",
+      "raw_sha256": "cfba907b2d8b7a19ba207cc0c3a6715dc41be40b1e26a4e107df3691cde14f9c",
+      "index_blob": "762254dd411318b82fc8a6df317e3d6ba97c97bd",
+      "cause": "CRLF-to-LF conversion from repository text=auto eol=lf"
+    }
+  ],
+  "product_mismatch": false,
+  "resolution": "Task-scoped attributes preserve all original bytes; no frozen file content changes."
+}

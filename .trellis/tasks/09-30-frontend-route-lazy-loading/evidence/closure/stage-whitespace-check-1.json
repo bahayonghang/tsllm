@@ -1,0 +1,42 @@
+{
+  "all_staged_bytes_match": true,
+  "file_count": 295,
+  "full_check": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 2,
+    "stdout": ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:4: trailing whitespace.\n+  \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:14: trailing whitespace.\n+    ······· │ \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:24: trailing whitespace.\n+    ······· │ \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:34: trailing whitespace.\n+    ······· │ \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:44: trailing whitespace.\n+  \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:51: trailing whitespace.\n+  \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt:51: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-1-vitest.txt:194: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-2-vitest.txt:194: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-3-vitest.txt:29: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-4-vitest.txt:29: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B0-s1-a1.txt:2: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B1-s1-a1.txt:2: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s1-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s2-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s3-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s4-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s5-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s1-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s2-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s3-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s4-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s5-a1.txt:7: new blank line at EOF.\n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff:10: trailing whitespace.\n+ \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff:14: trailing whitespace.\n+ \n.trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff:44: trailing whitespace.\n+ \n",
+    "stderr": ""
+  },
+  "verbatim_evidence_paths": [
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/check-1-biome.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-1-vitest.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-2-vitest.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-3-vitest.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/closure/logs/evidence/implementation/gates/test-4-vitest.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B0-s1-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/journey-r1/measurement-B1-s1-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s1-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s2-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s3-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s4-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B0-s5-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s1-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s2-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s3-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s4-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/measurement/raw-r1/measurement-B1-s5-a1.txt",
+    ".trellis/tasks/09-30-frontend-route-lazy-loading/evidence/scope/product-final.diff"
+  ],
+  "source_docs_tools_check": {
+    "checked_count": 277,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "decision": "Retain original log and patch whitespace as data; do not trim records or suppress diff checks. No source, specification, planning or tool whitespace errors."
+}

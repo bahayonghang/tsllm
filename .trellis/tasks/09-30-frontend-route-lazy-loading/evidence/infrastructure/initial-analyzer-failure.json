@@ -1,0 +1,8 @@
+{
+  "command": "node tools/analyze_build.mjs --snapshot evidence/snapshots/B0-source.json --output evidence/snapshots/B0-build.json",
+  "exit_code": 1,
+  "error": "SyntaxError: Invalid regular expression flags",
+  "reason": "JavaScript string transport removed slash escape in newly written analyzer regex",
+  "repair": "Parse quoted attribute values, then filter /assets/ prefix; no product change",
+  "subsequent_result": "B0-build.json created successfully"
+}

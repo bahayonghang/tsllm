@@ -1,0 +1,304 @@
+E501 Line too long (101 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\acceptance_common.py:20:101
+   |
+18 | def record(path: Path) -> dict:
+19 |     stat = path.stat()
+20 |     return {"sha256": digest(path.read_bytes()), "bytes": stat.st_size, "mtime_ns": stat.st_mtime_ns}
+   |                                                                                                     ^
+
+E501 Line too long (108 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\acceptance_common.py:33:101
+   |
+32 | def version(files: dict) -> str:
+33 |     stable = {name: {key: item[key] for key in ("sha256", "bytes")} for name, item in sorted(files.items())}
+   |                                                                                                     ^^^^^^^^
+34 |     return digest(json.dumps(stable, sort_keys=True, separators=(",", ":")).encode())
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\create_fixtures.py:3:1
+   |
+ 1 |   """Build deterministic synthetic files without running an ingestion or worker."""
+ 2 |
+ 3 | / from __future__ import annotations
+ 4 | |
+ 5 | | import argparse
+ 6 | | import hashlib
+ 7 | | import json
+ 8 | | import math
+ 9 | | import os
+10 | | from datetime import UTC, datetime, timedelta
+11 | | from pathlib import Path
+12 | | import sys
+   | |__________^
+13 |
+14 |   sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "isolation/source/src"))
+   |
+help: Organize imports
+   |
+9  | import os
+10 + import sys
+11 | from datetime import UTC, datetime, timedelta
+12 | from pathlib import Path
+   - import sys
+13 |
+   |
+
+E501 Line too long (104 > 100)
+   --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\create_fixtures.py:328:101
+    |
+326 |         "schema_version": 1,
+327 |         "synthetic_only": True,
+328 |         "fixture_roots": {name: name for name in ("runs", "cache", "configs", "source", "model-cache")},
+    |                                                                                                     ^^^^
+329 |         "ids": IDS,
+330 |         "datasets": [alpha.id, beta.id],
+    |
+
+E501 Line too long (106 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\freeze_experiment.py:17:101
+   |
+15 |     variants = {}
+16 |     for variant, stem in (("B0", "B0"), ("B1", args.b1)):
+17 |         source = json.loads((TASK / f"evidence/snapshots/{stem}-source.json").read_text(encoding="utf-8"))
+   |                                                                                                     ^^^^^^
+18 |         build = json.loads((TASK / f"evidence/snapshots/{stem}-build.json").read_text(encoding="utf-8"))
+19 |         assert source["source_version"] == build["source_version"]
+   |
+
+E501 Line too long (104 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\freeze_experiment.py:18:101
+   |
+16 |     for variant, stem in (("B0", "B0"), ("B1", args.b1)):
+17 |         source = json.loads((TASK / f"evidence/snapshots/{stem}-source.json").read_text(encoding="utf-8"))
+18 |         build = json.loads((TASK / f"evidence/snapshots/{stem}-build.json").read_text(encoding="utf-8"))
+   |                                                                                                     ^^^^
+19 |         assert source["source_version"] == build["source_version"]
+20 |         root = Path(source["root"])
+   |
+
+E501 Line too long (103 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\freeze_experiment.py:28:101
+   |
+26 |     verify(fixture_manifest["files"], fixture, mtimes=True)
+27 |     scripts = {name: record(TASK / "tools" / name)["sha256"] for name in (
+28 |         "browser_probe.mjs", "measure.mjs", "run_matrix.py", "serve_variant.py", "acceptance_common.py"
+   |                                                                                                     ^^^
+29 |     )}
+30 |     identity = {"revision": "route-lazy-final-r1", "readiness_revision": "recovery-r1",
+   |
+
+E501 Line too long (113 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\freeze_experiment.py:36:101
+   |
+34 |         "fixture_manifest_sha256": record(fixture / "manifest.json")["sha256"],
+35 |         "variants": {key: {"source_version": value["source"]["source_version"],
+36 |                              "dist_version": value["build"]["dist_version"]} for key, value in variants.items()}}
+   |                                                                                                     ^^^^^^^^^^^^^
+37 |     output = {"schema_version": 1, "fixture_root": str(fixture),
+38 |               "source_root": str(TASK / "isolation/source"),
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\prepare_isolation.py:3:1
+   |
+ 1 |   """Export tracked baseline files and freeze the final web source without private data."""
+ 2 |
+ 3 | / from __future__ import annotations
+ 4 | |
+ 5 | | import argparse
+ 6 | | import json
+ 7 | | import shutil
+ 8 | | import subprocess
+ 9 | | import _winapi
+10 | |
+11 | | from acceptance_common import BASELINE, REPOSITORY, TASK, record, version, write_json
+   | |_____________________________________________________________________________________^
+help: Organize imports
+   |
+4  |
+5  + import _winapi
+6  | import argparse
+7  | import json
+8  | import shutil
+9  | import subprocess
+   - import _winapi
+10 |
+   |
+
+E501 Line too long (104 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\prepare_isolation.py:73:101
+   |
+71 |         if root.exists():
+72 |             raise FileExistsError(root)
+73 |         additions = git("ls-files", "--others", "--exclude-standard", "--", "web").decode().splitlines()
+   |                                                                                                     ^^^^
+74 |         allowed = {"web/src/components/RouteLoading.tsx"}
+75 |         for name in additions:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:3:1
+   |
+ 1 |   """Run exact package scripts with installed binaries and preserve every attempt."""
+ 2 |
+ 3 | / from __future__ import annotations
+ 4 | |
+ 5 | | import argparse
+ 6 | | from datetime import UTC, datetime
+ 7 | | import json
+ 8 | | from pathlib import Path
+ 9 | | import shlex
+10 | | import subprocess
+11 | | import time
+12 | |
+13 | | from acceptance_common import TASK, record, verify, write_json
+   | |______________________________________________________________^
+help: Organize imports
+   |
+5  | import argparse
+   - from datetime import UTC, datetime
+6  | import json
+   - from pathlib import Path
+7  | import shlex
+8  | import subprocess
+9  | import time
+10 + from datetime import UTC, datetime
+11 + from pathlib import Path
+12 |
+   |
+
+E501 Line too long (118 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:25:101
+   |
+23 |     verify(snapshot["files"], root)
+24 |     scripts = json.loads((root / "web/package.json").read_text(encoding="utf-8"))["scripts"]
+25 |     expected = {"check": "biome check . && tsc --noEmit", "test": "vitest run", "build": "tsc --noEmit && vite build"}
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^
+26 |     if any(scripts[key] != command for key, command in expected.items()):
+27 |         raise RuntimeError("Package scripts changed; review the gate contract")
+   |
+
+E501 Line too long (134 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:35:101
+   |
+33 |             raise ValueError(gate)
+34 |         attempt = 1
+35 |         while (evidence / f"{root.name}-{gate}-{attempt}.json").exists() or (evidence / f"{root.name}-{gate}-{attempt}.txt").exists():
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+36 |             attempt += 1
+37 |         stem = f"{root.name}-{gate}-{attempt}"
+   |
+
+E501 Line too long (130 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:46:101
+   |
+44 |                 raise FileNotFoundError(executable)
+45 |             command = [str(executable), *words[1:]]
+46 |             result = subprocess.run(command, cwd=root / "web", capture_output=True, text=True, encoding="utf-8", errors="replace")
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+47 |             output.append(result.stdout + "\n" + result.stderr)
+48 |             components.append({"argv": command, "exit_code": result.returncode, "launcher": record(executable)})
+   |
+
+E501 Line too long (112 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:48:101
+   |
+46 |             result = subprocess.run(command, cwd=root / "web", capture_output=True, text=True, encoding="utf-8", errors="replace")
+47 |             output.append(result.stdout + "\n" + result.stderr)
+48 |             components.append({"argv": command, "exit_code": result.returncode, "launcher": record(executable)})
+   |                                                                                                     ^^^^^^^^^^^^
+49 |             if result.returncode:
+50 |                 break
+   |
+
+E501 Line too long (112 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:54:101
+   |
+52 |         with (evidence / f"{stem}.txt").open("x", encoding="utf-8", newline="\n") as handle:
+53 |             handle.write("\n".join(line.rstrip() for line in text.splitlines()).rstrip() + "\n")
+54 |         item = {"variant": snapshot["variant"], "root": str(root), "source_version": snapshot["source_version"],
+   |                                                                                                     ^^^^^^^^^^^^
+55 |                 "gate": gate, "attempt": attempt, "command": scripts[gate], "components": components,
+56 |                 "started_utc": started, "duration_seconds": time.perf_counter() - start,
+   |
+
+E501 Line too long (101 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:55:101
+   |
+53 |             handle.write("\n".join(line.rstrip() for line in text.splitlines()).rstrip() + "\n")
+54 |         item = {"variant": snapshot["variant"], "root": str(root), "source_version": snapshot["source_version"],
+55 |                 "gate": gate, "attempt": attempt, "command": scripts[gate], "components": components,
+   |                                                                                                     ^
+56 |                 "started_utc": started, "duration_seconds": time.perf_counter() - start,
+57 |                 "exit_code": result.returncode, "log": f"{stem}.txt", "runner": record(Path(__file__)),
+   |
+
+E501 Line too long (103 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:57:101
+   |
+55 |                 "gate": gate, "attempt": attempt, "command": scripts[gate], "components": components,
+56 |                 "started_utc": started, "duration_seconds": time.perf_counter() - start,
+57 |                 "exit_code": result.returncode, "log": f"{stem}.txt", "runner": record(Path(__file__)),
+   |                                                                                                     ^^^
+58 |                 "invocation": "Installed .bin launchers; exact package.json script; no pnpm preparation or installation"}
+59 |         write_json(evidence / f"{stem}.json", item)
+   |
+
+E501 Line too long (121 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:58:101
+   |
+56 |                 "started_utc": started, "duration_seconds": time.perf_counter() - start,
+57 |                 "exit_code": result.returncode, "log": f"{stem}.txt", "runner": record(Path(__file__)),
+58 |                 "invocation": "Installed .bin launchers; exact package.json script; no pnpm preparation or installation"}
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^
+59 |         write_json(evidence / f"{stem}.json", item)
+60 |         results.append(item)
+   |
+
+E501 Line too long (130 > 100)
+  --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_gates.py:61:101
+   |
+59 |         write_json(evidence / f"{stem}.json", item)
+60 |         results.append(item)
+61 |         print(json.dumps({key: item[key] for key in ("variant", "gate", "attempt", "exit_code", "duration_seconds")}), flush=True)
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+62 |     verify(snapshot["files"], root)
+63 |     raise SystemExit(0 if all(item["exit_code"] == 0 for item in results) else 1)
+   |
+
+E501 Line too long (143 > 100)
+   --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_matrix.py:187:101
+    |
+185 | …
+186 | …
+187 | …=root, check=False, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    |                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+188 | …ariant}-s{sample}-a{args.attempt}.txt").open("x", encoding="utf-8", newline="\n") as output_log:
+189 | … "\n" + result.stderr)
+    |
+
+E501 Line too long (152 > 100)
+   --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\run_matrix.py:188:101
+    |
+186 | …
+187 | …t, check=False, capture_output=True, text=True, encoding="utf-8", errors="replace")
+188 | …nt}-s{sample}-a{args.attempt}.txt").open("x", encoding="utf-8", newline="\n") as output_log:
+    |                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+189 | …" + result.stderr)
+190 | …
+    |
+
+E501 Line too long (125 > 100)
+   --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\summarize.py:246:101
+    |
+244 |     with args.output.open("x", encoding="utf-8", newline="\n") as handle:
+245 |         handle.write(json.dumps(summary, indent=2, ensure_ascii=False) + "\n")
+246 |     with args.output.with_name(args.output.stem + "-asset-headers.json").open("x", encoding="utf-8", newline="\n") as handle:
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+247 |         handle.write(json.dumps(headers, indent=2) + "\n")
+248 |     print(
+    |
+
+Found 23 errors.
+[*] 3 fixable with the `--fix` option.

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_scope.py",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\scope-final.json",
+    "--require-cleanup"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"passed\": true, \"failures\": [], \"changed\": [\".trellis/spec/frontend/directory-structure.md\", \".trellis/spec/frontend/quality-guidelines.md\", \"web/src/components/AppLayout.tsx\", \"web/src/router.tsx\"], \"output\": \".trellis\\\\tasks\\\\09-30-frontend-route-lazy-loading\\\\evidence\\\\review\\\\scope-final.json\"}\n",
+  "stderr": ""
+}

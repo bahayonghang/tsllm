@@ -1,0 +1,32 @@
+{
+  "variant": "B0",
+  "root": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B0",
+  "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+  "gate": "test",
+  "attempt": 1,
+  "command": "vitest run",
+  "components": [
+    {
+      "argv": [
+        "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\isolation\\B0\\web\\node_modules\\.bin\\vitest.CMD",
+        "run"
+      ],
+      "exit_code": 0,
+      "launcher": {
+        "sha256": "fcca13b373a7d3a7fbe24b2587b19f3dccc4cc63fed15390e5fc0a479e7846f2",
+        "bytes": 890,
+        "mtime_ns": 1790675005518266300
+      }
+    }
+  ],
+  "started_utc": "2026-09-30T10:49:57.439403+00:00",
+  "duration_seconds": 8.029044000002614,
+  "exit_code": 0,
+  "log": "B0-test-1.txt",
+  "runner": {
+    "sha256": "7419d880b65c85e601ec1ab712e1b2ffa048fc793cbcadd9ce518601ad6d5104",
+    "bytes": 3385,
+    "mtime_ns": 1790765341869555000
+  },
+  "invocation": "Installed .bin launchers; exact package.json script; no pnpm preparation or installation"
+}

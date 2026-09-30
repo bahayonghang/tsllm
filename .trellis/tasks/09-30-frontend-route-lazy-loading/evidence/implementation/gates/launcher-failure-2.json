@@ -1,0 +1,11 @@
+{
+  "phase": "gate launcher output",
+  "exit_code": 1,
+  "tool_chunk_id": "9e6d69",
+  "error": "UnicodeEncodeError: gbk codec cannot encode U+23AF",
+  "check_record_saved": true,
+  "test_log_saved": true,
+  "test_exit_code_recorded": false,
+  "test_summary": "8 failed, 33 passed",
+  "note": "The launcher failed while printing after saving the test log. Repeat the unchanged test to record its child exit code."
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-B",
+    ".trellis/scripts/get_context.py",
+    "--mode",
+    "packages"
+  ],
+  "exit_code": 0,
+  "stdout": "Single-repo project (no packages configured)\n\nSpec layers: backend, frontend\n",
+  "stderr": ""
+}

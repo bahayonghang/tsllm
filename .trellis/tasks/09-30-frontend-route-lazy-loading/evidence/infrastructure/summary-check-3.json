@@ -1,0 +1,10 @@
+{
+  "command": [
+    "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.venv\\Scripts\\python.exe",
+    "-m",
+    "ruff",
+    "check",
+    "D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\09-30-frontend-route-lazy-loading\\tools\\summarize.py"
+  ],
+  "exit_code": 0
+}

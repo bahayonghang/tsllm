@@ -1,0 +1,12 @@
+E501 Line too long (113 > 100)
+   --> .trellis\tasks\09-30-frontend-route-lazy-loading\tools\summarize.py:175:101
+    |
+173 |         "schema_version": 1,
+174 |         "measurement_identity": identity,
+175 |         "summary_role": "Implementation-side descriptive summary; independent review must recompute raw records",
+    |                                                                                                     ^^^^^^^^^^^^^
+176 |         "complete_60_matrix": complete,
+177 |         "valid_primary_observations": sum(
+    |
+
+Found 1 error.

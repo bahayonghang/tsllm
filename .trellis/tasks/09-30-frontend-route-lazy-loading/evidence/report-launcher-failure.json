@@ -1,0 +1,6 @@
+{
+  "phase": "report generation before command execution",
+  "error": "SyntaxError: Unexpected identifier encoded_body_union",
+  "files_written_by_failed_call": false,
+  "repair": "Use a raw JavaScript template literal for the shell command; product and measurement unchanged"
+}

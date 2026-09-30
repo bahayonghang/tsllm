@@ -1,0 +1,1434 @@
+{
+  "schema_version": 1,
+  "measurement_identity": {
+    "revision": "route-lazy-final-r1",
+    "readiness_revision": "recovery-r1",
+    "paint_revision": "paint-collection-r1",
+    "scripts": {
+      "browser_probe.mjs": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd",
+      "measure.mjs": "5ec80f5fcf6389561f3aa66ffd8bd78bd675c6e2e6bd83eaf25ae44b9d587746",
+      "run_matrix.py": "1c2a30b62afcd0fde12461815437b0554493763867a8fd0f367073aac68f6bc5",
+      "serve_variant.py": "9a1943c8387e560789915495beb7d412798f31935481e8442f5137fd6541d71a",
+      "acceptance_common.py": "a9675bcfd2b3fe46f18d1ad236319e3aaca422b877ccec92682165e1552b9e6b"
+    },
+    "paintCollection": {
+      "timeoutMs": 1000,
+      "scope": "document",
+      "beforeNextNavigationOrClose": true,
+      "preservesReadySnapshot": true
+    },
+    "fixture_manifest_sha256": "949e9879119d058814e6c193bdfc4000a0d0898a80478ef24e958263b46cd845",
+    "variants": {
+      "B0": {
+        "source_version": "d7ed55a3ad1ff91a8c94e9e122e2f73af5c28cfdb4e739a0a11b9547dad98c16",
+        "dist_version": "8d7bc493b3c3dbcefbd4ef3987b82ee4eacac7bdcb4f5684f5e7e5d40065fa43"
+      },
+      "B1": {
+        "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+        "dist_version": "a27404802c27827e1f4c2955517400f8fd4e56b77cd8862f93d6c0fad8b937a7"
+      }
+    }
+  },
+  "summary_role": "Implementation-side descriptive summary; independent review must recompute raw records",
+  "complete_60_matrix": false,
+  "valid_primary_observations": 0,
+  "valid_supplementary_observations": 2,
+  "failures": [],
+  "browser_versions": [
+    "154.0.4258.37"
+  ],
+  "cache_classification_counts": {
+    "network-or-unreported": 79,
+    "disk-cache": 20
+  },
+  "limits": [
+    "Headless installed browser on loopback; not visible acceptance or real phone/network",
+    "Cold means browser HTTP cache only; OS, process and code caches are not claimed cold",
+    "Readiness includes identical external observer cost and two stable animation frames",
+    "Long tasks include observer and browser work and are not assigned to a package",
+    "Resource Timing transferSize is browser-reported transfer; does not measure TCP/IP packet overhead",
+    "Largest observed body per full URL; every request remains in transfer sums",
+    "Warm is reload in same page/context after verified cold entry; actual cache outcome remains observed",
+    "FCP and navigation timing describe document loads; SPA navigation uses browser click-to-ready timing"
+  ],
+  "groups": {
+    "B0:journey": {
+      "files": [
+        "B0-journey-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 186.40000000596046,
+        "min": 186.40000000596046,
+        "max": 186.40000000596046,
+        "values": [
+          186.40000000596046
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 9.700000025331974,
+        "min": 9.700000025331974,
+        "max": 9.700000025331974,
+        "values": [
+          9.700000025331974
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 17.600000001490116,
+        "min": 17.600000001490116,
+        "max": 17.600000001490116,
+        "values": [
+          17.600000001490116
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "ready_definition": "Last system navigation only; not full journey elapsed time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 40,
+            "min": 40,
+            "max": 40,
+            "values": [
+              40
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 22,
+            "min": 22,
+            "max": 22,
+            "values": [
+              22
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2488723,
+            "min": 2488723,
+            "max": 2488723,
+            "values": [
+              2488723
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2468544,
+            "min": 2468544,
+            "max": 2468544,
+            "values": [
+              2468544
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2468544,
+            "min": 2468544,
+            "max": 2468544,
+            "values": [
+              2468544
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "navigation": {
+          "request_entries": {
+            "count": 1,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "values": [
+              2
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "values": [
+              2
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 1154,
+            "min": 1154,
+            "max": 1154,
+            "values": [
+              1154
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 1185,
+            "min": 1185,
+            "max": 1185,
+            "values": [
+              1185
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 1185,
+            "min": 1185,
+            "max": 1185,
+            "values": [
+              1185
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "increment": {
+          "request_entries": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 1154,
+            "min": 1154,
+            "max": 1154,
+            "values": [
+              1154
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 854,
+            "min": 854,
+            "max": 854,
+            "values": [
+              854
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 854,
+            "min": 854,
+            "max": 854,
+            "values": [
+              854
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "with_preview": {
+          "request_entries": {
+            "count": 1,
+            "median": 11,
+            "min": 11,
+            "max": 11,
+            "values": [
+              11
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 9,
+            "min": 9,
+            "max": 9,
+            "values": [
+              9
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2442314,
+            "min": 2442314,
+            "max": 2442314,
+            "values": [
+              2442314
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2439614,
+            "min": 2439614,
+            "max": 2439614,
+            "values": [
+              2439614
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2439614,
+            "min": 2439614,
+            "max": 2439614,
+            "values": [
+              2439614
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        }
+      },
+      "preview_ready_ms": {
+        "count": 1,
+        "median": 43.899999998509884,
+        "min": 43.899999998509884,
+        "max": 43.899999998509884,
+        "values": [
+          43.899999998509884
+        ]
+      },
+      "cdp_encoded_data_length": {
+        "count": 1,
+        "median": 2484052,
+        "min": 2484052,
+        "max": 2484052,
+        "values": [
+          2484052
+        ]
+      },
+      "paint_status_counts": {
+        "observed": 1
+      },
+      "native_document_fcp_ms": {
+        "count": 1,
+        "median": 304,
+        "min": 304,
+        "max": 304,
+        "values": [
+          304
+        ]
+      },
+      "fcp_scope": "Document paint; not a SPA-navigation duration",
+      "full_url_union_across_samples": {
+        "http://127.0.0.1:9000/runs": {
+          "encodedBodySize": 331,
+          "decodedBodySize": 331
+        },
+        "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js": {
+          "encodedBodySize": 2419860,
+          "decodedBodySize": 2419860,
+          "offline_gzip_bytes": 776403,
+          "asset_sha256": "9d4690a2705c2b1e2a906c9933ff9c88ee4fc37ca9cd048f7d6e1fd77fb9853f"
+        },
+        "http://127.0.0.1:9000/api/runs": {
+          "encodedBodySize": 1614,
+          "decodedBodySize": 1614
+        },
+        "http://127.0.0.1:9000/favicon.ico": {
+          "encodedBodySize": 331,
+          "decodedBodySize": 331
+        },
+        "http://127.0.0.1:9000/api/schema/run-config": {
+          "encodedBodySize": 11074,
+          "decodedBodySize": 11074
+        },
+        "http://127.0.0.1:9000/api/backbones": {
+          "encodedBodySize": 4316,
+          "decodedBodySize": 4316
+        },
+        "http://127.0.0.1:9000/api/datasets": {
+          "encodedBodySize": 1450,
+          "decodedBodySize": 1450
+        },
+        "http://127.0.0.1:9000/api/run-templates": {
+          "encodedBodySize": 30,
+          "decodedBodySize": 30
+        },
+        "http://127.0.0.1:9000/api/run-templates/synthetic-preview": {
+          "encodedBodySize": 608,
+          "decodedBodySize": 608
+        },
+        "http://127.0.0.1:9000/api/compare?run_ids=20260101-000001-synthetic-forecast-0001%2C20260101-000002-synthetic-different-0002%2C20260101-000003-synthetic-classify-0003%2C20260101-000004-synthetic-ingest-0004%2C20260101-000005-synthetic-ingest-0005": {
+          "encodedBodySize": 8648,
+          "decodedBodySize": 8648
+        },
+        "http://127.0.0.1:9000/api/datasets/synthetic-alpha": {
+          "encodedBodySize": 2040,
+          "decodedBodySize": 2040
+        },
+        "http://127.0.0.1:9000/api/datasets/synthetic-alpha/series?channels=synthetic_a&max_points=2000": {
+          "encodedBodySize": 10151,
+          "decodedBodySize": 10151
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001": {
+          "encodedBodySize": 1585,
+          "decodedBodySize": 1585
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/metrics": {
+          "encodedBodySize": 837,
+          "decodedBodySize": 837
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/events?from=0": {
+          "encodedBodySize": 195,
+          "decodedBodySize": 195
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/predictions?split=test&limit=500": {
+          "encodedBodySize": 121,
+          "decodedBodySize": 121
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/predictions?split=test&channel=synthetic_a&origin_time=2026-01-01T03%3A37%3A00": {
+          "encodedBodySize": 1018,
+          "decodedBodySize": 1018
+        },
+        "http://127.0.0.1:9000/api/datasets/synthetic-alpha/series?channels=synthetic_a&start=2026-01-01T03%3A26%3A00&end=2026-01-01T03%3A37%3A00&max_points=13": {
+          "encodedBodySize": 821,
+          "decodedBodySize": 821
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000003-synthetic-classify-0003": {
+          "encodedBodySize": 1816,
+          "decodedBodySize": 1816
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000003-synthetic-classify-0003/metrics": {
+          "encodedBodySize": 649,
+          "decodedBodySize": 649
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000003-synthetic-classify-0003/events?from=0": {
+          "encodedBodySize": 195,
+          "decodedBodySize": 195
+        },
+        "http://127.0.0.1:9000/api/system": {
+          "encodedBodySize": 854,
+          "decodedBodySize": 854
+        }
+      },
+      "offline_asset_gzip_url_union_bytes": 776403
+    },
+    "B1:journey": {
+      "files": [
+        "B1-journey-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 168.5,
+        "min": 168.5,
+        "max": 168.5,
+        "values": [
+          168.5
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 12.200000002980232,
+        "min": 12.200000002980232,
+        "max": 12.200000002980232,
+        "values": [
+          12.200000002980232
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 24,
+        "min": 24,
+        "max": 24,
+        "values": [
+          24
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "ready_definition": "Last system navigation only; not full journey elapsed time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 12,
+            "min": 12,
+            "max": 12,
+            "values": [
+              12
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 12,
+            "min": 12,
+            "max": 12,
+            "values": [
+              12
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 1100432,
+            "min": 1100432,
+            "max": 1100432,
+            "values": [
+              1100432
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 1096832,
+            "min": 1096832,
+            "max": 1096832,
+            "values": [
+              1096832
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 1096832,
+            "min": 1096832,
+            "max": 1096832,
+            "values": [
+              1096832
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 9,
+            "min": 9,
+            "max": 9,
+            "values": [
+              9
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 1094078,
+            "min": 1094078,
+            "max": 1094078,
+            "values": [
+              1094078
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 1094078,
+            "min": 1094078,
+            "max": 1094078,
+            "values": [
+              1094078
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 59,
+            "min": 59,
+            "max": 59,
+            "values": [
+              59
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 41,
+            "min": 41,
+            "max": 41,
+            "values": [
+              41
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2505056,
+            "min": 2505056,
+            "max": 2505056,
+            "values": [
+              2505056
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2479177,
+            "min": 2479177,
+            "max": 2479177,
+            "values": [
+              2479177
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2479177,
+            "min": 2479177,
+            "max": 2479177,
+            "values": [
+              2479177
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 20,
+            "min": 20,
+            "max": 20,
+            "values": [
+              20
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2430015,
+            "min": 2430015,
+            "max": 2430015,
+            "values": [
+              2430015
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2430015,
+            "min": 2430015,
+            "max": 2430015,
+            "values": [
+              2430015
+            ]
+          }
+        },
+        "navigation": {
+          "request_entries": {
+            "count": 1,
+            "median": 3,
+            "min": 3,
+            "max": 3,
+            "values": [
+              3
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 3,
+            "min": 3,
+            "max": 3,
+            "values": [
+              3
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 3234,
+            "min": 3234,
+            "max": 3234,
+            "values": [
+              3234
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 3204,
+            "min": 3204,
+            "max": 3204,
+            "values": [
+              3204
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 3204,
+            "min": 3204,
+            "max": 3204,
+            "values": [
+              3204
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 1780,
+            "min": 1780,
+            "max": 1780,
+            "values": [
+              1780
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 1780,
+            "min": 1780,
+            "max": 1780,
+            "values": [
+              1780
+            ]
+          }
+        },
+        "increment": {
+          "request_entries": {
+            "count": 1,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "values": [
+              2
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "values": [
+              2
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 3234,
+            "min": 3234,
+            "max": 3234,
+            "values": [
+              3234
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2634,
+            "min": 2634,
+            "max": 2634,
+            "values": [
+              2634
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2634,
+            "min": 2634,
+            "max": 2634,
+            "values": [
+              2634
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 1780,
+            "min": 1780,
+            "max": 1780,
+            "values": [
+              1780
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 1780,
+            "min": 1780,
+            "max": 1780,
+            "values": [
+              1780
+            ]
+          }
+        },
+        "with_preview": {
+          "request_entries": {
+            "count": 1,
+            "median": 23,
+            "min": 23,
+            "max": 23,
+            "values": [
+              23
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 21,
+            "min": 21,
+            "max": 21,
+            "values": [
+              21
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 1752032,
+            "min": 1752032,
+            "max": 1752032,
+            "values": [
+              1752032
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 1745732,
+            "min": 1745732,
+            "max": 1745732,
+            "values": [
+              1745732
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 1745732,
+            "min": 1745732,
+            "max": 1745732,
+            "values": [
+              1745732
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 13,
+            "min": 13,
+            "max": 13,
+            "values": [
+              13
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 1725500,
+            "min": 1725500,
+            "max": 1725500,
+            "values": [
+              1725500
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 1725500,
+            "min": 1725500,
+            "max": 1725500,
+            "values": [
+              1725500
+            ]
+          }
+        }
+      },
+      "preview_ready_ms": {
+        "count": 1,
+        "median": 50.5,
+        "min": 50.5,
+        "max": 50.5,
+        "values": [
+          50.5
+        ]
+      },
+      "cdp_encoded_data_length": {
+        "count": 1,
+        "median": 2499315,
+        "min": 2499315,
+        "max": 2499315,
+        "values": [
+          2499315
+        ]
+      },
+      "paint_status_counts": {
+        "observed": 1
+      },
+      "native_document_fcp_ms": {
+        "count": 1,
+        "median": 136,
+        "min": 136,
+        "max": 136,
+        "values": [
+          136
+        ]
+      },
+      "fcp_scope": "Document paint; not a SPA-navigation duration",
+      "full_url_union_across_samples": {
+        "http://127.0.0.1:9000/runs": {
+          "encodedBodySize": 570,
+          "decodedBodySize": 570
+        },
+        "http://127.0.0.1:9000/assets/fast-deep-equal-DMTWy6R9.js": {
+          "encodedBodySize": 1625,
+          "decodedBodySize": 1625,
+          "offline_gzip_bytes": 756,
+          "asset_sha256": "46129daa0f0fda0a9bbf19ec6078c310261f31d678529e12868ec66e93b16f89"
+        },
+        "http://127.0.0.1:9000/assets/index-Bw4YU1Ku.js": {
+          "encodedBodySize": 146015,
+          "decodedBodySize": 146015,
+          "offline_gzip_bytes": 48179,
+          "asset_sha256": "a0677e03c73effbb739e6350c1e78ba8c90754503542e5cae630e191f535f2ef"
+        },
+        "http://127.0.0.1:9000/assets/button-CCZs0Voe.js": {
+          "encodedBodySize": 491991,
+          "decodedBodySize": 491991,
+          "offline_gzip_bytes": 160204,
+          "asset_sha256": "4d540596ae2ba255c6bd34da0817b0f07823fb2886141f18ba9c9148006db7d0"
+        },
+        "http://127.0.0.1:9000/assets/hooks-BIRQC-dQ.js": {
+          "encodedBodySize": 72796,
+          "decodedBodySize": 72796,
+          "offline_gzip_bytes": 24061,
+          "asset_sha256": "0a9ed869c43ea5d624dec7cc33bd1ab69bf997423524c10e28d2648f6e5946f2"
+        },
+        "http://127.0.0.1:9000/assets/RunsPage-DR8Ns_w6.js": {
+          "encodedBodySize": 2326,
+          "decodedBodySize": 2326,
+          "offline_gzip_bytes": 1268,
+          "asset_sha256": "838ba90d9ae3c50e14dc4c79d9c56148c11566651e5cd798ab0bfdd4fbd568a0"
+        },
+        "http://127.0.0.1:9000/assets/ErrorAlert-B4_5QW98.js": {
+          "encodedBodySize": 185549,
+          "decodedBodySize": 185549,
+          "offline_gzip_bytes": 58987,
+          "asset_sha256": "a93bfa3bf34d9fca2dca71d88c08c09e5b0ce0e0ec12b8e0340acdce3effa1bd"
+        },
+        "http://127.0.0.1:9000/assets/table-CeaGE0R5.js": {
+          "encodedBodySize": 183756,
+          "decodedBodySize": 183756,
+          "offline_gzip_bytes": 56715,
+          "asset_sha256": "5049f4583917634e9790dbe2de928ef52d6393f0bac81fde09ac66f0fad71253"
+        },
+        "http://127.0.0.1:9000/assets/StateTag-Dr4yVMIJ.js": {
+          "encodedBodySize": 9083,
+          "decodedBodySize": 9083,
+          "offline_gzip_bytes": 3623,
+          "asset_sha256": "ee9d60d25da779f098b5d51a9e995295efb8f2aeec2a78778eb04eeeec9bf7c3"
+        },
+        "http://127.0.0.1:9000/assets/format-DJgdk6Jc.js": {
+          "encodedBodySize": 937,
+          "decodedBodySize": 937,
+          "offline_gzip_bytes": 565,
+          "asset_sha256": "1213d6c1a7697ca30455782f12b8e9ee449095e3d25f1411a82c9d3db3e0ff03"
+        },
+        "http://127.0.0.1:9000/favicon.ico": {
+          "encodedBodySize": 570,
+          "decodedBodySize": 570
+        },
+        "http://127.0.0.1:9000/api/runs": {
+          "encodedBodySize": 1614,
+          "decodedBodySize": 1614
+        },
+        "http://127.0.0.1:9000/assets/RunNewPage-ckpljBXr.js": {
+          "encodedBodySize": 469769,
+          "decodedBodySize": 469769,
+          "offline_gzip_bytes": 151591,
+          "asset_sha256": "750048c597cfad9b47ec377414af59257674c51dd13a17562f863c8dd41c5e31"
+        },
+        "http://127.0.0.1:9000/assets/input-DrqXIbCD.js": {
+          "encodedBodySize": 114725,
+          "decodedBodySize": 114725,
+          "offline_gzip_bytes": 36463,
+          "asset_sha256": "c01ef8f2deec194479f335174839d006c9d065b0cfc59b7877988e2e7f56abab"
+        },
+        "http://127.0.0.1:9000/assets/card-CrEYUjZ-.js": {
+          "encodedBodySize": 44467,
+          "decodedBodySize": 44467,
+          "offline_gzip_bytes": 13506,
+          "asset_sha256": "73976b0e365119d94ab8991c1bd21e52aef121b741b3173c0079920d35254f16"
+        },
+        "http://127.0.0.1:9000/assets/row-C_YvIpeN.js": {
+          "encodedBodySize": 2461,
+          "decodedBodySize": 2461,
+          "offline_gzip_bytes": 1277,
+          "asset_sha256": "3ae07e43223b72fac3ad5ac7c90ff8d9e19306fab7a77c80650044881bd17bfd"
+        },
+        "http://127.0.0.1:9000/api/schema/run-config": {
+          "encodedBodySize": 11074,
+          "decodedBodySize": 11074
+        },
+        "http://127.0.0.1:9000/api/backbones": {
+          "encodedBodySize": 4316,
+          "decodedBodySize": 4316
+        },
+        "http://127.0.0.1:9000/api/datasets": {
+          "encodedBodySize": 1450,
+          "decodedBodySize": 1450
+        },
+        "http://127.0.0.1:9000/api/run-templates": {
+          "encodedBodySize": 30,
+          "decodedBodySize": 30
+        },
+        "http://127.0.0.1:9000/api/run-templates/synthetic-preview": {
+          "encodedBodySize": 608,
+          "decodedBodySize": 608
+        },
+        "http://127.0.0.1:9000/assets/ComparePage-RNU3_j0K.js": {
+          "encodedBodySize": 4597,
+          "decodedBodySize": 4597,
+          "offline_gzip_bytes": 2243,
+          "asset_sha256": "dd13cdee2cc01a03ffa4c9c71d634b01c65db2ccb2e3aadd7fae43fe92028339"
+        },
+        "http://127.0.0.1:9000/assets/EChart-CygN2abW.js": {
+          "encodedBodySize": 633014,
+          "decodedBodySize": 633014,
+          "offline_gzip_bytes": 211170,
+          "asset_sha256": "24bb9df3fefc1edb056510c5e3d7c3bd377246827a4b1dafc10d6852102ad32f"
+        },
+        "http://127.0.0.1:9000/api/compare?run_ids=20260101-000001-synthetic-forecast-0001%2C20260101-000002-synthetic-different-0002%2C20260101-000003-synthetic-classify-0003%2C20260101-000004-synthetic-ingest-0004%2C20260101-000005-synthetic-ingest-0005": {
+          "encodedBodySize": 8648,
+          "decodedBodySize": 8648
+        },
+        "http://127.0.0.1:9000/assets/DatasetsPage-B_tIBJzF.js": {
+          "encodedBodySize": 1365,
+          "decodedBodySize": 1365,
+          "offline_gzip_bytes": 816,
+          "asset_sha256": "8e402ac8439845f48e1ea92c6575848ad3a2ae14deeb76ca1a390075e6068140"
+        },
+        "http://127.0.0.1:9000/assets/DatasetDetailPage-CnQc9Ktq.js": {
+          "encodedBodySize": 8118,
+          "decodedBodySize": 8118,
+          "offline_gzip_bytes": 3746,
+          "asset_sha256": "d383fc8d0b3634e8f63a0dd5135932716d1420693a456b8e5124435f81f0d1dc"
+        },
+        "http://127.0.0.1:9000/assets/descriptions-CMc-Ltgv.js": {
+          "encodedBodySize": 7896,
+          "decodedBodySize": 7896,
+          "offline_gzip_bytes": 2790,
+          "asset_sha256": "2df725a8250ad1e654e771b20a5d79fb6ac838bcc69c7598ed529bd06e82f73f"
+        },
+        "http://127.0.0.1:9000/api/datasets/synthetic-alpha": {
+          "encodedBodySize": 2040,
+          "decodedBodySize": 2040
+        },
+        "http://127.0.0.1:9000/api/datasets/synthetic-alpha/series?channels=synthetic_a&max_points=2000": {
+          "encodedBodySize": 10151,
+          "decodedBodySize": 10151
+        },
+        "http://127.0.0.1:9000/assets/RunDetailPage-ZaeUnRMC.js": {
+          "encodedBodySize": 47745,
+          "decodedBodySize": 47745,
+          "offline_gzip_bytes": 16920,
+          "asset_sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e"
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001": {
+          "encodedBodySize": 1585,
+          "decodedBodySize": 1585
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/metrics": {
+          "encodedBodySize": 837,
+          "decodedBodySize": 837
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/events?from=0": {
+          "encodedBodySize": 195,
+          "decodedBodySize": 195
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/predictions?split=test&limit=500": {
+          "encodedBodySize": 121,
+          "decodedBodySize": 121
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000001-synthetic-forecast-0001/predictions?split=test&channel=synthetic_a&origin_time=2026-01-01T03%3A37%3A00": {
+          "encodedBodySize": 1018,
+          "decodedBodySize": 1018
+        },
+        "http://127.0.0.1:9000/api/datasets/synthetic-alpha/series?channels=synthetic_a&start=2026-01-01T03%3A26%3A00&end=2026-01-01T03%3A37%3A00&max_points=13": {
+          "encodedBodySize": 821,
+          "decodedBodySize": 821
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000003-synthetic-classify-0003": {
+          "encodedBodySize": 1816,
+          "decodedBodySize": 1816
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000003-synthetic-classify-0003/metrics": {
+          "encodedBodySize": 649,
+          "decodedBodySize": 649
+        },
+        "http://127.0.0.1:9000/api/runs/20260101-000003-synthetic-classify-0003/events?from=0": {
+          "encodedBodySize": 195,
+          "decodedBodySize": 195
+        },
+        "http://127.0.0.1:9000/assets/SystemPage-D01M2jNg.js": {
+          "encodedBodySize": 1780,
+          "decodedBodySize": 1780,
+          "offline_gzip_bytes": 899,
+          "asset_sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52"
+        },
+        "http://127.0.0.1:9000/api/system": {
+          "encodedBodySize": 854,
+          "decodedBodySize": 854
+        }
+      },
+      "offline_asset_gzip_url_union_bytes": 795779
+    }
+  },
+  "deltas_vs_B0": {
+    "B1:journey": {
+      "ready_ms": {
+        "absolute": -17.900000005960464,
+        "relative_percent": -9.603004294736095
+      },
+      "entry.request_entries": {
+        "absolute": 8,
+        "relative_percent": 200.0
+      },
+      "entry.unique_urls": {
+        "absolute": 8,
+        "relative_percent": 200.0
+      },
+      "entry.transfer_bytes_sum": {
+        "absolute": -1322904,
+        "relative_percent": -54.59020127625719
+      },
+      "entry.encoded_body_url_union": {
+        "absolute": -1325304,
+        "relative_percent": -54.71633302176261
+      },
+      "entry.decoded_body_url_union": {
+        "absolute": -1325304,
+        "relative_percent": -54.71633302176261
+      },
+      "entry.asset_url_count": {
+        "absolute": 8,
+        "relative_percent": 800.0
+      },
+      "entry.asset_encoded_body_union": {
+        "absolute": -1325782,
+        "relative_percent": -54.78754969295745
+      },
+      "entry.asset_decoded_body_union": {
+        "absolute": -1325782,
+        "relative_percent": -54.78754969295745
+      },
+      "cumulative.request_entries": {
+        "absolute": 19,
+        "relative_percent": 47.5
+      },
+      "cumulative.unique_urls": {
+        "absolute": 19,
+        "relative_percent": 86.36363636363636
+      },
+      "cumulative.transfer_bytes_sum": {
+        "absolute": 16333,
+        "relative_percent": 0.6562803494000738
+      },
+      "cumulative.encoded_body_url_union": {
+        "absolute": 10633,
+        "relative_percent": 0.4307397397008115
+      },
+      "cumulative.decoded_body_url_union": {
+        "absolute": 10633,
+        "relative_percent": 0.4307397397008115
+      },
+      "cumulative.asset_url_count": {
+        "absolute": 19,
+        "relative_percent": 1900.0
+      },
+      "cumulative.asset_encoded_body_union": {
+        "absolute": 10155,
+        "relative_percent": 0.41965237658376936
+      },
+      "cumulative.asset_decoded_body_union": {
+        "absolute": 10155,
+        "relative_percent": 0.41965237658376936
+      },
+      "navigation.request_entries": {
+        "absolute": 1,
+        "relative_percent": 50.0
+      },
+      "navigation.unique_urls": {
+        "absolute": 1,
+        "relative_percent": 50.0
+      },
+      "navigation.transfer_bytes_sum": {
+        "absolute": 2080,
+        "relative_percent": 180.2426343154246
+      },
+      "navigation.encoded_body_url_union": {
+        "absolute": 2019,
+        "relative_percent": 170.37974683544303
+      },
+      "navigation.decoded_body_url_union": {
+        "absolute": 2019,
+        "relative_percent": 170.37974683544303
+      },
+      "navigation.asset_url_count": {
+        "absolute": 1,
+        "relative_percent": null
+      },
+      "navigation.asset_encoded_body_union": {
+        "absolute": 1780,
+        "relative_percent": null
+      },
+      "navigation.asset_decoded_body_union": {
+        "absolute": 1780,
+        "relative_percent": null
+      },
+      "increment.request_entries": {
+        "absolute": 1,
+        "relative_percent": 100.0
+      },
+      "increment.unique_urls": {
+        "absolute": 1,
+        "relative_percent": 100.0
+      },
+      "increment.transfer_bytes_sum": {
+        "absolute": 2080,
+        "relative_percent": 180.2426343154246
+      },
+      "increment.encoded_body_url_union": {
+        "absolute": 1780,
+        "relative_percent": 208.43091334894615
+      },
+      "increment.decoded_body_url_union": {
+        "absolute": 1780,
+        "relative_percent": 208.43091334894615
+      },
+      "increment.asset_url_count": {
+        "absolute": 1,
+        "relative_percent": null
+      },
+      "increment.asset_encoded_body_union": {
+        "absolute": 1780,
+        "relative_percent": null
+      },
+      "increment.asset_decoded_body_union": {
+        "absolute": 1780,
+        "relative_percent": null
+      },
+      "with_preview.request_entries": {
+        "absolute": 12,
+        "relative_percent": 109.09090909090908
+      },
+      "with_preview.unique_urls": {
+        "absolute": 12,
+        "relative_percent": 133.33333333333331
+      },
+      "with_preview.transfer_bytes_sum": {
+        "absolute": -690282,
+        "relative_percent": -28.263441965283743
+      },
+      "with_preview.encoded_body_url_union": {
+        "absolute": -693882,
+        "relative_percent": -28.442286361694926
+      },
+      "with_preview.decoded_body_url_union": {
+        "absolute": -693882,
+        "relative_percent": -28.442286361694926
+      },
+      "with_preview.asset_url_count": {
+        "absolute": 12,
+        "relative_percent": 1200.0
+      },
+      "with_preview.asset_encoded_body_union": {
+        "absolute": -694360,
+        "relative_percent": -28.694221979783958
+      },
+      "with_preview.asset_decoded_body_union": {
+        "absolute": -694360,
+        "relative_percent": -28.694221979783958
+      }
+    }
+  }
+}

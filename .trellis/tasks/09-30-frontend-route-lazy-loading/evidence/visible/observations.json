@@ -1,0 +1,993 @@
+{
+  "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+  "dist_version": "a27404802c27827e1f4c2955517400f8fd4e56b77cd8862f93d6c0fad8b937a7",
+  "inline_images": 17,
+  "method": "CUA visible DOM/AX observations; warning messages reduced to their observed codes; no screenshots stored",
+  "observations": [
+    {
+      "label": "1280-root-redirect-runs",
+      "canvases": [],
+      "checkboxes": [
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": true
+        },
+        {
+          "checked": false,
+          "disabled": true
+        }
+      ],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "运行"
+      ],
+      "height": 900,
+      "nullCells": 6,
+      "path": "/runs",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/runs",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-forecast-module-failure-query-hash",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": true,
+      "hash": "#restore",
+      "headings": [],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/runs/20260101-000001-synthetic-forecast-0001",
+      "scrollWidth": 1265,
+      "search": "?split=test&assessment=recovery-r1",
+      "url": "http://127.0.0.1:9000/runs/20260101-000001-synthetic-forecast-0001?split=test&assessment=recovery-r1#restore",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-forecast-recovered-document-navigation",
+      "canvases": [
+        {
+          "cssHeight": 360,
+          "cssWidth": 1191,
+          "height": 360,
+          "width": 1191
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "#restore",
+      "headings": [
+        "Synthetic forecast"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/runs/20260101-000001-synthetic-forecast-0001",
+      "scrollWidth": 1265,
+      "search": "?split=test&assessment=recovery-r1",
+      "url": "http://127.0.0.1:9000/runs/20260101-000001-synthetic-forecast-0001?split=test&assessment=recovery-r1#restore",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280,
+      "recovery": {
+        "trustedClick": true,
+        "expectDocumentNavigationResolved": true,
+        "method": "tab.playwright.expectNavigation(link.click, waitUntil=load)",
+        "samePathSearchHash": true
+      }
+    },
+    {
+      "label": "390-system-module-failure-empty-hash",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": true,
+      "hash": "",
+      "headings": [],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/system",
+      "scrollWidth": 375,
+      "search": "?assessment=empty-fragment",
+      "url": "http://127.0.0.1:9000/system?assessment=empty-fragment",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-system-recovered-document-navigation",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "系统"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/system",
+      "scrollWidth": 375,
+      "search": "?assessment=empty-fragment",
+      "url": "http://127.0.0.1:9000/system?assessment=empty-fragment",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390,
+      "recovery": {
+        "trustedClick": true,
+        "expectDocumentNavigationResolved": true,
+        "method": "tab.playwright.expectNavigation(link.click, waitUntil=load)",
+        "samePathSearchHash": true
+      }
+    },
+    {
+      "label": "390-runs",
+      "canvases": [],
+      "checkboxes": [
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": true
+        },
+        {
+          "checked": false,
+          "disabled": true
+        }
+      ],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "运行"
+      ],
+      "height": 844,
+      "nullCells": 6,
+      "path": "/runs",
+      "scrollWidth": 375,
+      "search": "",
+      "url": "http://127.0.0.1:9000/runs",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-selected-experiments-comparison",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "对比"
+      ],
+      "height": 844,
+      "nullCells": 37,
+      "path": "/compare",
+      "scrollWidth": 375,
+      "search": "?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003",
+      "url": "http://127.0.0.1:9000/compare?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003",
+      "visibility": "visible",
+      "warnings": [
+        "RUN_NOT_SUCCEEDED",
+        "DATASET_MISMATCH",
+        "TASK_MISMATCH",
+        "CONTEXT_LENGTH_MISMATCH",
+        "HORIZON_MISMATCH",
+        "ORIGIN_SET_MISMATCH",
+        "ORIGIN_SET_MISMATCH"
+      ],
+      "width": 390
+    },
+    {
+      "label": "390-mixed-comparison-deep-link",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "#chart",
+      "headings": [
+        "对比"
+      ],
+      "height": 844,
+      "nullCells": 91,
+      "path": "/compare",
+      "scrollWidth": 375,
+      "search": "?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003,20260101-000004-synthetic-ingest-0004,20260101-000005-synthetic-ingest-0005&metric=mae_norm_macro",
+      "url": "http://127.0.0.1:9000/compare?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003,20260101-000004-synthetic-ingest-0004,20260101-000005-synthetic-ingest-0005&metric=mae_norm_macro#chart",
+      "visibility": "visible",
+      "warnings": [
+        "RUN_NOT_SUCCEEDED",
+        "RUN_NOT_SUCCEEDED",
+        "DATASET_MISMATCH",
+        "TASK_MISMATCH",
+        "CONTEXT_LENGTH_MISMATCH",
+        "HORIZON_MISMATCH",
+        "ORIGIN_SET_MISMATCH",
+        "ORIGIN_SET_MISMATCH",
+        "NON_EXPERIMENT_RUN",
+        "NON_EXPERIMENT_RUN"
+      ],
+      "width": 390
+    },
+    {
+      "label": "390-datasets",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/datasets",
+      "scrollWidth": 375,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-dataset-detail",
+      "canvases": [
+        {
+          "cssHeight": 160,
+          "cssWidth": 302,
+          "height": 160,
+          "width": 302
+        },
+        {
+          "cssHeight": 360,
+          "cssWidth": 302,
+          "height": 360,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集 synthetic-alpha"
+      ],
+      "height": 844,
+      "nullCells": 2,
+      "path": "/datasets/synthetic-alpha",
+      "scrollWidth": 375,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets/synthetic-alpha",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-history-back-datasets",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/datasets",
+      "scrollWidth": 375,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-history-forward-dataset",
+      "canvases": [
+        {
+          "cssHeight": 160,
+          "cssWidth": 302,
+          "height": 160,
+          "width": 302
+        },
+        {
+          "cssHeight": 360,
+          "cssWidth": 302,
+          "height": 360,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集 synthetic-alpha"
+      ],
+      "height": 844,
+      "nullCells": 2,
+      "path": "/datasets/synthetic-alpha",
+      "scrollWidth": 375,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets/synthetic-alpha",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-forecast-deep-link",
+      "canvases": [
+        {
+          "cssHeight": 360,
+          "cssWidth": 302,
+          "height": 360,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "#restore",
+      "headings": [
+        "Synthetic forecast"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/runs/20260101-000001-synthetic-forecast-0001",
+      "scrollWidth": 375,
+      "search": "?split=test&assessment=recovery-r1",
+      "url": "http://127.0.0.1:9000/runs/20260101-000001-synthetic-forecast-0001?split=test&assessment=recovery-r1#restore",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-classification-deep-link",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        },
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "#curves",
+      "headings": [
+        "Synthetic classification"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/runs/20260101-000003-synthetic-classify-0003",
+      "scrollWidth": 375,
+      "search": "?split=test",
+      "url": "http://127.0.0.1:9000/runs/20260101-000003-synthetic-classify-0003?split=test#curves",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-classification-details",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        },
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "#curves",
+      "headings": [
+        "Synthetic classification"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/runs/20260101-000003-synthetic-classify-0003",
+      "scrollWidth": 375,
+      "search": "?split=test",
+      "url": "http://127.0.0.1:9000/runs/20260101-000003-synthetic-classify-0003?split=test#curves",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "390-form-template-preview",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 390,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "新建运行"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/runs/new",
+      "scrollWidth": 390,
+      "search": "?template=synthetic-preview",
+      "url": "http://127.0.0.1:9000/runs/new?template=synthetic-preview",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390,
+      "preview": {
+        "template": "synthetic-preview",
+        "name": "Synthetic forecast",
+        "context_length": 12,
+        "horizon": 6,
+        "modal": "提交前预览",
+        "submitted": false
+      }
+    },
+    {
+      "label": "390-dataset-channel-chart",
+      "canvases": [
+        {
+          "cssHeight": 160,
+          "cssWidth": 302,
+          "height": 160,
+          "width": 302
+        },
+        {
+          "cssHeight": 360,
+          "cssWidth": 302,
+          "height": 360,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集 synthetic-alpha"
+      ],
+      "height": 844,
+      "nullCells": 2,
+      "path": "/datasets/synthetic-alpha",
+      "scrollWidth": 375,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets/synthetic-alpha",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390
+    },
+    {
+      "label": "1280-dataset-detail",
+      "canvases": [
+        {
+          "cssHeight": 160,
+          "cssWidth": 1191,
+          "height": 160,
+          "width": 1191
+        },
+        {
+          "cssHeight": 360,
+          "cssWidth": 1191,
+          "height": 360,
+          "width": 1191
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集 synthetic-alpha"
+      ],
+      "height": 900,
+      "nullCells": 2,
+      "path": "/datasets/synthetic-alpha",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets/synthetic-alpha",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-datasets",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/datasets",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-history-back-datasets",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/datasets",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-history-forward-dataset",
+      "canvases": [
+        {
+          "cssHeight": 160,
+          "cssWidth": 1191,
+          "height": 160,
+          "width": 1191
+        },
+        {
+          "cssHeight": 360,
+          "cssWidth": 1191,
+          "height": 360,
+          "width": 1191
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "数据集 synthetic-alpha"
+      ],
+      "height": 900,
+      "nullCells": 2,
+      "path": "/datasets/synthetic-alpha",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/datasets/synthetic-alpha",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-runs",
+      "canvases": [],
+      "checkboxes": [
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": true
+        },
+        {
+          "checked": false,
+          "disabled": true
+        }
+      ],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "运行"
+      ],
+      "height": 900,
+      "nullCells": 6,
+      "path": "/runs",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/runs",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-runs-selected",
+      "canvases": [],
+      "checkboxes": [
+        {
+          "checked": true,
+          "disabled": false
+        },
+        {
+          "checked": true,
+          "disabled": false
+        },
+        {
+          "checked": true,
+          "disabled": false
+        },
+        {
+          "checked": true,
+          "disabled": false
+        },
+        {
+          "checked": true,
+          "disabled": false
+        },
+        {
+          "checked": false,
+          "disabled": true
+        },
+        {
+          "checked": false,
+          "disabled": true
+        }
+      ],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "运行"
+      ],
+      "height": 900,
+      "nullCells": 6,
+      "path": "/runs",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/runs",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    },
+    {
+      "label": "1280-selected-comparison",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 1191,
+          "height": 320,
+          "width": 1191
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "对比"
+      ],
+      "height": 900,
+      "nullCells": 37,
+      "path": "/compare",
+      "scrollWidth": 1265,
+      "search": "?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003",
+      "url": "http://127.0.0.1:9000/compare?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003",
+      "visibility": "visible",
+      "warnings": [
+        "RUN_NOT_SUCCEEDED",
+        "DATASET_MISMATCH",
+        "TASK_MISMATCH",
+        "CONTEXT_LENGTH_MISMATCH",
+        "HORIZON_MISMATCH",
+        "ORIGIN_SET_MISMATCH",
+        "ORIGIN_SET_MISMATCH"
+      ],
+      "width": 1280
+    },
+    {
+      "label": "1280-mixed-compare",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 1191,
+          "height": 320,
+          "width": 1191
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "#chart",
+      "headings": [
+        "对比"
+      ],
+      "height": 900,
+      "nullCells": 91,
+      "path": "/compare",
+      "scrollWidth": 1265,
+      "search": "?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003,20260101-000004-synthetic-ingest-0004,20260101-000005-synthetic-ingest-0005&metric=mae_norm_macro",
+      "url": "http://127.0.0.1:9000/compare?run_ids=20260101-000001-synthetic-forecast-0001,20260101-000002-synthetic-different-0002,20260101-000003-synthetic-classify-0003,20260101-000004-synthetic-ingest-0004,20260101-000005-synthetic-ingest-0005&metric=mae_norm_macro#chart",
+      "visibility": "visible",
+      "warnings": [
+        "RUN_NOT_SUCCEEDED",
+        "RUN_NOT_SUCCEEDED",
+        "DATASET_MISMATCH",
+        "TASK_MISMATCH",
+        "CONTEXT_LENGTH_MISMATCH",
+        "HORIZON_MISMATCH",
+        "ORIGIN_SET_MISMATCH",
+        "ORIGIN_SET_MISMATCH",
+        "NON_EXPERIMENT_RUN",
+        "NON_EXPERIMENT_RUN"
+      ],
+      "width": 1280
+    },
+    {
+      "label": "1280-classification",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 588,
+          "height": 320,
+          "width": 588
+        },
+        {
+          "cssHeight": 320,
+          "cssWidth": 588,
+          "height": 320,
+          "width": 588
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "#curves",
+      "headings": [
+        "Synthetic classification"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/runs/20260101-000003-synthetic-classify-0003",
+      "scrollWidth": 1265,
+      "search": "?split=test",
+      "url": "http://127.0.0.1:9000/runs/20260101-000003-synthetic-classify-0003?split=test#curves",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280,
+      "classification": {
+        "matrices": {
+          "val": [
+            [
+              12,
+              2
+            ],
+            [
+              2,
+              8
+            ]
+          ],
+          "test": [
+            [
+              12,
+              2
+            ],
+            [
+              2,
+              8
+            ]
+          ]
+        },
+        "rule": "future_event",
+        "channel": "synthetic_a",
+        "comparison": "gt",
+        "eventThreshold": 1.5,
+        "window": 3,
+        "minDuration": 1,
+        "decisionThresholds": {
+          "val": 0.5,
+          "test": 0.5
+        }
+      }
+    },
+    {
+      "label": "390-classification-matrix-rule",
+      "canvases": [
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        },
+        {
+          "cssHeight": 320,
+          "cssWidth": 302,
+          "height": 320,
+          "width": 302
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "#curves",
+      "headings": [
+        "Synthetic classification"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/runs/20260101-000003-synthetic-classify-0003",
+      "scrollWidth": 375,
+      "search": "?split=test",
+      "url": "http://127.0.0.1:9000/runs/20260101-000003-synthetic-classify-0003?split=test#curves",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390,
+      "classification": {
+        "matrices": {
+          "val": [
+            [
+              12,
+              2
+            ],
+            [
+              2,
+              8
+            ]
+          ],
+          "test": [
+            [
+              12,
+              2
+            ],
+            [
+              2,
+              8
+            ]
+          ]
+        },
+        "rule": "future_event",
+        "channel": "synthetic_a",
+        "comparison": "gt",
+        "eventThreshold": 1.5,
+        "window": 3,
+        "minDuration": 1,
+        "decisionThresholds": {
+          "val": 0.5,
+          "test": 0.5
+        }
+      }
+    },
+    {
+      "label": "1280-form-template-preview",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 1280,
+      "error": false,
+      "hash": "#preview",
+      "headings": [
+        "新建运行"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/runs/new",
+      "scrollWidth": 1280,
+      "search": "?template=synthetic-preview",
+      "url": "http://127.0.0.1:9000/runs/new?template=synthetic-preview#preview",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280,
+      "preview": {
+        "template": "synthetic-preview",
+        "name": "Synthetic forecast",
+        "context_length": 12,
+        "horizon": 6,
+        "modal": "提交前预览",
+        "submitted": false
+      }
+    },
+    {
+      "label": "1280-system",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "系统"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/system",
+      "scrollWidth": 1265,
+      "search": "",
+      "url": "http://127.0.0.1:9000/system",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280
+    }
+  ]
+}

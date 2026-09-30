@@ -1,0 +1,16 @@
+{
+  "gate": "test",
+  "attempt": 2,
+  "package_script": "vitest run",
+  "command": [
+    "D:\\Documents\\Code\\Python\\Exp\\tsllm\\web\\node_modules\\.bin\\vitest.cmd",
+    "run"
+  ],
+  "cwd": "D:\\Documents\\Code\\Python\\Exp\\tsllm\\web",
+  "started_utc": "2026-09-30T10:51:51.511354+00:00",
+  "seconds": 6.018069000005198,
+  "exit_code": 1,
+  "source_encoding": "utf-8",
+  "log_sha256": "f6b160597fe2dd0fed4e13713d88036917c5e41e66d79557ac913290a7a6a86a",
+  "note": "Unchanged source repeat after launcher stdout encoding failure."
+}

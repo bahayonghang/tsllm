@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/Scripts/ruff.exe",
+    "format",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_measurements.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_product.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_scope.py",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\test_audit_measurements.py"
+  ],
+  "exit_code": 0,
+  "stdout": "2 files reformatted, 2 files left unchanged\n",
+  "stderr": ""
+}

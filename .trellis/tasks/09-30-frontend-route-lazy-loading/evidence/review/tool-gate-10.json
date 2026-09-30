@@ -1,0 +1,10 @@
+{
+  "command": [
+    ".venv/Scripts/ruff.exe",
+    "check",
+    ".trellis\\tasks\\09-30-frontend-route-lazy-loading\\evidence\\review\\audit_product.py"
+  ],
+  "exit_code": 0,
+  "stdout": "All checks passed!\n",
+  "stderr": ""
+}

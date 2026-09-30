@@ -1,0 +1,71 @@
+{
+  "source_version": "9da4838b462bfc8cd5181ebd5c7cc0bffe43122c72ac8cd9b5c933b95201f07a",
+  "dist_version": "a27404802c27827e1f4c2955517400f8fd4e56b77cd8862f93d6c0fad8b937a7",
+  "cases": [
+    {
+      "label": "1280-forecast-recovered-document-navigation",
+      "canvases": [
+        {
+          "cssHeight": 360,
+          "cssWidth": 1191,
+          "height": 360,
+          "width": 1191
+        }
+      ],
+      "checkboxes": [],
+      "documentWidth": 1265,
+      "error": false,
+      "hash": "#restore",
+      "headings": [
+        "Synthetic forecast"
+      ],
+      "height": 900,
+      "nullCells": 0,
+      "path": "/runs/20260101-000001-synthetic-forecast-0001",
+      "scrollWidth": 1265,
+      "search": "?split=test&assessment=recovery-r1",
+      "url": "http://127.0.0.1:9000/runs/20260101-000001-synthetic-forecast-0001?split=test&assessment=recovery-r1#restore",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 1280,
+      "recovery": {
+        "trustedClick": true,
+        "expectDocumentNavigationResolved": true,
+        "method": "tab.playwright.expectNavigation(link.click, waitUntil=load)",
+        "samePathSearchHash": true
+      }
+    },
+    {
+      "label": "390-system-recovered-document-navigation",
+      "canvases": [],
+      "checkboxes": [],
+      "documentWidth": 375,
+      "error": false,
+      "hash": "",
+      "headings": [
+        "系统"
+      ],
+      "height": 844,
+      "nullCells": 0,
+      "path": "/system",
+      "scrollWidth": 375,
+      "search": "?assessment=empty-fragment",
+      "url": "http://127.0.0.1:9000/system?assessment=empty-fragment",
+      "visibility": "visible",
+      "warnings": [],
+      "width": 390,
+      "recovery": {
+        "trustedClick": true,
+        "expectDocumentNavigationResolved": true,
+        "method": "tab.playwright.expectNavigation(link.click, waitUntil=load)",
+        "samePathSearchHash": true
+      }
+    }
+  ],
+  "fault_receipts": [
+    "fault-RunDetailPage-hold.json",
+    "fault-RunDetailPage-restore.json",
+    "fault-SystemPage-hold.json",
+    "fault-SystemPage-restore.json"
+  ]
+}

@@ -1,0 +1,20 @@
+✔ nonempty output without a sidecar is rejected before browser launch (6.6424ms)
+✔ a sidecar from a different revision is rejected without overwrite (3.3526ms)
+✔ changed production bytes are rejected before output creation (2.6833ms)
+✔ changed frozen source is rejected before output creation (3.1998ms)
+✔ late publication retains a native FCP before the frozen endpoint (1.6383ms)
+✔ already published native paint completes without an observer or wait (0.4381ms)
+✔ a native FCP after ready remains after ready without moving the endpoint (0.4718ms)
+✔ a bounded timeout reports missing paint without creating values (0.446ms)
+✔ queued native records are drained before a timeout result (0.4004ms)
+✔ unsupported paint and observer failure have explicit separate status (0.773ms)
+✔ awaitReady waits for native collection before the caller can navigate (2.317ms)
+✔ the original readiness probe is unchanged by the supplemental collector (0.5328ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.6078

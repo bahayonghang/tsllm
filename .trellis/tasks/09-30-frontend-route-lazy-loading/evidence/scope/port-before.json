@@ -1,0 +1,6 @@
+{
+  "address": "127.0.0.1:9000",
+  "connect_ex": 10061,
+  "listening": false,
+  "initial_method_failure": "Get-NetTCPConnection is not installed in the active PowerShell environment; replaced by a plain loopback socket check."
+}

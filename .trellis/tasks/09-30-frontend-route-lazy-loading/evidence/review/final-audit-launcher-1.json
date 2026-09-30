@@ -1,0 +1,8 @@
+{
+  "command_scope": "inline final document audit before execution",
+  "exit_code": 1,
+  "error": "SyntaxError: unterminated string literal (detected at line 29)",
+  "cause": "JavaScript string transport expanded a Python newline escape before Python parsed the script.",
+  "repair": "Saved the audit as a UTF-8 source file with apply_patch and reran the same checks.",
+  "files_written_by_failed_attempt": []
+}
