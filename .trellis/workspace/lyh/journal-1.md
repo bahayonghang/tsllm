@@ -243,3 +243,39 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Next Steps
 
 - 待用户启动下一步 Prompt，对旧加载评估任务进行独立证据复核及本地收尾；不自动实施B2。
+
+
+## Session 9: 旧前端加载评估证据复核与独立归档
+<!-- trellis-session: v=2 fp=606535914d0e9572 -->
+
+**Date**: 2026-09-30
+**Task**: 旧前端加载评估证据复核与独立归档
+**Branch**: `codex/frontend-route-lazy-loading`
+
+### Summary
+
+AC1–AC6 独立复核通过；提交 530 项旧评估材料，独立归档并修正直接引用；保留当前 B1。
+
+### Main Changes
+
+- 旧评估证据、首次失败、Git 对象、归档和版本化引用可追溯；产品改动为 0。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `967644734806d9056af67fcc7c284d5147b9f97e` | docs(task): 收录前端加载评估与复核证据 |
+| `5fcddada74483b8db53d8e4cdbae2e0d1f4fb8d4` | docs(task): 同步评估归档引用与收尾记录 |
+
+### Testing
+
+- [OK] 90+3 观测、40,275 对照值、463 原文件、38 日志副本、50 引用及 530/7 项暂存对象核对通过。
+- [OK] 新增工具 Ruff/format/Pyright；归档前后 validate；完整空白与范围检查通过。
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- 保留当前 B1；其他性能优化须另行授权。未推送。
