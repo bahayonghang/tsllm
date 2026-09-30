@@ -110,7 +110,7 @@
 
 ### 集成审查状态（2026-09-29）
 
-分支 `codex/web-ui`，验证基线 `e53b17ce8f3b22d50120fd5643d69716996c8c42`。AC2–AC7 已核对并勾选。AC1 的默认套件在进程级离线设置下通过，但原定的未联网机器环境条件尚未验证，保持未勾选。两项缺陷已在工作区修复（见下文“缺陷修复”），尚未提交。统一验证需在提交后用干净克隆重跑，顺序 6 尚未完成。未推送或归档。
+分支 `codex/web-ui`，验证基线 `e53b17ce8f3b22d50120fd5643d69716996c8c42`。AC2–AC7 已核对并勾选。AC1 的默认套件在进程级离线设置下通过，但原定的未联网机器环境条件尚未验证，保持未勾选。两项缺陷已修复并提交为 `4b46719`（见下文“缺陷修复”）。提交 `63d747d` 的默认 Windows 干净克隆统一验证全部通过（见“提交后干净克隆复验”），顺序 6 清单全部勾选。父任务仍因 AC1 未完成。未推送或归档。
 
 ### 验收证据
 
@@ -205,7 +205,7 @@
 | 历史 Chronos-2 分类结果 | ROC、PR 各有 val/test 曲线，坐标轴与图例可见 |
 | 水泥数据集详情 | 运行段时间轴、四色划分带、划分边界、通道曲线与缩放控件可见 |
 
-### 缺陷修复（2026-09-29，未提交）
+### 缺陷修复（2026-09-29，提交 `4b46719`）
 
 | 缺陷 | 修改 | 验证 |
 | --- | --- | --- |
@@ -213,6 +213,28 @@
 | 对比柱状图纵轴标题与顶部图例重叠 | `web/src/components/charts/CompareBarChart.tsx`：滚动图例从 `top: 0` 改为 `bottom: 0`，`grid.bottom` 从 32 改为 64。 | 工作区 `pnpm -C web run check`、`test`（5 个文件、20 项）、`build` 通过。重建后在内置浏览器打开七项水泥预测对比页，宽度 640 px：纵轴标题单独位于绘图区上方，图例位于 x 轴标签下方并分页显示（1/3），三者互不重叠。 |
 
 复核服务：Windows 当前排除 TCP 7705–8404 端口段，8000 无法绑定。复核改用被 git 忽略的 `.claude/launch.json` 在 9000 端口启动 `uv run tsllm serve`。
+
+### 提交后干净克隆复验
+
+克隆：会话暂存目录下 `verify-63d747d/repo`，HEAD `63d747da9e818b029a0d56f804b6edb4121ffc62`，继承 `core.autocrlf=true`。检出后 278 个文本文件为 `w/lf`，2 个为空文件，`web/` 下 48 个文件全部为 `w/lf`。日志与 `results-*.txt` 位于克隆上一级目录。
+
+工具版本：Python 3.13.14、uv 0.12.19、Ruff 0.16.9、Pyright 1.1.414、pytest 9.1.1、Node 26.7.0、pnpm 12.8.1。
+
+| 命令 | 退出码 | 结果 |
+| --- | ---: | --- |
+| `uv sync` | 0 | 通过；含 torch 2.6 GiB 下载，耗时 414 s |
+| `uv run ruff check` | 0 | 通过 |
+| `uv run ruff format --check` | 0 | 109 个文件通过 |
+| `uv run pyright` | 0 | 0 errors、0 warnings |
+| 离线 `uv run pytest` | 0 | 165 passed、5 deselected、3 warnings；测试耗时 57.90 s |
+| `pnpm -C web install --frozen-lockfile` | 0 | 通过 |
+| `pnpm -C web run check` | 0 | 45 个文件通过 |
+| `pnpm -C web run test` | 0 | 5 个文件、20 项通过 |
+| `pnpm -C web run build` | 0 | 通过；主块 2,418.61 kB，仍有块体积警告 |
+
+离线 pytest 的环境设置与前次相同：`HF_HUB_OFFLINE=1`、`TRANSFORMERS_OFFLINE=1`、`UV_OFFLINE=1`、独立空 `HF_HOME`，外部代理指向 `127.0.0.1:9`，保留回环地址例外。结束时 `git status --porcelain` 为空，`git diff --check` 通过。
+
+前两次复验尝试未计入结果：第一次在 `uv sync` 下载 torch 时被中断；第二次的五个 Python 步骤因该中断进程持有的 uv 缓存锁等待 300 s 超时（退出码 2），同次四个前端步骤通过。确认无残留 uv 进程后单独重跑 Python 步骤，结果见上表。
 
 ### AC7 泄漏测试映射
 
@@ -239,7 +261,6 @@
 ### 遗留问题
 
 - AC1 的未联网机器环境条件尚无证据；现有离线标志、空模型缓存与代理设置仅构成进程级离线验证。未修改原验收条件。
-- `.gitattributes` 与 `CompareBarChart.tsx` 的修复尚未提交；提交后需用默认 Windows 干净克隆重跑统一验证命令，再勾选顺序 6 的第一项。
 - 规范索引仍有归档前子任务路径，backend 索引仍写 `Web contracts remain Decided`；本次记录差异，未扩大到规范清理。
 - `AGENTS.md` 的父任务状态仍写集成证据未记录；该文件在本轮开始前已有未提交改动，本轮未修改。父任务当前状态以本备注为准。
 - 继承 web-ui 已记录事项：`ETTh1.acc-backup` 保留；服务对比警告为英文；接口未警告“实验 + 入库作业”组合，但网页已禁止该组合；约 2.4 MB 构建块仍有警告。
