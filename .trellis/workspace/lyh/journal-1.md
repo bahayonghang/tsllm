@@ -131,3 +131,40 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Status
 
 [OK] **Completed**
+
+
+## Session 6: 平台父任务验收收尾与归档
+<!-- trellis-session: v=2 fp=550901d285531ba7 -->
+
+**Date**: 2026-09-29
+**Task**: 平台父任务验收收尾与归档
+**Branch**: `codex/web-ui`
+
+### Summary
+
+用户批准取消整机断网要求；当前 HEAD 干净克隆通过进程级离线默认测试，AC1–AC7 完成，父任务已归档。
+
+### Main Changes
+
+- 更新 AGENTS 状态、规范索引归档路径及 web 验收状态；保留已有 web-ui 事项。
+- 归档九份父任务文件，同步现行父任务引用及上下文清单路径。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `322ff9258c501f7e24240dbfc86cbb83f7b49ff6` | docs: 完成父任务验收并同步规范索引 |
+
+### Testing
+
+- [OK] uv run pytest：165 passed、5 deselected、3 warnings，54.01 s，退出码 0；模型缓存前后 0 文件。
+- [OK] 复用并核对 63d747d 九命令原始成功日志及 AC2–AC7 证据；全范围审查通过。
+- [OK] 归档文件清单、七项验收、引用目标和 git diff --check 均通过；四个私有根目录无跟踪文件。
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- 推送 codex/web-ui 后，等待用户选择整体 PR 或按子任务分支分别合并；不启用 auto-merge。
