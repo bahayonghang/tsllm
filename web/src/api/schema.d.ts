@@ -561,6 +561,16 @@ export interface components {
             code: string;
             /** Message */
             message: string;
+            /**
+             * Run Id
+             * @description Run id for a state warning or an ingest job without metrics.
+             */
+            run_id?: string | null;
+            /**
+             * Split
+             * @description Split with different evaluation origins.
+             */
+            split?: string | null;
         };
         /** Condition */
         Condition: {

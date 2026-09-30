@@ -1,6 +1,7 @@
-import { Alert, Card, Select, Space, Table, Typography } from "antd";
+import { Card, Select, Space, Table, Typography } from "antd";
 import { Link, useSearchParams } from "react-router";
 import { useCompare, useRuns } from "../api/hooks";
+import { CompareWarnings } from "../components/CompareWarnings";
 import { CompareBarChart } from "../components/charts/CompareBarChart";
 import { ErrorAlert } from "../components/ErrorAlert";
 import { StateTag } from "../components/StateTag";
@@ -47,15 +48,7 @@ export function ComparePage() {
         onChange={(value: string[]) => setParam("run_ids", value.join(","))}
       />
       <ErrorAlert error={runs.error ?? compare.error} />
-      {data?.warnings.map((warning) => (
-        <Alert
-          key={`${warning.code}:${warning.message}`}
-          type="warning"
-          showIcon
-          title={warning.message}
-          description={warning.code}
-        />
-      ))}
+      {data && <CompareWarnings warnings={data.warnings} columns={columns} />}
       {data && (
         <>
           <Card size="small" title="运行">

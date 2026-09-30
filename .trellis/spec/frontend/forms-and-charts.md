@@ -81,4 +81,11 @@ echarts.use([
 
 ## Comparison Warnings
 
-The compare API returns `warnings` (different dataset, task, context length, horizon, `origin_set_hash`, or a run that did not succeed). Show every warning above the table with antd `Alert type="warning"`. Do not hide them.
+The compare API returns `warnings` for different datasets, tasks, context lengths, horizons, origin sets, unsuccessful runs, and ingestion jobs. The additive contract is in [Comparison Warning Contract](../backend/error-handling.md#comparison-warning-contract).
+
+- Show every warning above the table with antd `Alert type="warning"`. Preserve service order, including repeated codes and identical entries. A React key must distinguish each entry.
+- Use the warning code for the Chinese main message. Use optional `run_id` and `split` for context; preserve their original values. Resolve the run name and state by exact ID in `columns`, and use `StateTag` for the state. Do not parse English messages.
+- Keep a Chinese generic message and the original message for older responses, absent/null context, or missing run columns. Unknown codes retain both the original code and message. Render all content as text.
+- Keep the run selection controls restricted to experiments. Send IDs from a manual comparison URL to the API and show the returned ingestion warning without discarding the selected ingestion column.
+- Preserve `null` as `—`, metric and chart behavior, and table-local horizontal scrolling. Long warning IDs and messages must wrap at 390 px without clipping or page-level horizontal overflow.
+- Page tests mock fetch with English service messages and cover all seven codes, context fallbacks, repeated codes, and manual mixed URLs. Visible browser checks use isolated synthetic terminal jobs at 390 px and 1280 px.

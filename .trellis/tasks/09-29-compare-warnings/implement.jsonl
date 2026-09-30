@@ -1,0 +1,11 @@
+{"file":".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md","reason":"Shared layer, job, metrics, and API contracts; preserve archived acceptance."}
+{"file":".trellis/spec/backend/directory-structure.md","reason":"Comparison logic belongs in runs; HTTP routes remain thin and import-light."}
+{"file":".trellis/spec/backend/error-handling.md","reason":"Preserve validation and missing-run error envelopes."}
+{"file":".trellis/spec/backend/database-guidelines.md","reason":"Read-only run-store access and isolated synthetic validation roots."}
+{"file":".trellis/spec/backend/quality-guidelines.md","reason":"Offline synthetic fixtures and all four backend quality gates."}
+{"file":".trellis/spec/frontend/api-client.md","reason":"Generated OpenAPI types, optional context, and existing request hooks."}
+{"file":".trellis/spec/frontend/quality-guidelines.md","reason":"Fetch-level mocks, complete frontend gates, and visible browser checks."}
+{"file":".trellis/spec/guides/cross-layer-thinking-guide.md","reason":"Trace warning context through comparison, HTTP models, types, and UI."}
+{"file":".trellis/tasks/09-29-compare-warnings/research/read-only-findings.md","reason":"Verified source anchors, accepted behavior, and investigation limits."}
+{"file":".trellis/spec/backend/index.md","reason":"Backend routing and authoritative shared contracts."}
+{"file":".trellis/spec/frontend/index.md","reason":"Chinese UI and backend-owned contracts."}

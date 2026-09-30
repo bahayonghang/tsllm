@@ -5,16 +5,21 @@ from typing import Any
 from tsllm.runs.store import RunStore, job_name
 
 
-def _warning(code: str, message: str) -> dict[str, str]:
-    return {"code": code, "message": message}
+def _warning(
+    code: str, message: str, *, run_id: str | None = None, split: str | None = None
+) -> dict[str, str | None]:
+    return {"code": code, "message": message, "run_id": run_id, "split": split}
 
 
 def compare_runs(store: RunStore, run_ids: list[str]) -> dict[str, Any]:
     """Return run columns, one row per (split, overall metric), and warnings."""
     columns: list[dict[str, Any]] = []
     metrics: dict[str, dict[str, Any]] = {}
+    ingest_ids: list[str] = []
     for run_id in run_ids:
         job, status = store.read_job(run_id), store.read_status(run_id)
+        if job.kind == "ingest":
+            ingest_ids.append(run_id)
         run = job.run
         columns.append(
             {
@@ -44,7 +49,11 @@ def compare_runs(store: RunStore, run_ids: list[str]) -> dict[str, Any]:
             values.setdefault(run_id, None)
 
     warnings = [
-        _warning("RUN_NOT_SUCCEEDED", f"run '{c['run_id']}' state is '{c['state']}'")
+        _warning(
+            "RUN_NOT_SUCCEEDED",
+            f"run '{c['run_id']}' state is '{c['state']}'",
+            run_id=c["run_id"],
+        )
         for c in columns
         if c["state"] != "succeeded"
     ]
@@ -67,9 +76,19 @@ def compare_runs(store: RunStore, run_ids: list[str]) -> dict[str, Any]:
         if len(hashes) > 1:
             warnings.append(
                 _warning(
-                    "ORIGIN_SET_MISMATCH", f"runs have different origin sets in split '{split}'"
+                    "ORIGIN_SET_MISMATCH",
+                    f"runs have different origin sets in split '{split}'",
+                    split=split,
                 )
             )
+    warnings.extend(
+        _warning(
+            "NON_EXPERIMENT_RUN",
+            f"run '{run_id}' is an ingest job and has no experiment metrics",
+            run_id=run_id,
+        )
+        for run_id in ingest_ids
+    )
     return {
         "columns": columns,
         "rows": [

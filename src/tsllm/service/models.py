@@ -117,6 +117,10 @@ class CompareRowOut(BaseModel):
 class CompareWarningOut(BaseModel):
     code: str
     message: str
+    run_id: str | None = Field(
+        default=None, description="Run id for a state warning or an ingest job without metrics."
+    )
+    split: str | None = Field(default=None, description="Split with different evaluation origins.")
 
 
 class CompareOut(BaseModel):

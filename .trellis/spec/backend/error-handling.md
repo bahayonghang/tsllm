@@ -136,6 +136,56 @@ Tests: `tests/service/test_api_basic.py::test_error_envelopes` covers 404, 409, 
 - After a worker process exits, the service writes `failed` only if the state is still `queued` or `running`: `error = "worker exited with code N"`, with the suffix ` before it started` for `queued`. A run that is being cancelled is skipped.
 - Tests: `tests/service/test_api_jobs.py::test_worker_exit_without_final_state_is_failed` and `test_worker_exit_before_running_is_failed`.
 
+## Comparison Warning Contract
+
+### 1. Scope / Trigger
+
+`GET /api/compare` preserves results when selected jobs are not directly comparable. The comparison module owns warning conditions. The UI owns Chinese presentation. The approved additive contract is recorded in `.trellis/tasks/09-29-compare-warnings/design.md`.
+
+### 2. Signatures
+
+- `tsllm.runs.compare.compare_runs(store: RunStore, run_ids: list[str])` reads jobs and metrics.
+- `GET /api/compare?run_ids=<comma-separated ids>` returns `CompareOut`.
+- `CompareWarningOut` has required `code: str` and `message: str`, plus optional `run_id: str | None = None` and `split: str | None = None`.
+
+### 3. Contracts
+
+- The route removes duplicate IDs in input order. Preserve `columns`, `rows`, metric values, and existing warning order. Do not write to job files or caches.
+- Keep the English messages for `RUN_NOT_SUCCEEDED`, `DATASET_MISMATCH`, `TASK_MISMATCH`, `CONTEXT_LENGTH_MISMATCH`, `HORIZON_MISMATCH`, and `ORIGIN_SET_MISMATCH` unchanged.
+- Add `run_id` to `RUN_NOT_SUCCEEDED`; add `split` to `ORIGIN_SET_MISMATCH`. Resolve the run state from the matching response column.
+- Identify ingestion jobs through `JobSpec.kind == "ingest"`. Append one `NON_EXPERIMENT_RUN` per selected ingestion job after existing warnings, in deduplicated input order. Include `run_id`. An unsuccessful ingestion job has both state and ingestion warnings.
+- Keep HTTP 200 and all columns for ingestion selections. Missing metrics remain `null`; an all-ingestion selection has `rows: []`. Do not infer job kind from a name or absent metrics.
+- Keep `code` open to future strings. Context fields can be absent in older responses or `null`. Regenerate OpenAPI and TypeScript together; a second generation must be byte-identical.
+
+### 4. Validation and Error Matrix
+
+| Condition | Result |
+| --- | --- |
+| Comparable successful experiments | 200; no warnings |
+| Single ingestion, all ingestion, or mixed selection | 200; results retained; one ingestion warning per unique ingestion ID |
+| Unsuccessful ingestion job | 200; state warning and ingestion warning |
+| Duplicate selected IDs | Preserve the first occurrence and its order |
+| Missing run | 404 with `RUN_NOT_FOUND` |
+| Empty or invalid parameter | 422 with the existing validation envelope |
+
+### 5. Good / Base / Bad Cases
+
+- Good: a mixed request retains the experiment metrics, a `null` ingestion column, and an ingestion warning.
+- Base: comparable successful experiments retain the same rows and no warnings.
+- Bad input: a nonexistent ID returns 404; do not return partial results.
+
+### 6. Tests Required
+
+- `tests/service/test_api_compare.py`: single/all/mixed ingestion, reverse order, duplicate IDs, unsuccessful ingestion, existing mismatches, 404/422, and comparable experiments. Ingestion fixtures have no `metrics.json`.
+- Assert warning context and order, unchanged English messages, unchanged metrics, `null` values, empty all-ingestion rows, and identical job files/status before and after comparison.
+- Frontend tests use English API messages at the fetch boundary and cover all codes, missing context, unknown codes, and repeated warning codes.
+
+### 7. Wrong / Correct
+
+Wrong: infer ingestion from missing metrics, reject mixed requests, or parse an English message to recover a run ID.
+
+Correct: use `JobSpec.kind` and structured context. For example, `{'code': 'NON_EXPERIMENT_RUN', 'message': '...', 'run_id': run_id}` retains a stable code and an explicit run identifier. Keep all results and warnings.
+
 ## Common Mistakes
 
 - Raising `HTTPException` in a lower layer. Raise a `TsllmError` subclass. The service maps it.

@@ -2131,6 +2131,30 @@
           "message": {
             "type": "string",
             "title": "Message"
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id",
+            "description": "Run id for a state warning or an ingest job without metrics."
+          },
+          "split": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Split",
+            "description": "Split with different evaluation origins."
           }
         },
         "type": "object",
