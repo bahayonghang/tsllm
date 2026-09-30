@@ -166,3 +166,11 @@
 - 未执行真实数据实验、真实训练、真实入库、GPU/weights 验收、权重下载、依赖安装或新的浏览器/HTTP 验收；既有进程级离线证据不扩展为整机隔离。
 - 未读取备份内容或处置 cache/datasets/ETTh1.acc-backup；不修改 .claude/launch.json、私有目录、构建体积阈值、依赖、锁文件及归档父任务。
 - 不合并、不推送、不创建 PR、不发布、不删除分支、不创建任务。下一候选为“前端加载影响与拆分收益评估”，仅留待用户另行选择。
+
+### 归档执行
+
+- 工作提交：1060a432e384b96d326ce4e5530809b17ef4532d，包含 8 个产品/测试/生成文件、2 份规范和 8 份任务材料；提交后工作区干净。
+- 正式命令 python .trellis/scripts/task.py archive 09-29-compare-warnings --no-commit 成功，退出码 0。主动使用 --no-commit，将归档移动、状态更新及引用修正放入同一个独立归档提交；没有发生自动提交失败。
+- 八份材料移动到 .trellis/tasks/archive/2026-09/09-29-compare-warnings；原目录已不存在，状态 completed，completedAt 为 2026-09-30，commit 字段记录工作提交。
+- 仅修正后端 error-handling.md 的设计引用，以及 implement.jsonl、check.jsonl 的调查依据路径；归档父任务和其他历史文档不变。
+- 后续日志使用 add_session.py，引用工作提交，独立提交在归档提交之后。最终会话记录位于 .trellis/workspace/lyh/journal-1.md 的“对比警告本地收尾与归档”条目。

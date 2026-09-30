@@ -140,7 +140,7 @@ Tests: `tests/service/test_api_basic.py::test_error_envelopes` covers 404, 409, 
 
 ### 1. Scope / Trigger
 
-`GET /api/compare` preserves results when selected jobs are not directly comparable. The comparison module owns warning conditions. The UI owns Chinese presentation. The approved additive contract is recorded in `.trellis/tasks/09-29-compare-warnings/design.md`.
+`GET /api/compare` preserves results when selected jobs are not directly comparable. The comparison module owns warning conditions. The UI owns Chinese presentation. The approved additive contract is recorded in `.trellis/tasks/archive/2026-09/09-29-compare-warnings/design.md`.
 
 ### 2. Signatures
 

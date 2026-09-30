@@ -6,5 +6,6 @@
 {"file":".trellis/spec/frontend/api-client.md","reason":"Generated OpenAPI types, optional context, and existing request hooks."}
 {"file":".trellis/spec/frontend/quality-guidelines.md","reason":"Fetch-level mocks, complete frontend gates, and visible browser checks."}
 {"file":".trellis/spec/guides/cross-layer-thinking-guide.md","reason":"Trace warning context through comparison, HTTP models, types, and UI."}
-{"file":".trellis/tasks/09-29-compare-warnings/research/read-only-findings.md","reason":"Verified source anchors, accepted behavior, and investigation limits."}
-{"file":".trellis/spec/frontend/forms-and-charts.md","reason":"Preserve null metric presentation and existing chart behavior."}
+{"file":".trellis/tasks/archive/2026-09/09-29-compare-warnings/research/read-only-findings.md","reason":"Verified source anchors, accepted behavior, and investigation limits."}
+{"file":".trellis/spec/backend/index.md","reason":"Backend routing and authoritative shared contracts."}
+{"file":".trellis/spec/frontend/index.md","reason":"Chinese UI and backend-owned contracts."}

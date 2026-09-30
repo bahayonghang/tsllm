@@ -92,4 +92,4 @@
 
 ## 实施状态
 
-2026-09-30 已按 design.md 和 implement.md 完成实施、七项正式门槛、独立检查及可见浏览器验收。AC1–AC8 通过；当前无产品阻断项。用户已授权本地收尾，工作提交前保持 in_progress。收尾复核见 verification.md。
+2026-09-30 已按 design.md 和 implement.md 完成实施、七项正式门槛、独立检查及可见浏览器验收。AC1–AC8 通过；当前无产品阻断项。工作提交为 1060a432e384b96d326ce4e5530809b17ef4532d；任务已于同日归档为 completed。收尾复核见 verification.md，开发者日志按顺序在归档提交后单独记录。
