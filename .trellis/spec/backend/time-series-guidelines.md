@@ -8,7 +8,7 @@
 
 Status: **Verified** for source parsing, preparation, splits, windows, batches, fit statistics, rule labels, and adapter sampling/normalization. Evaluation metrics and run artifacts are also Verified. API times are Verified: prepared and prediction times have no time zone; the service returns them as ISO strings without an offset, and an offset in a request time (`start`, `end`, `origin_time`) is removed without conversion (`src/tsllm/data/series.py`, `src/tsllm/runs/results.py`).
 
-The data contract is in the parent design §3.1 and §4 (`.trellis/tasks/09-28-tsfm-platform/design.md`). This file states the rules that every layer must keep. If code breaks one of these rules, the metrics are not valid.
+The data contract is in the parent design §3.1 and §4 (`.trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md`). This file states the rules that every layer must keep. If code breaks one of these rules, the metrics are not valid.
 
 ---
 

@@ -51,9 +51,9 @@ Also read `.trellis/spec/guides/index.md` when a change crosses two or more laye
 
 ## Source Documents
 
-- Shared contracts: `.trellis/tasks/09-28-tsfm-platform/design.md`. When a spec rule and the shared contract differ, the shared contract is correct. Update the spec file in the same change.
-- Data facts: `.trellis/tasks/09-28-tsfm-platform/research/data-profile.md`.
-- Library versions and API facts: `.trellis/tasks/09-28-tsfm-platform/research/library-compatibility.md`.
+- Shared contracts: `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md`. When a spec rule and the shared contract differ, the shared contract is correct. Update the spec file in the same change.
+- Data facts: `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/research/data-profile.md`.
+- Library versions and API facts: `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/research/library-compatibility.md`.
 
 ---
 

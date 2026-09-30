@@ -11,8 +11,8 @@ The first dataset is the Yangquan rotary kiln DCS data (`data/阳泉回转窑联
 - Experiment-runner implementation and local acceptance are complete (`65b6f11`).
 - Service-api implementation and local acceptance are complete (`212ccf2`). The state table includes `queued → failed` (service).
 - Web-ui implementation and in-app browser acceptance (AC1–AC6) are complete (`2b26ac4`). The frontend guides are Verified. Parent integration review also checked visible chart canvases and verified the comparison-chart legend fix. Evidence is in the parent task `prd.md`.
-- All five child tasks are archived under `.trellis/tasks/archive/2026-09/`. Parent integration acceptance (AC1–AC7) is complete and recorded in the parent task `prd.md`. AC1 covers the user-approved process-level offline environment; whole-machine network isolation was not tested.
-- Parent task: `.trellis/tasks/09-28-tsfm-platform/`. Read its `prd.md` and `design.md` before any work. `design.md` holds the shared contracts.
+- All five child tasks and the parent task are archived under `.trellis/tasks/archive/2026-09/`. Parent integration acceptance (AC1–AC7) is complete and recorded in the parent task `prd.md`. AC1 covers the user-approved process-level offline environment; whole-machine network isolation was not tested.
+- Archived parent task: `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/`. Read its `prd.md` and `design.md` before any work. `design.md` holds the shared contracts.
 - Child tasks, in order: `09-28-data-contract` → `09-28-backbone-adapters` → `09-28-experiment-runner` → `09-28-service-api` → `09-28-web-ui`. Each child has `prd.md`, `design.md`, `implement.md`.
 
 ## Stack
@@ -61,11 +61,11 @@ pnpm -C web run build
 
 | Need | File |
 | --- | --- |
-| Requirements and acceptance | `.trellis/tasks/09-28-tsfm-platform/prd.md` |
-| Shared contracts (config, data, adapter, run directory, API) | `.trellis/tasks/09-28-tsfm-platform/design.md` |
-| Data facts | `.trellis/tasks/09-28-tsfm-platform/research/data-profile.md` |
-| Library versions and APIs | `.trellis/tasks/09-28-tsfm-platform/research/library-compatibility.md` |
-| Which report clauses apply | `.trellis/tasks/09-28-tsfm-platform/research/report-applicability.md` |
+| Requirements and acceptance | `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md` |
+| Shared contracts (config, data, adapter, run directory, API) | `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md` |
+| Data facts | `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/research/data-profile.md` |
+| Library versions and APIs | `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/research/library-compatibility.md` |
+| Which report clauses apply | `.trellis/tasks/archive/2026-09/09-28-tsfm-platform/research/report-applicability.md` |
 | Backend conventions | `.trellis/spec/backend/index.md` |
 | Frontend conventions | `.trellis/spec/frontend/index.md` |
 
