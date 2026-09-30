@@ -206,3 +206,40 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Next Steps
 
 - 下一候选：前端加载影响与拆分收益评估。等待用户另行选择；未创建、激活或实施。未合并、推送、创建 PR、发布或删除分支。
+
+
+## Session 8: 路由级延迟加载本地提交与归档
+<!-- trellis-session: v=2 fp=68ccd9d1e5661e27 -->
+
+**Date**: 2026-09-30
+**Task**: 路由级延迟加载本地提交与归档
+**Branch**: `codex/frontend-route-lazy-loading`
+
+### Summary
+
+用户另行授权后完成 B1 工作提交、独立自动归档、规范引用及证据收尾。旧加载评估任务保持未跟踪且未改动；未推送或发布。
+
+### Main Changes
+
+- 七路由 B1 实施与规划证据先进入历史，再以 4064878 独立归档。
+- 补存11份原日志字节副本；任务级属性保留83份CRLF证据，冻结数据没有改写。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `934ba580e39a3ecee53abe936cc41ff5aaef0049` | perf(web): 实施路由级延迟加载并记录验收 |
+| `15ebf629d9479eb7d03e23b8aca7f14e97d06607` | docs(web): 同步路由加载归档引用与收尾记录 |
+
+### Testing
+
+- [OK] 冻结产品与证据哈希一致；复用同修订完整 check/test/build、41 tests、可见验收、60主观测和2完整流程。
+- [OK] 归档 validate、当前 diff --check、范围和历史对象核对通过；完整暂存原始证据空白检查退出2及限定通过结果均保留。
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- 待用户启动下一步 Prompt，对旧加载评估任务进行独立证据复核及本地收尾；不自动实施B2。
