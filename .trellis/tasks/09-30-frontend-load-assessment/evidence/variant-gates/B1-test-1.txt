@@ -1,0 +1,382 @@
+
+ RUN  v5.0.2 <assessment-temp>/variants/B1/web
+
+ ❯ tests/LazyRouting.test.tsx (3 tests | 1 failed) 1941ms
+   ❯ route module boundaries (3)
+     × shows module failure with a full-document recovery URL and resolves after reload 1047ms
+ ❯ tests/RouteResolution.test.tsx (8 tests | 1 failed) 3009ms
+   ❯ route loading contract (8)
+     × resolves direct entry /runs/new?from=synthetic-run without changing its URL 1343ms
+ ❯ tests/pages/ComparePage.test.tsx (8 tests | 1 failed) 3141ms
+   ❯ ComparePage (8)
+     × shows every comparability warning and null values as — 1138ms
+
+ Test Files  3 failed | 4 passed (7)
+      Tests  3 failed | 35 passed (38)
+   Start at  03:29:46
+   Duration  8.77s (import 40%, tests 33%, environment 26%, transform 1%)
+
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./assessmentGraph" without a file extension (vite.config.ts:3:33). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/LazyRouting.test.tsx > route module boundaries > shows module failure with a full-document recovery URL and resolves after reload
+TestingLibraryElementError: Unable to find an element with the text: 页面加载失败. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"css-dev-only-do-not-override-oc1rc0 ant-app css-var-root"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"ant-layout css-dev-only-do-not-override-oc1rc0 css-var-root"[39m
+        [33mstyle[39m=[32m"min-height: 100vh;"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"ant-layout-header css-dev-only-do-not-override-oc1rc0 css-var-root"[39m
+          [33mstyle[39m=[32m"display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; height: auto; padding-inline: 16px; background: rgb(255, 255, 255); border-bottom: 1px solid rgb(240, 240, 240);"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/runs"[39m
+            [33mstyle[39m=[32m"font-weight: 600; white-space: nowrap; color: rgba(0, 0, 0, 0.88);"[39m
+          [36m>[39m
+            [0mTSFM 实验平台[0m
+          [36m</a>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"ant-menu ant-menu-root ant-menu-horizontal ant-menu-light css-dev-only-do-not-override-oc1rc0 css-var-root ant-menu-css-var"[39m
+            [33mdata-menu-list[39m=[32m"true"[39m
+            [33mrole[39m=[32m"menu"[39m
+            [33mstyle[39m=[32m"flex: 1 1 0%; min-width: 0px; flex-wrap: wrap; border-bottom: medium;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-selected ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/runs"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/runs"[39m
+                [36m>[39m
+                  [0m运行[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/runs/new"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/runs/new"[39m
+                [36m>[39m
+                  [0m新建运行[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/compare"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/compare"[39m
+                [36m>[39m
+                  [0m对比[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/datasets"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/datasets"[39m
+                [36m>[39m
+                  [0m数据集[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/system"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/system"[39m
+                [36m>[39m
+                  [0m系统[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mstyle[39m=[32m"display: none;"[39m
+          [36m/>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"ant-layout-content css-dev-only-do-not-override-oc1rc0 css-var-root"[39m
+          [33mstyle[39m=[32m"padding: 16px; max-width: 1600px; width: 100%; margin: 0px auto;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"css-dev-only-do-not-override-oc1rc0 ant-app css-var-root"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"ant-layout css-dev-only-do-not-override-oc1rc0 css-var-root"[39m
+        [33mstyle[39m=[32m"min-height: 100vh;"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"ant-layout-header css-dev-only-do-not-override-oc1rc0 css-var-root"[39m
+          [33mstyle[39m=[32m"display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; height: auto; padding-inline: 16px; background: rgb(255, 255, 255); border-bottom: 1px solid rgb(240, 240, 240);"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/runs"[39m
+            [33mstyle[39m=[32m"font-weight: 600; white-space: nowrap; color: rgba(0, 0, 0, 0.88);"[39m
+          [36m>[39m
+            [0mTSFM 实验平台[0m
+          [36m</a>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"ant-menu ant-menu-root ant-menu-horizontal ant-menu-light css-dev-only-do-not-override-oc1rc0 css-var-root ant-menu-css-var"[39m
+            [33mdata-menu-list[39m=[32m"true"[39m
+            [33mrole[39m=[32m"menu"[39m
+            [33mstyle[39m=[32m"flex: 1 1 0%; min-width: 0px; flex-wrap: wrap; border-bottom: medium;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-selected ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/runs"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/runs"[39m
+                [36m>[39m
+                  [0m运行[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/runs/new"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/runs/new"[39m
+                [36m>[39m
+                  [0m新建运行[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/compare"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/compare"[39m
+                [36m>[39m
+                  [0m对比[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/datasets"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/datasets"[39m
+                [36m>[39m
+                  [0m数据集[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"ant-menu-item ant-menu-item-only-child"[39m
+              [33mdata-menu-id[39m=[32m"rc-menu-uuid-test-id-/system"[39m
+              [33mrole[39m=[32m"menuitem"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ant-menu-title-content"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mhref[39m=[32m"/system"[39m
+                [36m>[39m
+                  [0m系统[0m
+                [36m</a>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mstyle[39m=[32m"display: none;"[39m
+          [36m/>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"ant-layout-content css-dev-only-do-not-override-oc1rc0 css-var-root"[39m
+          [33mstyle[39m=[32m"padding: 16px; max-width: 1600px; width: 100%; margin: 0px auto;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ tests/LazyRouting.test.tsx:98:25
+     96|       pending.reject(new Error("Synthetic module download failure"));
+     97|     });
+     98|     expect(await screen.findByText("页面加载失败")).toBeTruthy();
+       |                         ^
+     99|     expect(screen.getByRole("link", { name: "重新加载页面" }).getAttribute("…
+    100|       "/runs?state=succeeded",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/RouteResolution.test.tsx > route loading contract > resolves direct entry /runs/new?from=synthetic-run without changing its URL
+AssertionError: expected false to be true // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body />[39m
+[36m</html>[39m
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/RouteResolution.test.tsx:20:58
+     18|     if (!url) throw new Error("Missing test URL");
+     19|     const router = createMemoryRouter(routes, { initialEntries: [url] …
+     20|     await waitFor(() => expect(router.state.initialized).toBe(true));
+       |                                                          ^
+     21|     expect(router.state.errors).toBeNull();
+     22|     expect(router.state.location.pathname + router.state.location.sear…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/pages/ComparePage.test.tsx > ComparePage > shows every comparability warning and null values as —
+TestingLibraryElementError: Unable to find an element with the text: 所选运行使用了不同的数据集. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"css-dev-only-do-not-override-oc1rc0 ant-app css-var-root"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0m正在加载页面…[0m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"css-dev-only-do-not-override-oc1rc0 ant-app css-var-root"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [0m正在加载页面…[0m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ <repository>/web/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ tests/pages/ComparePage.test.tsx:46:25
+     44|     renderRoute("/compare?run_ids=r1,r2");
+     45|
+     46|     expect(await screen.findByText("所选运行使用了不同的数据集")).toBeTruthy();
+       |                         ^
+     47|     expect(screen.getByText("test 划分的评价起点集合不同")).toBeTruthy();
+     48|     const alerts = screen.getAllByRole("alert");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯

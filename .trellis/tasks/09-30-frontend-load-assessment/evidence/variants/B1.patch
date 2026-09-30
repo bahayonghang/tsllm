@@ -1,0 +1,290 @@
+--- a/web/src/components/AppLayout.tsx
++++ b/web/src/components/AppLayout.tsx
+@@ -2 +2,2 @@
+-import { Link, Outlet, useLocation } from "react-router";
++import { Link, Outlet, useLocation, useNavigation } from "react-router";
++import { RouteLoading } from "./RouteLoading";
+@@ -19,0 +21 @@
++  const navigation = useNavigation();
+@@ -54,0 +57 @@
++        {navigation.state === "loading" && <RouteLoading />}
+--- /dev/null
++++ b/web/src/components/RouteLoading.tsx
+@@ -0,0 +1,40 @@
++import { Alert, Button } from "antd";
++import type { ComponentType } from "react";
++import { useLocation } from "react-router";
++
++export function RouteLoading() {
++  return <div role="status">正在加载页面…</div>;
++}
++
++export function RouteLoadError() {
++  const location = useLocation();
++  return (
++    <Alert
++      type="error"
++      showIcon
++      title="页面加载失败"
++      description="请重新加载页面。"
++      action={
++        <Button
++          href={`${location.pathname}${location.search}${location.hash}`}
++          onClick={(event) => {
++            event.preventDefault();
++            globalThis.location.reload();
++          }}
++        >
++          重新加载页面
++        </Button>
++      }
++    />
++  );
++}
++
++export function loadRoute(load: () => Promise<{ Component: ComponentType }>) {
++  return async () => {
++    try {
++      return await load();
++    } catch {
++      return { Component: RouteLoadError };
++    }
++  };
++}
+--- a/web/src/router.tsx
++++ b/web/src/router.tsx
+@@ -3,7 +3 @@
+-import { ComparePage } from "./pages/ComparePage";
+-import { DatasetDetailPage } from "./pages/DatasetDetailPage";
+-import { DatasetsPage } from "./pages/DatasetsPage";
+-import { RunDetailPage } from "./pages/RunDetailPage";
+-import { RunNewPage } from "./pages/RunNewPage";
+-import { RunsPage } from "./pages/RunsPage";
+-import { SystemPage } from "./pages/SystemPage";
++import { loadRoute, RouteLoadError, RouteLoading } from "./components/RouteLoading";
+@@ -14,0 +9 @@
++    HydrateFallback: RouteLoading,
+@@ -17,7 +12,47 @@
+-      { path: "datasets", element: <DatasetsPage /> },
+-      { path: "datasets/:id", element: <DatasetDetailPage /> },
+-      { path: "runs", element: <RunsPage /> },
+-      { path: "runs/new", element: <RunNewPage /> },
+-      { path: "runs/:id", element: <RunDetailPage /> },
+-      { path: "compare", element: <ComparePage /> },
+-      { path: "system", element: <SystemPage /> },
++      {
++        path: "datasets",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/DatasetsPage")).DatasetsPage,
++        })),
++      },
++      {
++        path: "datasets/:id",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/DatasetDetailPage")).DatasetDetailPage,
++        })),
++      },
++      {
++        path: "runs",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({ Component: (await import("./pages/RunsPage")).RunsPage })),
++      },
++      {
++        path: "runs/new",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/RunNewPage")).RunNewPage,
++        })),
++      },
++      {
++        path: "runs/:id",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/RunDetailPage")).RunDetailPage,
++        })),
++      },
++      {
++        path: "compare",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/ComparePage")).ComparePage,
++        })),
++      },
++      {
++        path: "system",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/SystemPage")).SystemPage,
++        })),
++      },
+--- /dev/null
++++ b/web/tests/LazyRouting.test.tsx
+@@ -0,0 +1,120 @@
++import { QueryClientProvider } from "@tanstack/react-query";
++import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
++import { App } from "antd";
++import type { ComponentType } from "react";
++import { createMemoryRouter, type RouteObject, RouterProvider } from "react-router";
++import { afterEach, describe, expect, it, vi } from "vitest";
++import { loadRoute } from "../src/components/RouteLoading";
++import { routes } from "../src/router";
++import { mockFetch, newQueryClient } from "./helpers";
++
++type Module = { Component: ComponentType };
++
++function delayedModule() {
++  let resolve: (value: Module) => void = () => {};
++  let reject: (error: Error) => void = () => {};
++  const promise = new Promise<Module>((done, fail) => {
++    resolve = done;
++    reject = fail;
++  });
++  return { promise, resolve, reject };
++}
++
++function configured(path: string, load: () => Promise<Module>): RouteObject[] {
++  return routes.map((route) => ({
++    ...route,
++    children: route.children.map((child) =>
++      child.path === path ? { ...child, lazy: loadRoute(load) } : child,
++    ),
++  }));
++}
++
++function mount(initial: string, definitions: RouteObject[]) {
++  const router = createMemoryRouter(definitions, { initialEntries: [initial] });
++  const view = render(
++    <QueryClientProvider client={newQueryClient()}>
++      <App>
++        <RouterProvider router={router} />
++      </App>
++    </QueryClientProvider>,
++  );
++  return { router, ...view };
++}
++
++afterEach(() => {
++  cleanup();
++  vi.unstubAllGlobals();
++  vi.restoreAllMocks();
++});
++
++describe("route module boundaries", () => {
++  it("shows initial loading until the real page module resolves", async () => {
++    mockFetch({ "/api/runs": [] });
++    const pending = delayedModule();
++    const view = mount(
++      "/runs",
++      configured("runs", () => pending.promise),
++    );
++    expect(screen.getByRole("status").textContent).toContain("正在加载页面");
++    await act(async () => {
++      pending.resolve({ Component: (await import("../src/pages/RunsPage")).RunsPage });
++    });
++    expect(await screen.findByRole("heading", { name: "运行" })).toBeTruthy();
++    expect(screen.queryByRole("status")).toBeNull();
++    view.router.dispose();
++  });
++
++  it("shows navigation loading then renders the requested page", async () => {
++    mockFetch({ "/api/runs": [], "/api/datasets": [] });
++    const pending = delayedModule();
++    const view = mount(
++      "/runs",
++      configured("datasets", () => pending.promise),
++    );
++    await screen.findByRole("heading", { name: "运行" });
++    let navigation: Promise<void> | undefined;
++    await act(async () => {
++      navigation = view.router.navigate("/datasets");
++    });
++    expect(screen.getByRole("status").textContent).toContain("正在加载页面");
++    await act(async () => {
++      pending.resolve({ Component: (await import("../src/pages/DatasetsPage")).DatasetsPage });
++      await navigation;
++    });
++    expect(await screen.findByRole("heading", { name: "数据集" })).toBeTruthy();
++    expect(screen.queryByRole("status")).toBeNull();
++    view.router.dispose();
++  });
++
++  it.each(["", "#restore"])(
++    "reloads a failed route document and preserves the URL with hash %s",
++    async (hash) => {
++      const url = `/runs?state=succeeded${hash}`;
++      const reload = vi.fn();
++      vi.stubGlobal("location", { ...window.location, reload });
++      mockFetch({ "/api/runs": [] });
++      const pending = delayedModule();
++      const view = mount(
++        url,
++        configured("runs", () => pending.promise),
++      );
++      await act(async () => {
++        pending.reject(new Error("Synthetic module download failure"));
++      });
++      expect(await screen.findByText("页面加载失败")).toBeTruthy();
++      const recovery = screen.getByRole("link", { name: "重新加载页面" });
++      expect(recovery.getAttribute("href")).toBe(url);
++      expect(fireEvent.click(recovery)).toBe(false);
++      expect(reload).toHaveBeenCalledTimes(1);
++      const location = view.router.state.location;
++      expect(location.pathname + location.search + location.hash).toBe(url);
++      view.router.dispose();
++      view.unmount();
++      // A document reload creates a new router and imports the working module.
++      const recovered = mount(url, routes);
++      expect(await screen.findByRole("heading", { name: "运行" })).toBeTruthy();
++      expect(recovered.router.state.errors).toBeNull();
++      recovered.router.dispose();
++    },
++  );
++});
+--- /dev/null
++++ b/web/tests/RouteResolution.test.tsx
+@@ -0,0 +1,43 @@
++import { waitFor } from "@testing-library/react";
++import { createMemoryRouter } from "react-router";
++import { describe, expect, it } from "vitest";
++import { routes } from "../src/router";
++
++const entries = [
++  ["/datasets", "datasets", undefined],
++  ["/datasets/synthetic-dataset", "datasets/:id", "synthetic-dataset"],
++  ["/runs", "runs", undefined],
++  ["/runs/new?from=synthetic-run", "runs/new", undefined],
++  ["/runs/synthetic-run", "runs/:id", "synthetic-run"],
++  ["/compare?run_ids=first,second&metric=mae", "compare", undefined],
++  ["/system", "system", undefined],
++];
++
++describe("route loading contract", () => {
++  it.each(entries)("resolves direct entry %s without changing its URL", async (url, path, id) => {
++    if (!url) throw new Error("Missing test URL");
++    const router = createMemoryRouter(routes, { initialEntries: [url] });
++    await waitFor(() => expect(router.state.initialized).toBe(true));
++    expect(router.state.errors).toBeNull();
++    expect(router.state.location.pathname + router.state.location.search).toBe(url);
++    const match = router.state.matches.at(-1);
++    expect(match?.route.path).toBe(path);
++    expect(match?.params.id).toBe(id);
++    expect(match?.route.Component ?? match?.route.element).toBeTruthy();
++    router.dispose();
++  });
++
++  it("resolves every page during navigation and keeps query parameters", async () => {
++    const router = createMemoryRouter(routes, { initialEntries: ["/runs"] });
++    await waitFor(() => expect(router.state.initialized).toBe(true));
++    for (const [url, path] of entries) {
++      if (!url) throw new Error("Missing test URL");
++      await router.navigate(url);
++      expect(router.state.navigation.state).toBe("idle");
++      expect(router.state.errors).toBeNull();
++      expect(router.state.matches.at(-1)?.route.path).toBe(path);
++      expect(router.state.location.pathname + router.state.location.search).toBe(url);
++    }
++    router.dispose();
++  });
++});

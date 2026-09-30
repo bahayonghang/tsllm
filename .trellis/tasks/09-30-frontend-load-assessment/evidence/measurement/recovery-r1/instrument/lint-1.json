@@ -1,0 +1,35 @@
+[
+  {
+    "file": "browser_probe.mjs",
+    "command": [
+      "<repository>/web/node_modules/.bin/biome.CMD",
+      "lint",
+      "--stdin-file-path=browser_probe.mjs"
+    ],
+    "configuration": "existing web/biome.json",
+    "exit_code": 1,
+    "log": "lint-1-command-1.txt"
+  },
+  {
+    "file": "measure.mjs",
+    "command": [
+      "<repository>/web/node_modules/.bin/biome.CMD",
+      "lint",
+      "--stdin-file-path=measure.mjs"
+    ],
+    "configuration": "existing web/biome.json",
+    "exit_code": 1,
+    "log": "lint-1-command-2.txt"
+  },
+  {
+    "file": "paint_collection.test.mjs",
+    "command": [
+      "<repository>/web/node_modules/.bin/biome.CMD",
+      "lint",
+      "--stdin-file-path=paint_collection.test.mjs"
+    ],
+    "configuration": "existing web/biome.json",
+    "exit_code": 1,
+    "log": "lint-1-command-3.txt"
+  }
+]

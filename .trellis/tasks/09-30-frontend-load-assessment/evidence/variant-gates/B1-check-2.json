@@ -1,0 +1,12 @@
+{
+  "variant": "B1",
+  "gate": "check",
+  "attempt": 2,
+  "command": "biome check . && tsc --noEmit",
+  "working_directory": "<variant>/web",
+  "launcher": "installed .bin commands; identical package.json script, pnpm 12 automatic install bypassed",
+  "started_utc": "2026-09-30T08:34:37.166249+00:00",
+  "duration_seconds": 2.247531599998183,
+  "exit_code": 0,
+  "log": "B1-check-2.txt"
+}

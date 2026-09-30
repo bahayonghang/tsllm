@@ -1,0 +1,45 @@
+{
+  "commands": [
+    {
+      "command": [
+        "node",
+        "--check",
+        ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\browser_probe.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.05944640000234358,
+      "log": "validation-1-command-1.txt"
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\measure.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.0617837999961921,
+      "log": "validation-1-command-2.txt"
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\instrument\\paint_collection.test.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.058842999998887535,
+      "log": "validation-1-command-3.txt"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\instrument\\paint_collection.test.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.16772529999434482,
+      "log": "validation-1-command-4.txt"
+    }
+  ],
+  "recorded_utc": "2026-09-30T09:30:44.467542+00:00"
+}

@@ -1,0 +1,209 @@
+{
+  "finding": "Ready snapshots can precede native paint entry publication; paint API is supported",
+  "variants": {
+    "B0": {
+      "records": 30,
+      "supports_paint": 30,
+      "entry_paint_empty": 26,
+      "later_same_document_stage_has_fcp": 16,
+      "fcp_precedes_frozen_ready_snapshot": 16
+    },
+    "B1": {
+      "records": 30,
+      "supports_paint": 30,
+      "entry_paint_empty": 0
+    },
+    "B2": {
+      "records": 30,
+      "supports_paint": 30,
+      "entry_paint_empty": 0
+    }
+  },
+  "examples": [
+    {
+      "file": "measurement/raw/B0-first-compare-s1-a1.json",
+      "file_sha256": "4e8b1db9b9442436fa0a30ba2c87b3a4682b45f1600f3ccac503c2394aaa975c",
+      "entry_end_ms": 258,
+      "entry_paint": [],
+      "later_kind": "compare",
+      "later_start_ms": 262,
+      "fcp_ms": 232,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-compare-s2-a1.json",
+      "file_sha256": "180883d4dd2e90a42d3b40d26f7cdfb6c8e7658f7ba3f1756089e8ef779db4b1",
+      "entry_end_ms": 260.8999999985099,
+      "entry_paint": [],
+      "later_kind": "compare",
+      "later_start_ms": 264.8999999985099,
+      "fcp_ms": 240,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-compare-s3-a1.json",
+      "file_sha256": "978b44d12a271367f34cda3f572b6423996d45b63c8a1e9e2400d5537327ddd8",
+      "entry_end_ms": 264.80000000074506,
+      "entry_paint": [],
+      "later_kind": "compare",
+      "later_start_ms": 269.5999999977648,
+      "fcp_ms": 244,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-compare-s4-a1.json",
+      "file_sha256": "12443e2d0da9157028284fe6d71e445eb8d790e33f8ee4f00fbff3cbb0b19091",
+      "entry_end_ms": 267,
+      "entry_paint": [],
+      "later_kind": "compare",
+      "later_start_ms": 271.5999999977648,
+      "fcp_ms": 244,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-compare-s5-a1.json",
+      "file_sha256": "87c425e40bebadf3167d9b7f9fb53ee2bf37bab3fd2c2b5bd5480d825eb68215",
+      "entry_end_ms": 263.30000000074506,
+      "entry_paint": [],
+      "later_kind": "compare",
+      "later_start_ms": 267.69999999925494,
+      "fcp_ms": 240,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-dataset-s1-a1.json",
+      "file_sha256": "55bad861f82f95b0de2281436c28dba43ba23489aecf0b1e3a0dc9ddee14bf1e",
+      "entry_end_ms": 239.80000000074506,
+      "entry_paint": [],
+      "later_kind": "dataset",
+      "later_start_ms": 269.0999999977648,
+      "fcp_ms": 232,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-forecast-s1-a1.json",
+      "file_sha256": "0924f5cdfe77344a04cb861d02d64d8f27bf86e943ba9eb2f1aa341ab5a50cad",
+      "entry_end_ms": 264.19999999925494,
+      "entry_paint": [],
+      "later_kind": "forecast",
+      "later_start_ms": 301.8999999985099,
+      "fcp_ms": 244,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-forecast-s2-a1.json",
+      "file_sha256": "0dfa7dc8416df93b0d5e2d4cde2c5edebb7141e98d0018de77f24b2a12e7a9c0",
+      "entry_end_ms": 260.4000000022352,
+      "entry_paint": [],
+      "later_kind": "forecast",
+      "later_start_ms": 288.6000000014901,
+      "fcp_ms": 236,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-forecast-s3-a1.json",
+      "file_sha256": "0f1a8249be018f5429b2904689bf0e1fc95749a914d1b7fe2f1c84d21c61dd2b",
+      "entry_end_ms": 265.1000000014901,
+      "entry_paint": [],
+      "later_kind": "forecast",
+      "later_start_ms": 298.80000000074506,
+      "fcp_ms": 248,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-forecast-s4-a1.json",
+      "file_sha256": "86f4644d1535e8c66a15051a03e38ae7701db9095741d3c140ec73e39dcd440f",
+      "entry_end_ms": 264.30000000074506,
+      "entry_paint": [],
+      "later_kind": "forecast",
+      "later_start_ms": 301.30000000074506,
+      "fcp_ms": 240,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-forecast-s5-a1.json",
+      "file_sha256": "a77b22ac4e893e07fbebc00de8a929957491210fdc6e54dcca9218d32ec459a5",
+      "entry_end_ms": 264.80000000074506,
+      "entry_paint": [],
+      "later_kind": "forecast",
+      "later_start_ms": 303.70000000298023,
+      "fcp_ms": 244,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-form-s1-a1.json",
+      "file_sha256": "83410eebe49f587b88dd25e9ae5001b7aacaabe166db7405d5ac59d02da3896a",
+      "entry_end_ms": 264.70000000298023,
+      "entry_paint": [],
+      "later_kind": "form",
+      "later_start_ms": 296,
+      "fcp_ms": 244,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-form-s2-a1.json",
+      "file_sha256": "0423931da3d0110afd4d8fd1893fb0487f311449b26ac532843987786c3368f5",
+      "entry_end_ms": 260.70000000298023,
+      "entry_paint": [],
+      "later_kind": "form",
+      "later_start_ms": 294.1000000014901,
+      "fcp_ms": 240,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-form-s3-a1.json",
+      "file_sha256": "f96566e13d68d42ceec7bdbbb274f076b43c23a8bc97ea5e58b8d36fc91e6185",
+      "entry_end_ms": 259.80000000074506,
+      "entry_paint": [],
+      "later_kind": "form",
+      "later_start_ms": 294.6000000014901,
+      "fcp_ms": 244,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-form-s4-a1.json",
+      "file_sha256": "43611d134a24ce419d9c290eafc7a5538e0d5f618857f308a350742ba591a8b9",
+      "entry_end_ms": 257.9000000022352,
+      "entry_paint": [],
+      "later_kind": "form",
+      "later_start_ms": 296.20000000298023,
+      "fcp_ms": 236,
+      "same_document": true,
+      "entry_visibility": "visible"
+    },
+    {
+      "file": "measurement/raw/B0-first-form-s5-a1.json",
+      "file_sha256": "d18853b76a496a923a2f896645b31238339040bf04ba1ed9fe5cf503447fe5ec",
+      "entry_end_ms": 261.80000000074506,
+      "entry_paint": [],
+      "later_kind": "form",
+      "later_start_ms": 298.8999999985099,
+      "fcp_ms": 240,
+      "same_document": true,
+      "entry_visibility": "visible"
+    }
+  ],
+  "original_script_sha256": {
+    "browser_probe.mjs": "3e6ec1156a323e6a5a18c0e6232bc0db604cb96297d9af6577181bb4e1a43003",
+    "measure.mjs": "a8cbb301e38677a779070fd0aa957d9af27f76395928edaca051de03516d2594"
+  },
+  "source_anchors": {
+    "browser_probe.mjs": "poll stores getEntriesByType(paint) inside second ready rAF, then stops polling",
+    "measure.mjs": "awaitReady returns the frozen snapshot and document may be reloaded or closed without paint followup"
+  },
+  "recommendation": "Keep readiness timestamps and resource snapshots immutable; collect supplemental native paint entries after ready, in the same document and before next navigation. Record collection time and timeout/unsupported status. Apply the same policy to all variants."
+}

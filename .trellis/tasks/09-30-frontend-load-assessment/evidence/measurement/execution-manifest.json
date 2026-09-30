@@ -1,0 +1,39 @@
+{
+  "baseline_commit": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "scripts": {
+    "evidence/measurement/run_matrix.py": "28ad4298c50aea14cf54a16b4eac809e810cdda00902f0bf6dc7a0dbc555f7ab",
+    "evidence/measurement/serve_variant.py": "3df53fe243de31907c5230c00ad048f562d4332db11c30485eb8a006bd12cc13",
+    "evidence/measurement/summarize.py": "82bd6bba8b1fcc7c01eb260d2f1e4ee4865d621460195754ef020ed95adda27b",
+    "evidence/measurement/browser_probe.mjs": "3e6ec1156a323e6a5a18c0e6232bc0db604cb96297d9af6577181bb4e1a43003",
+    "evidence/measurement/measure.mjs": "a8cbb301e38677a779070fd0aa957d9af27f76395928edaca051de03516d2594",
+    "evidence/fixtures/create_fixtures.py": "9b91b28d45020c82fe45c638e0d31e0132e5ea35488a2b1be4d4cda58f6ca0c3"
+  },
+  "observation_counts": {
+    "pilot": {
+      "observations": 6,
+      "valid": 6,
+      "failed": 0
+    },
+    "raw": {
+      "observations": 90,
+      "valid": 90,
+      "failed": 0
+    },
+    "journey": {
+      "observations": 3,
+      "valid": 3,
+      "failed": 0
+    }
+  },
+  "build_instrumentation": "none; same external Playwright probe on production builds",
+  "formal_order": "B0,B1,B2; B1,B2,B0; B2,B0,B1; B0,B1,B2; B1,B2,B0",
+  "fixtures_unchanged_in_19_owned_service_lifecycles": true,
+  "validation": [
+    "B0 launcher check-only passed without torch import",
+    "4 Python scripts ruff check and format passed",
+    "2 Node files syntax check passed",
+    "all99 raw observations valid; no retries",
+    "formal90 summary completeness passed",
+    "3 complete-route journeys passed"
+  ]
+}

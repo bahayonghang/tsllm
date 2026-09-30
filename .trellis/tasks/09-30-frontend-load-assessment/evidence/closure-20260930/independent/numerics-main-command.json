@@ -1,0 +1,18 @@
+{
+  "args": [
+    ".venv\\Scripts\\python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\review\\verify_numerics.py",
+    "--raw",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\raw",
+    "--summary",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\summary.json",
+    "--variants",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\variants",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\numerics-main.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\"passed\": true, \"primary_observations\": 90, \"supplementary_observations\": 0, \"failures_preserved\": [], \"browsers\": [\"154.0.4258.37\"], \"statistics_and_delta_checks\": 1349, \"asset_entries_matched_to_variant_inventory\": 1755, \"summary_sha256\": \"c3e1733c5d5515548fa08b0a917e51e6ba0bd4fef65181a728203226237c433e\", \"limits\": [\"Checks measured timing and resource arithmetic; does not replace visible acceptance\", \"Does not interpret last journey stage time as total journey duration\"]}\n",
+  "stderr": ""
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "file": "browser_probe.mjs",
+    "sha256": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd",
+    "command": [
+      "<repository>/web/node_modules/.bin/biome.CMD",
+      "lint",
+      "--config-path=<repository>/web",
+      "<lint-temp>/browser_probe.mjs"
+    ],
+    "configuration": "existing web/biome.json",
+    "exit_code": 0,
+    "log": "lint-2-command-1.txt"
+  },
+  {
+    "file": "measure.mjs",
+    "sha256": "e5b7f96d90898082450b2c76d688fa8e4838101c57905af52e618919477d45cd",
+    "command": [
+      "<repository>/web/node_modules/.bin/biome.CMD",
+      "lint",
+      "--config-path=<repository>/web",
+      "<lint-temp>/measure.mjs"
+    ],
+    "configuration": "existing web/biome.json",
+    "exit_code": 0,
+    "log": "lint-2-command-2.txt"
+  },
+  {
+    "file": "paint_collection.test.mjs",
+    "sha256": "162af0f981ee0fa1883dc05c26b5d2b719da4ed9d6d521f82b340003d40e1621",
+    "command": [
+      "<repository>/web/node_modules/.bin/biome.CMD",
+      "lint",
+      "--config-path=<repository>/web",
+      "<lint-temp>/paint_collection.test.mjs"
+    ],
+    "configuration": "existing web/biome.json",
+    "exit_code": 0,
+    "log": "lint-2-command-3.txt"
+  }
+]

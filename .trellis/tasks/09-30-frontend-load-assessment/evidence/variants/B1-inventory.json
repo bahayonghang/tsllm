@@ -1,0 +1,197 @@
+{
+  "variant": "B1",
+  "baseline_commit": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "build": {
+    "script": "tsc --noEmit && vite build",
+    "chunkSizeWarningLimit": 2000,
+    "timing_probes": false,
+    "output_hook": "metadata only; writes outside dist"
+  },
+  "gzip_estimate": {
+    "python": "3.14.7",
+    "zlib": "1.3.1.zlib-ng",
+    "function": "gzip.compress",
+    "compresslevel": 9,
+    "mtime": 0,
+    "scope": "each file separately; not HTTP transfer bytes"
+  },
+  "assets": [
+    {
+      "file": "assets/button-CCZs0Voe.js",
+      "bytes": 491991,
+      "gzip_bytes": 160204,
+      "sha256": "4d540596ae2ba255c6bd34da0817b0f07823fb2886141f18ba9c9148006db7d0"
+    },
+    {
+      "file": "assets/card-CrEYUjZ-.js",
+      "bytes": 44467,
+      "gzip_bytes": 13506,
+      "sha256": "73976b0e365119d94ab8991c1bd21e52aef121b741b3173c0079920d35254f16"
+    },
+    {
+      "file": "assets/ComparePage-RNU3_j0K.js",
+      "bytes": 4597,
+      "gzip_bytes": 2243,
+      "sha256": "dd13cdee2cc01a03ffa4c9c71d634b01c65db2ccb2e3aadd7fae43fe92028339"
+    },
+    {
+      "file": "assets/DatasetDetailPage-CnQc9Ktq.js",
+      "bytes": 8118,
+      "gzip_bytes": 3746,
+      "sha256": "d383fc8d0b3634e8f63a0dd5135932716d1420693a456b8e5124435f81f0d1dc"
+    },
+    {
+      "file": "assets/DatasetsPage-B_tIBJzF.js",
+      "bytes": 1365,
+      "gzip_bytes": 816,
+      "sha256": "8e402ac8439845f48e1ea92c6575848ad3a2ae14deeb76ca1a390075e6068140"
+    },
+    {
+      "file": "assets/descriptions-CMc-Ltgv.js",
+      "bytes": 7896,
+      "gzip_bytes": 2790,
+      "sha256": "2df725a8250ad1e654e771b20a5d79fb6ac838bcc69c7598ed529bd06e82f73f"
+    },
+    {
+      "file": "assets/EChart-CygN2abW.js",
+      "bytes": 633014,
+      "gzip_bytes": 211170,
+      "sha256": "24bb9df3fefc1edb056510c5e3d7c3bd377246827a4b1dafc10d6852102ad32f"
+    },
+    {
+      "file": "assets/ErrorAlert-B4_5QW98.js",
+      "bytes": 185549,
+      "gzip_bytes": 58987,
+      "sha256": "a93bfa3bf34d9fca2dca71d88c08c09e5b0ce0e0ec12b8e0340acdce3effa1bd"
+    },
+    {
+      "file": "assets/fast-deep-equal-DMTWy6R9.js",
+      "bytes": 1625,
+      "gzip_bytes": 756,
+      "sha256": "46129daa0f0fda0a9bbf19ec6078c310261f31d678529e12868ec66e93b16f89"
+    },
+    {
+      "file": "assets/format-DJgdk6Jc.js",
+      "bytes": 937,
+      "gzip_bytes": 565,
+      "sha256": "1213d6c1a7697ca30455782f12b8e9ee449095e3d25f1411a82c9d3db3e0ff03"
+    },
+    {
+      "file": "assets/hooks-BIRQC-dQ.js",
+      "bytes": 72796,
+      "gzip_bytes": 24061,
+      "sha256": "0a9ed869c43ea5d624dec7cc33bd1ab69bf997423524c10e28d2648f6e5946f2"
+    },
+    {
+      "file": "assets/index-Bw4YU1Ku.js",
+      "bytes": 146015,
+      "gzip_bytes": 48179,
+      "sha256": "a0677e03c73effbb739e6350c1e78ba8c90754503542e5cae630e191f535f2ef"
+    },
+    {
+      "file": "assets/input-DrqXIbCD.js",
+      "bytes": 114725,
+      "gzip_bytes": 36463,
+      "sha256": "c01ef8f2deec194479f335174839d006c9d065b0cfc59b7877988e2e7f56abab"
+    },
+    {
+      "file": "assets/row-C_YvIpeN.js",
+      "bytes": 2461,
+      "gzip_bytes": 1277,
+      "sha256": "3ae07e43223b72fac3ad5ac7c90ff8d9e19306fab7a77c80650044881bd17bfd"
+    },
+    {
+      "file": "assets/RunDetailPage-ZaeUnRMC.js",
+      "bytes": 47745,
+      "gzip_bytes": 16920,
+      "sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e"
+    },
+    {
+      "file": "assets/RunNewPage-ckpljBXr.js",
+      "bytes": 469769,
+      "gzip_bytes": 151591,
+      "sha256": "750048c597cfad9b47ec377414af59257674c51dd13a17562f863c8dd41c5e31"
+    },
+    {
+      "file": "assets/RunsPage-DR8Ns_w6.js",
+      "bytes": 2326,
+      "gzip_bytes": 1268,
+      "sha256": "838ba90d9ae3c50e14dc4c79d9c56148c11566651e5cd798ab0bfdd4fbd568a0"
+    },
+    {
+      "file": "assets/StateTag-Dr4yVMIJ.js",
+      "bytes": 9083,
+      "gzip_bytes": 3623,
+      "sha256": "ee9d60d25da779f098b5d51a9e995295efb8f2aeec2a78778eb04eeeec9bf7c3"
+    },
+    {
+      "file": "assets/SystemPage-D01M2jNg.js",
+      "bytes": 1780,
+      "gzip_bytes": 899,
+      "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52"
+    },
+    {
+      "file": "assets/table-CeaGE0R5.js",
+      "bytes": 183756,
+      "gzip_bytes": 56715,
+      "sha256": "5049f4583917634e9790dbe2de928ef52d6393f0bac81fde09ac66f0fad71253"
+    },
+    {
+      "file": "index.html",
+      "bytes": 570,
+      "gzip_bytes": 339,
+      "sha256": "0c4ce5b8fc0bb706324551c044099d5982bf6f973129e05043e01844000d6b13"
+    }
+  ],
+  "total_bytes": 2430585,
+  "total_gzip_bytes": 796118,
+  "html_resources": [
+    "assets/index-Bw4YU1Ku.js",
+    "assets/fast-deep-equal-DMTWy6R9.js",
+    "assets/button-CCZs0Voe.js",
+    "assets/hooks-BIRQC-dQ.js"
+  ],
+  "bootstrap_static_closure": [
+    "assets/button-CCZs0Voe.js",
+    "assets/fast-deep-equal-DMTWy6R9.js",
+    "assets/hooks-BIRQC-dQ.js",
+    "assets/index-Bw4YU1Ku.js"
+  ],
+  "bootstrap_note": "Static HTML closure only; excludes initial lazy route until browser measurement",
+  "source_changes": [
+    {
+      "file": "web/src/components/AppLayout.tsx",
+      "before_sha256": "b4e188bd999e127e70f7a1d860eee36d748fd166f04feae7ac07c182a338cc76",
+      "after_sha256": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703"
+    },
+    {
+      "file": "web/src/components/RouteLoading.tsx",
+      "before_sha256": null,
+      "after_sha256": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e"
+    },
+    {
+      "file": "web/src/router.tsx",
+      "before_sha256": "b5ed0b7cedff063a0a0ad923bd5e25a5ba883507bc3ac39ad3f6c0f3674e8d25",
+      "after_sha256": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f"
+    },
+    {
+      "file": "web/tests/LazyRouting.test.tsx",
+      "before_sha256": null,
+      "after_sha256": "c7ee168e996e0f0cb8ad2156d532f45843ccbdd71474acf56a4fce90de70b512"
+    },
+    {
+      "file": "web/tests/RouteResolution.test.tsx",
+      "before_sha256": null,
+      "after_sha256": "2b3f748fe86ed8d0264b7f72fb07b4b0d8620a43a8d8c2e807696176657e96f6"
+    }
+  ],
+  "unchanged_locks": {
+    "package.json": true,
+    "pnpm-lock.yaml": true,
+    "openapi.json": true,
+    "src/api/schema.d.ts": true
+  },
+  "patch_sha256": "9a801e00a090da7cc357aa0abdaea07ea473b4598e4adf8e31fd2f91f20f7dfe",
+  "graph_file": "B1-graph.json",
+  "module_attribution_note": "Rolldown renderedLength is module metadata, not compressed bytes or measured transfer attribution"
+}

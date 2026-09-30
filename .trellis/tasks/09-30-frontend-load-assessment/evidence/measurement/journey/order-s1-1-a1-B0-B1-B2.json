@@ -1,0 +1,20 @@
+{
+  "order": [
+    {
+      "sample": 1,
+      "variant": "B0"
+    },
+    {
+      "sample": 1,
+      "variant": "B1"
+    },
+    {
+      "sample": 1,
+      "variant": "B2"
+    }
+  ],
+  "scenarios": [
+    "journey"
+  ],
+  "created_at": "2026-09-30T08:49:21.711215+00:00"
+}

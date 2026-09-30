@@ -1,0 +1,20 @@
+{
+  "baseline_commit": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "head": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "branch": "codex/frontend-load-assessment",
+  "baseline_tracked_count": 289,
+  "changed_tracked_files": [],
+  "added_tracked_files": [],
+  "removed_tracked_files": [],
+  "staged_paths": [],
+  "private_tracked_count": 0,
+  "outside_task_untracked": [],
+  "task_untracked_count": 84,
+  "launch_config_hash_unchanged": true,
+  "backup_exists": true,
+  "backup_content_read": false,
+  "original_dist_changed": [],
+  "original_dist_added": [],
+  "original_dist_removed": [],
+  "passed": true
+}

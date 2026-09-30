@@ -1,0 +1,10 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\preparation\\prepare_closure_v1.py"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"audited\": 463, \"errors\": 0, \"credential_candidates\": 0, \"large_files\": 2, \"logs\": 38, \"adapters\": 4}\n",
+  "stderr": ""
+}

@@ -1,0 +1,18 @@
+{
+  "lifecycle": [
+    {
+      "sample": 1,
+      "variant": "B0",
+      "pid": 69304,
+      "started_at": "2026-09-30T08:43:06.881518+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T08:43:17.441946+00:00",
+      "port_9000_free": true
+    }
+  ],
+  "fixture_files_unchanged": true,
+  "fixture_file_count": 34,
+  "port_9000_free": true
+}

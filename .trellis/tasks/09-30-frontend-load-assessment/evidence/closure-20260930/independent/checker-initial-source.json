@@ -1,0 +1,8 @@
+{
+  "source": "closure_verify_v1.py",
+  "copy": "closure_verify_v1.initial.py.txt",
+  "size": 9123,
+  "sha256": "19e434f600f4b04c124ec86578b0dc44a4c00ceb9b523d9a259d320b0548ba4b",
+  "failure": "closure-evidence-command-1.json",
+  "status": "unchanged failed checker retained before repair"
+}

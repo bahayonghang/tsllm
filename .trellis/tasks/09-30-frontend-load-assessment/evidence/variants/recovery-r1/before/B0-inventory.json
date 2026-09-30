@@ -1,0 +1,57 @@
+{
+  "variant": "B0",
+  "baseline_commit": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "build": {
+    "script": "tsc --noEmit && vite build",
+    "chunkSizeWarningLimit": 2000,
+    "timing_probes": false,
+    "output_hook": "metadata only; writes outside dist"
+  },
+  "gzip_estimate": {
+    "python": "3.14.7",
+    "zlib": "1.3.1.zlib-ng",
+    "function": "gzip.compress",
+    "compresslevel": 9,
+    "mtime": 0,
+    "scope": "each file separately; not HTTP transfer bytes"
+  },
+  "assets": [
+    {
+      "file": "assets/index-DlIxrfbQ.js",
+      "bytes": 2419860,
+      "gzip_bytes": 776403,
+      "sha256": "9d4690a2705c2b1e2a906c9933ff9c88ee4fc37ca9cd048f7d6e1fd77fb9853f"
+    },
+    {
+      "file": "index.html",
+      "bytes": 331,
+      "gzip_bytes": 262,
+      "sha256": "be7c0918b0eda1d70b137245bcb27610317892dee160c429470e60ab41c9423a"
+    }
+  ],
+  "total_bytes": 2420191,
+  "total_gzip_bytes": 776665,
+  "html_resources": [
+    "assets/index-DlIxrfbQ.js"
+  ],
+  "bootstrap_static_closure": [
+    "assets/index-DlIxrfbQ.js"
+  ],
+  "bootstrap_note": "Static HTML closure only; excludes initial lazy route until browser measurement",
+  "source_changes": [
+    {
+      "file": "web/tests/RouteResolution.test.tsx",
+      "before_sha256": null,
+      "after_sha256": "2b3f748fe86ed8d0264b7f72fb07b4b0d8620a43a8d8c2e807696176657e96f6"
+    }
+  ],
+  "unchanged_locks": {
+    "package.json": true,
+    "pnpm-lock.yaml": true,
+    "openapi.json": true,
+    "src/api/schema.d.ts": true
+  },
+  "patch_sha256": "1198285054ec0251437558c9b1d23bbab1317b154dfe6a0f2e12efe282adff58",
+  "graph_file": "B0-graph.json",
+  "module_attribution_note": "Rolldown renderedLength is module metadata, not compressed bytes or measured transfer attribution"
+}

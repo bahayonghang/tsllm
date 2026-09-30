@@ -1,0 +1,389 @@
+{
+  "revision": "recovery-r1",
+  "protected_web_files_unchanged": {
+    "B0": {
+      "package.json": true,
+      "pnpm-lock.yaml": true,
+      "openapi.json": true,
+      "src/api/schema.d.ts": true,
+      "vite.config.ts": true,
+      "biome.json": true,
+      "tsconfig.json": true
+    },
+    "B1": {
+      "package.json": true,
+      "pnpm-lock.yaml": true,
+      "openapi.json": true,
+      "src/api/schema.d.ts": true,
+      "vite.config.ts": true,
+      "biome.json": true,
+      "tsconfig.json": true
+    },
+    "B2": {
+      "package.json": true,
+      "pnpm-lock.yaml": true,
+      "openapi.json": true,
+      "src/api/schema.d.ts": true,
+      "vite.config.ts": true,
+      "biome.json": true,
+      "tsconfig.json": true
+    }
+  },
+  "historical_gate_files_unchanged": true,
+  "b0_reused_without_rebuild": true,
+  "variants": [
+    {
+      "variant": "B0",
+      "assets": 2,
+      "total_bytes": 2420191,
+      "total_gzip_bytes": 776665,
+      "delta_bytes": 0,
+      "delta_gzip_bytes": 0,
+      "changed_assets": [],
+      "removed_asset_urls": [],
+      "unchanged_asset_urls": [
+        "assets/index-DlIxrfbQ.js",
+        "index.html"
+      ]
+    },
+    {
+      "variant": "B1",
+      "assets": 21,
+      "total_bytes": 2430585,
+      "total_gzip_bytes": 796118,
+      "delta_bytes": 61,
+      "delta_gzip_bytes": 43,
+      "changed_assets": [
+        {
+          "file": "assets/card-CrEYUjZ-.js",
+          "bytes": 44467,
+          "gzip_bytes": 13506,
+          "sha256": "73976b0e365119d94ab8991c1bd21e52aef121b741b3173c0079920d35254f16"
+        },
+        {
+          "file": "assets/ComparePage-RNU3_j0K.js",
+          "bytes": 4597,
+          "gzip_bytes": 2243,
+          "sha256": "dd13cdee2cc01a03ffa4c9c71d634b01c65db2ccb2e3aadd7fae43fe92028339"
+        },
+        {
+          "file": "assets/DatasetDetailPage-CnQc9Ktq.js",
+          "bytes": 8118,
+          "gzip_bytes": 3746,
+          "sha256": "d383fc8d0b3634e8f63a0dd5135932716d1420693a456b8e5124435f81f0d1dc"
+        },
+        {
+          "file": "assets/DatasetsPage-B_tIBJzF.js",
+          "bytes": 1365,
+          "gzip_bytes": 816,
+          "sha256": "8e402ac8439845f48e1ea92c6575848ad3a2ae14deeb76ca1a390075e6068140"
+        },
+        {
+          "file": "assets/EChart-CygN2abW.js",
+          "bytes": 633014,
+          "gzip_bytes": 211170,
+          "sha256": "24bb9df3fefc1edb056510c5e3d7c3bd377246827a4b1dafc10d6852102ad32f"
+        },
+        {
+          "file": "assets/format-DJgdk6Jc.js",
+          "bytes": 937,
+          "gzip_bytes": 565,
+          "sha256": "1213d6c1a7697ca30455782f12b8e9ee449095e3d25f1411a82c9d3db3e0ff03"
+        },
+        {
+          "file": "assets/index-Bw4YU1Ku.js",
+          "bytes": 146015,
+          "gzip_bytes": 48179,
+          "sha256": "a0677e03c73effbb739e6350c1e78ba8c90754503542e5cae630e191f535f2ef"
+        },
+        {
+          "file": "assets/input-DrqXIbCD.js",
+          "bytes": 114725,
+          "gzip_bytes": 36463,
+          "sha256": "c01ef8f2deec194479f335174839d006c9d065b0cfc59b7877988e2e7f56abab"
+        },
+        {
+          "file": "assets/row-C_YvIpeN.js",
+          "bytes": 2461,
+          "gzip_bytes": 1277,
+          "sha256": "3ae07e43223b72fac3ad5ac7c90ff8d9e19306fab7a77c80650044881bd17bfd"
+        },
+        {
+          "file": "assets/RunDetailPage-ZaeUnRMC.js",
+          "bytes": 47745,
+          "gzip_bytes": 16920,
+          "sha256": "d9a79f065105e205e21843b64888c4414713e2527a3af8c8a1a9883632987b8e"
+        },
+        {
+          "file": "assets/RunNewPage-ckpljBXr.js",
+          "bytes": 469769,
+          "gzip_bytes": 151591,
+          "sha256": "750048c597cfad9b47ec377414af59257674c51dd13a17562f863c8dd41c5e31"
+        },
+        {
+          "file": "assets/RunsPage-DR8Ns_w6.js",
+          "bytes": 2326,
+          "gzip_bytes": 1268,
+          "sha256": "838ba90d9ae3c50e14dc4c79d9c56148c11566651e5cd798ab0bfdd4fbd568a0"
+        },
+        {
+          "file": "assets/SystemPage-D01M2jNg.js",
+          "bytes": 1780,
+          "gzip_bytes": 899,
+          "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52"
+        },
+        {
+          "file": "assets/table-CeaGE0R5.js",
+          "bytes": 183756,
+          "gzip_bytes": 56715,
+          "sha256": "5049f4583917634e9790dbe2de928ef52d6393f0bac81fde09ac66f0fad71253"
+        },
+        {
+          "file": "index.html",
+          "bytes": 570,
+          "gzip_bytes": 339,
+          "sha256": "0c4ce5b8fc0bb706324551c044099d5982bf6f973129e05043e01844000d6b13"
+        }
+      ],
+      "removed_asset_urls": [
+        "assets/ComparePage--JifMfjB.js",
+        "assets/DatasetDetailPage-nm6pC55E.js",
+        "assets/DatasetsPage-DUFX8kA1.js",
+        "assets/EChart-DbHjYICo.js",
+        "assets/RunDetailPage-BbDsvxfP.js",
+        "assets/RunNewPage-BbXAm0AM.js",
+        "assets/RunsPage-BYy60BsB.js",
+        "assets/SystemPage-D6BUX1I5.js",
+        "assets/card-CvB46sMK.js",
+        "assets/format-BuyssE-R.js",
+        "assets/index-CFabaRg-.js",
+        "assets/input-CLfD4daH.js",
+        "assets/row-BXEO7Y3e.js",
+        "assets/table-DkvL4FvR.js"
+      ],
+      "unchanged_asset_urls": [
+        "assets/ErrorAlert-B4_5QW98.js",
+        "assets/StateTag-Dr4yVMIJ.js",
+        "assets/button-CCZs0Voe.js",
+        "assets/descriptions-CMc-Ltgv.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/hooks-BIRQC-dQ.js"
+      ]
+    },
+    {
+      "variant": "B2",
+      "assets": 39,
+      "total_bytes": 2442905,
+      "total_gzip_bytes": 810268,
+      "delta_bytes": 122,
+      "delta_gzip_bytes": 14,
+      "changed_assets": [
+        {
+          "file": "assets/card-C-lnRRSb.js",
+          "bytes": 44534,
+          "gzip_bytes": 13532,
+          "sha256": "47faaea41d95a133b3f5a37b24033867dda9cb163011c60323900242c42b4461"
+        },
+        {
+          "file": "assets/ClassifyResults-DrKTtQ6d.js",
+          "bytes": 3583,
+          "gzip_bytes": 1606,
+          "sha256": "e69af3852eea6b3091f8486c7e46299461ff595ab307a62feb95c3bba9615032"
+        },
+        {
+          "file": "assets/CompareBarChart-BeqLV0jZ.js",
+          "bytes": 724,
+          "gzip_bytes": 475,
+          "sha256": "ea004546fbe947bcfe21b4d0505c0869bd20ba95124b81a42ebb2a3016925f90"
+        },
+        {
+          "file": "assets/ComparePage-BMzGeQZF.js",
+          "bytes": 4906,
+          "gzip_bytes": 2344,
+          "sha256": "9ead971ca00efe8d852b1046452763967ea58b97fbd11cefb9a5468a69c688c0"
+        },
+        {
+          "file": "assets/DatasetDetailPage-1dAArgtt.js",
+          "bytes": 6803,
+          "gzip_bytes": 3035,
+          "sha256": "3d8207a5806c6f29845d601fb466fcd00f74bd1a253d0b494f046e9730c63aa1"
+        },
+        {
+          "file": "assets/DatasetsPage-BKmqvJPG.js",
+          "bytes": 1414,
+          "gzip_bytes": 836,
+          "sha256": "95d23b87d13189439f3aa220def9fdea010e9945b06a0e3299c8ac9c4150581b"
+        },
+        {
+          "file": "assets/date-picker-CAWbpq_q.js",
+          "bytes": 103246,
+          "gzip_bytes": 32257,
+          "sha256": "a5d492b107be1dd4d05e10530633169ab033aea890cf0e35a34e4900694bd2eb"
+        },
+        {
+          "file": "assets/EChart--S5GzHyP.js",
+          "bytes": 633014,
+          "gzip_bytes": 211172,
+          "sha256": "05d3b89025396220f610304bc48373b14b05cf0509585c572c0553f1efe544c7"
+        },
+        {
+          "file": "assets/ErrorAlert-C7nbaIGP.js",
+          "bytes": 84027,
+          "gzip_bytes": 26802,
+          "sha256": "cc57430adf186dbed89795c3de3437defbeb14922209cc59281fabe612b1cb22"
+        },
+        {
+          "file": "assets/FeatureLoading-m16Ul-og.js",
+          "bytes": 772,
+          "gzip_bytes": 507,
+          "sha256": "b156277a222e9f149d821ea3c4a347556ce182963afb235213daba6c650766d3"
+        },
+        {
+          "file": "assets/ForecastResults-BeF6mWoN.js",
+          "bytes": 5276,
+          "gzip_bytes": 2478,
+          "sha256": "b4772475a9faa83c8ae63b2fc17069b1d479dd11ca06781e3178cb4693ec0de7"
+        },
+        {
+          "file": "assets/format-BpEJLEbv.js",
+          "bytes": 937,
+          "gzip_bytes": 564,
+          "sha256": "ce47d0962573e402c5f488926343a112de173c7db51137914531606467850cd3"
+        },
+        {
+          "file": "assets/index-iXCYusIl.js",
+          "bytes": 164057,
+          "gzip_bytes": 53187,
+          "sha256": "1a00bab0402ebb7d68e0902271e8e3c03d702bebdd7d6fa3b050e842e370a02a"
+        },
+        {
+          "file": "assets/input-BT3LyQ1F.js",
+          "bytes": 11877,
+          "gzip_bytes": 5271,
+          "sha256": "741a4577cf3aab844aee1005ab4aa2ad3f0a758816937ea9301f212f83df26a2"
+        },
+        {
+          "file": "assets/Input-CSwm4dKt.js",
+          "bytes": 77983,
+          "gzip_bytes": 26580,
+          "sha256": "7135e7fa025a604dcc97b01d1637095b67cfdccc9aa8f2877f1eaf138a1f6892"
+        },
+        {
+          "file": "assets/MetricTable-B1rlNaAJ.js",
+          "bytes": 506,
+          "gzip_bytes": 366,
+          "sha256": "73cbcd377b9d602fb01aad0a66fa81f36b5c34077c5312adcf8ca797b31d14d3"
+        },
+        {
+          "file": "assets/row-B5_Eao-p.js",
+          "bytes": 2495,
+          "gzip_bytes": 1286,
+          "sha256": "12c6bc66a5e7dabc8570ac8104a473cace121e492fb3e72a91a0dd1968e3dae4"
+        },
+        {
+          "file": "assets/RunConfigForm-Cf2BmTWU.js",
+          "bytes": 269326,
+          "gzip_bytes": 89982,
+          "sha256": "84edff3feec9aa43318d18a9e636b87e1a627497225e842ada7b436987028146"
+        },
+        {
+          "file": "assets/RunDetailPage-TXzLI2Fn.js",
+          "bytes": 40904,
+          "gzip_bytes": 14722,
+          "sha256": "0dec36140472a234f7b315c79c2f2eb1ac7a5619f62982fbe74fb93afc8e8801"
+        },
+        {
+          "file": "assets/RunNewPage-Dnigpmd_.js",
+          "bytes": 203182,
+          "gzip_bytes": 63581,
+          "sha256": "78969e00e0f606e7722ea71d86981a99132d1d0869a348e562a19e972cb9af03"
+        },
+        {
+          "file": "assets/RunsPage-C9OOCbtz.js",
+          "bytes": 2401,
+          "gzip_bytes": 1301,
+          "sha256": "e8879b81ecea80311b70b611dc23ac2853ff7e8c4eab0066f62ed1b41a49a759"
+        },
+        {
+          "file": "assets/SegmentTimeline-CaBJSsTk.js",
+          "bytes": 1501,
+          "gzip_bytes": 928,
+          "sha256": "535bc1a8f25ea6392a32aeec786101db90e46620942f170472078dd5847f7c95"
+        },
+        {
+          "file": "assets/SeriesChart-CAd84FO6.js",
+          "bytes": 1534,
+          "gzip_bytes": 904,
+          "sha256": "f81e4390c27a4e1cdc81bf558b2a7373ce7c7849ea53586a166c6ea0949b7abf"
+        },
+        {
+          "file": "assets/StateTag-D2w8ig90.js",
+          "bytes": 9113,
+          "gzip_bytes": 3635,
+          "sha256": "390fec6da1d69abb5667559a2a03799a5a71e49be528904df639dd9dcdd19d7e"
+        },
+        {
+          "file": "assets/SystemPage-GswXUoje.js",
+          "bytes": 1781,
+          "gzip_bytes": 898,
+          "sha256": "f6460608e8290f8c672298c072414a9cf4e12dfa07acda3fc8f0432c659b681a"
+        },
+        {
+          "file": "assets/table-CBrogH7J.js",
+          "bytes": 184056,
+          "gzip_bytes": 56813,
+          "sha256": "f09e0f16ca4fc1f4477f19bdac28fa53460efdff2befcce25fa52c58c3963f84"
+        },
+        {
+          "file": "index.html",
+          "bytes": 1070,
+          "gzip_bytes": 446,
+          "sha256": "e13349d544f1cc1d5845738a95d8156b534473f2a076c62cd66c18cf26164b4a"
+        }
+      ],
+      "removed_asset_urls": [
+        "assets/ClassifyResults-BoYIDyHK.js",
+        "assets/CompareBarChart-DKy0D5FL.js",
+        "assets/ComparePage-DL2Sjeh_.js",
+        "assets/DatasetDetailPage-CsIaXf4F.js",
+        "assets/DatasetsPage-D-HewCLJ.js",
+        "assets/EChart-B2Hbxc12.js",
+        "assets/ErrorAlert-DktxHh8R.js",
+        "assets/FeatureLoading-DNkhaHnw.js",
+        "assets/ForecastResults-CEuj2ld4.js",
+        "assets/Input-MjnOgFrj.js",
+        "assets/MetricTable-BUpeLKFL.js",
+        "assets/RunConfigForm-DvFW4wqn.js",
+        "assets/RunDetailPage-CY9iaAe4.js",
+        "assets/RunNewPage-BSXOB2If.js",
+        "assets/RunsPage-DV6u4xRm.js",
+        "assets/SegmentTimeline-BClcJPN1.js",
+        "assets/SeriesChart-BFaAQwss.js",
+        "assets/StateTag-CCRB0VTK.js",
+        "assets/SystemPage-DM65ZBoG.js",
+        "assets/card-9bVl8gtH.js",
+        "assets/date-picker-DD7Lb4sb.js",
+        "assets/format-Bb2-8GBZ.js",
+        "assets/index-S1F36ID7.js",
+        "assets/input-e4-cwwC4.js",
+        "assets/row-BbDlRnYL.js",
+        "assets/table-Dz18ArnY.js"
+      ],
+      "unchanged_asset_urls": [
+        "assets/EllipsisOutlined-zZvlXIwj.js",
+        "assets/RightOutlined-Dl-YeTgD.js",
+        "assets/alert-lYJjM0bQ.js",
+        "assets/button-OSMQ4PUr.js",
+        "assets/checkbox-BQwopFr5.js",
+        "assets/collapse-DNXyBCq_.js",
+        "assets/config-provider-PC3xJLKt.js",
+        "assets/descriptions-BqjklEqc.js",
+        "assets/fast-deep-equal-DMTWy6R9.js",
+        "assets/preload-helper-CgfwhHgH.js",
+        "assets/useBreakpoint-DKA3pwbv.js",
+        "assets/useToken-L1KE0CE9.js"
+      ]
+    }
+  ],
+  "measurement_status": "B1/B2 require a complete replacement matrix and browser recovery checks for these new hashes. The original matrix remains historical evidence."
+}

@@ -1,0 +1,52 @@
+
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 4156 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              1.07 kB │ gzip:   0.44 kB
+dist/assets/collapse-DNXyBCq_.js             0.38 kB │ gzip:   0.22 kB
+dist/assets/MetricTable-Coc8WrSJ.js          0.50 kB │ gzip:   0.36 kB
+dist/assets/FeatureLoading-DNkhaHnw.js       0.71 kB │ gzip:   0.47 kB
+dist/assets/CompareBarChart-iljTOQsh.js      0.72 kB │ gzip:   0.47 kB
+dist/assets/RightOutlined-Dl-YeTgD.js        0.78 kB │ gzip:   0.54 kB
+dist/assets/format-DC3qDuBj.js               0.93 kB │ gzip:   0.56 kB
+dist/assets/DatasetsPage-CEVhCBtl.js         1.41 kB │ gzip:   0.83 kB
+dist/assets/SegmentTimeline-f1ntl-CZ.js      1.50 kB │ gzip:   0.93 kB
+dist/assets/SeriesChart-BUV1yWdV.js          1.53 kB │ gzip:   0.90 kB
+dist/assets/fast-deep-equal-DMTWy6R9.js      1.62 kB │ gzip:   0.75 kB
+dist/assets/SystemPage-lGNTFAeE.js           1.78 kB │ gzip:   0.90 kB
+dist/assets/useBreakpoint-DKA3pwbv.js        1.88 kB │ gzip:   0.91 kB
+dist/assets/RunsPage-CWGPXXYY.js             2.40 kB │ gzip:   1.30 kB
+dist/assets/row-BB8kzr-y.js                  2.49 kB │ gzip:   1.29 kB
+dist/assets/ClassifyResults-B0JWnjv5.js      3.58 kB │ gzip:   1.62 kB
+dist/assets/ComparePage-BQMtr9K7.js          4.90 kB │ gzip:   2.36 kB
+dist/assets/ForecastResults-C2YH5ptV.js      5.27 kB │ gzip:   2.48 kB
+dist/assets/config-provider-PC3xJLKt.js      6.58 kB │ gzip:   2.66 kB
+dist/assets/DatasetDetailPage-igYwKn60.js    6.80 kB │ gzip:   3.05 kB
+dist/assets/descriptions-BqjklEqc.js         7.92 kB │ gzip:   2.82 kB
+dist/assets/alert-lYJjM0bQ.js                8.47 kB │ gzip:   3.35 kB
+dist/assets/StateTag-CqkADHFe.js             9.11 kB │ gzip:   3.63 kB
+dist/assets/input-vk3m_Vkd.js               11.87 kB │ gzip:   5.33 kB
+dist/assets/EllipsisOutlined-zZvlXIwj.js    20.61 kB │ gzip:   7.58 kB
+dist/assets/checkbox-BQwopFr5.js            22.63 kB │ gzip:   7.83 kB
+dist/assets/RunDetailPage-B1nlI7MH.js       40.90 kB │ gzip:  14.81 kB
+dist/assets/card-CW0jyq3e.js                44.53 kB │ gzip:  13.60 kB
+dist/assets/useToken-L1KE0CE9.js            55.61 kB │ gzip:  21.72 kB
+dist/assets/preload-helper-CgfwhHgH.js      72.97 kB │ gzip:  24.27 kB
+dist/assets/Input-G9tmFx1l.js               77.98 kB │ gzip:  26.79 kB
+dist/assets/ErrorAlert-z4Lu3DLZ.js          84.02 kB │ gzip:  27.02 kB
+dist/assets/date-picker-BXUu_lfY.js        103.24 kB │ gzip:  32.43 kB
+dist/assets/index-BTc2c1QB.js              163.88 kB │ gzip:  53.69 kB
+dist/assets/table-D00rfpMQ.js              184.05 kB │ gzip:  57.33 kB
+dist/assets/RunNewPage-CdWsI6tq.js         203.18 kB │ gzip:  64.22 kB
+dist/assets/RunConfigForm-CFpOziD9.js      269.32 kB │ gzip:  90.74 kB
+dist/assets/button-OSMQ4PUr.js             382.38 kB │ gzip: 123.58 kB
+dist/assets/EChart-B_px1w3d.js             633.01 kB │ gzip: 213.27 kB
+
+✓ built in 1.56s
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./assessmentGraph" without a file extension (vite.config.ts:3:33). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.

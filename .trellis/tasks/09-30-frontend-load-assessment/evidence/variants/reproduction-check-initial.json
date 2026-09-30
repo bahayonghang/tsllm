@@ -1,0 +1,63 @@
+[
+  {
+    "variant": "B0",
+    "reproduced_files": 51,
+    "mismatches": [
+      "web/tests/RouteResolution.test.tsx"
+    ],
+    "existing_test_files_unchanged": true,
+    "changed_files": [
+      "web/tests/RouteResolution.test.tsx"
+    ]
+  },
+  {
+    "variant": "B1",
+    "reproduced_files": 53,
+    "mismatches": [
+      "web/src/components/AppLayout.tsx",
+      "web/src/components/RouteLoading.tsx",
+      "web/src/router.tsx",
+      "web/tests/LazyRouting.test.tsx",
+      "web/tests/RouteResolution.test.tsx"
+    ],
+    "existing_test_files_unchanged": true,
+    "changed_files": [
+      "web/src/components/AppLayout.tsx",
+      "web/src/components/RouteLoading.tsx",
+      "web/src/router.tsx",
+      "web/tests/LazyRouting.test.tsx",
+      "web/tests/RouteResolution.test.tsx"
+    ]
+  },
+  {
+    "variant": "B2",
+    "reproduced_files": 55,
+    "mismatches": [
+      "web/src/components/AppLayout.tsx",
+      "web/src/components/FeatureLoading.tsx",
+      "web/src/components/RouteLoading.tsx",
+      "web/src/pages/ComparePage.tsx",
+      "web/src/pages/DatasetDetailPage.tsx",
+      "web/src/pages/RunDetailPage.tsx",
+      "web/src/pages/RunNewPage.tsx",
+      "web/src/router.tsx",
+      "web/tests/FeatureLoading.test.tsx",
+      "web/tests/LazyRouting.test.tsx",
+      "web/tests/RouteResolution.test.tsx"
+    ],
+    "existing_test_files_unchanged": true,
+    "changed_files": [
+      "web/src/components/AppLayout.tsx",
+      "web/src/components/FeatureLoading.tsx",
+      "web/src/components/RouteLoading.tsx",
+      "web/src/pages/ComparePage.tsx",
+      "web/src/pages/DatasetDetailPage.tsx",
+      "web/src/pages/RunDetailPage.tsx",
+      "web/src/pages/RunNewPage.tsx",
+      "web/src/router.tsx",
+      "web/tests/FeatureLoading.test.tsx",
+      "web/tests/LazyRouting.test.tsx",
+      "web/tests/RouteResolution.test.tsx"
+    ]
+  }
+]

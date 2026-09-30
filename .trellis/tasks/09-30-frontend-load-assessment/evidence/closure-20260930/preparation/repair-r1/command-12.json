@@ -1,0 +1,12 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\replay_sources_v1.py",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\preparation\\repair-r1\\source-replay-v1.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"B0\": null, \"B1\": 53, \"B2\": 55}\n",
+  "stderr": ""
+}

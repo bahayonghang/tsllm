@@ -1,0 +1,1989 @@
+{
+  "schema_version": 1,
+  "complete_90_matrix": false,
+  "valid_primary_observations": 6,
+  "valid_supplementary_observations": 0,
+  "failures": [],
+  "browser_versions": [
+    "154.0.4258.37"
+  ],
+  "cache_classification_counts": {
+    "network-or-unreported": 43,
+    "disk-cache": 6,
+    "cache-reported-no-disk-flag": 1
+  },
+  "limits": [
+    "Headless installed browser on loopback; not visible acceptance or real phone/network",
+    "Cold means browser HTTP cache only; OS, process and code caches are not claimed cold",
+    "Readiness includes identical external observer cost and two stable animation frames",
+    "Long tasks include observer and browser work and are not assigned to a package",
+    "Resource Timing transferSize is browser-reported transfer; does not measure TCP/IP packet overhead",
+    "Largest observed body per full URL; every request remains in transfer sums",
+    "Warm is reload in same page/context after verified cold entry; actual cache outcome remains observed",
+    "FCP and navigation timing describe document loads; SPA navigation uses browser click-to-ready timing"
+  ],
+  "groups": {
+    "B0:cold-runs": {
+      "files": [
+        "B0-cold-runs-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 279.19999999925494,
+        "min": 279.19999999925494,
+        "max": 279.19999999925494,
+        "values": [
+          279.19999999925494
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 4.099999997764826,
+        "min": 4.099999997764826,
+        "max": 4.099999997764826,
+        "values": [
+          4.099999997764826
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 2.699999999254942,
+        "min": 2.699999999254942,
+        "max": 2.699999999254942,
+        "values": [
+          2.699999999254942
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 2,
+        "min": 2,
+        "max": 2,
+        "values": [
+          2
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 164.0,
+        "min": 164.0,
+        "max": 164.0,
+        "values": [
+          164.0
+        ]
+      },
+      "ready_definition": "Primary scenario readiness in browser time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        }
+      }
+    },
+    "B0:first-compare": {
+      "files": [
+        "B0-first-compare-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 1140.5,
+        "min": 1140.5,
+        "max": 1140.5,
+        "values": [
+          1140.5
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 57.80000001937151,
+        "min": 57.80000001937151,
+        "max": 57.80000001937151,
+        "values": [
+          57.80000001937151
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 27.199999999254942,
+        "min": 27.199999999254942,
+        "max": 27.199999999254942,
+        "values": [
+          27.199999999254942
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "ready_definition": "Primary scenario readiness in browser time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 7,
+            "min": 7,
+            "max": 7,
+            "values": [
+              7
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 5,
+            "min": 5,
+            "max": 5,
+            "values": [
+              5
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2434198,
+            "min": 2434198,
+            "max": 2434198,
+            "values": [
+              2434198
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2430784,
+            "min": 2430784,
+            "max": 2430784,
+            "values": [
+              2430784
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2430784,
+            "min": 2430784,
+            "max": 2430784,
+            "values": [
+              2430784
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "navigation": {
+          "request_entries": {
+            "count": 1,
+            "median": 3,
+            "min": 3,
+            "max": 3,
+            "values": [
+              3
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 3,
+            "min": 3,
+            "max": 3,
+            "values": [
+              3
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 10862,
+            "min": 10862,
+            "max": 10862,
+            "values": [
+              10862
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 10593,
+            "min": 10593,
+            "max": 10593,
+            "values": [
+              10593
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 10593,
+            "min": 10593,
+            "max": 10593,
+            "values": [
+              10593
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "increment": {
+          "request_entries": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 8948,
+            "min": 8948,
+            "max": 8948,
+            "values": [
+              8948
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 8648,
+            "min": 8648,
+            "max": 8648,
+            "values": [
+              8648
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 8648,
+            "min": 8648,
+            "max": 8648,
+            "values": [
+              8648
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        }
+      }
+    },
+    "B0:first-dataset": {
+      "files": [
+        "B0-first-dataset-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 1127.699999999255,
+        "min": 1127.699999999255,
+        "max": 1127.699999999255,
+        "values": [
+          1127.699999999255
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 34.400000020861626,
+        "min": 34.400000020861626,
+        "max": 34.400000020861626,
+        "values": [
+          34.400000020861626
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 3.600000001490116,
+        "min": 3.600000001490116,
+        "max": 3.600000001490116,
+        "values": [
+          3.600000001490116
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "ready_definition": "Primary scenario readiness in browser time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423118,
+            "min": 2423118,
+            "max": 2423118,
+            "values": [
+              2423118
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2421918,
+            "min": 2421918,
+            "max": 2421918,
+            "values": [
+              2421918
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2421918,
+            "min": 2421918,
+            "max": 2421918,
+            "values": [
+              2421918
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 7,
+            "min": 7,
+            "max": 7,
+            "values": [
+              7
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 6,
+            "min": 6,
+            "max": 6,
+            "values": [
+              6
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2435882,
+            "min": 2435882,
+            "max": 2435882,
+            "values": [
+              2435882
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2434082,
+            "min": 2434082,
+            "max": 2434082,
+            "values": [
+              2434082
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2434082,
+            "min": 2434082,
+            "max": 2434082,
+            "values": [
+              2434082
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "navigation": {
+          "request_entries": {
+            "count": 1,
+            "median": 3,
+            "min": 3,
+            "max": 3,
+            "values": [
+              3
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 3,
+            "min": 3,
+            "max": 3,
+            "values": [
+              3
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 12764,
+            "min": 12764,
+            "max": 12764,
+            "values": [
+              12764
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 12495,
+            "min": 12495,
+            "max": 12495,
+            "values": [
+              12495
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 12495,
+            "min": 12495,
+            "max": 12495,
+            "values": [
+              12495
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "increment": {
+          "request_entries": {
+            "count": 1,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "values": [
+              2
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 2,
+            "min": 2,
+            "max": 2,
+            "values": [
+              2
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 12764,
+            "min": 12764,
+            "max": 12764,
+            "values": [
+              12764
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 12164,
+            "min": 12164,
+            "max": 12164,
+            "values": [
+              12164
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 12164,
+            "min": 12164,
+            "max": 12164,
+            "values": [
+              12164
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        }
+      }
+    },
+    "B0:first-forecast": {
+      "files": [
+        "B0-first-forecast-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 1119.3999999985099,
+        "min": 1119.3999999985099,
+        "max": 1119.3999999985099,
+        "values": [
+          1119.3999999985099
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 24.50000000745058,
+        "min": 24.50000000745058,
+        "max": 24.50000000745058,
+        "values": [
+          24.50000000745058
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 4,
+        "min": 4,
+        "max": 4,
+        "values": [
+          4
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "ready_definition": "Primary scenario readiness in browser time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 13,
+            "min": 13,
+            "max": 13,
+            "values": [
+              13
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 10,
+            "min": 10,
+            "max": 10,
+            "values": [
+              10
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2432681,
+            "min": 2432681,
+            "max": 2432681,
+            "values": [
+              2432681
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2426686,
+            "min": 2426686,
+            "max": 2426686,
+            "values": [
+              2426686
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2426686,
+            "min": 2426686,
+            "max": 2426686,
+            "values": [
+              2426686
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "navigation": {
+          "request_entries": {
+            "count": 1,
+            "median": 9,
+            "min": 9,
+            "max": 9,
+            "values": [
+              9
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 7,
+            "min": 7,
+            "max": 7,
+            "values": [
+              7
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 9345,
+            "min": 9345,
+            "max": 9345,
+            "values": [
+              9345
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 4881,
+            "min": 4881,
+            "max": 4881,
+            "values": [
+              4881
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 4881,
+            "min": 4881,
+            "max": 4881,
+            "values": [
+              4881
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "increment": {
+          "request_entries": {
+            "count": 1,
+            "median": 8,
+            "min": 8,
+            "max": 8,
+            "values": [
+              8
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 6,
+            "min": 6,
+            "max": 6,
+            "values": [
+              6
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 9345,
+            "min": 9345,
+            "max": 9345,
+            "values": [
+              9345
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 4550,
+            "min": 4550,
+            "max": 4550,
+            "values": [
+              4550
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 4550,
+            "min": 4550,
+            "max": 4550,
+            "values": [
+              4550
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        }
+      }
+    },
+    "B0:first-form": {
+      "files": [
+        "B0-first-form-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 186.09999999776483,
+        "min": 186.09999999776483,
+        "max": 186.09999999776483,
+        "values": [
+          186.09999999776483
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 6.199999999254942,
+        "min": 6.199999999254942,
+        "max": 6.199999999254942,
+        "values": [
+          6.199999999254942
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 2.399999998509884,
+        "min": 2.399999998509884,
+        "max": 2.399999998509884,
+        "values": [
+          2.399999998509884
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 1,
+        "min": 1,
+        "max": 1,
+        "values": [
+          1
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 114.0,
+        "min": 114.0,
+        "max": 114.0,
+        "values": [
+          114.0
+        ]
+      },
+      "ready_definition": "Primary scenario readiness in browser time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 9,
+            "min": 9,
+            "max": 9,
+            "values": [
+              9
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 8,
+            "min": 8,
+            "max": 8,
+            "values": [
+              8
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2441352,
+            "min": 2441352,
+            "max": 2441352,
+            "values": [
+              2441352
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2438952,
+            "min": 2438952,
+            "max": 2438952,
+            "values": [
+              2438952
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2438952,
+            "min": 2438952,
+            "max": 2438952,
+            "values": [
+              2438952
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "navigation": {
+          "request_entries": {
+            "count": 1,
+            "median": 5,
+            "min": 5,
+            "max": 5,
+            "values": [
+              5
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 5,
+            "min": 5,
+            "max": 5,
+            "values": [
+              5
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 18016,
+            "min": 18016,
+            "max": 18016,
+            "values": [
+              18016
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 17147,
+            "min": 17147,
+            "max": 17147,
+            "values": [
+              17147
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 17147,
+            "min": 17147,
+            "max": 17147,
+            "values": [
+              17147
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "increment": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 18016,
+            "min": 18016,
+            "max": 18016,
+            "values": [
+              18016
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 16816,
+            "min": 16816,
+            "max": 16816,
+            "values": [
+              16816
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 16816,
+            "min": 16816,
+            "max": 16816,
+            "values": [
+              16816
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 0,
+            "min": 0,
+            "max": 0,
+            "values": [
+              0
+            ]
+          }
+        },
+        "with_preview": {
+          "request_entries": {
+            "count": 1,
+            "median": 11,
+            "min": 11,
+            "max": 11,
+            "values": [
+              11
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 9,
+            "min": 9,
+            "max": 9,
+            "values": [
+              9
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2442260,
+            "min": 2442260,
+            "max": 2442260,
+            "values": [
+              2442260
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2439560,
+            "min": 2439560,
+            "max": 2439560,
+            "values": [
+              2439560
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2439560,
+            "min": 2439560,
+            "max": 2439560,
+            "values": [
+              2439560
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        }
+      },
+      "preview_ready_ms": {
+        "count": 1,
+        "median": 35.099999997764826,
+        "min": 35.099999997764826,
+        "max": 35.099999997764826,
+        "values": [
+          35.099999997764826
+        ]
+      }
+    },
+    "B0:warm-runs": {
+      "files": [
+        "B0-warm-runs-s1-a1.json"
+      ],
+      "valid_count": 1,
+      "ready_ms": {
+        "count": 1,
+        "median": 120.69999999925494,
+        "min": 120.69999999925494,
+        "max": 120.69999999925494,
+        "values": [
+          120.69999999925494
+        ]
+      },
+      "observer_total_ms": {
+        "count": 1,
+        "median": 3.899999998509884,
+        "min": 3.899999998509884,
+        "max": 3.899999998509884,
+        "values": [
+          3.899999998509884
+        ]
+      },
+      "observer_document_max_predicate_ms": {
+        "count": 1,
+        "median": 2.699999999254942,
+        "min": 2.699999999254942,
+        "max": 2.699999999254942,
+        "values": [
+          2.699999999254942
+        ]
+      },
+      "completed_long_tasks_overlapping_window": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "completed_long_tasks_overlap_ms": {
+        "count": 1,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0
+        ]
+      },
+      "ready_definition": "Primary scenario readiness in browser time",
+      "windows": {
+        "entry": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2423336,
+            "min": 2423336,
+            "max": 2423336,
+            "values": [
+              2423336
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "cumulative": {
+          "request_entries": {
+            "count": 1,
+            "median": 8,
+            "min": 8,
+            "max": 8,
+            "values": [
+              8
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2425881,
+            "min": 2425881,
+            "max": 2425881,
+            "values": [
+              2425881
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        },
+        "warm": {
+          "request_entries": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "unique_urls": {
+            "count": 1,
+            "median": 4,
+            "min": 4,
+            "max": 4,
+            "values": [
+              4
+            ]
+          },
+          "transfer_bytes_sum": {
+            "count": 1,
+            "median": 2545,
+            "min": 2545,
+            "max": 2545,
+            "values": [
+              2545
+            ]
+          },
+          "encoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "decoded_body_url_union": {
+            "count": 1,
+            "median": 2422136,
+            "min": 2422136,
+            "max": 2422136,
+            "values": [
+              2422136
+            ]
+          },
+          "asset_url_count": {
+            "count": 1,
+            "median": 1,
+            "min": 1,
+            "max": 1,
+            "values": [
+              1
+            ]
+          },
+          "asset_encoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          },
+          "asset_decoded_body_union": {
+            "count": 1,
+            "median": 2419860,
+            "min": 2419860,
+            "max": 2419860,
+            "values": [
+              2419860
+            ]
+          }
+        }
+      }
+    }
+  },
+  "deltas_vs_B0": {}
+}

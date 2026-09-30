@@ -1,0 +1,14 @@
+{
+  "args": [
+    ".venv\\Scripts\\python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\review\\verify_paint_revision.py",
+    "--measurement-root",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\paint.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\"passed\": true, \"observations\": {\"raw\": 90, \"journey\": 3}, \"document_groups\": 108, \"snapshot_counts\": {\"raw_stages\": 165, \"raw_preview\": 15, \"journey_stages\": 30, \"journey_preview\": 3}, \"paint_status_counts\": {\"observed\": 213}, \"cold_warm_fcp_coverage\": {\"B0:cold-runs\": 5, \"B0:warm-runs\": 5, \"B1:cold-runs\": 5, \"B1:warm-runs\": 5, \"B2:cold-runs\": 5, \"B2:warm-runs\": 5}, \"fcp_missing_at_ready_but_collected_later\": 33, \"fcp_native_timestamp_after_ready\": 1, \"paint_collection_wait_ms_range\": [0, 6.800000004470348], \"coverage_gaps\": [], \"instrument_scripts_sha256\": {\"browser_probe.mjs\": \"3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd\", \"measure.mjs\": \"e5b7f96d90898082450b2c76d688fa8e4838101c57905af52e618919477d45cd\"}, \"limits\": [\"Checks retained native records and metadata; does not run a browser\", \"Readiness immutability is also covered by the collector regression tests\"]}\n",
+  "stderr": ""
+}

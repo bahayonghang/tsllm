@@ -1,0 +1,13 @@
+{
+  "revision": "paint-collection-r1",
+  "scripts": {
+    "browser_probe.mjs": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd",
+    "measure.mjs": "e5b7f96d90898082450b2c76d688fa8e4838101c57905af52e618919477d45cd"
+  },
+  "paintCollection": {
+    "timeoutMs": 1000,
+    "scope": "document",
+    "beforeNextNavigationOrClose": true,
+    "preservesReadySnapshot": true
+  }
+}

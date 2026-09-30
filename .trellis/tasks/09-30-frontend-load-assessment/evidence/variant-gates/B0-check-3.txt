@@ -1,0 +1,96 @@
+Checked 47 files in 28ms. No fixes applied.
+Found 1 error.
+
+assessmentGraph.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+
+     4  4 │
+     5  5 │   function moduleName(id: string): string {
+     6    │ - → const·normalized·=·id.replaceAll("\\",·"/");
+     7    │ - → const·dependency·=·normalized.lastIndexOf("/node_modules/");
+     8    │ - → if·(dependency·>=·0)
+     9    │ - → → return·`node_modules/${normalized.slice(dependency·+·14)}`;
+    10    │ - → const·source·=·normalized.lastIndexOf("/web/");
+    11    │ - → return·source·>=·0·?·`web/${normalized.slice(source·+·5)}`·:·normalized;
+        6 │ + ··const·normalized·=·id.replaceAll("\\",·"/");
+        7 │ + ··const·dependency·=·normalized.lastIndexOf("/node_modules/");
+        8 │ + ··if·(dependency·>=·0)·return·`node_modules/${normalized.slice(dependency·+·14)}`;
+        9 │ + ··const·source·=·normalized.lastIndexOf("/web/");
+       10 │ + ··return·source·>=·0·?·`web/${normalized.slice(source·+·5)}`·:·normalized;
+    12 11 │   }
+    13 12 │
+    14 13 │   export function assessmentGraph(): Plugin {
+    15    │ - → return·{
+    16    │ - → → name:·"assessment-output-graph",
+    17    │ - → → apply:·"build",
+    18    │ - → → generateBundle(_options,·bundle)·{
+    19    │ - → → → const·chunks·=·Object.values(bundle).flatMap((output)·=>
+    20    │ - → → → → output.type·===·"chunk"
+    21    │ - → → → → → ?·[
+    22    │ - → → → → → → → {
+    23    │ - → → → → → → → → file:·output.fileName,
+    24    │ - → → → → → → → → entry:·output.isEntry,
+    25    │ - → → → → → → → → dynamicEntry:·output.isDynamicEntry,
+    26    │ - → → → → → → → → facade:·output.facadeModuleId
+    27    │ - → → → → → → → → → ?·moduleName(output.facadeModuleId)
+    28    │ - → → → → → → → → → :·null,
+    29    │ - → → → → → → → → imports:·output.imports,
+    30    │ - → → → → → → → → dynamicImports:·output.dynamicImports,
+    31    │ - → → → → → → → → modules:·Object.entries(output.modules).map(
+    32    │ - → → → → → → → → → ([id,·metadata])·=>·({
+    33    │ - → → → → → → → → → → id:·moduleName(id),
+    34    │ - → → → → → → → → → → renderedLength:·metadata.renderedLength,
+    35    │ - → → → → → → → → → }),
+    36    │ - → → → → → → → → ),
+    37    │ - → → → → → → → },
+    38    │ - → → → → → → ]
+    39    │ - → → → → → :·[],
+    40    │ - → → → );
+    41    │ - → → → const·directory·=·resolve(process.cwd(),·"../assessment");
+    42    │ - → → → mkdirSync(directory,·{·recursive:·true·});
+    43    │ - → → → writeFileSync(
+    44    │ - → → → → resolve(directory,·"graph.json"),
+    45    │ - → → → → `${JSON.stringify({·chunks·},·null,·2)}\n`,
+    46    │ - → → → → "utf8",
+    47    │ - → → → );
+    48    │ - → → },
+    49    │ - → };
+       14 │ + ··return·{
+       15 │ + ····name:·"assessment-output-graph",
+       16 │ + ····apply:·"build",
+       17 │ + ····generateBundle(_options,·bundle)·{
+       18 │ + ······const·chunks·=·Object.values(bundle).flatMap((output)·=>
+       19 │ + ········output.type·===·"chunk"
+       20 │ + ··········?·[
+       21 │ + ··············{
+       22 │ + ················file:·output.fileName,
+       23 │ + ················entry:·output.isEntry,
+       24 │ + ················dynamicEntry:·output.isDynamicEntry,
+       25 │ + ················facade:·output.facadeModuleId·?·moduleName(output.facadeModuleId)·:·null,
+       26 │ + ················imports:·output.imports,
+       27 │ + ················dynamicImports:·output.dynamicImports,
+       28 │ + ················modules:·Object.entries(output.modules).map(([id,·metadata])·=>·({
+       29 │ + ··················id:·moduleName(id),
+       30 │ + ··················renderedLength:·metadata.renderedLength,
+       31 │ + ················})),
+       32 │ + ··············},
+       33 │ + ············]
+       34 │ + ··········:·[],
+       35 │ + ······);
+       36 │ + ······const·directory·=·resolve(process.cwd(),·"../assessment");
+       37 │ + ······mkdirSync(directory,·{·recursive:·true·});
+       38 │ + ······writeFileSync(
+       39 │ + ········resolve(directory,·"graph.json"),
+       40 │ + ········`${JSON.stringify({·chunks·},·null,·2)}\n`,
+       41 │ + ········"utf8",
+       42 │ + ······);
+       43 │ + ····},
+       44 │ + ··};
+    50 45 │   }
+    51 46 │
+
+
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.

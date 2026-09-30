@@ -1,0 +1,8 @@
+{
+  "source": ".trellis/tasks/09-30-frontend-load-assessment/task.json",
+  "copy": "evidence/closure-20260930/preparation/task-before-closure.json",
+  "sha256": "f6a25f3d9ba1e6cacd548fcb9fddbe1126d4f0abc653457ba458904c51fef883",
+  "size": 1212,
+  "matches_preflight": true,
+  "captured_before_authorization_metadata_edit": true
+}

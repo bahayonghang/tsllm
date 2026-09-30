@@ -1,0 +1,73 @@
+{
+  "order": [
+    {
+      "sample": 1,
+      "variant": "B0"
+    },
+    {
+      "sample": 1,
+      "variant": "B1"
+    },
+    {
+      "sample": 1,
+      "variant": "B2"
+    },
+    {
+      "sample": 2,
+      "variant": "B1"
+    },
+    {
+      "sample": 2,
+      "variant": "B2"
+    },
+    {
+      "sample": 2,
+      "variant": "B0"
+    },
+    {
+      "sample": 3,
+      "variant": "B2"
+    },
+    {
+      "sample": 3,
+      "variant": "B0"
+    },
+    {
+      "sample": 3,
+      "variant": "B1"
+    },
+    {
+      "sample": 4,
+      "variant": "B0"
+    },
+    {
+      "sample": 4,
+      "variant": "B1"
+    },
+    {
+      "sample": 4,
+      "variant": "B2"
+    },
+    {
+      "sample": 5,
+      "variant": "B1"
+    },
+    {
+      "sample": 5,
+      "variant": "B2"
+    },
+    {
+      "sample": 5,
+      "variant": "B0"
+    }
+  ],
+  "scenarios": [
+    "cold-runs",
+    "warm-runs",
+    "first-form",
+    "first-compare",
+    "first-dataset",
+    "first-forecast"
+  ],
+  "created_at": "2026-09-30T08:45:18.299505+00:00"
+}

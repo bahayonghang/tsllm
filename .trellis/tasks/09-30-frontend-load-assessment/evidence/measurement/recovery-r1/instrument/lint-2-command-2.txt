@@ -1,0 +1,210 @@
+Checked 1 file in 11ms. No fixes applied.
+Found 10 infos.
+measure.mjs:19:145 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    17 │     args[argv[index].slice(2)] = argv[index + 1];
+    18 │   }
+  > 19 │   for (const name of ['playwright-root', 'browser-executable', 'fixture-root', 'output', 'variant', 'sample']) if (!args[name]) throw new Error('Missing --' + name);
+       │                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^
+    20 │   if (!['B0', 'B1', 'B2'].includes(args.variant)) throw new Error('Variant must be B0, B1, or B2');
+    21 │   args.sample = Number(args.sample);
+
+  i Unsafe fix: Use a template literal.
+
+     17  17 │       args[argv[index].slice(2)] = argv[index + 1];
+     18  18 │     }
+     19     │ - ··for·(const·name·of·['playwright-root',·'browser-executable',·'fixture-root',·'output',·'variant',·'sample'])·if·(!args[name])·throw·new·Error('Missing·--'·+·name);
+         19 │ + ··for·(const·name·of·['playwright-root',·'browser-executable',·'fixture-root',·'output',·'variant',·'sample'])·if·(!args[name])·throw·new·Error(`Missing·--${name}`);
+     20  20 │     if (!['B0', 'B1', 'B2'].includes(args.variant)) throw new Error('Variant must be B0, B1, or B2');
+     21  21 │     args.sample = Number(args.sample);
+
+
+measure.mjs:36:31 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    34 │   const urls = new Map();
+    35 │   for (const item of resourceEntries) {
+  > 36 │     if (!item.name.startsWith(ORIGIN + '/')) continue;
+       │                               ^^^^^^^^^^^^
+    37 │     const old = urls.get(item.name);
+    38 │     if (!old || item.encodedBodySize > old.encodedBodySize) urls.set(item.name, {
+
+  i Unsafe fix: Use a template literal.
+
+     34  34 │     const urls = new Map();
+     35  35 │     for (const item of resourceEntries) {
+     36     │ - ····if·(!item.name.startsWith(ORIGIN·+·'/'))·continue;
+         36 │ + ····if·(!item.name.startsWith(`${ORIGIN}/`))·continue;
+     37  37 │       const old = urls.get(item.name);
+     38  38 │       if (!old || item.encodedBodySize > old.encodedBodySize) urls.set(item.name, {
+
+
+measure.mjs:149:21 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    147 │       record.accountingWithPreview = describeResources(entries(record.preview));
+    148 │     } else if (scenario === 'first-compare') {
+  > 149 │       const route = '/compare?run_ids=' + Object.values(configuration.ids).join(',');
+        │                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    150 │       const target = await programmaticStage(page, 'target', 'compare', route);
+    151 │       record.stages.push(target);
+
+  i Unsafe fix: Use a template literal.
+
+    147 147 │         record.accountingWithPreview = describeResources(entries(record.preview));
+    148 148 │       } else if (scenario === 'first-compare') {
+    149     │ - ······const·route·=·'/compare?run_ids='·+·Object.values(configuration.ids).join(',');
+        149 │ + ······const·route·=·`/compare?run_ids=${Object.values(configuration.ids).join(',')}`;
+    150 150 │         const target = await programmaticStage(page, 'target', 'compare', route);
+    151 151 │         record.stages.push(target);
+
+
+measure.mjs:174:125 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    172 │       ];
+    173 │       for (const [id, getLocator, kind] of steps) {
+  > 174 │         const stage = getLocator ? await clickStage(page, id, kind, getLocator()) : await programmaticStage(page, id, kind, '/compare?run_ids=' + Object.values(configuration.ids).join(','));
+        │                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    175 │         record.stages.push(stage);
+    176 │         if (kind === 'form') record.preview = await checkPreview(page);
+
+  i Unsafe fix: Use a template literal.
+
+    172 172 │         ];
+    173 173 │         for (const [id, getLocator, kind] of steps) {
+    174     │ - ········const·stage·=·getLocator·?·await·clickStage(page,·id,·kind,·getLocator())·:·await·programmaticStage(page,·id,·kind,·'/compare?run_ids='·+·Object.values(configuration.ids).join(','));
+        174 │ + ········const·stage·=·getLocator·?·await·clickStage(page,·id,·kind,·getLocator())·:·await·programmaticStage(page,·id,·kind,·`/compare?run_ids=${Object.values(configuration.ids).join(',')}`);
+    175 175 │           record.stages.push(stage);
+    176 176 │           if (kind === 'form') record.preview = await checkPreview(page);
+
+
+measure.mjs:184:44 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    182 │     record.primaryReadyMilliseconds = primary.duration;
+    183 │     record.capabilities = await page.evaluate(() => window.__tsllmAssessment.capabilities);
+  > 184 │     if (pageErrors.length) throw new Error('Uncaught browser error: ' + pageErrors.join('; '));
+        │                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    185 │     if ([...network.requests.values()].some((item) => item.method && !['GET', 'HEAD', 'OPTIONS'].includes(item.method))) throw new Error('Unexpected mutating HTTP request');
+    186 │     const failures = [...network.requests.values()].filter((item) => item.failed && !item.canceled || item.status >= 400 && !item.url.endsWith('/favicon.ico'));
+
+  i Unsafe fix: Use a template literal.
+
+    182 182 │       record.primaryReadyMilliseconds = primary.duration;
+    183 183 │       record.capabilities = await page.evaluate(() => window.__tsllmAssessment.capabilities);
+    184     │ - ····if·(pageErrors.length)·throw·new·Error('Uncaught·browser·error:·'·+·pageErrors.join(';·'));
+        184 │ + ····if·(pageErrors.length)·throw·new·Error(`Uncaught·browser·error:·${pageErrors.join(';·')}`);
+    185 185 │       if ([...network.requests.values()].some((item) => item.method && !['GET', 'HEAD', 'OPTIONS'].includes(item.method))) throw new Error('Unexpected mutating HTTP request');
+    186 186 │       const failures = [...network.requests.values()].filter((item) => item.failed && !item.canceled || item.status >= 400 && !item.url.endsWith('/favicon.ico'));
+
+
+measure.mjs:187:42 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    185 │     if ([...network.requests.values()].some((item) => item.method && !['GET', 'HEAD', 'OPTIONS'].includes(item.method))) throw new Error('Unexpected mutating HTTP request');
+    186 │     const failures = [...network.requests.values()].filter((item) => item.failed && !item.canceled || item.status >= 400 && !item.url.endsWith('/favicon.ico'));
+  > 187 │     if (failures.length) throw new Error('Resource failure: ' + JSON.stringify(failures.map((item) => ({ url: item.url, status: item.status, error: item.errorText }))));
+        │                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    188 │     record.valid = true;
+    189 │   } catch (error) {
+
+  i Unsafe fix: Use a template literal.
+
+    185 185 │       if ([...network.requests.values()].some((item) => item.method && !['GET', 'HEAD', 'OPTIONS'].includes(item.method))) throw new Error('Unexpected mutating HTTP request');
+    186 186 │       const failures = [...network.requests.values()].filter((item) => item.failed && !item.canceled || item.status >= 400 && !item.url.endsWith('/favicon.ico'));
+    187     │ - ····if·(failures.length)·throw·new·Error('Resource·failure:·'·+·JSON.stringify(failures.map((item)·=>·({·url:·item.url,·status:·item.status,·error:·item.errorText·}))));
+        187 │ + ····if·(failures.length)·throw·new·Error(`Resource·failure:·${JSON.stringify(failures.map((item)·=>·({·url:·item.url,·status:·item.status,·error:·item.errorText·})))}`);
+    188 188 │       record.valid = true;
+    189 189 │     } catch (error) {
+
+
+measure.mjs:209:61 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    207 │     paintCollection: { timeoutMs: PAINT_COLLECTION_TIMEOUT_MS, scope: 'document', beforeNextNavigationOrClose: true, preservesReadySnapshot: true },
+    208 │   };
+  > 209 │   const manifestPath = path.join(path.dirname(args.output), path.basename(args.output) + '-instrumentation.json');
+        │                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    210 │   const manifestText = JSON.stringify(instrumentation, null, 2) + String.fromCharCode(10);
+    211 │   if (fs.existsSync(manifestPath)) {
+
+  i Unsafe fix: Use a template literal.
+
+    207 207 │       paintCollection: { timeoutMs: PAINT_COLLECTION_TIMEOUT_MS, scope: 'document', beforeNextNavigationOrClose: true, preservesReadySnapshot: true },
+    208 208 │     };
+    209     │ - ··const·manifestPath·=·path.join(path.dirname(args.output),·path.basename(args.output)·+·'-instrumentation.json');
+        209 │ + ··const·manifestPath·=·path.join(path.dirname(args.output),·`${path.basename(args.output)}-instrumentation.json`);
+    210 210 │     const manifestText = JSON.stringify(instrumentation, null, 2) + String.fromCharCode(10);
+    211 211 │     if (fs.existsSync(manifestPath)) {
+
+
+measure.mjs:221:50 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    219 │   try {
+    220 │     for (const scenario of args.scenarios) {
+  > 221 │       const destination = path.join(args.output, args.variant + '-' + scenario + '-s' + args.sample + '-a' + args.attempt + '.json');
+        │                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    222 │       if (fs.existsSync(destination)) throw new Error('Existing attempt preserved: ' + destination);
+    223 │       const result = await sample(browser, configuration, args, scenario, instrumentation);
+
+  i Unsafe fix: Use a template literal.
+
+    219 219 │     try {
+    220 220 │       for (const scenario of args.scenarios) {
+    221     │ - ······const·destination·=·path.join(args.output,·args.variant·+·'-'·+·scenario·+·'-s'·+·args.sample·+·'-a'·+·args.attempt·+·'.json');
+        221 │ + ······const·destination·=·path.join(args.output,·`${args.variant}-${scenario}-s${args.sample}-a${args.attempt}.json`);
+    222 222 │         if (fs.existsSync(destination)) throw new Error('Existing attempt preserved: ' + destination);
+    223 223 │         const result = await sample(browser, configuration, args, scenario, instrumentation);
+
+
+measure.mjs:222:55 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    220 │     for (const scenario of args.scenarios) {
+    221 │       const destination = path.join(args.output, args.variant + '-' + scenario + '-s' + args.sample + '-a' + args.attempt + '.json');
+  > 222 │       if (fs.existsSync(destination)) throw new Error('Existing attempt preserved: ' + destination);
+        │                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    223 │       const result = await sample(browser, configuration, args, scenario, instrumentation);
+    224 │       fs.writeFileSync(destination, JSON.stringify(result, null, 2) + '\n', { encoding: 'utf8', flag: 'wx' });
+
+  i Unsafe fix: Use a template literal.
+
+    220 220 │       for (const scenario of args.scenarios) {
+    221 221 │         const destination = path.join(args.output, args.variant + '-' + scenario + '-s' + args.sample + '-a' + args.attempt + '.json');
+    222     │ - ······if·(fs.existsSync(destination))·throw·new·Error('Existing·attempt·preserved:·'·+·destination);
+        222 │ + ······if·(fs.existsSync(destination))·throw·new·Error(`Existing·attempt·preserved:·${destination}`);
+    223 223 │         const result = await sample(browser, configuration, args, scenario, instrumentation);
+    224 224 │         fs.writeFileSync(destination, JSON.stringify(result, null, 2) + '\n', { encoding: 'utf8', flag: 'wx' });
+
+
+measure.mjs:224:37 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    222 │       if (fs.existsSync(destination)) throw new Error('Existing attempt preserved: ' + destination);
+    223 │       const result = await sample(browser, configuration, args, scenario, instrumentation);
+  > 224 │       fs.writeFileSync(destination, JSON.stringify(result, null, 2) + '\n', { encoding: 'utf8', flag: 'wx' });
+        │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    225 │       console.log(JSON.stringify({ variant: args.variant, sample: args.sample, attempt: args.attempt, scenario, valid: result.valid, primaryReadyMilliseconds: result.primaryReadyMilliseconds, error: result.error }));
+    226 │       if (!result.valid) failed++;
+
+  i Unsafe fix: Use a template literal.
+
+    222 222 │         if (fs.existsSync(destination)) throw new Error('Existing attempt preserved: ' + destination);
+    223 223 │         const result = await sample(browser, configuration, args, scenario, instrumentation);
+    224     │ - ······fs.writeFileSync(destination,·JSON.stringify(result,·null,·2)·+·'\n',·{·encoding:·'utf8',·flag:·'wx'·});
+        224 │ + ······fs.writeFileSync(destination,·`${JSON.stringify(result,·null,·2)}\n`,·{·encoding:·'utf8',·flag:·'wx'·});
+    225 225 │         console.log(JSON.stringify({ variant: args.variant, sample: args.sample, attempt: args.attempt, scenario, valid: result.valid, primaryReadyMilliseconds: result.primaryReadyMilliseconds, error: result.error }));
+    226 226 │         if (!result.valid) failed++;

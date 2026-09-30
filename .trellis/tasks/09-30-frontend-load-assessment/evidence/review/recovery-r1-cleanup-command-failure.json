@@ -1,0 +1,9 @@
+{
+  "phase": "review cleanup verification command",
+  "exit_code": 1,
+  "error": "SyntaxError: unterminated string literal at output serialization",
+  "cause": "An embedded newline literal was expanded while transporting an inline Python command",
+  "cleanup_checks_executed": false,
+  "repair": "Run the saved verify_cleanup.py script instead of inline Python",
+  "measurement_sample_failure": false
+}

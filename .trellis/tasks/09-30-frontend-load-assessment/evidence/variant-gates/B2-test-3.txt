@@ -1,0 +1,83 @@
+
+ RUN  v5.0.2 <assessment-temp>/variants/B2/web
+
+ ❯ tests/LazyRouting.test.tsx (4 tests | 2 failed) 757ms
+   ❯ route module boundaries (4)
+     × reloads a failed route document and preserves the URL with hash  110ms
+     × reloads a failed route document and preserves the URL with hash #restore 84ms
+ ❯ tests/FeatureLoading.test.tsx (3 tests | 2 failed) 776ms
+   ❯ feature module boundaries (3)
+     × reloads a failed feature document and preserves the URL with hash  364ms
+     × reloads a failed feature document and preserves the URL with hash #restore 332ms
+
+ Test Files  2 failed | 6 passed (8)
+      Tests  4 failed | 38 passed (42)
+   Start at  04:18:47
+   Duration  5.83s (import 43%, tests 33%, environment 21%, transform 1%)
+
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./assessmentGraph" without a file extension (vite.config.ts:3:33). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/FeatureLoading.test.tsx > feature module boundaries > reloads a failed feature document and preserves the URL with hash
+ FAIL  tests/FeatureLoading.test.tsx > feature module boundaries > reloads a failed feature document and preserves the URL with hash #restore
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/FeatureLoading.test.tsx:48:39
+     46|     const recovery = screen.getByRole("link", { name: "重新加载页面" });
+     47|     expect(recovery.getAttribute("href")).toBe(url);
+     48|     expect(fireEvent.click(recovery)).toBe(false);
+       |                                       ^
+     49|     expect(reload).toHaveBeenCalledTimes(1);
+     50|     expect(window.location.pathname + window.location.search + window.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/LazyRouting.test.tsx > route module boundaries > reloads a failed route document and preserves the URL with hash
+ FAIL  tests/LazyRouting.test.tsx > route module boundaries > reloads a failed route document and preserves the URL with hash #restore
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/LazyRouting.test.tsx:105:39
+    103|     const recovery = screen.getByRole("link", { name: "重新加载页面" });
+    104|     expect(recovery.getAttribute("href")).toBe(url);
+    105|     expect(fireEvent.click(recovery)).toBe(false);
+       |                                       ^
+    106|     expect(reload).toHaveBeenCalledTimes(1);
+    107|     const location = view.router.state.location;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯

@@ -1,0 +1,10 @@
+{
+  "variant": "B0",
+  "gate": "build",
+  "attempt": 1,
+  "command": "pnpm -C <variant>/web run build",
+  "started_utc": "2026-09-30T08:24:04.614816+00:00",
+  "duration_seconds": 0.22558379999827594,
+  "exit_code": 1,
+  "log": "B0-build-1.txt"
+}

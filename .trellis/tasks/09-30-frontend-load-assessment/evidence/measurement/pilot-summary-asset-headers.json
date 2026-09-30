@@ -1,0 +1,114 @@
+[
+  {
+    "file": "B0-cold-runs-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 08:43:09 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B0-first-compare-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 08:43:11 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B0-first-dataset-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 08:43:14 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B0-first-forecast-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 08:43:15 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B0-first-form-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 08:43:09 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B0-warm-runs-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": 200,
+    "cache_class": "network-or-unreported",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "content-type": "application/javascript",
+      "date": "Wed, 30 Sep 2026 08:43:09 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  },
+  {
+    "file": "B0-warm-runs-s1-a1.json",
+    "url": "http://127.0.0.1:9000/assets/index-DlIxrfbQ.js",
+    "status": 200,
+    "network_status": null,
+    "cache_class": "cache-reported-no-disk-flag",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "2419860",
+      "date": "Wed, 30 Sep 2026 08:43:09 GMT",
+      "etag": "\"95c7201bfd1d0fbbb8d88dfae876b1c1\"",
+      "content-type": "application/javascript",
+      "last-modified": "Wed, 30 Sep 2026 08:30:00 GMT",
+      "server": "uvicorn"
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "variant": "B2",
+  "gate": "test",
+  "attempt": 3,
+  "command": "vitest run",
+  "working_directory": "<variant>/web",
+  "launcher": "installed .bin commands; identical package.json script, pnpm 12 automatic install bypassed",
+  "started_utc": "2026-09-30T09:18:47.377412+00:00",
+  "duration_seconds": 6.176439200004097,
+  "exit_code": 1,
+  "log": "B2-test-3.txt"
+}

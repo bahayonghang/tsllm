@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "python": "3.14.7",
+  "zlib": "1.3.1.zlib-ng",
+  "variants": [
+    {
+      "variant": "B0",
+      "source_changes": [
+        "web/tests/RouteResolution.test.tsx"
+      ],
+      "original_test_files_unchanged": 8,
+      "assets_checked": 2,
+      "bytes": 2420191,
+      "gzip_estimate_bytes": 776665,
+      "graph_reference_integrity": true,
+      "latest_gates": {
+        "check": {
+          "attempt": 4,
+          "exit_code": 0,
+          "log_sha256": "2474928f4236237d35718c902ca8b874bd96e7e14f3b8afd3adbfe4a1e838e41"
+        },
+        "test": {
+          "attempt": 3,
+          "exit_code": 0,
+          "log_sha256": "aba7e3830ec0e773f37dadbfc2618b7d29f10732884385e55421c95c6414981d"
+        },
+        "build": {
+          "attempt": 4,
+          "exit_code": 0,
+          "log_sha256": "3013350431caadcf4bc41795a8a27ccca7875e74b5dad4f61c50e9d99f870f1f"
+        }
+      }
+    },
+    {
+      "variant": "B1",
+      "source_changes": [
+        "web/src/components/AppLayout.tsx",
+        "web/src/components/RouteLoading.tsx",
+        "web/src/router.tsx",
+        "web/tests/LazyRouting.test.tsx",
+        "web/tests/RouteResolution.test.tsx"
+      ],
+      "original_test_files_unchanged": 8,
+      "assets_checked": 21,
+      "bytes": 2430524,
+      "gzip_estimate_bytes": 796075,
+      "graph_reference_integrity": true,
+      "latest_gates": {
+        "check": {
+          "attempt": 2,
+          "exit_code": 0,
+          "log_sha256": "1428cd5e2dd49415c45808472b5d6763de77a61122d8d6bee5cbfe372a86ab81"
+        },
+        "test": {
+          "attempt": 2,
+          "exit_code": 0,
+          "log_sha256": "709a546ef9e23a52c81385b87b01dafcac58e704e059ba2fefca55a1bfcca46c"
+        },
+        "build": {
+          "attempt": 2,
+          "exit_code": 0,
+          "log_sha256": "b2dd64705e56ab9484fd1f820d0288679b67a46fdc7f9f78b2ad90804ea5597e"
+        }
+      }
+    },
+    {
+      "variant": "B2",
+      "source_changes": [
+        "web/src/components/AppLayout.tsx",
+        "web/src/components/FeatureLoading.tsx",
+        "web/src/components/RouteLoading.tsx",
+        "web/src/pages/ComparePage.tsx",
+        "web/src/pages/DatasetDetailPage.tsx",
+        "web/src/pages/RunDetailPage.tsx",
+        "web/src/pages/RunNewPage.tsx",
+        "web/src/router.tsx",
+        "web/tests/FeatureLoading.test.tsx",
+        "web/tests/LazyRouting.test.tsx",
+        "web/tests/RouteResolution.test.tsx"
+      ],
+      "original_test_files_unchanged": 8,
+      "assets_checked": 39,
+      "bytes": 2442783,
+      "gzip_estimate_bytes": 810254,
+      "graph_reference_integrity": true,
+      "latest_gates": {
+        "check": {
+          "attempt": 2,
+          "exit_code": 0,
+          "log_sha256": "0f30246157a6c95b8662107e62c836b091c8b56f73cc17b3eb19a5ecf1fc42a1"
+        },
+        "test": {
+          "attempt": 2,
+          "exit_code": 0,
+          "log_sha256": "5f1160fdb48e7a692ccbabeaed09d10231a48a6dc5998c2c8eab0380b1c7292f"
+        },
+        "build": {
+          "attempt": 2,
+          "exit_code": 0,
+          "log_sha256": "800f100e090221a815e950635d9ae6ee126449e3a4f8644a440de7ebf3f01f74"
+        }
+      }
+    }
+  ]
+}

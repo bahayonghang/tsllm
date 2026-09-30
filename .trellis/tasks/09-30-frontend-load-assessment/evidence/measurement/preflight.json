@@ -1,0 +1,21 @@
+{
+  "node": "v24.19.0",
+  "python": "Python 3.13.11",
+  "playwright": "1.62.1",
+  "edge_file_version": "154.0.4258.37",
+  "planned_mode": "headless",
+  "viewport": {
+    "height": 900,
+    "width": 1280
+  },
+  "deviceScaleFactor": 1,
+  "network": "loopback; no throttling",
+  "live_measurement_status": "not started by measurement agent",
+  "code_checks": [
+    "node --check browser_probe.mjs passed",
+    "node --check measure.mjs passed",
+    "ruff check four owned Python scripts passed",
+    "ruff format --check four owned Python scripts passed",
+    "serve_variant --check-only B0 passed; no torch import"
+  ]
+}

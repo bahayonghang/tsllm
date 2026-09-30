@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "log_copies_independently_compared": 38,
+  "all_log_copies_empty": true,
+  "large_json_files": [
+    {
+      "path": "evidence/report/original-recomputed.json",
+      "size": 1915287,
+      "sha256": "126c5d0924fb88a17edb4c7841b0578a55dbfd5b2a56b44d53c2bae0e195eafd",
+      "utf8": true,
+      "binary": false
+    },
+    {
+      "path": "evidence/report/recomputed.json",
+      "size": 1915231,
+      "sha256": "d11fd9be2b45e631e678ef286060b47d2cbb91a83acf306159b05d4bfd9d30c8",
+      "utf8": true,
+      "binary": false
+    }
+  ],
+  "historical_task_fields_unchanged": true,
+  "added_task_fields": [
+    "closure_20260930"
+  ],
+  "material_audit_tool_sha256_matches": true,
+  "commands": [
+    {
+      "args": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        ".venv/Scripts/python.exe",
+        "-B",
+        ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\preparation\\prepare_closure_v1.py",
+        "--verify"
+      ],
+      "returncode": 0,
+      "stdout": "{\"mode\": \"verify\", \"archived\": false, \"original_files_verified\": 463, \"log_copies_verified\": 38, \"reference_entries_verified\": 50, \"writes\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "limits": [
+    "Preliminary staged state only; coordinator will stage final review materials again.",
+    "UTF-8 and credential scans supplement source inspection and are not proof of origin alone."
+  ]
+}

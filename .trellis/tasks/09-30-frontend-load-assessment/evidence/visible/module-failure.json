@@ -1,0 +1,12 @@
+{
+  "variant": "B1",
+  "asset": "SystemPage-D6BUX1I5.js",
+  "sha256": "97caba80ff9e4484d681a51b21ec47eb3174d570842fb44ac07c8e5218cb293f",
+  "action": "temporarily withheld isolated SystemPage module",
+  "restored": true,
+  "failure_observed": true,
+  "failure_url": "/system?assessment=module-recovery#restore",
+  "failure_text": "页面加载失败 请重新加载页面。",
+  "reload_link_preserves_query_hash": true,
+  "recovery_observed": false
+}

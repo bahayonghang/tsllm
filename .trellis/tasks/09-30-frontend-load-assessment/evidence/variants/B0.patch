@@ -1,0 +1,46 @@
+--- /dev/null
++++ b/web/tests/RouteResolution.test.tsx
+@@ -0,0 +1,43 @@
++import { waitFor } from "@testing-library/react";
++import { createMemoryRouter } from "react-router";
++import { describe, expect, it } from "vitest";
++import { routes } from "../src/router";
++
++const entries = [
++  ["/datasets", "datasets", undefined],
++  ["/datasets/synthetic-dataset", "datasets/:id", "synthetic-dataset"],
++  ["/runs", "runs", undefined],
++  ["/runs/new?from=synthetic-run", "runs/new", undefined],
++  ["/runs/synthetic-run", "runs/:id", "synthetic-run"],
++  ["/compare?run_ids=first,second&metric=mae", "compare", undefined],
++  ["/system", "system", undefined],
++];
++
++describe("route loading contract", () => {
++  it.each(entries)("resolves direct entry %s without changing its URL", async (url, path, id) => {
++    if (!url) throw new Error("Missing test URL");
++    const router = createMemoryRouter(routes, { initialEntries: [url] });
++    await waitFor(() => expect(router.state.initialized).toBe(true));
++    expect(router.state.errors).toBeNull();
++    expect(router.state.location.pathname + router.state.location.search).toBe(url);
++    const match = router.state.matches.at(-1);
++    expect(match?.route.path).toBe(path);
++    expect(match?.params.id).toBe(id);
++    expect(match?.route.Component ?? match?.route.element).toBeTruthy();
++    router.dispose();
++  });
++
++  it("resolves every page during navigation and keeps query parameters", async () => {
++    const router = createMemoryRouter(routes, { initialEntries: ["/runs"] });
++    await waitFor(() => expect(router.state.initialized).toBe(true));
++    for (const [url, path] of entries) {
++      if (!url) throw new Error("Missing test URL");
++      await router.navigate(url);
++      expect(router.state.navigation.state).toBe("idle");
++      expect(router.state.errors).toBeNull();
++      expect(router.state.matches.at(-1)?.route.path).toBe(path);
++      expect(router.state.location.pathname + router.state.location.search).toBe(url);
++    }
++    router.dispose();
++  });
++});

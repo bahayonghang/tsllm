@@ -1,0 +1,189 @@
+Checked 1 file in 10ms. No fixes applied.
+Found 9 infos.
+browser_probe.mjs:81:123 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    79 │     let valid = false;
+    80 │     let charts = [];
+  > 81 │     if (kind === 'runs') valid = location.pathname === '/runs' && Object.values(ids).every((id) => document.querySelector('a[href="/runs/' + id + '"]')) && !!button('新建运行') && resource('/api/runs');
+       │                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    82 │     if (kind === 'datasets') valid = location.pathname === '/datasets' && configuration.datasets.every((id) => document.querySelector('a[href="/datasets/' + id + '"]')) && resource('/api/datasets');
+    83 │     if (kind === 'form') valid = location.pathname === '/runs/new' && !!document.querySelector('form input') && !!button('预览并提交') && resource('/api/schema/run-config') && resource('/api/backbones') && resource('/api/datasets');
+
+  i Unsafe fix: Use a template literal.
+
+     79  79 │       let valid = false;
+     80  80 │       let charts = [];
+     81     │ - ····if·(kind·===·'runs')·valid·=·location.pathname·===·'/runs'·&&·Object.values(ids).every((id)·=>·document.querySelector('a[href="/runs/'·+·id·+·'"]'))·&&·!!button('新建运行')·&&·resource('/api/runs');
+         81 │ + ····if·(kind·===·'runs')·valid·=·location.pathname·===·'/runs'·&&·Object.values(ids).every((id)·=>·document.querySelector(`a[href="/runs/${id}"]`))·&&·!!button('新建运行')·&&·resource('/api/runs');
+     82  82 │       if (kind === 'datasets') valid = location.pathname === '/datasets' && configuration.datasets.every((id) => document.querySelector('a[href="/datasets/' + id + '"]')) && resource('/api/datasets');
+     83  83 │       if (kind === 'form') valid = location.pathname === '/runs/new' && !!document.querySelector('form input') && !!button('预览并提交') && resource('/api/schema/run-config') && resource('/api/backbones') && resource('/api/datasets');
+
+
+browser_probe.mjs:82:135 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    80 │     let charts = [];
+    81 │     if (kind === 'runs') valid = location.pathname === '/runs' && Object.values(ids).every((id) => document.querySelector('a[href="/runs/' + id + '"]')) && !!button('新建运行') && resource('/api/runs');
+  > 82 │     if (kind === 'datasets') valid = location.pathname === '/datasets' && configuration.datasets.every((id) => document.querySelector('a[href="/datasets/' + id + '"]')) && resource('/api/datasets');
+       │                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    83 │     if (kind === 'form') valid = location.pathname === '/runs/new' && !!document.querySelector('form input') && !!button('预览并提交') && resource('/api/schema/run-config') && resource('/api/backbones') && resource('/api/datasets');
+    84 │     if (kind === 'preview') {
+
+  i Unsafe fix: Use a template literal.
+
+     80  80 │       let charts = [];
+     81  81 │       if (kind === 'runs') valid = location.pathname === '/runs' && Object.values(ids).every((id) => document.querySelector('a[href="/runs/' + id + '"]')) && !!button('新建运行') && resource('/api/runs');
+     82     │ - ····if·(kind·===·'datasets')·valid·=·location.pathname·===·'/datasets'·&&·configuration.datasets.every((id)·=>·document.querySelector('a[href="/datasets/'·+·id·+·'"]'))·&&·resource('/api/datasets');
+         82 │ + ····if·(kind·===·'datasets')·valid·=·location.pathname·===·'/datasets'·&&·configuration.datasets.every((id)·=>·document.querySelector(`a[href="/datasets/${id}"]`))·&&·resource('/api/datasets');
+     83  83 │       if (kind === 'form') valid = location.pathname === '/runs/new' && !!document.querySelector('form input') && !!button('预览并提交') && resource('/api/schema/run-config') && resource('/api/backbones') && resource('/api/datasets');
+     84  84 │       if (kind === 'preview') {
+
+
+browser_probe.mjs:99:39 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+     97 │       if (kind === 'forecast') {
+     98 │         const resultSeries = charts[0]?.series ?? [];
+   > 99 │         valid = location.pathname === '/runs/' + ids.forecast && resource('/api/runs/' + ids.forecas...
+        │                                       ^^^^^^^^^^^^^^^^^^^^^^^
+    100 │       }
+    101 │       if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+
+  i Unsafe fix: Use a template literal.
+
+     97  97 │         if (kind === 'forecast') {
+     98  98 │           const resultSeries = charts[0]?.series ?? [];
+     99     │ - ········valid·=·location.pathname·===·'/runs/'·+·ids.forecast·&&·resource('/api/runs/'·+·ids.forecas...
+         99 │ + ········valid·=·location.pathname·===·`/runs/${ids.forecast}`·&&·resource('/api/runs/'·+·ids.forecas...
+    100 100 │         }
+    101 101 │         if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+
+
+browser_probe.mjs:99:75 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+     97 │       if (kind === 'forecast') {
+     98 │         const resultSeries = charts[0]?.series ?? [];
+   > 99 │ .../' + ids.forecast && resource('/api/runs/' + ids.forecast + '/metrics') && resource('/api/runs/' + i...
+        │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    100 │       }
+    101 │       if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+
+  i Unsafe fix: Use a template literal.
+
+     97  97 │         if (kind === 'forecast') {
+     98  98 │           const resultSeries = charts[0]?.series ?? [];
+     99     │ - ...name·===·'/runs/'·+·ids.forecast·&&·resource('/api/runs/'·+·ids.forecast·+·'/metrics')·&&·resource('...
+         99 │ + ········valid·=·location.pathname·===·'/runs/'·+·ids.forecast·&&·resource(`/api/runs/${ids.forecast}/metrics`)·&&·resource('/api/runs/'·+·ids.forecast·+·'/predictions',·['origin_time'])·&&·resource('/api/datasets/synthetic-alpha/series',·['start',·'end'])·&&·['上下文',·'真值',·'预测均值'].every((name)·=>·resultSeries.some((series)·=>·series.name·===·name·&&·series.nonempty·>·0))·&&·readyCharts;
+    100 100 │         }
+    101 101 │         if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+
+
+browser_probe.mjs:99:129 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+     97 │       if (kind === 'forecast') {
+     98 │         const resultSeries = charts[0]?.series ?? [];
+   > 99 │ ...t + '/metrics') && resource('/api/runs/' + ids.forecast + '/predictions', ['origin_time']) && resour...
+        │                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    100 │       }
+    101 │       if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+
+  i Unsafe fix: Use a template literal.
+
+     97  97 │         if (kind === 'forecast') {
+     98  98 │           const resultSeries = charts[0]?.series ?? [];
+     99     │ - ...s/'·+·ids.forecast·+·'/metrics')·&&·resource('/api/runs/'·+·ids.forecast·+·'/predictions',·['origin_...
+         99 │ + ········valid·=·location.pathname·===·'/runs/'·+·ids.forecast·&&·resource('/api/runs/'·+·ids.forecast·+·'/metrics')·&&·resource(`/api/runs/${ids.forecast}/predictions`,·['origin_time'])·&&·resource('/api/datasets/synthetic-alpha/series',·['start',·'end'])·&&·['上下文',·'真值',·'预测均值'].every((name)·=>·resultSeries.some((series)·=>·series.name·===·name·&&·series.nonempty·>·0))·&&·readyCharts;
+    100 100 │         }
+    101 101 │         if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+
+
+browser_probe.mjs:101:62 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+     99 │         valid = location.pathname === '/runs/' + ids.forecast && resource('/api/runs/' + ids.forecas...
+    100 │       }
+  > 101 │       if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+        │                                                              ^^^^^^^^^^^^^^^^^^^^^^^
+    102 │     }
+    103 │     if (kind === 'system') valid = location.pathname === '/system' && resource('/api/system') && resource('/api/backbones') && body.includes('CPU') && !document.querySelector('.ant-skeleton-active');
+
+  i Unsafe fix: Use a template literal.
+
+     99  99 │   ... === name && series.nonempty > 0)) && readyCharts;
+    100 100 │         }
+    101     │ - ······if·(kind·===·'classify')·valid·=·location.pathname·===·'/runs/'·+·ids.classify·&&·body.includes('混淆矩阵')·&&·body.includes('标签规则与阈值')·&&·resource('/api/runs/'·+·ids.classify·+·'/metrics')·&&·readyCharts;
+        101 │ + ······if·(kind·===·'classify')·valid·=·location.pathname·===·`/runs/${ids.classify}`·&&·body.includes('混淆矩阵')·&&·body.includes('标签规则与阈值')·&&·resource('/api/runs/'·+·ids.classify·+·'/metrics')·&&·readyCharts;
+    102 102 │       }
+    103 103 │       if (kind === 'system') valid = location.pathname === '/system' && resource('/api/system') && resource('/api/backbones') && body.includes('CPU') && !document.querySelector('.ant-skeleton-active');
+
+
+browser_probe.mjs:101:151 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+     99 │         valid = location.pathname === '/runs/' + ids.forecast && resource('/api/runs/' + ids.forecas...
+    100 │       }
+  > 101 │       if (kind === 'classify') valid = location.pathname === '/runs/' + ids.classify && body.includes('混淆矩阵') && body.includes('标签规则与阈值') && resource('/api/runs/' + ids.classify + '/metrics') && readyCharts;
+        │                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    102 │     }
+    103 │     if (kind === 'system') valid = location.pathname === '/system' && resource('/api/system') && resource('/api/backbones') && body.includes('CPU') && !document.querySelector('.ant-skeleton-active');
+
+  i Unsafe fix: Use a template literal.
+
+     99  99 │   ... === name && series.nonempty > 0)) && readyCharts;
+    100 100 │         }
+    101     │ - ······if·(kind·===·'classify')·valid·=·location.pathname·===·'/runs/'·+·ids.classify·&&·body.includes('混淆矩阵')·&&·body.includes('标签规则与阈值')·&&·resource('/api/runs/'·+·ids.classify·+·'/metrics')·&&·readyCharts;
+        101 │ + ······if·(kind·===·'classify')·valid·=·location.pathname·===·'/runs/'·+·ids.classify·&&·body.includes('混淆矩阵')·&&·body.includes('标签规则与阈值')·&&·resource(`/api/runs/${ids.classify}/metrics`)·&&·readyCharts;
+    102 102 │       }
+    103 103 │       if (kind === 'system') valid = location.pathname === '/system' && resource('/api/system') && resource('/api/backbones') && body.includes('CPU') && !document.querySelector('.ant-skeleton-active');
+
+
+browser_probe.mjs:166:31 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    164 │ export function collectPaint({ id, timeoutMs = 1000 }) {
+    165 │   const stage = window.__tsllmAssessment?.results[id];
+  > 166 │   if (!stage) throw new Error('Missing ready stage: ' + id);
+        │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    167 │   if (!Number.isFinite(timeoutMs) || timeoutMs < 0) throw new Error('Invalid paint collection timeout');
+    168 │   const startedAt = performance.now();
+
+  i Unsafe fix: Use a template literal.
+
+    164 164 │   export function collectPaint({ id, timeoutMs = 1000 }) {
+    165 165 │     const stage = window.__tsllmAssessment?.results[id];
+    166     │ - ··if·(!stage)·throw·new·Error('Missing·ready·stage:·'·+·id);
+        166 │ + ··if·(!stage)·throw·new·Error(`Missing·ready·stage:·${id}`);
+    167 167 │     if (!Number.isFinite(timeoutMs) || timeoutMs < 0) throw new Error('Invalid paint collection timeout');
+    168 168 │     const startedAt = performance.now();
+
+
+browser_probe.mjs:171:44 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    169 │   const paintAtReady = stage.paint.map((entry) => ({ ...entry }));
+    170 │   const observed = new Map();
+  > 171 │   const remember = (entry) => observed.set(entry.entryType + ':' + entry.name + ':' + entry.startTime, entry);
+        │                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    172 │   for (const entry of paintAtReady) remember(entry);
+    173 │   const appendNative = (entries) => { for (const entry of entries) remember(entry.toJSON()); };
+
+  i Unsafe fix: Use a template literal.
+
+    169 169 │     const paintAtReady = stage.paint.map((entry) => ({ ...entry }));
+    170 170 │     const observed = new Map();
+    171     │ - ··const·remember·=·(entry)·=>·observed.set(entry.entryType·+·':'·+·entry.name·+·':'·+·entry.startTime,·entry);
+        171 │ + ··const·remember·=·(entry)·=>·observed.set(`${entry.entryType}:${entry.name}:${entry.startTime}`,·entry);
+    172 172 │     for (const entry of paintAtReady) remember(entry);
+    173 173 │     const appendNative = (entries) => { for (const entry of entries) remember(entry.toJSON()); };

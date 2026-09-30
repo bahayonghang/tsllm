@@ -1,0 +1,8 @@
+{
+  "phase": "context reading",
+  "command": "Get-Content -LiteralPath <B1 archive>/evidence/closure/archive-reference-mapping.json -Raw -Encoding utf8",
+  "failure": "Path did not exist; PowerShell reported Cannot find path.",
+  "effect": "Read-only lookup failed. No file changed.",
+  "repair": "Listed evidence/closure and read README.md, result.md, archive-receipt.json and postarchive-validation.json. No source was invented.",
+  "scope": "Does not affect historical observations or formal gates."
+}

@@ -1,0 +1,13 @@
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend rules and scope"}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Seven route paths and ownership"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Mandatory gates and browser requirements"}
+{"file": ".trellis/spec/frontend/api-client.md", "reason": "Preserve API requests and SSE behavior"}
+{"file": ".trellis/spec/frontend/forms-and-charts.md", "reason": "Preserve form, Canvas and warning contracts"}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Minimal shared route helper"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md", "reason": "Parent requirements read only"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md", "reason": "Shared contracts read only"}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/report.md", "reason": "Historical decision and measurement semantics"}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/verification.md", "reason": "Recovery and evidence boundaries"}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/review/continuation-review.md", "reason": "Independent recovery-r1 conclusions"}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md", "reason": "Actual document recovery rationale"}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/README.md", "reason": "Ready snapshot and corrected FCP semantics"}

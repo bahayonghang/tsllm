@@ -1,0 +1,24 @@
+{
+  "check": "File mtimes and installation metadata after blocked pnpm preparation",
+  "attempt_start_utc": "2026-09-30T08:24:00Z",
+  "metadata": [
+    {
+      "file": ".modules.yaml",
+      "sha256": "4d2ba7b3e4ada99730af03f273faf3d1850e4aad04d6fd4f3b5f398b10f6d82d",
+      "last_write_utc": "2026-09-29T09:43:25.645253+00:00"
+    },
+    {
+      "file": ".pnpm-workspace-state-v1.json",
+      "sha256": "316f7e71b41739065d07e2e4ccf55fbc3dca29fe3d5d26bfe15ef16e087ed34f",
+      "last_write_utc": "2026-09-29T09:43:25.654772+00:00"
+    },
+    {
+      "file": ".pnpm/lock.yaml",
+      "sha256": "636cd49d8cd5a5f67dd9a5ad2652ad188040541f398fd299ad253acc981ae2d4",
+      "last_write_utc": "2026-09-29T09:43:25.648252+00:00"
+    }
+  ],
+  "package_files_inspected": 29234,
+  "files_modified_since_attempt": [],
+  "limitation": "No pre-attempt complete dependency hash snapshot; this is not a before/after dependency hash comparison."
+}

@@ -1,0 +1,16 @@
+{
+  "args": [
+    ".venv\\Scripts\\python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\review\\verify_http.py",
+    "--raw",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\raw",
+    "--variants",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\variants",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\http.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\"passed\": true, \"cold_source_asset_entries_checked\": 830, \"cold_http_status_counts\": {\"200\": 830}, \"asset_content_encoding_counts\": {\"absent\": 1205}, \"asset_cache_control_counts\": {\"absent\": 1205}, \"warm_asset_cache_classifications\": {\"B0\": {\"cache-reported-no-disk-flag\": 5}, \"B1\": {\"cache-reported-no-disk-flag\": 45}, \"B2\": {\"cache-reported-no-disk-flag\": 90}}, \"warm_asset_resource_timing_transfer_bytes\": {\"B0\": [0, 0, 0, 0, 0], \"B1\": [0, 0, 0, 0, 0], \"B2\": [0, 0, 0, 0, 0]}, \"limits\": [\"Cache event without a disk flag does not prove a specific cache tier\", \"Resource Timing byte reports are not packet-capture measurements\"]}\n",
+  "stderr": ""
+}

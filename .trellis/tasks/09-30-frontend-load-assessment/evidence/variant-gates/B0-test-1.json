@@ -1,0 +1,10 @@
+{
+  "variant": "B0",
+  "gate": "test",
+  "attempt": 1,
+  "command": "pnpm -C <variant>/web run test",
+  "started_utc": "2026-09-30T08:24:04.395286+00:00",
+  "duration_seconds": 0.21784159999879193,
+  "exit_code": 1,
+  "log": "B0-test-1.txt"
+}

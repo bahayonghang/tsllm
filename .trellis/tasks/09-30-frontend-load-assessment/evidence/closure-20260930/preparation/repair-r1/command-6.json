@@ -1,0 +1,11 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\preparation\\prepare_closure_v1.py",
+    "--verify"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"mode\": \"verify\", \"archived\": false, \"original_files_verified\": 463, \"log_copies_verified\": 38, \"reference_entries_verified\": 50, \"writes\": 0}\n",
+  "stderr": ""
+}

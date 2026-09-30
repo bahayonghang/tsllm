@@ -1,0 +1,95 @@
+--- a/evidence/measurement/browser_probe.mjs
++++ b/evidence/measurement/browser_probe.mjs
+@@ -161,0 +162,58 @@
++
++// Readiness and resources stay frozen. Native paint publication can follow rAF.
++export function collectPaint({ id, timeoutMs = 1000 }) {
++  const stage = window.__tsllmAssessment?.results[id];
++  if (!stage) throw new Error('Missing ready stage: ' + id);
++  if (!Number.isFinite(timeoutMs) || timeoutMs < 0) throw new Error('Invalid paint collection timeout');
++  const startedAt = performance.now();
++  const paintAtReady = stage.paint.map((entry) => ({ ...entry }));
++  const observed = new Map();
++  const remember = (entry) => observed.set(entry.entryType + ':' + entry.name + ':' + entry.startTime, entry);
++  for (const entry of paintAtReady) remember(entry);
++  const appendNative = (entries) => { for (const entry of entries) remember(entry.toJSON()); };
++  const hasFcp = () => [...observed.values()].some((entry) => entry.name === 'first-contentful-paint');
++
++  return new Promise((resolve) => {
++    let observer = null;
++    let timer = null;
++    let settled = false;
++    const finish = (status, error = null) => {
++      if (settled) return;
++      settled = true;
++      if (timer !== null) clearTimeout(timer);
++      try {
++        appendNative(performance.getEntriesByType('paint'));
++        if (observer) appendNative(observer.takeRecords());
++      } catch (failure) {
++        error = String(failure);
++        status = 'error';
++      }
++      observer?.disconnect();
++      const collectedAt = performance.now();
++      resolve({
++        ...stage,
++        paintAtReady,
++        paint: [...observed.values()].sort((left, right) => left.startTime - right.startTime),
++        paintCollection: {
++          status: hasFcp() ? 'observed' : status,
++          startedAt, collectedAt, waitMs: collectedAt - startedAt, timeoutMs,
++          readyEndpoint: stage.end, scope: 'document',
++          source: 'native-performance-timeline-and-buffered-observer',
++          ...(error === null ? {} : { error }),
++        },
++      });
++    };
++    try {
++      if (!PerformanceObserver.supportedEntryTypes.includes('paint')) return finish('unsupported');
++      appendNative(performance.getEntriesByType('paint'));
++      if (hasFcp()) return finish('observed');
++      observer = new PerformanceObserver((list) => {
++        if (settled) return;
++        appendNative(list.getEntries());
++        if (hasFcp()) finish('observed');
++      });
++      timer = setTimeout(() => finish('timeout'), timeoutMs);
++      observer.observe({ type: 'paint', buffered: true });
++    } catch (error) { finish('error', String(error)); }
++  });
++}
+--- a/evidence/measurement/measure.mjs
++++ b/evidence/measurement/measure.mjs
+@@ -3,0 +4 @@
++import { createHash } from 'node:crypto';
+@@ -6 +7 @@
+-import { installProbe } from './browser_probe.mjs';
++import { collectPaint, installProbe } from './browser_probe.mjs';
+@@ -8,0 +10 @@
++const PAINT_COLLECTION_TIMEOUT_MS = 1000;
+@@ -77 +79 @@
+-async function awaitReady(page, id) {
++export async function awaitReady(page, id) {
+@@ -79 +81 @@
+-  return page.evaluate((name) => window.__tsllmAssessment.results[name], id);
++  return page.evaluate(collectPaint, { id, timeoutMs: PAINT_COLLECTION_TIMEOUT_MS });
+@@ -112 +114 @@
+-async function sample(browser, configuration, args, scenario) {
++async function sample(browser, configuration, args, scenario, instrumentation) {
+@@ -123,0 +126 @@
++  record.instrumentation = instrumentation;
+@@ -200,0 +204,10 @@
++  const instrumentation = {
++    revision: 'paint-collection-r1',
++    scripts: Object.fromEntries(['browser_probe.mjs', 'measure.mjs'].map((name) => [name, createHash('sha256').update(fs.readFileSync(new URL(name, import.meta.url))).digest('hex')])),
++    paintCollection: { timeoutMs: PAINT_COLLECTION_TIMEOUT_MS, scope: 'document', beforeNextNavigationOrClose: true, preservesReadySnapshot: true },
++  };
++  const manifestPath = path.join(path.dirname(args.output), path.basename(args.output) + '-instrumentation.json');
++  const manifestText = JSON.stringify(instrumentation, null, 2) + String.fromCharCode(10);
++  if (fs.existsSync(manifestPath)) {
++    if (fs.readFileSync(manifestPath, 'utf8') !== manifestText) throw new Error('Different measurement instrument revision in output directory');
++  } else fs.writeFileSync(manifestPath, manifestText, { encoding: 'utf8', flag: 'wx' });
+@@ -210 +223 @@
+-      const result = await sample(browser, configuration, args, scenario);
++      const result = await sample(browser, configuration, args, scenario, instrumentation);

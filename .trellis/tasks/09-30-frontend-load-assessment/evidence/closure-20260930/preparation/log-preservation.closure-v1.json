@@ -1,0 +1,349 @@
+{
+  "revision": "closure-v1",
+  "count": 38,
+  "files": [
+    {
+      "original_task_relative_path": "evidence/measurement/journey/service-B0-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/journey/service-B0-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758163785023400,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/journey/service-B1-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/journey/service-B1-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758177021710900,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/journey/service-B2-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/journey/service-B2-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758190040523700,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/pilot/service-B0-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/pilot/service-B0-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757786873728300,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B0-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B0-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757920389453500,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B0-s2-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B0-s2-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757990779019400,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B0-s3-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B0-s3-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758020655797800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B0-s4-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B0-s4-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758047389658300,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B0-s5-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B0-s5-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758116959378400,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B1-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B1-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757934404899100,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B1-s2-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B1-s2-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757962608338800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B1-s3-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B1-s3-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758034760775000,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B1-s4-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B1-s4-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758061386745400,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B1-s5-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B1-s5-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758088747764000,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B2-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B2-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757947961691100,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B2-s2-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B2-s2-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790757976013029600,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B2-s3-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B2-s3-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758004749546500,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B2-s4-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B2-s4-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758074874710200,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/raw/service-B2-s5-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/raw/service-B2-s5-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790758102161847400,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/journey/service-B0-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/journey/service-B0-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761363113109000,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/journey/service-B1-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/journey/service-B1-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761376372050500,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/journey/service-B2-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/journey/service-B2-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761389312378100,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/pilot/service-B0-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/pilot/service-B0-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790760987357885800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B0-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B0-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761116994816300,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B0-s2-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B0-s2-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761187575760100,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B0-s3-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B0-s3-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761215817387300,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B0-s4-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B0-s4-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761243246236200,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B0-s5-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B0-s5-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761311109895800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B1-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B1-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761131057070700,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B1-s2-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B1-s2-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761159153856700,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B1-s3-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B1-s3-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761229866039100,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B1-s4-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B1-s4-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761257181023800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B1-s5-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B1-s5-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761283618511800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B2-s1-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B2-s1-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761144475787800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B2-s2-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B2-s2-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761172618401900,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B2-s3-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B2-s3-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761200649040300,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B2-s4-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B2-s4-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761269730163400,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    },
+    {
+      "original_task_relative_path": "evidence/measurement/recovery-r1/raw/service-B2-s5-a1.log",
+      "preserved_task_relative_path": "evidence/closure-20260930/preparation/logs/evidence/measurement/recovery-r1/raw/service-B2-s5-a1.log.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_mtime_ns": 1790761297117685800,
+      "byte_equal": true,
+      "git_check_ignore_exit": 1
+    }
+  ],
+  "meaning": "38 个原服务日志均为空；保留字节与路径，不用空日志证明服务退出。"
+}

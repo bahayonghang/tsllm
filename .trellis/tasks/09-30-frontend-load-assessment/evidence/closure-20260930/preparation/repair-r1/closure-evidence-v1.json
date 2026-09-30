@@ -1,0 +1,136 @@
+{
+  "revision": "closure-evidence-v1",
+  "passed": true,
+  "read_only_import": "evidence/report/recompute_report.py",
+  "import_sha256": "79d96ca669e3cabbfbede318ac2c51405aa436e54f102c533b07e16e40a550d6",
+  "value_comparisons": 40275,
+  "main_observations": 90,
+  "journeys": 3,
+  "groups": 21,
+  "builds": {
+    "B0": {
+      "files": 2,
+      "raw_bytes": 2420191,
+      "gzip_sum_bytes": 776665
+    },
+    "B1": {
+      "files": 21,
+      "raw_bytes": 2430585,
+      "gzip_sum_bytes": 796118
+    },
+    "B2": {
+      "files": 39,
+      "raw_bytes": 2442905,
+      "gzip_sum_bytes": 810268
+    }
+  },
+  "gates": [
+    {
+      "gate": "B0-check-4",
+      "sha256": "2474928f4236237d35718c902ca8b874bd96e7e14f3b8afd3adbfe4a1e838e41",
+      "exit_code": 0
+    },
+    {
+      "gate": "B0-test-3",
+      "sha256": "aba7e3830ec0e773f37dadbfc2618b7d29f10732884385e55421c95c6414981d",
+      "exit_code": 0
+    },
+    {
+      "gate": "B0-build-4",
+      "sha256": "3013350431caadcf4bc41795a8a27ccca7875e74b5dad4f61c50e9d99f870f1f",
+      "exit_code": 0
+    },
+    {
+      "gate": "B1-check-3",
+      "sha256": "0da39d18196a7d447b65df0526f48a55a9c041d5dcffaefd43a1ecc90bad9b3e",
+      "exit_code": 0
+    },
+    {
+      "gate": "B1-test-4",
+      "sha256": "11999c0ca0f781a10c8984fadfeccbbb9861e01d8d2f7e2fb447e55a6e3c2005",
+      "exit_code": 0
+    },
+    {
+      "gate": "B1-build-3",
+      "sha256": "e2a98b580d75dbe4e3bad23e754d3566b2bc581ebaace72ec3f9c997fe3a469a",
+      "exit_code": 0
+    },
+    {
+      "gate": "B2-check-3",
+      "sha256": "77069545cedb1fad42c36fab46a3bad433a64437ec4fcf0a7683679298111112",
+      "exit_code": 0
+    },
+    {
+      "gate": "B2-test-4",
+      "sha256": "95b46053c1bdc63ee442640cd3c4e6317af699b6bcc22c7db7e3297de27d2f2d",
+      "exit_code": 0
+    },
+    {
+      "gate": "B2-build-3",
+      "sha256": "d65d73b5268609beafb2f43dd5b7093c463bd79f86df406d996fac09248ebf0b",
+      "exit_code": 0
+    }
+  ],
+  "historical_git_blob_hashes_checked": 289,
+  "historical_exact_git_blob_matches": 285,
+  "historical_explicit_crlf_worktree_proofs": {
+    ".trellis/spec/guides/code-reuse-thinking-guide.md": {
+      "git_blob_sha256": "f081fab5586ccce6a56ac1f7a660b61047db179733c9904dc3b08eadb7159550",
+      "git_blob_size": 5703,
+      "historical_worktree_sha256": "1908e8714f8815924977ccc3b5ea65f2888c29398896d90f39349827355e9bf4",
+      "reconstructed_crlf_sha256": "1908e8714f8815924977ccc3b5ea65f2888c29398896d90f39349827355e9bf4",
+      "reconstructed_crlf_size": 5889,
+      "converted_lf_count": 186,
+      "conversion": "LF-only Git blob, each LF replaced with CRLF",
+      "historical_sha256_matches_reconstruction": true
+    },
+    ".trellis/spec/guides/cross-layer-thinking-guide.md": {
+      "git_blob_sha256": "f59c23a7245d616793d79b8ac2c4131db22d8ae138efbd53642aaac600894374",
+      "git_blob_size": 4881,
+      "historical_worktree_sha256": "bc8abaf348279bc4a77726103f46346464b7996ae8207d0224148f762203f97f",
+      "reconstructed_crlf_sha256": "bc8abaf348279bc4a77726103f46346464b7996ae8207d0224148f762203f97f",
+      "reconstructed_crlf_size": 5039,
+      "converted_lf_count": 158,
+      "conversion": "LF-only Git blob, each LF replaced with CRLF",
+      "historical_sha256_matches_reconstruction": true
+    },
+    ".trellis/spec/guides/index.md": {
+      "git_blob_sha256": "a424e0aea19abb60307cac7ffb892c8d539e2bbeb0fee97a8280e65cd702a85e",
+      "git_blob_size": 3920,
+      "historical_worktree_sha256": "7ebc0bfa35539b24fa16d5b56c89adc351594476c0e050d83146395867f86f01",
+      "reconstructed_crlf_sha256": "7ebc0bfa35539b24fa16d5b56c89adc351594476c0e050d83146395867f86f01",
+      "reconstructed_crlf_size": 4023,
+      "converted_lf_count": 103,
+      "conversion": "LF-only Git blob, each LF replaced with CRLF",
+      "historical_sha256_matches_reconstruction": true
+    },
+    ".trellis/tasks/archive/2026-09/00-bootstrap-guidelines/task.json": {
+      "git_blob_sha256": "5e5748e5619e65d92a725d03c05c57f1f74938e0de96f0a6b966bcc1370bf942",
+      "git_blob_size": 690,
+      "historical_worktree_sha256": "34f0baecbf8b5f8d82aa393093461fee5c1d36608c07ad0e45fbf5ce660554af",
+      "reconstructed_crlf_sha256": "34f0baecbf8b5f8d82aa393093461fee5c1d36608c07ad0e45fbf5ce660554af",
+      "reconstructed_crlf_size": 717,
+      "converted_lf_count": 27,
+      "conversion": "LF-only Git blob, each LF replaced with CRLF",
+      "historical_sha256_matches_reconstruction": true
+    }
+  },
+  "historical_baseline": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "current_protection": {
+    "tracked_files": {
+      "count": 586,
+      "changed": []
+    },
+    "protected_files": {
+      "count": 3,
+      "changed": []
+    }
+  },
+  "retained_high_value_ms": 2439.7000000029802,
+  "limits": [
+    "Imports only retained pure report functions; never calls report main.",
+    "Re-sums retained per-asset gzip sizes; does not recompress missing artifacts.",
+    "Reuses hash-bound build, lint, TypeScript and visible acceptance evidence.",
+    "No new browser, server, benchmark, dependency operation or private-root read."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "prior_variant_snapshot_hashes_match": true,
+  "prior_gate_hashes_match": true,
+  "published_variants_match_after_snapshot": true,
+  "new_evidence_utf8_json_whitespace_checks": true,
+  "git_checks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--",
+        "web",
+        "src",
+        "tests",
+        "configs",
+        "pyproject.toml",
+        "uv.lock",
+        ".trellis/spec"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--no-index",
+        "--check",
+        "--",
+        "<empty-temp-directory>",
+        "<revision-evidence-directory>"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

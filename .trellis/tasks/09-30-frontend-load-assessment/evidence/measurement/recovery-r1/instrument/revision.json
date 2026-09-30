@@ -1,0 +1,36 @@
+{
+  "revision": "paint-collection-r1",
+  "recorded_utc": "2026-09-30T09:36:08.311998+00:00",
+  "scripts": [
+    {
+      "file": "browser_probe.mjs",
+      "before_sha256": "3e6ec1156a323e6a5a18c0e6232bc0db604cb96297d9af6577181bb4e1a43003",
+      "after_sha256": "3ae70bc5884653d1aeb29dda42c81221af0b4bf64bc1bf43874419d25b9b80dd"
+    },
+    {
+      "file": "measure.mjs",
+      "before_sha256": "a8cbb301e38677a779070fd0aa957d9af27f76395928edaca051de03516d2594",
+      "after_sha256": "e5b7f96d90898082450b2c76d688fa8e4838101c57905af52e618919477d45cd"
+    }
+  ],
+  "readiness_probe_unchanged": true,
+  "collection_timeout_ms": 1000,
+  "original_raw_records": 92,
+  "original_valid_raw_records": 90,
+  "original_raw_sha256_unchanged": true,
+  "product_tracked_diff_empty": true,
+  "test_sha256": "162af0f981ee0fa1883dc05c26b5d2b719da4ed9d6d521f82b340003d40e1621",
+  "syntax_checks": 3,
+  "deterministic_tests_passed": 8,
+  "lint_exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "lint_information_counts": [
+    9,
+    10,
+    2
+  ],
+  "real_browser_pilot": "Main-session responsibility; not run by this implementer"
+}

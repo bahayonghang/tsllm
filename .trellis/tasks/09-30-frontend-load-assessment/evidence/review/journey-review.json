@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "primary_observations": 0,
+  "supplementary_observations": 3,
+  "failures_preserved": [],
+  "browsers": [
+    "154.0.4258.37"
+  ],
+  "groups": {
+    "B0:journey": 1,
+    "B1:journey": 1,
+    "B2:journey": 1
+  },
+  "statistics_and_delta_checks": 302,
+  "asset_entries_matched_to_variant_inventory": 489,
+  "summary_sha256": "d28c5b8f290650d3355220e0e26213debe933838efc603e43125957d17f6fd5d",
+  "raw_sha256": {
+    "B0-journey-s1-a1.json": "a6b27f9b93e185bc6c547dc0cf2f2e5c601ca2879835607f6dcd56a713177764",
+    "B1-journey-s1-a1.json": "90e21c11a040ec8ff788f55c73d9a74b2351c6c2a955f5fd47420e5a9720164f",
+    "B2-journey-s1-a1.json": "7c4a51dff9eca19c8e87c72909c0d9d37299525ceced3945468ac76681d9e9a1"
+  },
+  "limits": [
+    "Checks measured timing and resource arithmetic; does not replace visible acceptance",
+    "Does not interpret last journey stage time as total journey duration"
+  ]
+}

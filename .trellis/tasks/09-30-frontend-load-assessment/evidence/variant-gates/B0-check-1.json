@@ -1,0 +1,10 @@
+{
+  "variant": "B0",
+  "gate": "check",
+  "attempt": 1,
+  "command": "pnpm -C <variant>/web run check",
+  "started_utc": "2026-09-30T08:24:04.178844+00:00",
+  "duration_seconds": 0.21494560000064666,
+  "exit_code": 1,
+  "log": "B0-check-1.txt"
+}

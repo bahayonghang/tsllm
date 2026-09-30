@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/Scripts/ruff.exe",
+    "format",
+    "--check",
+    "--no-cache",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\preparation\\prepare_closure_v1.py",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\closure_verify_v1.py"
+  ],
+  "exit_code": 0,
+  "stdout": "2 files already formatted\n",
+  "stderr": ""
+}

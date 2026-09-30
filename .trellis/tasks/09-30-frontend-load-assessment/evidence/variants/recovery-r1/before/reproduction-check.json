@@ -1,0 +1,23 @@
+[
+  {
+    "variant": "B0",
+    "patch_format": "zero-context; before/after SHA256 validation",
+    "reproduced_files": 51,
+    "mismatches": [],
+    "existing_test_files_unchanged": true
+  },
+  {
+    "variant": "B1",
+    "patch_format": "zero-context; before/after SHA256 validation",
+    "reproduced_files": 53,
+    "mismatches": [],
+    "existing_test_files_unchanged": true
+  },
+  {
+    "variant": "B2",
+    "patch_format": "zero-context; before/after SHA256 validation",
+    "reproduced_files": 55,
+    "mismatches": [],
+    "existing_test_files_unchanged": true
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "variant": "B0",
+  "gate": "build",
+  "attempt": 2,
+  "command": "tsc --noEmit && vite build",
+  "working_directory": "<variant>/web",
+  "launcher": "installed .bin commands; identical package.json script, pnpm 12 automatic install bypassed",
+  "started_utc": "2026-09-30T08:25:18.215751+00:00",
+  "duration_seconds": 2.073088299999654,
+  "exit_code": 2,
+  "log": "B0-build-2.txt"
+}

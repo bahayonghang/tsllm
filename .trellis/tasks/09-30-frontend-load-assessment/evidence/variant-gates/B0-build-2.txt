@@ -1,0 +1,1 @@
+assessmentGraph.ts(31,44): error TS2339: Property 'originalLength' does not exist on type 'RenderedModule'.

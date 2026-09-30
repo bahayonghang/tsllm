@@ -1,0 +1,31 @@
+{
+  "id": "frontend-load-assessment",
+  "name": "frontend-load-assessment",
+  "title": "前端加载影响与拆分收益评估",
+  "description": "量化当前前端加载成本，对照隔离临时方案评估路由与重依赖拆分收益，提交可复核的决策报告；本任务不落地产品拆分。",
+  "status": "in_progress",
+  "dev_type": "frontend",
+  "scope": "web",
+  "package": null,
+  "priority": "P2",
+  "creator": "lyh",
+  "assignee": "lyh",
+  "createdAt": "2026-09-30",
+  "completedAt": null,
+  "branch": "codex/frontend-load-assessment",
+  "base_branch": "codex/compare-warnings",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [],
+  "notes": "2026-09-30 用户在最终规划摘要后明确批准实施。正式 start 已激活任务；仅运行隔离评估并写入本任务材料，不落地产品拆分，不提交或归档。",
+  "meta": {
+    "baseline_commit": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+    "deliverable": "assessment-only",
+    "experiment_root": "C:\\Users\\lyh\\AppData\\Local\\Temp\\tsllm-frontend-load-20260930-t60bigc6",
+    "implementation_approved": "2026-09-30"
+  }
+}

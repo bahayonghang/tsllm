@@ -1,0 +1,19 @@
+{
+  "args": [
+    ".venv\\Scripts\\python.exe",
+    "-B",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\review\\verify_numerics.py",
+    "--raw",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\journey",
+    "--summary",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\measurement\\recovery-r1\\journey-summary.json",
+    "--variants",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\variants",
+    "--output",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\numerics-journey.json",
+    "--supplementary-only"
+  ],
+  "returncode": 0,
+  "stdout": "{\"passed\": true, \"primary_observations\": 0, \"supplementary_observations\": 3, \"failures_preserved\": [], \"browsers\": [\"154.0.4258.37\"], \"statistics_and_delta_checks\": 302, \"asset_entries_matched_to_variant_inventory\": 489, \"summary_sha256\": \"0d0a69307ec0859552b7900ea4a4358ca8447a21b965bc9506eeed10f0465952\", \"limits\": [\"Checks measured timing and resource arithmetic; does not replace visible acceptance\", \"Does not interpret last journey stage time as total journey duration\"]}\n",
+  "stderr": ""
+}

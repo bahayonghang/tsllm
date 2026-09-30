@@ -1,0 +1,172 @@
+{
+  "lifecycle": [
+    {
+      "sample": 1,
+      "variant": "B0",
+      "pid": 61412,
+      "started_at": "2026-09-30T09:38:37.000554+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:38:46.978487+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 1,
+      "variant": "B1",
+      "pid": 54852,
+      "started_at": "2026-09-30T09:38:51.061913+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:39:00.384062+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 1,
+      "variant": "B2",
+      "pid": 81296,
+      "started_at": "2026-09-30T09:39:04.481508+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:39:15.062224+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 2,
+      "variant": "B1",
+      "pid": 82164,
+      "started_at": "2026-09-30T09:39:19.158850+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:39:28.545073+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 2,
+      "variant": "B2",
+      "pid": 80932,
+      "started_at": "2026-09-30T09:39:32.624759+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:39:43.502275+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 2,
+      "variant": "B0",
+      "pid": 81496,
+      "started_at": "2026-09-30T09:39:47.580058+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:39:56.557961+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 3,
+      "variant": "B2",
+      "pid": 45328,
+      "started_at": "2026-09-30T09:40:00.655653+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:40:11.735999+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 3,
+      "variant": "B0",
+      "pid": 59408,
+      "started_at": "2026-09-30T09:40:15.823535+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:40:25.774733+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 3,
+      "variant": "B1",
+      "pid": 60868,
+      "started_at": "2026-09-30T09:40:29.871374+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:40:39.175918+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 4,
+      "variant": "B0",
+      "pid": 72896,
+      "started_at": "2026-09-30T09:40:43.250720+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:40:53.094005+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 4,
+      "variant": "B1",
+      "pid": 66376,
+      "started_at": "2026-09-30T09:40:57.186363+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:41:05.639552+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 4,
+      "variant": "B2",
+      "pid": 79144,
+      "started_at": "2026-09-30T09:41:09.735020+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:41:19.526723+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 5,
+      "variant": "B1",
+      "pid": 77920,
+      "started_at": "2026-09-30T09:41:23.623355+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:41:33.032581+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 5,
+      "variant": "B2",
+      "pid": 48236,
+      "started_at": "2026-09-30T09:41:37.122995+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:41:47.022248+00:00",
+      "port_9000_free": true
+    },
+    {
+      "sample": 5,
+      "variant": "B0",
+      "pid": 79556,
+      "started_at": "2026-09-30T09:41:51.114598+00:00",
+      "measurement_exit_code": 0,
+      "stop_method": "Owned process group interrupt",
+      "exit_code": 3,
+      "finished_at": "2026-09-30T09:42:00.356600+00:00",
+      "port_9000_free": true
+    }
+  ],
+  "fixture_files_unchanged": true,
+  "fixture_file_count": 34,
+  "port_9000_free": true
+}

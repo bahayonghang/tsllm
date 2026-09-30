@@ -1,0 +1,20 @@
+{
+  "revision": "recovery-r1",
+  "fixture_files": 34,
+  "fixtures_hash_size_mtime_unchanged": true,
+  "port_9000_free": true,
+  "owned_sessions_exited": [
+    36466,
+    64651,
+    90126
+  ],
+  "viewport_override_reset": true,
+  "restored_viewport": [
+    1280,
+    900
+  ],
+  "owned_browser_tab_closed": true,
+  "held_assets_remaining": [],
+  "model_cache_file_count": 0,
+  "screenshots_written": 0
+}

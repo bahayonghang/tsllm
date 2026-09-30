@@ -1,0 +1,547 @@
+--- a/web/src/components/AppLayout.tsx
++++ b/web/src/components/AppLayout.tsx
+@@ -2 +2,2 @@
+-import { Link, Outlet, useLocation } from "react-router";
++import { Link, Outlet, useLocation, useNavigation } from "react-router";
++import { RouteLoading } from "./RouteLoading";
+@@ -19,0 +21 @@
++  const navigation = useNavigation();
+@@ -54,0 +57 @@
++        {navigation.state === "loading" && <RouteLoading />}
+--- /dev/null
++++ b/web/src/components/FeatureLoading.tsx
+@@ -0,0 +1,41 @@
++import { Alert, Button } from "antd";
++import { Component, type ReactNode, Suspense } from "react";
++
++export class FeatureLoading extends Component<
++  { children: ReactNode; label: string },
++  { failed: boolean }
++> {
++  state = { failed: false };
++
++  static getDerivedStateFromError() {
++    return { failed: true };
++  }
++
++  render() {
++    if (this.state.failed) {
++      return (
++        <Alert
++          type="error"
++          showIcon
++          title={`${this.props.label}加载失败`}
++          action={
++            <Button
++              href={`${window.location.pathname}${window.location.search}${window.location.hash}`}
++              onClick={(event) => {
++                event.preventDefault();
++                globalThis.location.reload();
++              }}
++            >
++              重新加载页面
++            </Button>
++          }
++        />
++      );
++    }
++    return (
++      <Suspense fallback={<div role="status">正在加载{this.props.label}…</div>}>
++        {this.props.children}
++      </Suspense>
++    );
++  }
++}
+--- /dev/null
++++ b/web/src/components/RouteLoading.tsx
+@@ -0,0 +1,40 @@
++import { Alert, Button } from "antd";
++import type { ComponentType } from "react";
++import { useLocation } from "react-router";
++
++export function RouteLoading() {
++  return <div role="status">正在加载页面…</div>;
++}
++
++export function RouteLoadError() {
++  const location = useLocation();
++  return (
++    <Alert
++      type="error"
++      showIcon
++      title="页面加载失败"
++      description="请重新加载页面。"
++      action={
++        <Button
++          href={`${location.pathname}${location.search}${location.hash}`}
++          onClick={(event) => {
++            event.preventDefault();
++            globalThis.location.reload();
++          }}
++        >
++          重新加载页面
++        </Button>
++      }
++    />
++  );
++}
++
++export function loadRoute(load: () => Promise<{ Component: ComponentType }>) {
++  return async () => {
++    try {
++      return await load();
++    } catch {
++      return { Component: RouteLoadError };
++    }
++  };
++}
+--- a/web/src/pages/ComparePage.tsx
++++ b/web/src/pages/ComparePage.tsx
+@@ -1,0 +2 @@
++import { lazy } from "react";
+@@ -5 +5,0 @@
+-import { CompareBarChart } from "../components/charts/CompareBarChart";
+@@ -6,0 +7 @@
++import { FeatureLoading } from "../components/FeatureLoading";
+@@ -8,0 +10,4 @@
++
++const CompareBarChart = lazy(async () => ({
++  default: (await import("../components/charts/CompareBarChart")).CompareBarChart,
++}));
+@@ -137,9 +142,11 @@
+-              <CompareBarChart
+-                metric={metric}
+-                splits={metricRows.map((row) => row.split)}
+-                runs={columns.map((column) => ({
+-                  id: column.run_id,
+-                  name: runLabel(column.run_id),
+-                }))}
+-                values={Object.fromEntries(metricRows.map((row) => [row.split, row.values]))}
+-              />
++              <FeatureLoading label="对比图表">
++                <CompareBarChart
++                  metric={metric}
++                  splits={metricRows.map((row) => row.split)}
++                  runs={columns.map((column) => ({
++                    id: column.run_id,
++                    name: runLabel(column.run_id),
++                  }))}
++                  values={Object.fromEntries(metricRows.map((row) => [row.split, row.values]))}
++                />
++              </FeatureLoading>
+--- a/web/src/pages/DatasetDetailPage.tsx
++++ b/web/src/pages/DatasetDetailPage.tsx
+@@ -14 +14 @@
+-import { useState } from "react";
++import { lazy, useState } from "react";
+@@ -18,2 +17,0 @@
+-import { SegmentTimeline } from "../components/charts/SegmentTimeline";
+-import { SeriesChart } from "../components/charts/SeriesChart";
+@@ -20,0 +19 @@
++import { FeatureLoading } from "../components/FeatureLoading";
+@@ -23,0 +23,7 @@
++
++const SeriesChart = lazy(async () => ({
++  default: (await import("../components/charts/SeriesChart")).SeriesChart,
++}));
++const SegmentTimeline = lazy(async () => ({
++  default: (await import("../components/charts/SegmentTimeline")).SegmentTimeline,
++}));
+@@ -222 +228,3 @@
+-          <SegmentTimeline segments={meta.segments} boundaries={meta.splitBoundaries} />
++          <FeatureLoading label="运行段图表">
++            <SegmentTimeline segments={meta.segments} boundaries={meta.splitBoundaries} />
++          </FeatureLoading>
+@@ -264,6 +272,8 @@
+-              <SeriesChart
+-                time={series.data.time}
+-                values={series.data.values}
+-                units={units}
+-                onRangeChange={(start, end) => setRange({ start, end })}
+-              />
++              <FeatureLoading label="通道图表">
++                <SeriesChart
++                  time={series.data.time}
++                  values={series.data.values}
++                  units={units}
++                  onRangeChange={(start, end) => setRange({ start, end })}
++                />
++              </FeatureLoading>
+--- a/web/src/pages/RunDetailPage.tsx
++++ b/web/src/pages/RunDetailPage.tsx
+@@ -11,0 +12 @@
++import { lazy } from "react";
+@@ -15 +15,0 @@
+-import { ClassifyResults } from "../components/ClassifyResults";
+@@ -17 +17 @@
+-import { ForecastResults } from "../components/ForecastResults";
++import { FeatureLoading } from "../components/FeatureLoading";
+@@ -21,0 +22,7 @@
++
++const ForecastResults = lazy(async () => ({
++  default: (await import("../components/ForecastResults")).ForecastResults,
++}));
++const ClassifyResults = lazy(async () => ({
++  default: (await import("../components/ClassifyResults")).ClassifyResults,
++}));
+@@ -159 +166,3 @@
+-        <ForecastResults runId={runId} metrics={parsed} job={data.job} />
++        <FeatureLoading label="预测结果">
++          <ForecastResults runId={runId} metrics={parsed} job={data.job} />
++        </FeatureLoading>
+@@ -161 +170,5 @@
+-      {data && parsed?.task === "classify" && <ClassifyResults metrics={parsed} job={data.job} />}
++      {data && parsed?.task === "classify" && (
++        <FeatureLoading label="分类结果">
++          <ClassifyResults metrics={parsed} job={data.job} />
++        </FeatureLoading>
++      )}
+--- a/web/src/pages/RunNewPage.tsx
++++ b/web/src/pages/RunNewPage.tsx
+@@ -4 +4 @@
+-import { useEffect, useRef, useState } from "react";
++import { lazy, useEffect, useRef, useState } from "react";
+@@ -18 +18 @@
+-import { RunConfigForm } from "../components/forms/RunConfigForm";
++import { FeatureLoading } from "../components/FeatureLoading";
+@@ -19,0 +20,4 @@
++
++const RunConfigForm = lazy(async () => ({
++  default: (await import("../components/forms/RunConfigForm")).RunConfigForm,
++}));
+@@ -161,14 +165,16 @@
+-          <RunConfigForm
+-            baseSchema={baseSchema}
+-            optionSchemas={optionSchemas}
+-            backbones={backbones.data}
+-            datasetIds={datasets.data.map((item) => item.id)}
+-            formData={formData}
+-            extraErrors={extraErrors}
+-            submitText="预览并提交"
+-            onChange={(value) => {
+-              setFormData(value);
+-              setExtraErrors(undefined);
+-            }}
+-            onSubmit={handleSubmit}
+-          />
++          <FeatureLoading label="表单">
++            <RunConfigForm
++              baseSchema={baseSchema}
++              optionSchemas={optionSchemas}
++              backbones={backbones.data}
++              datasetIds={datasets.data.map((item) => item.id)}
++              formData={formData}
++              extraErrors={extraErrors}
++              submitText="预览并提交"
++              onChange={(value) => {
++                setFormData(value);
++                setExtraErrors(undefined);
++              }}
++              onSubmit={handleSubmit}
++            />
++          </FeatureLoading>
+--- a/web/src/router.tsx
++++ b/web/src/router.tsx
+@@ -3,7 +3 @@
+-import { ComparePage } from "./pages/ComparePage";
+-import { DatasetDetailPage } from "./pages/DatasetDetailPage";
+-import { DatasetsPage } from "./pages/DatasetsPage";
+-import { RunDetailPage } from "./pages/RunDetailPage";
+-import { RunNewPage } from "./pages/RunNewPage";
+-import { RunsPage } from "./pages/RunsPage";
+-import { SystemPage } from "./pages/SystemPage";
++import { loadRoute, RouteLoadError, RouteLoading } from "./components/RouteLoading";
+@@ -14,0 +9 @@
++    HydrateFallback: RouteLoading,
+@@ -17,7 +12,47 @@
+-      { path: "datasets", element: <DatasetsPage /> },
+-      { path: "datasets/:id", element: <DatasetDetailPage /> },
+-      { path: "runs", element: <RunsPage /> },
+-      { path: "runs/new", element: <RunNewPage /> },
+-      { path: "runs/:id", element: <RunDetailPage /> },
+-      { path: "compare", element: <ComparePage /> },
+-      { path: "system", element: <SystemPage /> },
++      {
++        path: "datasets",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/DatasetsPage")).DatasetsPage,
++        })),
++      },
++      {
++        path: "datasets/:id",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/DatasetDetailPage")).DatasetDetailPage,
++        })),
++      },
++      {
++        path: "runs",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({ Component: (await import("./pages/RunsPage")).RunsPage })),
++      },
++      {
++        path: "runs/new",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/RunNewPage")).RunNewPage,
++        })),
++      },
++      {
++        path: "runs/:id",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/RunDetailPage")).RunDetailPage,
++        })),
++      },
++      {
++        path: "compare",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/ComparePage")).ComparePage,
++        })),
++      },
++      {
++        path: "system",
++        ErrorBoundary: RouteLoadError,
++        lazy: loadRoute(async () => ({
++          Component: (await import("./pages/SystemPage")).SystemPage,
++        })),
++      },
+--- /dev/null
++++ b/web/tests/FeatureLoading.test.tsx
+@@ -0,0 +1,65 @@
++import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
++import { type ComponentType, lazy } from "react";
++import { afterEach, describe, expect, it, vi } from "vitest";
++import { FeatureLoading } from "../src/components/FeatureLoading";
++
++const originalUrl = window.location.href;
++
++afterEach(() => {
++  cleanup();
++  vi.unstubAllGlobals();
++  window.history.replaceState(null, "", originalUrl);
++  vi.restoreAllMocks();
++});
++
++describe("feature module boundaries", () => {
++  it("shows a pending form module and then its interactive control", async () => {
++    let resolve: (value: { default: ComponentType }) => void = () => {};
++    const pending = new Promise<{ default: ComponentType }>((done) => {
++      resolve = done;
++    });
++    const Form = lazy(() => pending);
++    render(
++      <FeatureLoading label="表单">
++        <Form />
++      </FeatureLoading>,
++    );
++    expect(screen.getByRole("status").textContent).toContain("正在加载表单");
++    await act(async () => {
++      resolve({ default: () => <button type="button">预览并提交</button> });
++    });
++    expect(screen.getByRole("button", { name: "预览并提交" })).toBeTruthy();
++    expect(screen.queryByRole("status")).toBeNull();
++  });
++
++  it.each(["", "#restore"])(
++    "reloads a failed feature document and preserves the URL with hash %s",
++    async (hash) => {
++      const url = `/runs/synthetic?split=test${hash}`;
++      window.history.replaceState(null, "", url);
++      const reload = vi.fn();
++      vi.stubGlobal("location", { ...window.location, reload });
++      vi.spyOn(console, "error").mockImplementation(() => {});
++      const Failed = lazy(() => Promise.reject(new Error("Synthetic chart module failure")));
++      const view = render(
++        <FeatureLoading label="图表">
++          <Failed />
++        </FeatureLoading>,
++      );
++      expect(await screen.findByText("图表加载失败")).toBeTruthy();
++      const recovery = screen.getByRole("link", { name: "重新加载页面" });
++      expect(recovery.getAttribute("href")).toBe(url);
++      expect(fireEvent.click(recovery)).toBe(false);
++      expect(reload).toHaveBeenCalledTimes(1);
++      expect(window.location.pathname + window.location.search + window.location.hash).toBe(url);
++      view.unmount();
++      const Recovered = lazy(async () => ({ default: () => <div>图表已恢复</div> }));
++      render(
++        <FeatureLoading label="图表">
++          <Recovered />
++        </FeatureLoading>,
++      );
++      expect(await screen.findByText("图表已恢复")).toBeTruthy();
++    },
++  );
++});
+--- /dev/null
++++ b/web/tests/LazyRouting.test.tsx
+@@ -0,0 +1,120 @@
++import { QueryClientProvider } from "@tanstack/react-query";
++import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
++import { App } from "antd";
++import type { ComponentType } from "react";
++import { createMemoryRouter, type RouteObject, RouterProvider } from "react-router";
++import { afterEach, describe, expect, it, vi } from "vitest";
++import { loadRoute } from "../src/components/RouteLoading";
++import { routes } from "../src/router";
++import { mockFetch, newQueryClient } from "./helpers";
++
++type Module = { Component: ComponentType };
++
++function delayedModule() {
++  let resolve: (value: Module) => void = () => {};
++  let reject: (error: Error) => void = () => {};
++  const promise = new Promise<Module>((done, fail) => {
++    resolve = done;
++    reject = fail;
++  });
++  return { promise, resolve, reject };
++}
++
++function configured(path: string, load: () => Promise<Module>): RouteObject[] {
++  return routes.map((route) => ({
++    ...route,
++    children: route.children.map((child) =>
++      child.path === path ? { ...child, lazy: loadRoute(load) } : child,
++    ),
++  }));
++}
++
++function mount(initial: string, definitions: RouteObject[]) {
++  const router = createMemoryRouter(definitions, { initialEntries: [initial] });
++  const view = render(
++    <QueryClientProvider client={newQueryClient()}>
++      <App>
++        <RouterProvider router={router} />
++      </App>
++    </QueryClientProvider>,
++  );
++  return { router, ...view };
++}
++
++afterEach(() => {
++  cleanup();
++  vi.unstubAllGlobals();
++  vi.restoreAllMocks();
++});
++
++describe("route module boundaries", () => {
++  it("shows initial loading until the real page module resolves", async () => {
++    mockFetch({ "/api/runs": [] });
++    const pending = delayedModule();
++    const view = mount(
++      "/runs",
++      configured("runs", () => pending.promise),
++    );
++    expect(screen.getByRole("status").textContent).toContain("正在加载页面");
++    await act(async () => {
++      pending.resolve({ Component: (await import("../src/pages/RunsPage")).RunsPage });
++    });
++    expect(await screen.findByRole("heading", { name: "运行" })).toBeTruthy();
++    expect(screen.queryByRole("status")).toBeNull();
++    view.router.dispose();
++  });
++
++  it("shows navigation loading then renders the requested page", async () => {
++    mockFetch({ "/api/runs": [], "/api/datasets": [] });
++    const pending = delayedModule();
++    const view = mount(
++      "/runs",
++      configured("datasets", () => pending.promise),
++    );
++    await screen.findByRole("heading", { name: "运行" });
++    let navigation: Promise<void> | undefined;
++    await act(async () => {
++      navigation = view.router.navigate("/datasets");
++    });
++    expect(screen.getByRole("status").textContent).toContain("正在加载页面");
++    await act(async () => {
++      pending.resolve({ Component: (await import("../src/pages/DatasetsPage")).DatasetsPage });
++      await navigation;
++    });
++    expect(await screen.findByRole("heading", { name: "数据集" })).toBeTruthy();
++    expect(screen.queryByRole("status")).toBeNull();
++    view.router.dispose();
++  });
++
++  it.each(["", "#restore"])(
++    "reloads a failed route document and preserves the URL with hash %s",
++    async (hash) => {
++      const url = `/runs?state=succeeded${hash}`;
++      const reload = vi.fn();
++      vi.stubGlobal("location", { ...window.location, reload });
++      mockFetch({ "/api/runs": [] });
++      const pending = delayedModule();
++      const view = mount(
++        url,
++        configured("runs", () => pending.promise),
++      );
++      await act(async () => {
++        pending.reject(new Error("Synthetic module download failure"));
++      });
++      expect(await screen.findByText("页面加载失败")).toBeTruthy();
++      const recovery = screen.getByRole("link", { name: "重新加载页面" });
++      expect(recovery.getAttribute("href")).toBe(url);
++      expect(fireEvent.click(recovery)).toBe(false);
++      expect(reload).toHaveBeenCalledTimes(1);
++      const location = view.router.state.location;
++      expect(location.pathname + location.search + location.hash).toBe(url);
++      view.router.dispose();
++      view.unmount();
++      // A document reload creates a new router and imports the working module.
++      const recovered = mount(url, routes);
++      expect(await screen.findByRole("heading", { name: "运行" })).toBeTruthy();
++      expect(recovered.router.state.errors).toBeNull();
++      recovered.router.dispose();
++    },
++  );
++});
+--- /dev/null
++++ b/web/tests/RouteResolution.test.tsx
+@@ -0,0 +1,43 @@
++import { waitFor } from "@testing-library/react";
++import { createMemoryRouter } from "react-router";
++import { describe, expect, it } from "vitest";
++import { routes } from "../src/router";
++
++const entries = [
++  ["/datasets", "datasets", undefined],
++  ["/datasets/synthetic-dataset", "datasets/:id", "synthetic-dataset"],
++  ["/runs", "runs", undefined],
++  ["/runs/new?from=synthetic-run", "runs/new", undefined],
++  ["/runs/synthetic-run", "runs/:id", "synthetic-run"],
++  ["/compare?run_ids=first,second&metric=mae", "compare", undefined],
++  ["/system", "system", undefined],
++];
++
++describe("route loading contract", () => {
++  it.each(entries)("resolves direct entry %s without changing its URL", async (url, path, id) => {
++    if (!url) throw new Error("Missing test URL");
++    const router = createMemoryRouter(routes, { initialEntries: [url] });
++    await waitFor(() => expect(router.state.initialized).toBe(true));
++    expect(router.state.errors).toBeNull();
++    expect(router.state.location.pathname + router.state.location.search).toBe(url);
++    const match = router.state.matches.at(-1);
++    expect(match?.route.path).toBe(path);
++    expect(match?.params.id).toBe(id);
++    expect(match?.route.Component ?? match?.route.element).toBeTruthy();
++    router.dispose();
++  });
++
++  it("resolves every page during navigation and keeps query parameters", async () => {
++    const router = createMemoryRouter(routes, { initialEntries: ["/runs"] });
++    await waitFor(() => expect(router.state.initialized).toBe(true));
++    for (const [url, path] of entries) {
++      if (!url) throw new Error("Missing test URL");
++      await router.navigate(url);
++      expect(router.state.navigation.state).toBe("idle");
++      expect(router.state.errors).toBeNull();
++      expect(router.state.matches.at(-1)?.route.path).toBe(path);
++      expect(router.state.location.pathname + router.state.location.search).toBe(url);
++    }
++    router.dispose();
++  });
++});

@@ -1,0 +1,448 @@
+{
+  "revision": "closure-v1",
+  "old_root": ".trellis/tasks/09-30-frontend-load-assessment",
+  "archive_root": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment",
+  "activation": "归档后显式使用 B1 适配清单；冻结原件保持。旧评估默认清单由主会话仅更新直接自引用。",
+  "manifests": [
+    {
+      "source": ".trellis/tasks/09-30-frontend-load-assessment/implement.jsonl",
+      "source_sha256": "db7cb82ee3ebc06ab095e65021343f3f65ad135a5709dbe0a6a3884c10c706f2",
+      "source_size": 1590,
+      "adapter_task_relative_path": "evidence/closure-20260930/preparation/reference-adapters/assessment-implement.closure-v1.jsonl",
+      "adapter_sha256": "c84411d467e28fb5a7a6c216481e733fc852c60ec0bbc366150eab216cf83799",
+      "adapter_size": 1606,
+      "entries": [
+        {
+          "line": 1,
+          "old": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "new": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "changed": false,
+          "target_sha256": "8ba912d347a23fa08cc7bac901e275da51dbb93baa485ff632aab6b0a77acdb7",
+          "target_size": 20581
+        },
+        {
+          "line": 2,
+          "old": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/design.md",
+          "new": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/design.md",
+          "changed": false,
+          "target_sha256": "1457eb0fdf1c17a72b751df57ddf1cc3cff4c043c8d149c487cfebca7c234708",
+          "target_size": 5597
+        },
+        {
+          "line": 3,
+          "old": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/verification.md",
+          "new": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/verification.md",
+          "changed": false,
+          "target_sha256": "ef23ab414e3b36bdd89724e14669642efcaa0239eedd2277b9506c1b59882423",
+          "target_size": 15062
+        },
+        {
+          "line": 4,
+          "old": ".trellis/spec/frontend/index.md",
+          "new": ".trellis/spec/frontend/index.md",
+          "changed": false,
+          "target_sha256": "302396bf1d668c42f64f471d99f2f0bf4da9811b0ec1733df3ee214e494e4ba1",
+          "target_size": 2723
+        },
+        {
+          "line": 5,
+          "old": ".trellis/spec/frontend/directory-structure.md",
+          "new": ".trellis/spec/frontend/directory-structure.md",
+          "changed": false,
+          "target_sha256": "5101aa6a5a0418b8ac010816eb46dd480a2b5b221e4fa57360c627d184df9b97",
+          "target_size": 4903
+        },
+        {
+          "line": 6,
+          "old": ".trellis/spec/frontend/quality-guidelines.md",
+          "new": ".trellis/spec/frontend/quality-guidelines.md",
+          "changed": false,
+          "target_sha256": "9175fee8d214d4f2887643e6a694b62179d0678ef0626e8176a042371e5fb771",
+          "target_size": 4817
+        },
+        {
+          "line": 7,
+          "old": ".trellis/spec/frontend/forms-and-charts.md",
+          "new": ".trellis/spec/frontend/forms-and-charts.md",
+          "changed": false,
+          "target_sha256": "896d50a048c42a939c1e0ab78d6e7bdd952585adcd6f834ff5f013972cd5297f",
+          "target_size": 6539
+        },
+        {
+          "line": 8,
+          "old": ".trellis/spec/frontend/api-client.md",
+          "new": ".trellis/spec/frontend/api-client.md",
+          "changed": false,
+          "target_sha256": "140b4b09999da8640f3b1bc697858a02d199a10208d7fc5a472b52fd39ec2b90",
+          "target_size": 4048
+        },
+        {
+          "line": 9,
+          "old": ".trellis/spec/backend/database-guidelines.md",
+          "new": ".trellis/spec/backend/database-guidelines.md",
+          "changed": false,
+          "target_sha256": "4cf07d07796b17ca51146f29e686b8a01f865d272fd64560e301d71fa5d9ea29",
+          "target_size": 10828
+        },
+        {
+          "line": 10,
+          "old": ".trellis/spec/backend/quality-guidelines.md",
+          "new": ".trellis/spec/backend/quality-guidelines.md",
+          "changed": false,
+          "target_sha256": "403a374957d92080478b7408f86ce64617cdf47200cefe89dc9cab877371253d",
+          "target_size": 9872
+        },
+        {
+          "line": 11,
+          "old": ".trellis/spec/guides/cross-layer-thinking-guide.md",
+          "new": ".trellis/spec/guides/cross-layer-thinking-guide.md",
+          "changed": false,
+          "target_sha256": "bc8abaf348279bc4a77726103f46346464b7996ae8207d0224148f762203f97f",
+          "target_size": 5039
+        },
+        {
+          "line": 12,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/research/baseline-findings.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/research/baseline-findings.md",
+          "changed": true,
+          "target_sha256": "fcdd100f2c7cecc1c46f63867f3ebc3231348cf28bf6d709603d4d9b358d484b",
+          "target_size": 3089
+        }
+      ]
+    },
+    {
+      "source": ".trellis/tasks/09-30-frontend-load-assessment/check.jsonl",
+      "source_sha256": "db7cb82ee3ebc06ab095e65021343f3f65ad135a5709dbe0a6a3884c10c706f2",
+      "source_size": 1590,
+      "adapter_task_relative_path": "evidence/closure-20260930/preparation/reference-adapters/assessment-check.closure-v1.jsonl",
+      "adapter_sha256": "c84411d467e28fb5a7a6c216481e733fc852c60ec0bbc366150eab216cf83799",
+      "adapter_size": 1606,
+      "entries": [
+        {
+          "line": 1,
+          "old": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "new": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "changed": false,
+          "target_sha256": "8ba912d347a23fa08cc7bac901e275da51dbb93baa485ff632aab6b0a77acdb7",
+          "target_size": 20581
+        },
+        {
+          "line": 2,
+          "old": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/design.md",
+          "new": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/design.md",
+          "changed": false,
+          "target_sha256": "1457eb0fdf1c17a72b751df57ddf1cc3cff4c043c8d149c487cfebca7c234708",
+          "target_size": 5597
+        },
+        {
+          "line": 3,
+          "old": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/verification.md",
+          "new": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/verification.md",
+          "changed": false,
+          "target_sha256": "ef23ab414e3b36bdd89724e14669642efcaa0239eedd2277b9506c1b59882423",
+          "target_size": 15062
+        },
+        {
+          "line": 4,
+          "old": ".trellis/spec/frontend/index.md",
+          "new": ".trellis/spec/frontend/index.md",
+          "changed": false,
+          "target_sha256": "302396bf1d668c42f64f471d99f2f0bf4da9811b0ec1733df3ee214e494e4ba1",
+          "target_size": 2723
+        },
+        {
+          "line": 5,
+          "old": ".trellis/spec/frontend/directory-structure.md",
+          "new": ".trellis/spec/frontend/directory-structure.md",
+          "changed": false,
+          "target_sha256": "5101aa6a5a0418b8ac010816eb46dd480a2b5b221e4fa57360c627d184df9b97",
+          "target_size": 4903
+        },
+        {
+          "line": 6,
+          "old": ".trellis/spec/frontend/quality-guidelines.md",
+          "new": ".trellis/spec/frontend/quality-guidelines.md",
+          "changed": false,
+          "target_sha256": "9175fee8d214d4f2887643e6a694b62179d0678ef0626e8176a042371e5fb771",
+          "target_size": 4817
+        },
+        {
+          "line": 7,
+          "old": ".trellis/spec/frontend/forms-and-charts.md",
+          "new": ".trellis/spec/frontend/forms-and-charts.md",
+          "changed": false,
+          "target_sha256": "896d50a048c42a939c1e0ab78d6e7bdd952585adcd6f834ff5f013972cd5297f",
+          "target_size": 6539
+        },
+        {
+          "line": 8,
+          "old": ".trellis/spec/frontend/api-client.md",
+          "new": ".trellis/spec/frontend/api-client.md",
+          "changed": false,
+          "target_sha256": "140b4b09999da8640f3b1bc697858a02d199a10208d7fc5a472b52fd39ec2b90",
+          "target_size": 4048
+        },
+        {
+          "line": 9,
+          "old": ".trellis/spec/backend/database-guidelines.md",
+          "new": ".trellis/spec/backend/database-guidelines.md",
+          "changed": false,
+          "target_sha256": "4cf07d07796b17ca51146f29e686b8a01f865d272fd64560e301d71fa5d9ea29",
+          "target_size": 10828
+        },
+        {
+          "line": 10,
+          "old": ".trellis/spec/backend/quality-guidelines.md",
+          "new": ".trellis/spec/backend/quality-guidelines.md",
+          "changed": false,
+          "target_sha256": "403a374957d92080478b7408f86ce64617cdf47200cefe89dc9cab877371253d",
+          "target_size": 9872
+        },
+        {
+          "line": 11,
+          "old": ".trellis/spec/guides/cross-layer-thinking-guide.md",
+          "new": ".trellis/spec/guides/cross-layer-thinking-guide.md",
+          "changed": false,
+          "target_sha256": "bc8abaf348279bc4a77726103f46346464b7996ae8207d0224148f762203f97f",
+          "target_size": 5039
+        },
+        {
+          "line": 12,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/research/baseline-findings.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/research/baseline-findings.md",
+          "changed": true,
+          "target_sha256": "fcdd100f2c7cecc1c46f63867f3ebc3231348cf28bf6d709603d4d9b358d484b",
+          "target_size": 3089
+        }
+      ]
+    },
+    {
+      "source": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/implement.jsonl",
+      "source_sha256": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+      "source_size": 1545,
+      "adapter_task_relative_path": "evidence/closure-20260930/preparation/reference-adapters/b1-implement.closure-v1.jsonl",
+      "adapter_sha256": "70a6d06cc6fe595722013adcdb45dbc6936bd7d9273046b0f403cb1988faedd1",
+      "adapter_size": 1625,
+      "entries": [
+        {
+          "line": 1,
+          "old": ".trellis/spec/frontend/index.md",
+          "new": ".trellis/spec/frontend/index.md",
+          "changed": false,
+          "target_sha256": "302396bf1d668c42f64f471d99f2f0bf4da9811b0ec1733df3ee214e494e4ba1",
+          "target_size": 2723
+        },
+        {
+          "line": 2,
+          "old": ".trellis/spec/frontend/directory-structure.md",
+          "new": ".trellis/spec/frontend/directory-structure.md",
+          "changed": false,
+          "target_sha256": "5101aa6a5a0418b8ac010816eb46dd480a2b5b221e4fa57360c627d184df9b97",
+          "target_size": 4903
+        },
+        {
+          "line": 3,
+          "old": ".trellis/spec/frontend/quality-guidelines.md",
+          "new": ".trellis/spec/frontend/quality-guidelines.md",
+          "changed": false,
+          "target_sha256": "9175fee8d214d4f2887643e6a694b62179d0678ef0626e8176a042371e5fb771",
+          "target_size": 4817
+        },
+        {
+          "line": 4,
+          "old": ".trellis/spec/frontend/api-client.md",
+          "new": ".trellis/spec/frontend/api-client.md",
+          "changed": false,
+          "target_sha256": "140b4b09999da8640f3b1bc697858a02d199a10208d7fc5a472b52fd39ec2b90",
+          "target_size": 4048
+        },
+        {
+          "line": 5,
+          "old": ".trellis/spec/frontend/forms-and-charts.md",
+          "new": ".trellis/spec/frontend/forms-and-charts.md",
+          "changed": false,
+          "target_sha256": "896d50a048c42a939c1e0ab78d6e7bdd952585adcd6f834ff5f013972cd5297f",
+          "target_size": 6539
+        },
+        {
+          "line": 6,
+          "old": ".trellis/spec/guides/code-reuse-thinking-guide.md",
+          "new": ".trellis/spec/guides/code-reuse-thinking-guide.md",
+          "changed": false,
+          "target_sha256": "1908e8714f8815924977ccc3b5ea65f2888c29398896d90f39349827355e9bf4",
+          "target_size": 5889
+        },
+        {
+          "line": 7,
+          "old": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md",
+          "new": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md",
+          "changed": false,
+          "target_sha256": "fa231557d6bafa1d36fef10c654ed8aef0a22fb432d4ee4d887faf631a7ee07d",
+          "target_size": 26996
+        },
+        {
+          "line": 8,
+          "old": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "new": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "changed": false,
+          "target_sha256": "8ba912d347a23fa08cc7bac901e275da51dbb93baa485ff632aab6b0a77acdb7",
+          "target_size": 20581
+        },
+        {
+          "line": 9,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/report.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/report.md",
+          "changed": true,
+          "target_sha256": "a23ad2bfc48bf5ef233d279295accaaf46c6772f7bc2124f4440412276494f9a",
+          "target_size": 37508
+        },
+        {
+          "line": 10,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/verification.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/verification.md",
+          "changed": true,
+          "target_sha256": "a11ba840a56bd5b422ce783f03235e0ebbe0ae9f70264c0bf98984e077219773",
+          "target_size": 7425
+        },
+        {
+          "line": 11,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-review.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/review/continuation-review.md",
+          "changed": true,
+          "target_sha256": "2e867084c31762809e8d62e250610a9e720e7a686afea5e11f7e901e87881d59",
+          "target_size": 9246
+        },
+        {
+          "line": 12,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md",
+          "changed": true,
+          "target_sha256": "36ccea20af92158f6f10c6d18ebfbcd38969db8455a6fa02176f569eb00826e2",
+          "target_size": 3956
+        },
+        {
+          "line": 13,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/README.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/README.md",
+          "changed": true,
+          "target_sha256": "c107760a4879f620f8dcec1f59ed4cb12ccb5cc9f25e6bd8c4d3896a2f0aed94",
+          "target_size": 3877
+        }
+      ]
+    },
+    {
+      "source": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/check.jsonl",
+      "source_sha256": "ea5a088387756211de5efdac011a7c26e68e427e7bfcf72ea699c304436b44a4",
+      "source_size": 1545,
+      "adapter_task_relative_path": "evidence/closure-20260930/preparation/reference-adapters/b1-check.closure-v1.jsonl",
+      "adapter_sha256": "70a6d06cc6fe595722013adcdb45dbc6936bd7d9273046b0f403cb1988faedd1",
+      "adapter_size": 1625,
+      "entries": [
+        {
+          "line": 1,
+          "old": ".trellis/spec/frontend/index.md",
+          "new": ".trellis/spec/frontend/index.md",
+          "changed": false,
+          "target_sha256": "302396bf1d668c42f64f471d99f2f0bf4da9811b0ec1733df3ee214e494e4ba1",
+          "target_size": 2723
+        },
+        {
+          "line": 2,
+          "old": ".trellis/spec/frontend/directory-structure.md",
+          "new": ".trellis/spec/frontend/directory-structure.md",
+          "changed": false,
+          "target_sha256": "5101aa6a5a0418b8ac010816eb46dd480a2b5b221e4fa57360c627d184df9b97",
+          "target_size": 4903
+        },
+        {
+          "line": 3,
+          "old": ".trellis/spec/frontend/quality-guidelines.md",
+          "new": ".trellis/spec/frontend/quality-guidelines.md",
+          "changed": false,
+          "target_sha256": "9175fee8d214d4f2887643e6a694b62179d0678ef0626e8176a042371e5fb771",
+          "target_size": 4817
+        },
+        {
+          "line": 4,
+          "old": ".trellis/spec/frontend/api-client.md",
+          "new": ".trellis/spec/frontend/api-client.md",
+          "changed": false,
+          "target_sha256": "140b4b09999da8640f3b1bc697858a02d199a10208d7fc5a472b52fd39ec2b90",
+          "target_size": 4048
+        },
+        {
+          "line": 5,
+          "old": ".trellis/spec/frontend/forms-and-charts.md",
+          "new": ".trellis/spec/frontend/forms-and-charts.md",
+          "changed": false,
+          "target_sha256": "896d50a048c42a939c1e0ab78d6e7bdd952585adcd6f834ff5f013972cd5297f",
+          "target_size": 6539
+        },
+        {
+          "line": 6,
+          "old": ".trellis/spec/guides/code-reuse-thinking-guide.md",
+          "new": ".trellis/spec/guides/code-reuse-thinking-guide.md",
+          "changed": false,
+          "target_sha256": "1908e8714f8815924977ccc3b5ea65f2888c29398896d90f39349827355e9bf4",
+          "target_size": 5889
+        },
+        {
+          "line": 7,
+          "old": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md",
+          "new": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md",
+          "changed": false,
+          "target_sha256": "fa231557d6bafa1d36fef10c654ed8aef0a22fb432d4ee4d887faf631a7ee07d",
+          "target_size": 26996
+        },
+        {
+          "line": 8,
+          "old": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "new": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+          "changed": false,
+          "target_sha256": "8ba912d347a23fa08cc7bac901e275da51dbb93baa485ff632aab6b0a77acdb7",
+          "target_size": 20581
+        },
+        {
+          "line": 9,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/report.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/report.md",
+          "changed": true,
+          "target_sha256": "a23ad2bfc48bf5ef233d279295accaaf46c6772f7bc2124f4440412276494f9a",
+          "target_size": 37508
+        },
+        {
+          "line": 10,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/verification.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/verification.md",
+          "changed": true,
+          "target_sha256": "a11ba840a56bd5b422ce783f03235e0ebbe0ae9f70264c0bf98984e077219773",
+          "target_size": 7425
+        },
+        {
+          "line": 11,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/evidence/review/continuation-review.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/review/continuation-review.md",
+          "changed": true,
+          "target_sha256": "2e867084c31762809e8d62e250610a9e720e7a686afea5e11f7e901e87881d59",
+          "target_size": 9246
+        },
+        {
+          "line": 12,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/variants/recovery-r1/README.md",
+          "changed": true,
+          "target_sha256": "36ccea20af92158f6f10c6d18ebfbcd38969db8455a6fa02176f569eb00826e2",
+          "target_size": 3956
+        },
+        {
+          "line": 13,
+          "old": ".trellis/tasks/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/README.md",
+          "new": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/measurement/recovery-r1/instrument/README.md",
+          "changed": true,
+          "target_sha256": "c107760a4879f620f8dcec1f59ed4cb12ccb5cc9f25e6bd8c4d3896a2f0aed94",
+          "target_size": 3877
+        }
+      ]
+    }
+  ]
+}

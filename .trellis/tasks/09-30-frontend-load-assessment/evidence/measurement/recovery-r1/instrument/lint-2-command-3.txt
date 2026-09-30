@@ -1,0 +1,42 @@
+Checked 1 file in 6ms. No fixes applied.
+Found 2 infos.
+paint_collection.test.mjs:45:51 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    43 │     clearTimeout: (id) => state.timers.delete(id),
+    44 │   };
+  > 45 │   const invoke = (fn, args) => vm.runInNewContext('(' + fn.toString() + ')', sandbox)(args);
+       │                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+    46 │   const collect = () => invoke(collectPaint, { id: 'entry', timeoutMs: 1000 });
+    47 │   const publish = (entries, now = 140) => {
+
+  i Unsafe fix: Use a template literal.
+
+     43  43 │       clearTimeout: (id) => state.timers.delete(id),
+     44  44 │     };
+     45     │ - ··const·invoke·=·(fn,·args)·=>·vm.runInNewContext('('·+·fn.toString()·+·')',·sandbox)(args);
+         45 │ + ··const·invoke·=·(fn,·args)·=>·vm.runInNewContext(`(${fn.toString()})`,·sandbox)(args);
+     46  46 │     const collect = () => invoke(collectPaint, { id: 'entry', timeoutMs: 1000 });
+     47  47 │     const publish = (entries, now = 140) => {
+
+
+paint_collection.test.mjs:169:30 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+
+    167 │   const before = fs.readFileSync(new URL('./before/browser_probe.mjs', import.meta.url), 'utf8').replaceAll('\r\n', '\n').trimEnd();
+    168 │   const after = fs.readFileSync(new URL('../../browser_probe.mjs', import.meta.url), 'utf8').replaceAll('\r\n', '\n');
+  > 169 │   assert.ok(after.startsWith(before + '\n'));
+        │                              ^^^^^^^^^^^^^
+    170 │ });
+    171 │
+
+  i Unsafe fix: Use a template literal.
+
+    167 167 │     const before = fs.readFileSync(new URL('./before/browser_probe.mjs', import.meta.url), 'utf8').replaceAll('\r\n', '\n').trimEnd();
+    168 168 │     const after = fs.readFileSync(new URL('../../browser_probe.mjs', import.meta.url), 'utf8').replaceAll('\r\n', '\n');
+    169     │ - ··assert.ok(after.startsWith(before·+·'\n'));
+        169 │ + ··assert.ok(after.startsWith(`${before}\n`));
+    170 170 │   });
+    171 171 │

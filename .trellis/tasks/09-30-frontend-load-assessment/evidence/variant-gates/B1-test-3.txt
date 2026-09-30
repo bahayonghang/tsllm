@@ -1,0 +1,59 @@
+
+ RUN  v5.0.2 <assessment-temp>/variants/B1/web
+
+ ❯ tests/LazyRouting.test.tsx (4 tests | 2 failed) 830ms
+   ❯ route module boundaries (4)
+     × reloads a failed route document and preserves the URL with hash  116ms
+     × reloads a failed route document and preserves the URL with hash #restore 87ms
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  2 failed | 37 passed (39)
+   Start at  04:18:31
+   Duration  7.01s (import 41%, tests 29%, environment 28%, transform 1%)
+
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./assessmentGraph" without a file extension (vite.config.ts:3:33). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: navigation to another Document
+Not implemented: navigation to another Document
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+Not implemented: Window's getComputedStyle() method: with pseudo-elements
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/LazyRouting.test.tsx > route module boundaries > reloads a failed route document and preserves the URL with hash
+ FAIL  tests/LazyRouting.test.tsx > route module boundaries > reloads a failed route document and preserves the URL with hash #restore
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/LazyRouting.test.tsx:105:39
+    103|     const recovery = screen.getByRole("link", { name: "重新加载页面" });
+    104|     expect(recovery.getAttribute("href")).toBe(url);
+    105|     expect(fireEvent.click(recovery)).toBe(false);
+       |                                       ^
+    106|     expect(reload).toHaveBeenCalledTimes(1);
+    107|     const location = view.router.state.location;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯

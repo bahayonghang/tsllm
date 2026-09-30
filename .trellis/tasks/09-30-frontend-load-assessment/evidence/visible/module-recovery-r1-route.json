@@ -1,0 +1,26 @@
+{
+  "revision": "recovery-r1",
+  "variant": "B1",
+  "surface": "route",
+  "asset": "SystemPage-D01M2jNg.js",
+  "sha256": "c8124b91d6ac92d377acba3726ff0af893a182016d46058bc298afe2db1a6b52",
+  "withheld": true,
+  "restored": true,
+  "failure_url": "/system?assessment=module-recovery-r1#restore",
+  "recovery_observed": true,
+  "failure_observed": true,
+  "reload_link_preserves_query_hash": true,
+  "recovered_url": "/system?assessment=module-recovery-r1#restore",
+  "recovered_heading": "系统",
+  "failure_alert_count_after_reload": 0,
+  "viewports_checked": [
+    [
+      1280,
+      900
+    ],
+    [
+      390,
+      844
+    ]
+  ]
+}

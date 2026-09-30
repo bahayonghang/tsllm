@@ -1,0 +1,28 @@
+{
+  "revision": "recovery-r1",
+  "fixture_files": 34,
+  "fixtures_hash_size_mtime_unchanged": true,
+  "port_9000_free": true,
+  "owned_service_lifecycles": [
+    {
+      "file": "evidence/measurement/recovery-r1/pilot/lifecycle-s1-1-a1-B0.json",
+      "owned_services_stopped": 1,
+      "all_measurements_exit_zero": true
+    },
+    {
+      "file": "evidence/measurement/recovery-r1/raw/lifecycle-s1-5-a1-B0-B1-B2.json",
+      "owned_services_stopped": 15,
+      "all_measurements_exit_zero": true
+    },
+    {
+      "file": "evidence/measurement/recovery-r1/journey/lifecycle-s1-1-a1-B0-B1-B2.json",
+      "owned_services_stopped": 3,
+      "all_measurements_exit_zero": true
+    }
+  ],
+  "held_assets_remaining": [],
+  "model_cache_file_count": 0,
+  "visible_browser_cleanup_receipt": "evidence/visible/cleanup-before-matrix.json",
+  "visible_browser_used_since_cleanup": false,
+  "new_inline_images_since_cleanup": 0
+}

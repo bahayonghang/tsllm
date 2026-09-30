@@ -1,0 +1,8 @@
+
+✓ Lockfile passes supply-chain policies (verified 22h ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "<temp>\
+      \tsllm-frontend-load-20260930-t60bigc6\\variants\\B0\\web\\node_modules\
+      \.pnpm": workspace hoist directory is not a real directory

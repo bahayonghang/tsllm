@@ -1,0 +1,16 @@
+✔ late publication retains a native FCP before the frozen endpoint (1.7985ms)
+✔ already published native paint completes without an observer or wait (0.4746ms)
+✔ a native FCP after ready remains after ready without moving the endpoint (0.5048ms)
+✔ a bounded timeout reports missing paint without creating values (0.469ms)
+✔ queued native records are drained before a timeout result (0.4344ms)
+✔ unsupported paint and observer failure have explicit separate status (0.8613ms)
+✔ awaitReady waits for native collection before the caller can navigate (2.6646ms)
+✔ the original readiness probe is unchanged by the supplemental collector (0.6218ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.7195

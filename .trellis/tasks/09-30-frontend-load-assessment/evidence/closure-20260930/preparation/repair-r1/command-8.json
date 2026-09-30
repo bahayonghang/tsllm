@@ -1,0 +1,11 @@
+{
+  "command": [
+    ".venv/Scripts/ruff.exe",
+    "format",
+    "--no-cache",
+    ".trellis\\tasks\\09-30-frontend-load-assessment\\evidence\\closure-20260930\\independent\\replay_sources_v1.py"
+  ],
+  "exit_code": 0,
+  "stdout": "1 file reformatted\n",
+  "stderr": ""
+}

@@ -1,0 +1,12 @@
+{"file": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md", "reason": "Preserve shared layer, service, job, and data contracts."}
+{"file": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/design.md", "reason": "Preserve additive warning behavior and compatibility boundaries."}
+{"file": ".trellis/tasks/archive/2026-09/09-29-compare-warnings/verification.md", "reason": "Reuse baseline evidence only within its recorded limits."}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend ownership and Chinese user interface rules."}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Existing route and feature ownership."}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Full frontend gates, fetch mocks, and visible browser checks."}
+{"file": ".trellis/spec/frontend/forms-and-charts.md", "reason": "Preserve forms, chart rendering, and all comparison warnings."}
+{"file": ".trellis/spec/frontend/api-client.md", "reason": "Preserve generated API types and request hooks."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Use isolated synthetic service roots and preserve private data."}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Offline controls and synthetic test boundaries."}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Trace route imports through resources and runtime behavior."}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/research/baseline-findings.md", "reason": "Verified source anchors, artifact measurements, and unknowns."}

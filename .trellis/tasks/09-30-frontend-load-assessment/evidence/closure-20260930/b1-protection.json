@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "command": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "934ba580e39a3ecee53abe936cc41ff5aaef0049",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "40648784376a5d3dc165e75f2aa981f9843722c4",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--name-status",
+        "1b075dc99b5fd4d5174809fe7f3416717c5d0584"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-status"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "ls-files",
+        "--",
+        "data",
+        "ref",
+        "runs",
+        "cache"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "b1_product_files": [
+    {
+      "path": "web/src/components/AppLayout.tsx",
+      "same_bytes_as_b1_work_commit": true,
+      "sha256": "4b4b4539bbbd22e926eb369ca34a2b74e8eca2430ddbbf4e142f2419bf9cb703",
+      "size": 2086
+    },
+    {
+      "path": "web/src/components/RouteLoading.tsx",
+      "same_bytes_as_b1_work_commit": true,
+      "sha256": "b4cb80634e73986b5b339d552fabb5ce434cd9ed95fddf34e4d07f271a29b21e",
+      "size": 941
+    },
+    {
+      "path": "web/src/router.tsx",
+      "same_bytes_as_b1_work_commit": true,
+      "sha256": "d2ad82dfa7dd10ef6b5a70f74424f612f25eb7102ea071d5afcc4d7aed98409f",
+      "size": 1882
+    },
+    {
+      "path": "web/tests/LazyRouting.test.tsx",
+      "same_bytes_as_b1_work_commit": true,
+      "sha256": "614a18a136674f48dc874c5f423c222da0f44e9425029fc165b34fc4e846bec2",
+      "size": 6251
+    },
+    {
+      "path": "web/tests/RouteResolution.test.tsx",
+      "same_bytes_as_b1_work_commit": true,
+      "sha256": "95505e0b53aae9d324a4b8f422b873b6a22a68ff02a61d61efd996d14202c17d",
+      "size": 3932
+    }
+  ],
+  "historical_assessment_baseline": "e9ce26a7bd1a4ed67cd30d257354e7345c44dec1",
+  "protection_baseline": "1b075dc99b5fd4d5174809fe7f3416717c5d0584",
+  "product_changes_authorized": []
+}

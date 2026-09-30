@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "fixture_files": 34,
+  "fixture_sha256_size_mtime_unchanged": true,
+  "port_9000_connect_ex": 10061,
+  "port_9000_connection_refused": true,
+  "held_asset_paths": [],
+  "model_cache_file_count": 0,
+  "private_directories_opened": false,
+  "visible_cleanup_receipt": "evidence/visible/cleanup-before-matrix.json",
+  "visible_browser_verified_by": "Main agent receipt; checker did not operate browser"
+}
