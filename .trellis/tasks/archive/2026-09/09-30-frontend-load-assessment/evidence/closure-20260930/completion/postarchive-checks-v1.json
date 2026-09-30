@@ -1,0 +1,59 @@
+{
+  "revision": "postarchive-checks-v1",
+  "date": "2026-09-30",
+  "direct_reference_changes": [
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/implement.jsonl",
+      "before_sha256": "db7cb82ee3ebc06ab095e65021343f3f65ad135a5709dbe0a6a3884c10c706f2",
+      "after_sha256": "c84411d467e28fb5a7a6c216481e733fc852c60ec0bbc366150eab216cf83799",
+      "changed_reference_count": 1
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/check.jsonl",
+      "before_sha256": "db7cb82ee3ebc06ab095e65021343f3f65ad135a5709dbe0a6a3884c10c706f2",
+      "after_sha256": "c84411d467e28fb5a7a6c216481e733fc852c60ec0bbc366150eab216cf83799",
+      "changed_reference_count": 1
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        ".trellis/scripts/task.py",
+        "validate",
+        ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment"
+      ],
+      "exit_code": 0,
+      "stdout": "\u001b[0;34m=== Validating Context Files ===\u001b[0m\r\nTarget dir: D:\\Documents\\Code\\Python\\Exp\\tsllm\\.trellis\\tasks\\archive\\2026-09\\09-30-frontend-load-assessment\r\n\r\n  \u001b[0;32mimplement.jsonl: ✓ (12 entries)\u001b[0m\r\n  \u001b[0;32mcheck.jsonl: ✓ (12 entries)\u001b[0m\r\n\r\n\u001b[0;32m✓ All validations passed\u001b[0m\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/closure-20260930/preparation/prepare_closure_v1.py",
+        "--verify"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"mode\": \"verify\", \"archived\": true, \"original_files_verified\": 463, \"log_copies_verified\": 38, \"reference_entries_verified\": 50, \"writes\": 0}\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "historical_b1_manifests": "unchanged; use versioned b1-implement.closure-v1.jsonl and b1-check.closure-v1.jsonl adapters",
+  "mapping_file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/closure-20260930/preparation/reference-adapters/mapping.closure-v1.json"
+}

@@ -9,4 +9,4 @@
 {"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Use isolated synthetic service roots and preserve private data."}
 {"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Offline controls and synthetic test boundaries."}
 {"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Trace route imports through resources and runtime behavior."}
-{"file": ".trellis/tasks/09-30-frontend-load-assessment/research/baseline-findings.md", "reason": "Verified source anchors, artifact measurements, and unknowns."}
+{"file": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/research/baseline-findings.md", "reason": "Verified source anchors, artifact measurements, and unknowns."}
