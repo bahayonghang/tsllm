@@ -1,0 +1,6 @@
+{"file": ".trellis/tasks/10-11-kiln-forecast/research/forecast-contract.md", "reason": "Frozen kiln window, channel roles, and model behavior"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md", "reason": "Shared data, window, metrics, and run-directory contracts"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "No leakage: fit-only stats and segment-local windows"}
+{"file": ".trellis/spec/backend/model-adapter-guidelines.md", "reason": "Do not change adapter multivariate or checkpoint behavior"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Real weights stay out of default pytest"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/research/data-profile.md", "reason": "Source fingerprint and eligibility baseline"}

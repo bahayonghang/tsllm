@@ -1,0 +1,5 @@
+{"file": ".trellis/tasks/10-11-kiln-forecast/research/forecast-contract.md", "reason": "Acceptance must match the frozen forecast contract"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "Reject split leakage and cross-segment windows"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Check offline gates if a blocking fix touches code"}
+{"file": ".trellis/spec/backend/model-adapter-guidelines.md", "reason": "Check revisions and forbid silent mode changes"}
+{"file": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md", "reason": "Metrics and prediction parquet contract"}
