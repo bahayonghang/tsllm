@@ -1,0 +1,3 @@
+{"file": ".trellis/spec/frontend/index.md", "reason": "当前前端职责与事实来源"}
+{"file": ".trellis/spec/backend/index.md", "reason": "后端分层与父共享契约优先规则"}
+{"file": ".trellis/tasks/09-30-next-task-planning/research/archive-evidence.md", "reason": "指定报告全文阅读、版本边界、冻结路径映射和待核对契约"}

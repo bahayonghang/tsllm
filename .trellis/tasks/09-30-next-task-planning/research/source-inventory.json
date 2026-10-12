@@ -1,0 +1,102 @@
+{
+  "recorded_date": "2026-09-30",
+  "head": "945a76ecf35303083aec36acd5e879a3aa409aba",
+  "type": "read_only_sources_and_protected_artifacts",
+  "product_gate_execution": false,
+  "required_reports": [
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/prd.md",
+      "bytes": 26996,
+      "sha256": "fa231557d6bafa1d36fef10c654ed8aef0a22fb432d4ee4d887faf631a7ee07d",
+      "lines": 295,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-28-tsfm-platform/design.md",
+      "bytes": 20581,
+      "sha256": "8ba912d347a23fa08cc7bac901e275da51dbb93baa485ff632aab6b0a77acdb7",
+      "lines": 374,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/report.md",
+      "bytes": 37508,
+      "sha256": "a23ad2bfc48bf5ef233d279295accaaf46c6772f7bc2124f4440412276494f9a",
+      "lines": 394,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/verification.md",
+      "bytes": 7425,
+      "sha256": "a11ba840a56bd5b422ce783f03235e0ebbe0ae9f70264c0bf98984e077219773",
+      "lines": 62,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/closure-20260930/completion/closure-result.md",
+      "bytes": 6465,
+      "sha256": "8e6f074e03b6567a305451c2f1b27875fefb84353536965d09a871db3f0a6d78",
+      "lines": 53,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/closure-20260930/independent/final-review.md",
+      "bytes": 11034,
+      "sha256": "4d4471721ab11d76bc012097a3688ebb54cf8a36f40a9fb1c5d90b07bd689108",
+      "lines": 87,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/report.md",
+      "bytes": 8053,
+      "sha256": "e6de1081975ffd6eb27884733855cc210a59ec12873ba79eb292735d68042342",
+      "lines": 109,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/verification.md",
+      "bytes": 10546,
+      "sha256": "bb6b498a1920aa4438b7038ee5d9cf77c30ee174a7cfd1e8ac5802ed102da21f",
+      "lines": 96,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/evidence/closure/README.md",
+      "bytes": 4502,
+      "sha256": "690a8c03699ad737484246f89c5a9f28c8f9a12110b787495bd7a7ffcc19171f",
+      "lines": 41,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-route-lazy-loading/evidence/closure/result.md",
+      "bytes": 2226,
+      "sha256": "2c9c7e633c0462c48fd6878ac33a0ad8433b46f0eda33791243c09ab86678ce5",
+      "lines": 15,
+      "read_mode": "full_text"
+    },
+    {
+      "path": ".trellis/tasks/archive/2026-09/09-30-frontend-load-assessment/evidence/closure-20260930/preparation/reference-adapters/mapping.closure-v1.json",
+      "bytes": 19769,
+      "sha256": "92a763975fa8b26e56bbccae3b4849a34b961968b89201a121b70ecefc853a70",
+      "lines": 448,
+      "read_mode": "parsed_mapping"
+    }
+  ],
+  "protected_artifacts": [
+    {
+      "path": ".claude/launch.json",
+      "bytes": 211,
+      "sha256": "f9b8b2e635b0dcd768ef19d46abbdee6395d7bb0fc4c3e148c1a54b0710a2de3"
+    },
+    {
+      "path": "web/dist/assets/index-DlIxrfbQ.js",
+      "bytes": 2419860,
+      "sha256": "9d4690a2705c2b1e2a906c9933ff9c88ee4fc37ca9cd048f7d6e1fd77fb9853f"
+    },
+    {
+      "path": "web/dist/index.html",
+      "bytes": 331,
+      "sha256": "be7c0918b0eda1d70b137245bcb27610317892dee160c429470e60ab41c9423a"
+    }
+  ]
+}
