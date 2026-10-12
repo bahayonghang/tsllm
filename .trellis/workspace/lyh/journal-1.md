@@ -168,3 +168,36 @@ Completed data-contract AC1-AC6 and archived the task. Preserved tracked Trellis
 ### Next Steps
 
 - 推送 codex/web-ui 后，等待用户选择整体 PR 或按子任务分支分别合并；不启用 auto-merge。
+
+
+## Session 10: 阳泉回转窑时序预测实验与归档
+<!-- trellis-session: v=2 fp=481788c4334df391 -->
+
+**Date**: 2026-10-12
+**Task**: 阳泉回转窑时序预测实验与归档
+**Branch**: `dev`
+
+### Summary
+
+在未改产品代码的前提下完成阳泉回转窑 120 分钟到 30 分钟的七个正式预测运行。验证集 mae_norm_macro 最低的是 Chronos-2 LoRA。任务已归档。
+
+### Main Changes
+
+- 写入入库指纹、预测契约和七行对比；AC1–AC6 已核对。
+- 正式结果只用先完成的 TimesFM 2.5 LoRA 运行；重复运行 9790 指标一致，未进入排序表。
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `a7eb64b` | docs(task): 记录阳泉回转窑时序预测实验 |
+| `77af6f6` | chore(task): archive 10-11-kiln-forecast |
+
+### Testing
+
+- [OK] 七个正式运行均为 succeeded，val 哈希 e51e301e6b09（1728），test 哈希 07c9ced03282（1735）。
+- [OK] 对比表六位小数与 metrics.json 一致；产品代码 diff 为空。
+
+### Status
+
+[OK] **Completed**
