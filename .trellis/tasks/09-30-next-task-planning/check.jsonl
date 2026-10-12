@@ -1,0 +1,10 @@
+{"file": ".trellis/spec/backend/index.md", "reason": "共享契约优先级与限定例外的既有入口"}
+{"file": ".trellis/spec/backend/time-series-guidelines.md", "reason": "现有数据契约与角色说明承载位置"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "四个正式门槛与合成离线边界"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "中文说明及后端源类型原则"}
+{"file": ".trellis/spec/frontend/api-client.md", "reason": "OpenAPI 与 TypeScript 生成同步契约"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "三个正式门槛、fetch 测试边界与真实可见验收"}
+{"file": ".trellis/spec/guides/index.md", "reason": "跨层契约检查入口"}
+{"file": ".trellis/tasks/09-30-next-task-planning/research/archive-evidence.md", "reason": "指定历史报告、版本边界及冻结引用映射"}
+{"file": ".trellis/tasks/09-30-next-task-planning/research/current-state-candidates.md", "reason": "当前调用链、两候选与第一轮修订"}
+{"file": ".trellis/tasks/09-30-next-task-planning/research/independent-candidate-review.md", "reason": "独立事实复核及三项成稿要求"}
